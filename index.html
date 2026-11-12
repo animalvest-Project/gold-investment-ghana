@@ -1,4 +1,5 @@
 
+<!
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,118 +9,193 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#090909;color:#fff;font-family:Arial,sans-serif;line-height:1.6}
-header{padding:20px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #453719}
-.logo{color:#e6bd55;font-weight:bold;font-size:19px}
-nav a{color:white;text-decoration:none;margin-left:15px;font-size:13px}
-.hero{padding:100px 8%;background:radial-gradient(circle at 80%,#493512,#090909 65%)}
-.hero h1{font-size:clamp(38px,7vw,65px);line-height:1.15;margin:20px 0}
+header{padding:20px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #292929}
+.logo{color:#e6bd55;font-weight:bold;font-size:22px}
+nav a{color:white;text-decoration:none;margin-left:18px}
+.hero{padding:85px 8%;background:radial-gradient(circle at top right,#463716,#090909 65%)}
+.hero h1{font-size:clamp(36px,7vw,60px);line-height:1.15;margin-bottom:20px}
 .gold{color:#e6bd55}
-.hero p{color:#ccc;max-width:500px}
-.btn{display:inline-block;background:#e6bd55;color:#090909;padding:13px 24px;text-decoration:none;border-radius:4px;font-weight:bold;margin-top:22px;border:0;cursor:pointer}
-section{padding:65px 8%}
-.heading{text-align:center;margin-bottom:35px}
-.heading h2{font-size:32px}
+.hero p{color:#ccc;max-width:600px;margin-bottom:25px}
+.btn{display:inline-block;background:#e6bd55;color:#111;padding:13px 22px;border:0;border-radius:5px;font-weight:bold;cursor:pointer;text-decoration:none}
+section{padding:55px 8%}
+.heading{text-align:center;margin-bottom:30px}
+.heading h2{font-size:30px}
 .heading p{color:#aaa}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:#171717;border:1px solid #57431d;border-radius:9px;padding:25px}
-.card h3{color:#e6bd55;margin-bottom:12px}
-.card p{color:#bbb;font-size:14px}
-.icon{font-size:35px;margin-bottom:12px}
-.price{font-size:27px;font-weight:bold;margin:15px 0;color:#e6bd55}
-.notice{background:#211a0c;border:1px solid #80642b;padding:18px;margin-top:25px;color:#e6d9b8;font-size:13px;border-radius:6px}
-.calculator{max-width:500px;margin:auto;background:#171717;padding:25px;border:1px solid #57431d;border-radius:8px}
-input{width:100%;padding:13px;margin:8px 0 18px;background:#090909;border:1px solid #57431d;color:white}
-footer{text-align:center;padding:30px;border-top:1px solid #453719;color:#aaa;font-size:13px}
-@media(max-width:600px){header{flex-direction:column;gap:15px}nav a{margin:0 7px}.hero{padding:75px 7%}section{padding:50px 6%}}
+.card{background:#171717;border:1px solid #393020;padding:25px;border-radius:10px}
+.card h3{color:#e6bd55;margin-bottom:10px}
+.card p{color:#bbb}
+.auth-section{background:#111}
+.auth-box{max-width:430px;margin:auto;background:#191919;padding:28px;border:1px solid #493b1c;border-radius:12px}
+.auth-box h2{text-align:center;color:#e6bd55;margin-bottom:20px}
+.auth-box input{width:100%;padding:14px;margin:9px 0;background:#090909;color:white;border:1px solid #555;border-radius:5px}
+.auth-box button{width:100%;margin-top:12px}
+.switch{text-align:center;margin-top:18px;color:#ccc}
+.switch a{color:#e6bd55;cursor:pointer}
+#message{margin-top:14px;text-align:center;color:#e6bd55;overflow-wrap:anywhere}
+#account{display:none;text-align:center}
+footer{text-align:center;padding:25px;color:#999;border-top:1px solid #333;font-size:13px}
+@media(max-width:600px){header{padding:17px 5%}nav a{margin-left:8px;font-size:13px}.hero{padding:65px 6%}section{padding:45px 6%}}
 </style>
 </head>
 <body>
 
 <header>
 <div class="logo">GOLD INVESTMENT GHANA</div>
-<nav>
-<a href="#home">Home</a>
-<a href="#gold">Gold</a>
-<a href="#plans">Plans</a>
-<a href="#about">About</a>
-</nav>
+<nav><a href="#home">Home</a><a href="#about">About</a><a href="#account-area">Account</a></nav>
 </header>
 
-<main>
-<div class="hero" id="home">
-<p class="gold">GOLD • VALUE • OPPORTUNITY</p>
-<h1>Discover the World of <span class="gold">Gold</span></h1>
-<p>Explore gold products, precious metals and educational information about the gold market in Ghana.</p>
-<a href="#gold" class="btn">Explore Gold</a>
-</div>
-
-<section id="gold">
-<div class="heading">
-<h2>Explore <span class="gold">Gold</span></h2>
-<p>Discover different gold categories.</p>
-</div>
-<div class="grid">
-<div class="card"><div class="icon">🥇</div><h3>Gold Bullion</h3><p>Learn about gold bars and precious metals.</p></div>
-<div class="card"><div class="icon">💍</div><h3>Gold Jewellery</h3><p>Explore gold jewellery and beautiful designs.</p></div>
-<div class="card"><div class="icon">✨</div><h3>Gold Market</h3><p>Learn about gold prices and market movements.</p></div>
-</div>
-</section>
-
-<section id="plans">
-<div class="heading">
-<h2>Investment <span class="gold">Information</span></h2>
-<p>Educational examples only. No deposits accepted.</p>
-</div>
-<div class="grid">
-<div class="card"><h3>Starter Example</h3><div class="price">GH₵50</div><p>Illustrative example for learning about gold investments.</p></div>
-<div class="card"><h3>Growth Example</h3><div class="price">GH₵200</div><p>Explore investment amounts and market risks.</p></div>
-<div class="card"><h3>Premium Example</h3><div class="price">GH₵500</div><p>Learn about larger investment amounts and risks.</p></div>
-</div>
-<div class="notice">DEMO ONLY: These are not active investment products. This website does not accept investment deposits or promise returns.</div>
-</section>
-
-<section>
-<div class="heading">
-<h2>Gold <span class="gold">Calculator</span></h2>
-<p>Try a hypothetical calculation.</p>
-</div>
-<div class="calculator">
-<label>Example amount (GH₵)</label>
-<input type="number" id="amount" value="100" min="0">
-<label>Hypothetical change (%)</label>
-<input type="number" id="rate" value="5">
-<button class="btn" onclick="calculate()">Calculate</button>
-<h3 class="gold" id="result" style="margin-top:20px">Example value: GH₵100.00</h3>
-<p style="color:#aaa;font-size:12px;margin-top:12px">Illustrative calculation only, not a prediction of profit.</p>
-</div>
+<section class="hero" id="home">
+<h1>Discover the Value of <span class="gold">Gold</span></h1>
+<p>Explore gold, learn about the precious metals market and discover information about gold ownership in Ghana.</p>
+<a href="#account-area" class="btn">Create Your Account</a>
 </section>
 
 <section id="about">
-<div class="heading"><h2>About <span class="gold">Us</span></h2></div>
-<div class="card">
-<p>Gold Investment Ghana provides educational information about gold, precious metals and investment markets. We aim to help visitors understand gold products and associated risks.</p>
+<div class="heading">
+<h2>Explore Gold</h2>
+<p>Learn about different areas of the gold market.</p>
+</div>
+<div class="grid">
+<div class="card"><h3>Gold Bullion</h3><p>Learn about gold bars, purity, weight and how bullion is valued.</p></div>
+<div class="card"><h3>Gold Jewellery</h3><p>Explore gold jewellery, craftsmanship and purity standards.</p></div>
+<div class="card"><h3>Gold Market</h3><p>Understand market prices and the factors that influence gold values.</p></div>
 </div>
 </section>
-</main>
+
+<section class="auth-section" id="account-area">
+<div class="auth-box" id="auth">
+<h2 id="form-title">Create Your Account</h2>
+<form id="auth-form">
+<input type="email" id="email" placeholder="Email address" required>
+<input type="password" id="password" placeholder="Password (at least 8 characters)" minlength="8" required>
+<button class="btn" type="submit" id="submit-btn">Sign Up</button>
+</form>
+<div class="switch">
+<span id="switch-text">Already have an account?</span>
+<a id="switch-link">Log In</a>
+</div>
+<p id="message" role="status"></p>
+</div>
+
+<div class="auth-box" id="account">
+<h2>Welcome!</h2>
+<p id="user-email"></p>
+<p style="color:#bbb;margin:12px 0">You are signed in successfully.</p>
+<button class="btn" id="logout-btn">Log Out</button>
+</div>
+</section>
 
 <footer>
-<p class="gold">GOLD INVESTMENT GHANA</p>
-<p>Gold market education and information.</p>
-<p>© 2026 Gold Investment Ghana.</p>
-<p>Demonstration website. No investment deposits accepted.</p>
+<p>Gold Investment Ghana</p>
+<p>Educational information only. Gold prices can rise or fall. No investment deposits or returns are offered through this website.</p>
 </footer>
 
-<script>
-function calculate(){
-let amount=Number(document.getElementById('amount').value);
-let rate=Number(document.getElementById('rate').value);
-if(!Number.isFinite(amount)||!Number.isFinite(rate)||amount<0||amount>100000000||rate < -100||rate>1000){
-document.getElementById('result').textContent='Enter valid example values.';
-return;
+<script type="module">
+import { createClient } from
+'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+const SUPABASE_URL = 'https://yvorlcgppaelcexwtiwf.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v';
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+let loginMode = false;
+
+const form = document.getElementById('auth-form');
+const message = document.getElementById('message');
+const authBox = document.getElementById('auth');
+const accountBox = document.getElementById('account');
+
+function showMessage(text) {
+  message.textContent = text;
 }
-let total=amount*(1+rate/100);
-document.getElementById('result').textContent='Example value: GH₵'+total.toFixed(2);
+
+function showAccount(user) {
+  authBox.style.display = 'none';
+  accountBox.style.display = 'block';
+  document.getElementById('user-email').textContent = user.email;
 }
+
+function showAuth() {
+  authBox.style.display = 'block';
+  accountBox.style.display = 'none';
+}
+
+document.getElementById('switch-link').addEventListener('click', () => {
+  loginMode = !loginMode;
+  document.getElementById('form-title').textContent =
+    loginMode ? 'Welcome Back' : 'Create Your Account';
+  document.getElementById('submit-btn').textContent =
+    loginMode ? 'Log In' : 'Sign Up';
+  document.getElementById('switch-text').textContent =
+    loginMode ? "Don't have an account?" : 'Already have an account?';
+  document.getElementById('switch-link').textContent =
+    loginMode ? 'Sign Up' : 'Log In';
+  showMessage('');
+});
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const button = document.getElementById('submit-btn');
+
+  button.disabled = true;
+  button.textContent = 'Please wait...';
+  showMessage('');
+
+  try {
+    if (loginMode) {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email, password
+      });
+      if (error) throw error;
+      if (data.user) showAccount(data.user);
+    } else {
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          emailRedirectTo: window.location.origin
+        }
+      });
+      if (error) throw error;
+
+      if (data.session && data.user) {
+        showAccount(data.user);
+      } else {
+        showMessage('Registration received. Check your email for a verification link.');
+      }
+    }
+  } catch (error) {
+    showMessage(error.message);
+  } finally {
+    button.disabled = false;
+    button.textContent = loginMode ? 'Log In' : 'Sign Up';
+  }
+});
+
+document.getElementById('logout-btn').addEventListener('click', async () => {
+  const { error } = await supabase.auth.signOut();
+  if (error) {
+    showMessage(error.message);
+    return;
+  }
+  showAuth();
+  showMessage('You have logged out.');
+});
+
+const { data: { session } } = await supabase.auth.getSession();
+if (session?.user) showAccount(session.user);
+
+supabase.auth.onAuthStateChange((_event, session) => {
+  if (session?.user) showAccount(session.user);
+  else showAuth();
+});
 </script>
+
 </body>
 </html>
+
