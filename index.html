@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gold Investment Ghana</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#090909;color:#fff;font-family:Arial,sans-serif;line-height:1.6}
+header{padding:20px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #453719}
+.logo{color:#e6bd55;font-weight:bold;font-size:19px}
+nav a{color:white;text-decoration:none;margin-left:15px;font-size:13px}
+.hero{padding:100px 8%;background:radial-gradient(circle at 80%,#493512,#090909 65%)}
+.hero h1{font-size:clamp(38px,7vw,65px);line-height:1.15;margin:20px 0}
+.gold{color:#e6bd55}
+.hero p{color:#ccc;max-width:500px}
+.btn{display:inline-block;background:#e6bd55;color:#090909;padding:13px 24px;text-decoration:none;border-radius:4px;font-weight:bold;margin-top:22px;border:0;cursor:pointer}
+section{padding:65px 8%}
+.heading{text-align:center;margin-bottom:35px}
+.heading h2{font-size:32px}
+.heading p{color:#aaa}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#171717;border:1px solid #57431d;border-radius:9px;padding:25px}
+.card h3{color:#e6bd55;margin-bottom:12px}
+.card p{color:#bbb;font-size:14px}
+.icon{font-size:35px;margin-bottom:12px}
+.price{font-size:27px;font-weight:bold;margin:15px 0;color:#e6bd55}
+.notice{background:#211a0c;border:1px solid #80642b;padding:18px;margin-top:25px;color:#e6d9b8;font-size:13px;border-radius:6px}
+.calculator{max-width:500px;margin:auto;background:#171717;padding:25px;border:1px solid #57431d;border-radius:8px}
+input{width:100%;padding:13px;margin:8px 0 18px;background:#090909;border:1px solid #57431d;color:white}
+footer{text-align:center;padding:30px;border-top:1px solid #453719;color:#aaa;font-size:13px}
+@media(max-width:600px){header{flex-direction:column;gap:15px}nav a{margin:0 7px}.hero{padding:75px 7%}section{padding:50px 6%}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">GOLD INVESTMENT GHANA</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#gold">Gold</a>
+<a href="#plans">Plans</a>
+<a href="#about">About</a>
+</nav>
+</header>
+
+<main>
+<div class="hero" id="home">
+<p class="gold">GOLD • VALUE • OPPORTUNITY</p>
+<h1>Discover the World of <span class="gold">Gold</span></h1>
+<p>Explore gold products, precious metals and educational information about the gold market in Ghana.</p>
+<a href="#gold" class="btn">Explore Gold</a>
+</div>
+
+<section id="gold">
+<div class="heading">
+<h2>Explore <span class="gold">Gold</span></h2>
+<p>Discover different gold categories.</p>
+</div>
+<div class="grid">
+<div class="card"><div class="icon">🥇</div><h3>Gold Bullion</h3><p>Learn about gold bars and precious metals.</p></div>
+<div class="card"><div class="icon">💍</div><h3>Gold Jewellery</h3><p>Explore gold jewellery and beautiful designs.</p></div>
+<div class="card"><div class="icon">✨</div><h3>Gold Market</h3><p>Learn about gold prices and market movements.</p></div>
+</div>
+</section>
+
+<section id="plans">
+<div class="heading">
+<h2>Investment <span class="gold">Information</span></h2>
+<p>Educational examples only. No deposits accepted.</p>
+</div>
+<div class="grid">
+<div class="card"><h3>Starter Example</h3><div class="price">GH₵50</div><p>Illustrative example for learning about gold investments.</p></div>
+<div class="card"><h3>Growth Example</h3><div class="price">GH₵200</div><p>Explore investment amounts and market risks.</p></div>
+<div class="card"><h3>Premium Example</h3><div class="price">GH₵500</div><p>Learn about larger investment amounts and risks.</p></div>
+</div>
+<div class="notice">DEMO ONLY: These are not active investment products. This website does not accept investment deposits or promise returns.</div>
+</section>
+
+<section>
+<div class="heading">
+<h2>Gold <span class="gold">Calculator</span></h2>
+<p>Try a hypothetical calculation.</p>
+</div>
+<div class="calculator">
+<label>Example amount (GH₵)</label>
+<input type="number" id="amount" value="100" min="0">
+<label>Hypothetical change (%)</label>
+<input type="number" id="rate" value="5">
+<button class="btn" onclick="calculate()">Calculate</button>
+<h3 class="gold" id="result" style="margin-top:20px">Example value: GH₵100.00</h3>
+<p style="color:#aaa;font-size:12px;margin-top:12px">Illustrative calculation only, not a prediction of profit.</p>
+</div>
+</section>
+
+<section id="about">
+<div class="heading"><h2>About <span class="gold">Us</span></h2></div>
+<div class="card">
+<p>Gold Investment Ghana provides educational information about gold, precious metals and investment markets. We aim to help visitors understand gold products and associated risks.</p>
+</div>
+</section>
+</main>
+
+<footer>
+<p class="gold">GOLD INVESTMENT GHANA</p>
+<p>Gold market education and information.</p>
+<p>© 2026 Gold Investment Ghana.</p>
+<p>Demonstration website. No investment deposits accepted.</p>
+</footer>
+
+<script>
+function calculate(){
+let amount=Number(document.getElementById('amount').value);
+let rate=Number(document.getElementById('rate').value);
+if(!Number.isFinite(amount)||!Number.isFinite(rate)||amount<0||amount>100000000||rate < -100||rate>1000){
+document.getElementById('result').textContent='Enter valid example values.';
+return;
+}
+let total=amount*(1+rate/100);
+document.getElementById('result').textContent='Example value: GH₵'+total.toFixed(2);
+}
+</script>
+</body>
+</html>
