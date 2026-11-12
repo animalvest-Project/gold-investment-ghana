@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!<!DOCTYPE html>
 
 <html lang="en">
 
@@ -10,79 +10,169 @@
 
 <title>Gold Investment Ghana</title>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <style>
 
 *{box-sizing:border-box;margin:0;padding:0}
 
-body{background:#090909;color:#fff;font-family:Arial,sans-serif;line-height:1.6}
+body{
 
-header{padding:20px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #393020}
+font-family:Arial,sans-serif;
 
-.logo{color:#e6bd55;font-weight:bold;font-size:19px}
+background:#101010;
 
-nav a{color:white;text-decoration:none;margin-left:12px;font-size:14px}
+color:white;
 
-.hero{padding:65px 7%;background:radial-gradient(circle at top right,#493817,#090909 65%)}
+min-height:100vh;
 
-.hero h1{font-size:clamp(34px,7vw,55px);line-height:1.2;margin-bottom:15px}
+padding:20px;
 
-.gold{color:#e6bd55}
+}
 
-.hero p{color:#ccc;max-width:600px;margin-bottom:22px}
+.container{
 
-section{padding:45px 7%}
+max-width:480px;
 
-.heading{text-align:center;margin-bottom:25px}
+margin:40px auto;
 
-.heading h2{color:#e6bd55}
+background:#1c1c1c;
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+padding:25px;
 
-.card,.panel{background:#171717;border:1px solid #493b1c;padding:23px;border-radius:10px}
+border-radius:15px;
 
-.card h3{color:#e6bd55;margin-bottom:8px}
+border:1px solid #b88b25;
 
-.card p,.muted{color:#bbb}
+}
 
-.btn{display:inline-block;background:#e6bd55;color:#111;padding:13px 20px;border:0;border-radius:5px;font-weight:bold;cursor:pointer;text-decoration:none}
+h1{
 
-.auth-section{background:#101010}
+text-align:center;
 
-.auth-box{max-width:440px;margin:auto;background:#191919;padding:25px;border:1px solid #493b1c;border-radius:12px}
+color:#e8b93f;
 
-.auth-box h2{text-align:center;color:#e6bd55;margin-bottom:18px}
+margin-bottom:12px;
 
-input{width:100%;padding:14px;margin:9px 0;background:#090909;color:white;border:1px solid #555;border-radius:5px}
+}
 
-.auth-box button{width:100%;margin-top:12px}
+.subtitle{
 
-.switch{text-align:center;margin-top:17px;color:#ccc}
+text-align:center;
 
-.switch a,.forgot{color:#e6bd55;cursor:pointer}
+color:#ccc;
 
-.forgot{display:block;text-align:right;margin-top:8px;font-size:14px}
+margin-bottom:25px;
 
-#message{margin-top:14px;text-align:center;color:#e6bd55;overflow-wrap:anywhere}
+line-height:1.5;
 
-#dashboard{display:none;max-width:650px;margin:auto}
+}
 
-#dashboard h2{color:#e6bd55;margin-bottom:15px}
+input{
 
-.detail{padding:12px 0;border-bottom:1px solid #393939}
+width:100%;
 
-.detail span{color:#aaa}
+padding:14px;
 
-footer{text-align:center;padding:25px;color:#999;border-top:1px solid #333;font-size:13px}
+margin:9px 0;
 
-@media(max-width:600px){
+border:1px solid #555;
 
-header{padding:16px 4%}
+border-radius:7px;
 
-nav a{margin-left:7px;font-size:12px}
+background:#292929;
 
-.hero{padding:55px 6%}
+color:white;
 
-section{padding:40px 6%}
+font-size:16px;
+
+}
+
+button{
+
+width:100%;
+
+padding:14px;
+
+margin-top:12px;
+
+background:#d6a52e;
+
+color:#111;
+
+border:0;
+
+border-radius:7px;
+
+font-weight:bold;
+
+font-size:16px;
+
+cursor:pointer;
+
+}
+
+button.secondary{
+
+background:#333;
+
+color:white;
+
+}
+
+button:disabled{opacity:.6}
+
+.link{
+
+color:#e8b93f;
+
+text-align:center;
+
+margin-top:18px;
+
+cursor:pointer;
+
+}
+
+.hidden{display:none}
+
+.message{
+
+margin-top:15px;
+
+text-align:center;
+
+line-height:1.5;
+
+color:#f3cf75;
+
+}
+
+.account{
+
+background:#292929;
+
+padding:18px;
+
+border-radius:9px;
+
+margin-top:20px;
+
+line-height:2;
+
+}
+
+.notice{
+
+font-size:12px;
+
+color:#aaa;
+
+line-height:1.6;
+
+margin-top:20px;
+
+text-align:center;
 
 }
 
@@ -92,397 +182,367 @@ section{padding:40px 6%}
 
 <body>
 
-<header>
+<div class="container">
 
-<div class="logo">GOLD INVESTMENT GHANA</div>
+<h1>GOLD INVESTMENT GHANA</h1>
 
-<nav>
+<p class="subtitle">
 
-<a href="#home">Home</a>
+Welcome to Gold Investment Ghana.
 
-<a href="#about">About</a>
-
-<a href="#account-area">Account</a>
-
-</nav>
-
-</header>
-
-<section class="hero" id="home">
-
-<h1>Discover the Value of <span class="gold">Gold</span></h1>
-
-<p>Explore gold, understand the gold market and learn about gold ownership in Ghana.</p>
-
-<a href="#account-area" class="btn">My Account</a>
-
-</section>
-
-<section id="about">
-
-<div class="heading">
-
-<h2>Explore Gold</h2>
-
-<p class="muted">Learn about different areas of the gold market.</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>Gold Bullion</h3>
-
-<p>Learn about gold bars, purity, weight and valuation.</p>
-
-</div>
-
-<div class="card">
-
-<h3>Gold Jewellery</h3>
-
-<p>Explore gold jewellery, craftsmanship and purity.</p>
-
-</div>
-
-<div class="card">
-
-<h3>Gold Market</h3>
-
-<p>Understand market prices and factors that influence gold values.</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="auth-section" id="account-area">
-
-<div class="auth-box" id="auth">
-
-<h2 id="form-title">Create Your Account</h2>
-
-<form id="auth-form">
-
-<input type="email" id="email" placeholder="Email address" required>
-
-<input type="password" id="password" placeholder="Password (at least 8 characters)" minlength="8" required>
-
-<a class="forgot" href="#" id="forgot-link">Forgot Password?</a>
-
-<button class="btn" type="submit" id="submit-btn">Sign Up</button>
-
-</form>
-
-<div class="switch" id="switch-area">
-
-<span id="switch-text">Already have an account?</span>
-
-<a id="switch-link" href="#">Log In</a>
-
-</div>
-
-<p id="message" role="status"></p>
-
-</div>
-
-<div id="dashboard" class="panel">
-
-<h2>My Account</h2>
-
-<p class="muted">Welcome to your Gold Investment Ghana account.</p>
-
-<div class="detail">
-
-<span>Account email</span>
-
-<p id="user-email"></p>
-
-</div>
-
-<div class="detail">
-
-<span>Account status</span>
-
-<p>Signed in</p>
-
-</div>
-
-<div class="detail">
-
-<span>Member since</span>
-
-<p id="member-date"></p>
-
-</div>
-
-<p class="muted" style="margin:15px 0">
-
-This account provides website access only. It does not represent an investment balance or promise of returns.
+Create an account or sign in to access your account.
 
 </p>
 
-<button class="btn" id="logout-btn">Log Out</button>
+<div id="authSection">
 
-<p id="dashboard-message" role="status"></p>
+<div id="signupSection">
+
+<h3>Create Account</h3>
+
+<input id="signupEmail" type="email"
+
+placeholder="Email address">
+
+<input id="signupPassword" type="password"
+
+placeholder="Create password">
+
+<button id="signupBtn" onclick="signup()">
+
+Create Account
+
+</button>
+
+<p class="link" onclick="showLogin()">
+
+Already have an account? Login
+
+</p>
 
 </div>
 
-</section>
+<div id="loginSection" class="hidden">
 
-<footer>
+<h3>Login to Your Account</h3>
 
-<p>Gold Investment Ghana</p>
+<input id="loginEmail" type="email"
 
-<p>Educational information only. Gold prices can rise or fall. No investment deposits or returns are offered through this website.</p>
+placeholder="Email address">
 
-</footer>
+<input id="loginPassword" type="password"
 
-<script type="module">
+placeholder="Password">
 
-import { createClient } from
+<button id="loginBtn" onclick="login()">
 
-'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+Login
 
-const SUPABASE_URL = 'https://yvorlcgppaelcexwtiwf.supabase.co';
+</button>
 
-const SUPABASE_KEY = 'sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v';
+<p class="link" onclick="resetPassword()">
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+Forgot Password?
 
-let mode = 'signup';
+</p>
 
-const authBox = document.getElementById('auth');
+<p class="link" onclick="showSignup()">
 
-const dashboard = document.getElementById('dashboard');
+Create a new account
 
-const form = document.getElementById('auth-form');
+</p>
 
-const message = document.getElementById('message');
+</div>
 
-const passwordInput = document.getElementById('password');
+</div>
 
-const emailInput = document.getElementById('email');
+<div id="accountSection" class="hidden">
 
-const submitButton = document.getElementById('submit-btn');
+<h2 style="color:#e8b93f;text-align:center">
 
-function showMessage(text) {
+My Account
 
-  message.textContent = text;
+</h2>
 
-}
+<div class="account">
 
-function setMode(newMode) {
+<p>Welcome to your Gold Investment Ghana account.</p>
 
-  mode = newMode;
+<p><strong>Account email:</strong></p>
 
-  showMessage('');
+<p id="accountEmail"></p>
 
-  document.getElementById('form-title').textContent =
+<p><strong>Account status:</strong> Signed in</p>
 
-    mode === 'signup' ? 'Create Your Account' :
+<p><strong>Member since:</strong></p>
 
-    mode === 'login' ? 'Welcome Back' :
+<p id="memberDate"></p>
 
-    mode === 'forgot' ? 'Reset Your Password' :
+</div>
 
-    'Choose a New Password';
+<button class="secondary" onclick="logout()">
 
-  submitButton.textContent =
+Logout
 
-    mode === 'signup' ? 'Sign Up' :
+</button>
 
-    mode === 'login' ? 'Log In' :
+</div>
 
-    mode === 'forgot' ? 'Send Reset Link' :
+<p id="message" class="message"></p>
 
-    'Update Password';
+<p class="notice">
 
-  passwordInput.style.display = mode === 'forgot' ? 'none' : 'block';
+Account registration does not constitute an investment
 
-  passwordInput.required = mode !== 'forgot';
+or guarantee any financial return. Verify the company's
 
-  passwordInput.value = '';
+identity, regulatory status and risks before committing
 
-  document.getElementById('forgot-link').style.display =
+any money. Investment services in Ghana should comply
 
-    mode === 'login' || mode === 'signup' ? 'block' : 'none';
+with applicable SEC Ghana requirements.
 
-  document.getElementById('switch-area').style.display =
+</p>
 
-    mode === 'reset' ? 'none' : 'block';
+</div>
 
-  document.getElementById('switch-text').textContent =
+<script>
 
-    mode === 'login' ? "Don't have an account?" : 'Already have an account?';
+const SUPABASE_URL =
 
-  document.getElementById('switch-link').textContent =
+'https://yvorlcgppaelcexwtiwf.supabase.co';
 
-    mode === 'login' ? 'Sign Up' : 'Log In';
+const SUPABASE_KEY =
 
-}
+'sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v';
 
-function showDashboard(user) {
+const db = window.supabase.createClient(
 
-  authBox.style.display = 'none';
+SUPABASE_URL,
 
-  dashboard.style.display = 'block';
+SUPABASE_KEY
 
-  document.getElementById('user-email').textContent = user.email || 'Not available';
+);
 
-  document.getElementById('member-date').textContent =
+function showMessage(message){
 
-    user.created_at ? new Date(user.created_at).toLocaleDateString() : 'Not available';
-
-}
-
-function showLogin() {
-
-  dashboard.style.display = 'none';
-
-  authBox.style.display = 'block';
+document.getElementById('message').textContent=message;
 
 }
 
-document.getElementById('switch-link').addEventListener('click', (event) => {
+function showLogin(){
 
-  event.preventDefault();
+document.getElementById('signupSection').classList.add('hidden');
 
-  setMode(mode === 'login' ? 'signup' : 'login');
+document.getElementById('loginSection').classList.remove('hidden');
 
-});
+showMessage('');
 
-document.getElementById('forgot-link').addEventListener('click', (event) => {
+}
 
-  event.preventDefault();
+function showSignup(){
 
-  setMode('forgot');
+document.getElementById('loginSection').classList.add('hidden');
 
-});
+document.getElementById('signupSection').classList.remove('hidden');
 
-form.addEventListener('submit', async (event) => {
+showMessage('');
 
-  event.preventDefault();
+}
 
-  const email = emailInput.value.trim();
+async function signup(){
 
-  const password = passwordInput.value;
+const email=document.getElementById('signupEmail').value.trim();
 
-  submitButton.disabled = true;
+const password=document.getElementById('signupPassword').value;
 
-  showMessage('Please wait...');
+if(!email || password.length<6){
 
-  try {
+showMessage('Enter a valid email and password of at least 6 characters.');
 
-    if (mode === 'signup') {
+return;
 
-      const { data, error } = await supabase.auth.signUp({
+}
 
-        email,
+const btn=document.getElementById('signupBtn');
 
-        password,
+btn.disabled=true;
 
-        options: { emailRedirectTo: window.location.origin }
+showMessage('Creating your account...');
 
-      });
+const {data,error}=await db.auth.signUp({
 
-      if (error) throw error;
+email:email,
 
-      if (data.session && data.user) showDashboard(data.user);
+password:password,
 
-      else showMessage('Registration successful. Please check your email to verify your account.');
+options:{
 
-    } else if (mode === 'login') {
+emailRedirectTo:window.location.origin
 
-      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-
-      if (error) throw error;
-
-      if (data.user) showDashboard(data.user);
-
-    } else if (mode === 'forgot') {
-
-      const { error } = await supabase.auth.resetPasswordForEmail(email, {
-
-        redirectTo: window.location.origin
-
-      });
-
-      if (error) throw error;
-
-      showMessage('If an account exists for this email, a password reset link will be sent. Check your inbox.');
-
-    } else if (mode === 'reset') {
-
-      const { error } = await supabase.auth.updateUser({ password });
-
-      if (error) throw error;
-
-      setMode('login');
-
-      showMessage('Password updated successfully. Please log in with your new password.');
-
-    }
-
-  } catch (error) {
-
-    showMessage(error.message);
-
-  } finally {
-
-    submitButton.disabled = false;
-
-  }
+}
 
 });
 
-document.getElementById('logout-btn').addEventListener('click', async () => {
+btn.disabled=false;
 
-  const { error } = await supabase.auth.signOut();
+if(error){
 
-  if (error) {
+showMessage(error.message);
 
-    document.getElementById('dashboard-message').textContent = error.message;
+return;
 
-    return;
+}
 
-  }
+if(data.session){
 
-  showLogin();
+showMessage('Account created successfully!');
 
-  setMode('login');
+showAccount(data.user);
 
-  showMessage('You have logged out.');
+}else{
+
+showMessage('Registration successful! Check your email to confirm your account before logging in.');
+
+}
+
+}
+
+async function login(){
+
+const email=document.getElementById('loginEmail').value.trim();
+
+const password=document.getElementById('loginPassword').value;
+
+if(!email || !password){
+
+showMessage('Please enter your email and password.');
+
+return;
+
+}
+
+const btn=document.getElementById('loginBtn');
+
+btn.disabled=true;
+
+showMessage('Signing in...');
+
+const {data,error}=await db.auth.signInWithPassword({
+
+email:email,
+
+password:password
 
 });
 
-const { data: { session } } = await supabase.auth.getSession();
+btn.disabled=false;
 
-if (session?.user) showDashboard(session.user);
+if(error){
 
-supabase.auth.onAuthStateChange((event, session) => {
+showMessage(error.message);
 
-  if (event === 'PASSWORD_RECOVERY') {
+return;
 
-    showLogin();
+}
 
-    setMode('reset');
+showAccount(data.user);
 
-    showMessage('Enter your new password below.');
+}
 
-  } else if (session?.user) {
+async function resetPassword(){
 
-    showDashboard(session.user);
+const email=document.getElementById('loginEmail').value.trim();
 
-  } else {
+if(!email){
 
-    showLogin();
+showMessage('Enter your email address first.');
 
-  }
+return;
+
+}
+
+const {error}=await db.auth.resetPasswordForEmail(email,{
+
+redirectTo:window.location.origin
 
 });
+
+if(error){
+
+showMessage(error.message);
+
+}else{
+
+showMessage('Password reset instructions have been sent if the account exists.');
+
+}
+
+}
+
+function showAccount(user){
+
+if(!user)return;
+
+document.getElementById('authSection').classList.add('hidden');
+
+document.getElementById('accountSection').classList.remove('hidden');
+
+document.getElementById('accountEmail').textContent=user.email;
+
+document.getElementById('memberDate').textContent=
+
+new Date(user.created_at).toLocaleDateString();
+
+showMessage('');
+
+}
+
+async function logout(){
+
+const {error}=await db.auth.signOut();
+
+if(error){
+
+showMessage(error.message);
+
+return;
+
+}
+
+document.getElementById('accountSection').classList.add('hidden');
+
+document.getElementById('authSection').classList.remove('hidden');
+
+showSignup();
+
+showMessage('You have logged out successfully.');
+
+}
+
+async function checkSession(){
+
+const {data,error}=await db.auth.getSession();
+
+if(!error && data.session){
+
+showAccount(data.session.user);
+
+}
+
+}
+
+db.auth.onAuthStateChange((event,session)=>{
+
+if(event==='PASSWORD_RECOVERY'){
+
+showMessage('You can now reset your password.');
+
+}
+
+});
+
+checkSession();
 
 </script>
 
