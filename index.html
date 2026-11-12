@@ -1,4 +1,4 @@
-!<!DOCTYPE html>
+!DOCTYPE html>
 
 <html lang="en">
 
@@ -16,163 +16,85 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 
-body{
+body{font-family:Arial,sans-serif;background:#101010;color:white;min-height:100vh}
 
-font-family:Arial,sans-serif;
+:root{--gold:#e5b63c;--panel:#1c1c1c}
 
-background:#101010;
+.hidden{display:none!important}
 
-color:white;
+button,input{font:inherit}
 
-min-height:100vh;
+button{cursor:pointer}
 
-padding:20px;
+.auth{max-width:440px;margin:45px auto;padding:28px;background:var(--panel);border:1px solid #765d20;border-radius:15px}
 
-}
+.logo{color:var(--gold);font-size:25px;font-weight:bold;text-align:center;margin-bottom:14px}
 
-.container{
+.subtitle{text-align:center;color:#ccc;line-height:1.5;margin-bottom:24px}
 
-max-width:480px;
+input{width:100%;padding:14px;margin:9px 0;background:#292929;border:1px solid #555;border-radius:7px;color:white}
 
-margin:40px auto;
+.btn{width:100%;padding:14px;margin-top:12px;background:var(--gold);color:#111;border:0;border-radius:7px;font-weight:bold}
 
-background:#1c1c1c;
+.secondary{background:#333;color:white}
 
-padding:25px;
+.link{text-align:center;color:var(--gold);margin-top:18px;cursor:pointer}
 
-border-radius:15px;
+.message{text-align:center;color:var(--gold);margin-top:15px;line-height:1.5}
 
-border:1px solid #b88b25;
+header{background:#191919;border-bottom:1px solid #765d20;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 
-}
+header .logo{margin:0;text-align:left;font-size:19px}
 
-h1{
+header small{color:#aaa}
 
-text-align:center;
+.layout{max-width:1150px;margin:25px auto;padding:0 18px;display:grid;grid-template-columns:220px 1fr;gap:20px}
 
-color:#e8b93f;
+.sidebar{background:var(--panel);padding:15px;border-radius:12px;height:max-content}
 
-margin-bottom:12px;
+.nav{display:block;width:100%;padding:14px;margin:5px 0;background:transparent;border:0;color:#ddd;text-align:left;border-radius:7px}
 
-}
+.nav.active,.nav:hover{background:#3a301b;color:var(--gold)}
 
-.subtitle{
+.content{min-width:0}
 
-text-align:center;
+.welcome{background:linear-gradient(120deg,#302512,#191919);border:1px solid #765d20;border-radius:13px;padding:25px;margin-bottom:20px}
 
-color:#ccc;
+.welcome h1{color:var(--gold);margin-bottom:10px}
 
-margin-bottom:25px;
+.welcome p{color:#ccc;line-height:1.6}
 
-line-height:1.5;
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-bottom:20px}
 
-}
+.card,.section{background:var(--panel);padding:20px;border:1px solid #333;border-radius:12px}
 
-input{
+.card h3,.section h2{color:var(--gold);margin-bottom:12px}
 
-width:100%;
+.card p,.section p{color:#ccc;line-height:1.7}
 
-padding:14px;
+.section{margin-bottom:18px}
 
-margin:9px 0;
+.section h2{margin-bottom:18px}
 
-border:1px solid #555;
+.plan{padding:18px;background:#292929;border-radius:9px;margin:12px 0}
 
-border-radius:7px;
+.plan h3{color:var(--gold);margin-bottom:8px}
 
-background:#292929;
+.status{display:inline-block;color:#e5b63c;background:#3a301b;padding:7px 12px;border-radius:20px;font-size:12px;margin-top:10px}
 
-color:white;
+footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
-font-size:16px;
+@media(max-width:650px){
 
-}
+.layout{grid-template-columns:1fr;margin:15px auto}
 
-button{
+.sidebar{display:grid;grid-template-columns:repeat(2,1fr);gap:4px}
 
-width:100%;
+.nav{font-size:13px;padding:12px 8px;text-align:center}
 
-padding:14px;
+.cards{grid-template-columns:1fr}
 
-margin-top:12px;
-
-background:#d6a52e;
-
-color:#111;
-
-border:0;
-
-border-radius:7px;
-
-font-weight:bold;
-
-font-size:16px;
-
-cursor:pointer;
-
-}
-
-button.secondary{
-
-background:#333;
-
-color:white;
-
-}
-
-button:disabled{opacity:.6}
-
-.link{
-
-color:#e8b93f;
-
-text-align:center;
-
-margin-top:18px;
-
-cursor:pointer;
-
-}
-
-.hidden{display:none}
-
-.message{
-
-margin-top:15px;
-
-text-align:center;
-
-line-height:1.5;
-
-color:#f3cf75;
-
-}
-
-.account{
-
-background:#292929;
-
-padding:18px;
-
-border-radius:9px;
-
-margin-top:20px;
-
-line-height:2;
-
-}
-
-.notice{
-
-font-size:12px;
-
-color:#aaa;
-
-line-height:1.6;
-
-margin-top:20px;
-
-text-align:center;
+.auth{margin:25px 15px}
 
 }
 
@@ -182,271 +104,313 @@ text-align:center;
 
 <body>
 
-<div class="container">
+<div id="authPage" class="auth">
 
-<h1>GOLD INVESTMENT GHANA</h1>
+<div class="logo">GOLD INVESTMENT GHANA</div>
 
-<p class="subtitle">
+<p class="subtitle">Welcome. Create an account or sign in to access your personal account.</p>
 
-Welcome to Gold Investment Ghana.
-
-Create an account or sign in to access your account.
-
-</p>
-
-<div id="authSection">
-
-<div id="signupSection">
+<div id="signup">
 
 <h3>Create Account</h3>
 
-<input id="signupEmail" type="email"
+<input id="signupEmail" type="email" placeholder="Email address">
 
-placeholder="Email address">
+<input id="signupPassword" type="password" placeholder="Create password (minimum 6 characters)">
 
-<input id="signupPassword" type="password"
+<button class="btn" onclick="register()">Create Account</button>
 
-placeholder="Create password">
-
-<button id="signupBtn" onclick="signup()">
-
-Create Account
-
-</button>
-
-<p class="link" onclick="showLogin()">
-
-Already have an account? Login
-
-</p>
+<p class="link" onclick="showLogin()">Already have an account? Login</p>
 
 </div>
 
-<div id="loginSection" class="hidden">
+<div id="login" class="hidden">
 
 <h3>Login to Your Account</h3>
 
-<input id="loginEmail" type="email"
+<input id="loginEmail" type="email" placeholder="Email address">
 
-placeholder="Email address">
+<input id="loginPassword" type="password" placeholder="Password">
 
-<input id="loginPassword" type="password"
+<button class="btn" onclick="signIn()">Login</button>
 
-placeholder="Password">
+<p class="link" onclick="resetPassword()">Forgot Password?</p>
 
-<button id="loginBtn" onclick="login()">
+<p class="link" onclick="showSignup()">Create a new account</p>
 
-Login
+</div>
 
-</button>
+<p id="authMessage" class="message"></p>
 
-<p class="link" onclick="resetPassword()">
+</div>
 
-Forgot Password?
+<div id="app" class="hidden">
 
-</p>
+<header>
 
-<p class="link" onclick="showSignup()">
+<div class="logo">GOLD INVESTMENT GHANA</div>
 
-Create a new account
+<small id="headerEmail"></small>
 
-</p>
+</header>
+
+<div class="layout">
+
+<aside class="sidebar">
+
+<button class="nav active" onclick="page('dashboard',this)">🏠 Dashboard</button>
+
+<button class="nav" onclick="page('plans',this)">🪙 Investment Plans</button>
+
+<button class="nav" onclick="page('investments',this)">📊 My Investments</button>
+
+<button class="nav" onclick="page('transactions',this)">💳 Transactions</button>
+
+<button class="nav" onclick="page('profile',this)">👤 My Profile</button>
+
+<button class="nav" onclick="logout()">🚪 Logout</button>
+
+</aside>
+
+<main class="content">
+
+<section id="dashboard">
+
+<div class="welcome">
+
+<h1>Welcome Back!</h1>
+
+<p>Welcome to your Gold Investment Ghana dashboard.</p>
+
+<p>Manage your account and view your information here.</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>My Account</h3>
+
+<p id="dashEmail"></p>
+
+<span class="status">Account signed in</span>
+
+</div>
+
+<div class="card">
+
+<h3>My Investments</h3>
+
+<p>View your investment records and updates here.</p>
+
+<span class="status">No verified records yet</span>
+
+</div>
+
+<div class="card">
+
+<h3>Transactions</h3>
+
+<p>Review your confirmed payment records here.</p>
+
+<span class="status">No verified transactions yet</span>
+
+</div>
+
+<div class="card">
+
+<h3>Account Security</h3>
+
+<p>Your account is connected to Supabase authentication.</p>
+
+<span class="status">Signed in</span>
 
 </div>
 
 </div>
 
-<div id="accountSection" class="hidden">
+<div class="section">
 
-<h2 style="color:#e8b93f;text-align:center">
+<h2>Welcome to Gold Investment Ghana</h2>
 
-My Account
+<p>This is your personal account area. You can access your profile, investment information and transaction records using the menu.</p>
 
-</h2>
+</div>
 
-<div class="account">
+</section>
 
-<p>Welcome to your Gold Investment Ghana account.</p>
+<section id="plans" class="hidden">
 
-<p><strong>Account email:</strong></p>
+<div class="section">
 
-<p id="accountEmail"></p>
+<h2>Investment Information</h2>
 
-<p><strong>Account status:</strong> Signed in</p>
+<p>Explore information about gold investment, pricing, market risks and available opportunities.</p>
 
-<p><strong>Member since:</strong></p>
+<div class="plan">
+
+<h3>Gold Investment</h3>
+
+<p>Learn about gold ownership, market prices, potential risks and how legitimate gold investments operate.</p>
+
+<span class="status">Information only</span>
+
+</div>
+
+<p>Investment terms, minimum deposits, fees and returns must be independently verified before any investment is offered.</p>
+
+</div>
+
+</section>
+
+<section id="investments" class="hidden">
+
+<div class="section">
+
+<h2>My Investments</h2>
+
+<p>Your verified investment records will appear here when connected to the secure investment database.</p>
+
+<span class="status">No verified investments recorded</span>
+
+</div>
+
+</section>
+
+<section id="transactions" class="hidden">
+
+<div class="section">
+
+<h2>Transaction History</h2>
+
+<p>Your confirmed payment records will appear here after secure payment verification is connected.</p>
+
+<span class="status">No verified transactions recorded</span>
+
+</div>
+
+</section>
+
+<section id="profile" class="hidden">
+
+<div class="section">
+
+<h2>My Profile</h2>
+
+<p><strong>Email Address:</strong></p>
+
+<p id="profileEmail"></p>
+
+<br>
+
+<p><strong>Account Status:</strong> Signed in</p>
+
+<p><strong>Member Since:</strong></p>
 
 <p id="memberDate"></p>
 
-</div>
-
-<button class="secondary" onclick="logout()">
-
-Logout
-
-</button>
+<button class="btn secondary" onclick="logout()">Logout</button>
 
 </div>
 
-<p id="message" class="message"></p>
+</section>
 
-<p class="notice">
+</main>
 
-Account registration does not constitute an investment
+</div>
 
-or guarantee any financial return. Verify the company's
+<footer>
 
-identity, regulatory status and risks before committing
+Gold Investment Ghana<br>
 
-any money. Investment services in Ghana should comply
+Account registration does not guarantee investment returns. Verify the business, regulatory authorization, investment terms and risks before committing funds.
 
-with applicable SEC Ghana requirements.
-
-</p>
+</footer>
 
 </div>
 
 <script>
 
-const SUPABASE_URL =
+const SUPABASE_URL='https://yvorlcgppaelcexwtiwf.supabase.co';
 
-'https://yvorlcgppaelcexwtiwf.supabase.co';
+const SUPABASE_KEY='sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v';
 
-const SUPABASE_KEY =
+const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 
-'sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v';
+function msg(t){
 
-const db = window.supabase.createClient(
-
-SUPABASE_URL,
-
-SUPABASE_KEY
-
-);
-
-function showMessage(message){
-
-document.getElementById('message').textContent=message;
+document.getElementById('authMessage').textContent=t;
 
 }
 
 function showLogin(){
 
-document.getElementById('signupSection').classList.add('hidden');
+document.getElementById('signup').classList.add('hidden');
 
-document.getElementById('loginSection').classList.remove('hidden');
+document.getElementById('login').classList.remove('hidden');
 
-showMessage('');
+msg('');
 
 }
 
 function showSignup(){
 
-document.getElementById('loginSection').classList.add('hidden');
+document.getElementById('login').classList.add('hidden');
 
-document.getElementById('signupSection').classList.remove('hidden');
+document.getElementById('signup').classList.remove('hidden');
 
-showMessage('');
+msg('');
 
 }
 
-async function signup(){
+async function register(){
 
 const email=document.getElementById('signupEmail').value.trim();
 
 const password=document.getElementById('signupPassword').value;
 
-if(!email || password.length<6){
+if(!email||password.length<6){
 
-showMessage('Enter a valid email and password of at least 6 characters.');
+msg('Enter a valid email and password of at least 6 characters.');
 
 return;
 
 }
 
-const btn=document.getElementById('signupBtn');
-
-btn.disabled=true;
-
-showMessage('Creating your account...');
+msg('Creating your account...');
 
 const {data,error}=await db.auth.signUp({
 
-email:email,
+email,password,
 
-password:password,
-
-options:{
-
-emailRedirectTo:window.location.origin
-
-}
+options:{emailRedirectTo:window.location.origin}
 
 });
 
-btn.disabled=false;
+if(error){msg(error.message);return;}
 
-if(error){
+if(data.session){openDashboard(data.user);}
 
-showMessage(error.message);
-
-return;
+else{msg('Registration successful! Check your email to confirm your account.');}
 
 }
 
-if(data.session){
-
-showMessage('Account created successfully!');
-
-showAccount(data.user);
-
-}else{
-
-showMessage('Registration successful! Check your email to confirm your account before logging in.');
-
-}
-
-}
-
-async function login(){
+async function signIn(){
 
 const email=document.getElementById('loginEmail').value.trim();
 
 const password=document.getElementById('loginPassword').value;
 
-if(!email || !password){
+if(!email||!password){msg('Enter your email and password.');return;}
 
-showMessage('Please enter your email and password.');
+msg('Signing in...');
 
-return;
+const {data,error}=await db.auth.signInWithPassword({email,password});
 
-}
+if(error){msg(error.message);return;}
 
-const btn=document.getElementById('loginBtn');
-
-btn.disabled=true;
-
-showMessage('Signing in...');
-
-const {data,error}=await db.auth.signInWithPassword({
-
-email:email,
-
-password:password
-
-});
-
-btn.disabled=false;
-
-if(error){
-
-showMessage(error.message);
-
-return;
-
-}
-
-showAccount(data.user);
+openDashboard(data.user);
 
 }
 
@@ -454,13 +418,7 @@ async function resetPassword(){
 
 const email=document.getElementById('loginEmail').value.trim();
 
-if(!email){
-
-showMessage('Enter your email address first.');
-
-return;
-
-}
+if(!email){msg('Enter your email address first.');return;}
 
 const {error}=await db.auth.resetPasswordForEmail(email,{
 
@@ -468,33 +426,43 @@ redirectTo:window.location.origin
 
 });
 
-if(error){
-
-showMessage(error.message);
-
-}else{
-
-showMessage('Password reset instructions have been sent if the account exists.');
+msg(error?error.message:'Password reset instructions requested. Check your email.');
 
 }
 
-}
-
-function showAccount(user){
+function openDashboard(user){
 
 if(!user)return;
 
-document.getElementById('authSection').classList.add('hidden');
+document.getElementById('authPage').classList.add('hidden');
 
-document.getElementById('accountSection').classList.remove('hidden');
+document.getElementById('app').classList.remove('hidden');
 
-document.getElementById('accountEmail').textContent=user.email;
+document.getElementById('headerEmail').textContent=user.email;
 
-document.getElementById('memberDate').textContent=
+document.getElementById('dashEmail').textContent=user.email;
 
-new Date(user.created_at).toLocaleDateString();
+document.getElementById('profileEmail').textContent=user.email;
 
-showMessage('');
+document.getElementById('memberDate').textContent=new Date(user.created_at).toLocaleDateString();
+
+page('dashboard',document.querySelector('.nav'));
+
+}
+
+function page(id,button){
+
+['dashboard','plans','investments','transactions','profile'].forEach(x=>{
+
+document.getElementById(x).classList.add('hidden');
+
+});
+
+document.getElementById(id).classList.remove('hidden');
+
+document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));
+
+if(button)button.classList.add('active');
 
 }
 
@@ -502,45 +470,29 @@ async function logout(){
 
 const {error}=await db.auth.signOut();
 
-if(error){
+if(error){alert(error.message);return;}
 
-showMessage(error.message);
+document.getElementById('app').classList.add('hidden');
 
-return;
+document.getElementById('authPage').classList.remove('hidden');
 
-}
-
-document.getElementById('accountSection').classList.add('hidden');
-
-document.getElementById('authSection').classList.remove('hidden');
-
-showSignup();
-
-showMessage('You have logged out successfully.');
-
-}
-
-async function checkSession(){
-
-const {data,error}=await db.auth.getSession();
-
-if(!error && data.session){
-
-showAccount(data.session.user);
-
-}
+showLogin();
 
 }
 
 db.auth.onAuthStateChange((event,session)=>{
 
-if(event==='PASSWORD_RECOVERY'){
-
-showMessage('You can now reset your password.');
-
-}
+if(session)openDashboard(session.user);
 
 });
+
+async function checkSession(){
+
+const {data,error}=await db.auth.getSession();
+
+if(!error&&data.session)openDashboard(data.session.user);
+
+}
 
 checkSession();
 
