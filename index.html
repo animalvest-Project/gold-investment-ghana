@@ -224,9 +224,9 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
       <h3>My Investments</h3>
 
-      <p>View your investment records and updates here.</p>
+      <p id="dashInvestmentCount">Loading your investment records...</p>
 
-      <span class="status">No verified records yet</span>
+      <span class="status" id="dashInvestmentStatus">Checking records</span>
 
     </div>
 
@@ -236,7 +236,7 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
       <p>Review your confirmed payment records here.</p>
 
-      <span class="status">No verified transactions yet</span>
+      <span class="status">Payment verification not connected</span>
 
     </div>
 
@@ -286,15 +286,49 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 </section>
 
+<!-- CUSTOMER INVESTMENT RECORDS -->
+
 <section id="investments" class="hidden">
 
   <div class="section">
 
     <h2>My Investments</h2>
 
-    <p>Your verified investment records will appear here when connected to the secure investment database.</p>
+    <p>These are investment records linked to your signed-in account.</p>
 
-    <span class="status">No verified investments recorded</span>
+    <button class="btn" onclick="loadMyInvestments()">Refresh My Investments</button>
+
+    <p id="myInvestmentMessage" class="admin-message">Your investment records have not been loaded yet.</p>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+
+          <tr>
+
+            <th>Plan</th>
+
+            <th>Amount (GHS)</th>
+
+            <th>Status</th>
+
+            <th>Date</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody id="myInvestmentTable">
+
+          <tr><td colspan="4">No records loaded.</td></tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
 
   </div>
 
@@ -308,7 +342,7 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
     <p>Your confirmed payment records will appear here after secure payment verification is connected.</p>
 
-    <span class="status">No verified transactions recorded</span>
+    <span class="status">Payment verification not connected</span>
 
   </div>
 
@@ -417,8 +451,6 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
     </div>
 
   </div>
-
-  <!-- NEW INVESTMENT RECORDS SECTION -->
 
   <div class="section">
 
@@ -684,6 +716,8 @@ async function openDashboard(user){
 
     page('dashboard',document.querySelector('.nav'));
 
+    await loadMyInvestments();
+
   }catch(e){
 
     console.error(e);
@@ -767,6 +801,148 @@ function page(id,button){
   document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));
 
   if(button)button.classList.add('active');
+
+  if(id==='investments'){
+
+    loadMyInvestments();
+
+  }
+
+}
+
+/* CUSTOMER: LOAD ONLY THE SIGNED-IN USER'S RECORDS */
+
+async function loadMyInvestments(){
+
+  const message=document.getElementById('myInvestmentMessage');
+
+  const table=document.getElementById('myInvestmentTable');
+
+  const dashboardCount=document.getElementById('dashInvestmentCount');
+
+  const dashboardStatus=document.getElementById('dashInvestmentStatus');
+
+  if(!currentUser){
+
+    message.textContent='Please sign in to view your investments.';
+
+    dashboardCount.textContent='Please sign in to view your records.';
+
+    return;
+
+  }
+
+  message.textContent='Loading your investment records...';
+
+  table.replaceChildren();
+
+  dashboardCount.textContent='Loading your records...';
+
+  dashboardStatus.textContent='Checking records';
+
+  const {data,error}=await db
+
+    .from('investment_records')
+
+    .select('id,plan_name,amount,status,created_at')
+
+    .eq('user_id',currentUser.id)
+
+    .order('created_at',{ascending:false});
+
+  if(error){
+
+    console.error('Customer investment loading error:',error);
+
+    message.textContent='Could not load your investments: '+error.message;
+
+    dashboardCount.textContent='Unable to load records.';
+
+    dashboardStatus.textContent='Loading error';
+
+    const row=document.createElement('tr');
+
+    const cell=document.createElement('td');
+
+    cell.colSpan=4;
+
+    cell.textContent='Your investment records could not be loaded.';
+
+    row.appendChild(cell);
+
+    table.appendChild(row);
+
+    return;
+
+  }
+
+  const records=data||[];
+
+  dashboardCount.textContent=records.length+
+
+    (records.length===1?' investment record found.':' investment records found.');
+
+  dashboardStatus.textContent=records.length
+
+    ?'Records available'
+
+    :'No investment records yet';
+
+  if(records.length===0){
+
+    message.textContent='No investment records found for your account yet.';
+
+    const row=document.createElement('tr');
+
+    const cell=document.createElement('td');
+
+    cell.colSpan=4;
+
+    cell.textContent='No investment records available.';
+
+    row.appendChild(cell);
+
+    table.appendChild(row);
+
+    return;
+
+  }
+
+  message.textContent=records.length+' investment record(s) loaded successfully.';
+
+  records.forEach(record=>{
+
+    const row=document.createElement('tr');
+
+    const values=[
+
+      record.plan_name||'Not specified',
+
+      'GH₵ '+Number(record.amount||0).toFixed(2),
+
+      record.status||'Pending',
+
+      record.created_at
+
+        ?new Date(record.created_at).toLocaleDateString()
+
+        :'Not available'
+
+    ];
+
+    values.forEach(value=>{
+
+      const cell=document.createElement('td');
+
+      cell.textContent=String(value);
+
+      row.appendChild(cell);
+
+    });
+
+    table.appendChild(row);
+
+  });
 
 }
 
@@ -905,8 +1081,6 @@ async function loadAdminCustomers(){
   });
 
 }
-
-/* LOAD ADMIN INVESTMENT RECORDS */
 
 async function loadAdminInvestments(){
 
