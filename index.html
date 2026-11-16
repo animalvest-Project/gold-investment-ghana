@@ -82,6 +82,22 @@ header small{color:#aaa}
 
 .status{display:inline-block;color:#e5b63c;background:#3a301b;padding:7px 12px;border-radius:20px;font-size:12px;margin-top:10px}
 
+.admin-stat{background:#292929;padding:18px;border-radius:9px;border:1px solid #765d20}
+
+.admin-stat strong{display:block;color:var(--gold);font-size:28px;margin-top:8px}
+
+.table-wrap{width:100%;overflow-x:auto;margin-top:18px}
+
+table{width:100%;border-collapse:collapse;min-width:560px}
+
+th,td{padding:13px 10px;border-bottom:1px solid #444;text-align:left;font-size:13px}
+
+th{color:var(--gold);background:#292929}
+
+td{color:#ddd}
+
+.admin-message{color:var(--gold);margin-top:14px;line-height:1.5}
+
 footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 @media(max-width:650px){
@@ -169,6 +185,8 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 <button class="nav" onclick="page('transactions',this)">💳 Transactions</button>
 
 <button class="nav" onclick="page('profile',this)">👤 My Profile</button>
+
+<button id="adminNav" class="nav hidden" onclick="openAdminPage(this)">🔐 Admin Dashboard</button>
 
 <button class="nav" onclick="logout()">🚪 Logout</button>
 
@@ -324,6 +342,84 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 </section>
 
+<!-- ADMIN DASHBOARD -->
+
+<section id="adminPage" class="hidden">
+
+<div class="welcome">
+
+<h1>Admin Dashboard 🔐</h1>
+
+<p>Welcome to your private administration area.</p>
+
+<p>Manage and review registered customer accounts.</p>
+
+</div>
+
+<div class="cards">
+
+<div class="admin-stat">
+
+<p>Total Registered Customers</p>
+
+<strong id="customerCount">0</strong>
+
+</div>
+
+<div class="admin-stat">
+
+<p>Your Administrator Account</p>
+
+<strong style="font-size:18px">ADMIN</strong>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Registered Customers</h2>
+
+<p>Customer records retrieved from the secure administrator function.</p>
+
+<button class="btn" onclick="loadAdminCustomers()">Refresh Customer List</button>
+
+<p id="adminMessage" class="admin-message">Loading customer records...</p>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Full Name</th>
+
+<th>Email Address</th>
+
+<th>Registration Date</th>
+
+<th>Role</th>
+
+</tr>
+
+</thead>
+
+<tbody id="customerTable">
+
+<tr><td colspan="4">Loading...</td></tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
 </main>
 
 </div>
@@ -349,6 +445,10 @@ const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 let currentUser=null;
 
 let currentFullName='';
+
+let isAdmin=false;
+
+let openingDashboard=false;
 
 function msg(t){
 
@@ -484,9 +584,13 @@ msg(error?error.message:'Password reset instructions requested. Check your email
 
 async function openDashboard(user){
 
-if(!user)return;
+if(!user||openingDashboard)return;
+
+openingDashboard=true;
 
 currentUser=user;
+
+try{
 
 document.getElementById('authPage').classList.add('hidden');
 
@@ -504,7 +608,7 @@ const {data,error}=await db
 
 .from('profiles')
 
-.select('full_name')
+.select('full_name,role')
 
 .eq('id',user.id)
 
@@ -518,6 +622,8 @@ console.error('Profile loading error:',error.message);
 
 currentFullName=data?.full_name||user.user_metadata?.full_name||'';
 
+isAdmin=data?.role==='admin';
+
 document.getElementById('profileName').value=currentFullName;
 
 document.getElementById('dashName').textContent='Name: '+(currentFullName||'Not added yet');
@@ -526,7 +632,19 @@ document.getElementById('dashEmail').textContent='Email: '+(user.email||'');
 
 document.getElementById('welcomeName').textContent=currentFullName||'Customer';
 
+document.getElementById('adminNav').classList.toggle('hidden',!isAdmin);
+
 page('dashboard',document.querySelector('.nav'));
+
+}catch(e){
+
+console.error(e);
+
+}finally{
+
+openingDashboard=false;
+
+}
 
 }
 
@@ -588,7 +706,9 @@ output.textContent='Your profile name has been saved successfully!';
 
 function page(id,button){
 
-['dashboard','plans','investments','transactions','profile'].forEach(x=>{
+const sections=['dashboard','plans','investments','transactions','profile','adminPage'];
+
+sections.forEach(x=>{
 
 document.getElementById(x).classList.add('hidden');
 
@@ -599,6 +719,136 @@ document.getElementById(id).classList.remove('hidden');
 document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));
 
 if(button)button.classList.add('active');
+
+}
+
+async function openAdminPage(button){
+
+if(!currentUser){
+
+alert('Please sign in first.');
+
+return;
+
+}
+
+if(!isAdmin){
+
+alert('Access denied. Administrator account only.');
+
+return;
+
+}
+
+page('adminPage',button);
+
+await loadAdminCustomers();
+
+}
+
+async function loadAdminCustomers(){
+
+const message=document.getElementById('adminMessage');
+
+const table=document.getElementById('customerTable');
+
+const count=document.getElementById('customerCount');
+
+if(!currentUser||!isAdmin){
+
+message.textContent='Access denied. Administrator account only.';
+
+return;
+
+}
+
+message.textContent='Loading customer records...';
+
+table.replaceChildren();
+
+count.textContent='...';
+
+const {data,error}=await db.rpc('admin_list_customers');
+
+if(error){
+
+console.error('Admin customer loading error:',error);
+
+message.textContent='Could not load customers: '+error.message;
+
+count.textContent='—';
+
+const row=document.createElement('tr');
+
+const cell=document.createElement('td');
+
+cell.colSpan=4;
+
+cell.textContent='Customer records could not be loaded.';
+
+row.appendChild(cell);
+
+table.appendChild(row);
+
+return;
+
+}
+
+const customers=data||[];
+
+count.textContent=customers.length;
+
+if(customers.length===0){
+
+message.textContent='No customer profiles found yet.';
+
+const row=document.createElement('tr');
+
+const cell=document.createElement('td');
+
+cell.colSpan=4;
+
+cell.textContent='No customer records available.';
+
+row.appendChild(cell);
+
+table.appendChild(row);
+
+return;
+
+}
+
+message.textContent='Customer records loaded successfully.';
+
+customers.forEach(customer=>{
+
+const row=document.createElement('tr');
+
+const name=document.createElement('td');
+
+name.textContent=customer.full_name||'Name not added';
+
+const email=document.createElement('td');
+
+email.textContent=customer.email||'Not available';
+
+const date=document.createElement('td');
+
+date.textContent=customer.created_at
+
+?new Date(customer.created_at).toLocaleDateString()
+
+:'Not available';
+
+const role=document.createElement('td');
+
+role.textContent=customer.role||'customer';
+
+row.append(name,email,date,role);
+
+table.appendChild(row);
+
+});
 
 }
 
@@ -618,9 +868,13 @@ currentUser=null;
 
 currentFullName='';
 
+isAdmin=false;
+
 document.getElementById('app').classList.add('hidden');
 
 document.getElementById('authPage').classList.remove('hidden');
+
+document.getElementById('adminNav').classList.add('hidden');
 
 showLogin();
 
@@ -631,6 +885,12 @@ db.auth.onAuthStateChange((event,session)=>{
 if(session?.user){
 
 setTimeout(()=>openDashboard(session.user),0);
+
+}else if(event==='SIGNED_OUT'){
+
+currentUser=null;
+
+isAdmin=false;
 
 }
 
