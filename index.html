@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -16,9 +16,9 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 
-body{font-family:Arial,sans-serif;background:#101010;color:white;min-height:100vh}
-
 :root{--gold:#e5b63c;--panel:#1c1c1c}
+
+body{font-family:Arial,sans-serif;background:#101010;color:white;min-height:100vh}
 
 .hidden{display:none!important}
 
@@ -26,7 +26,7 @@ button,input{font:inherit}
 
 button{cursor:pointer}
 
-.auth{max-width:440px;margin:45px auto;padding:28px;background:var(--panel);border:1px solid #765d20;border-radius:15px}
+.auth{max-width:440px;margin:35px auto;padding:28px;background:var(--panel);border:1px solid #765d20;border-radius:15px}
 
 .logo{color:var(--gold);font-size:25px;font-weight:bold;text-align:center;margin-bottom:14px}
 
@@ -40,7 +40,7 @@ input{width:100%;padding:14px;margin:9px 0;background:#292929;border:1px solid #
 
 .link{text-align:center;color:var(--gold);margin-top:18px;cursor:pointer}
 
-.message{text-align:center;color:var(--gold);margin-top:15px;line-height:1.5}
+.message{text-align:center;color:var(--gold);margin-top:15px;line-height:1.5;overflow-wrap:anywhere}
 
 header{background:#191919;border-bottom:1px solid #765d20;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 
@@ -70,7 +70,7 @@ header small{color:#aaa}
 
 .card h3,.section h2{color:var(--gold);margin-bottom:12px}
 
-.card p,.section p{color:#ccc;line-height:1.7}
+.card p,.section p{color:#ccc;line-height:1.7;overflow-wrap:anywhere}
 
 .section{margin-bottom:18px}
 
@@ -113,6 +113,8 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 <div id="signup">
 
 <h3>Create Account</h3>
+
+<input id="signupName" type="text" placeholder="Full name">
 
 <input id="signupEmail" type="email" placeholder="Email address">
 
@@ -178,7 +180,7 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 <div class="welcome">
 
-<h1>Welcome Back!</h1>
+<h1>Welcome, <span id="welcomeName">Customer</span>!</h1>
 
 <p>Welcome to your Gold Investment Ghana dashboard.</p>
 
@@ -191,6 +193,8 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 <div class="card">
 
 <h3>My Account</h3>
+
+<p id="dashName"></p>
 
 <p id="dashEmail"></p>
 
@@ -234,7 +238,7 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 <h2>Welcome to Gold Investment Ghana</h2>
 
-<p>This is your personal account area. You can access your profile, investment information and transaction records using the menu.</p>
+<p>This is your personal account area. Access your profile, investment information and transaction records using the menu.</p>
 
 </div>
 
@@ -298,17 +302,21 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 <h2>My Profile</h2>
 
-<p><strong>Email Address:</strong></p>
+<p><strong>Full Name</strong></p>
+
+<input id="profileName" type="text" placeholder="Enter your full name">
+
+<p><strong>Email Address</strong></p>
 
 <p id="profileEmail"></p>
 
-<br>
-
-<p><strong>Account Status:</strong> Signed in</p>
-
-<p><strong>Member Since:</strong></p>
+<p><strong>Member Since</strong></p>
 
 <p id="memberDate"></p>
+
+<button class="btn" onclick="saveProfile()">Save Profile</button>
+
+<p id="profileMessage" class="message"></p>
 
 <button class="btn secondary" onclick="logout()">Logout</button>
 
@@ -338,6 +346,10 @@ const SUPABASE_KEY='sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v';
 
 const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 
+let currentUser=null;
+
+let currentFullName='';
+
 function msg(t){
 
 document.getElementById('authMessage').textContent=t;
@@ -366,13 +378,15 @@ msg('');
 
 async function register(){
 
+const fullName=document.getElementById('signupName').value.trim();
+
 const email=document.getElementById('signupEmail').value.trim();
 
 const password=document.getElementById('signupPassword').value;
 
-if(!email||password.length<6){
+if(!fullName||!email||password.length<6){
 
-msg('Enter a valid email and password of at least 6 characters.');
+msg('Enter your full name, valid email and password of at least 6 characters.');
 
 return;
 
@@ -382,17 +396,37 @@ msg('Creating your account...');
 
 const {data,error}=await db.auth.signUp({
 
-email,password,
+email,
 
-options:{emailRedirectTo:window.location.origin}
+password,
+
+options:{
+
+data:{full_name:fullName},
+
+emailRedirectTo:window.location.origin
+
+}
 
 });
 
-if(error){msg(error.message);return;}
+if(error){
 
-if(data.session){openDashboard(data.user);}
+msg(error.message);
 
-else{msg('Registration successful! Check your email to confirm your account.');}
+return;
+
+}
+
+if(data.session){
+
+await openDashboard(data.user);
+
+}else{
+
+msg('Registration successful! Please check your email to confirm your account before logging in.');
+
+}
 
 }
 
@@ -402,15 +436,27 @@ const email=document.getElementById('loginEmail').value.trim();
 
 const password=document.getElementById('loginPassword').value;
 
-if(!email||!password){msg('Enter your email and password.');return;}
+if(!email||!password){
+
+msg('Enter your email and password.');
+
+return;
+
+}
 
 msg('Signing in...');
 
 const {data,error}=await db.auth.signInWithPassword({email,password});
 
-if(error){msg(error.message);return;}
+if(error){
 
-openDashboard(data.user);
+msg(error.message);
+
+return;
+
+}
+
+await openDashboard(data.user);
 
 }
 
@@ -418,7 +464,13 @@ async function resetPassword(){
 
 const email=document.getElementById('loginEmail').value.trim();
 
-if(!email){msg('Enter your email address first.');return;}
+if(!email){
+
+msg('Enter your email address first.');
+
+return;
+
+}
 
 const {error}=await db.auth.resetPasswordForEmail(email,{
 
@@ -430,23 +482,107 @@ msg(error?error.message:'Password reset instructions requested. Check your email
 
 }
 
-function openDashboard(user){
+async function openDashboard(user){
 
 if(!user)return;
+
+currentUser=user;
 
 document.getElementById('authPage').classList.add('hidden');
 
 document.getElementById('app').classList.remove('hidden');
 
-document.getElementById('headerEmail').textContent=user.email;
+document.getElementById('headerEmail').textContent=user.email||'';
 
-document.getElementById('dashEmail').textContent=user.email;
+document.getElementById('profileEmail').textContent=user.email||'';
 
-document.getElementById('profileEmail').textContent=user.email;
+document.getElementById('memberDate').textContent=
 
-document.getElementById('memberDate').textContent=new Date(user.created_at).toLocaleDateString();
+user.created_at?new Date(user.created_at).toLocaleDateString():'';
+
+const {data,error}=await db
+
+.from('profiles')
+
+.select('full_name')
+
+.eq('id',user.id)
+
+.maybeSingle();
+
+if(error){
+
+console.error('Profile loading error:',error.message);
+
+}
+
+currentFullName=data?.full_name||user.user_metadata?.full_name||'';
+
+document.getElementById('profileName').value=currentFullName;
+
+document.getElementById('dashName').textContent='Name: '+(currentFullName||'Not added yet');
+
+document.getElementById('dashEmail').textContent='Email: '+(user.email||'');
+
+document.getElementById('welcomeName').textContent=currentFullName||'Customer';
 
 page('dashboard',document.querySelector('.nav'));
+
+}
+
+async function saveProfile(){
+
+if(!currentUser)return;
+
+const fullName=document.getElementById('profileName').value.trim();
+
+const output=document.getElementById('profileMessage');
+
+if(!fullName){
+
+output.textContent='Please enter your full name.';
+
+return;
+
+}
+
+output.textContent='Saving your profile...';
+
+const {error}=await db
+
+.from('profiles')
+
+.update({full_name:fullName})
+
+.eq('id',currentUser.id);
+
+if(error){
+
+output.textContent='Could not save your name: '+error.message;
+
+return;
+
+}
+
+const {error:metadataError}=await db.auth.updateUser({
+
+data:{full_name:fullName}
+
+});
+
+if(metadataError){
+
+console.error('Metadata update error:',metadataError.message);
+
+}
+
+currentFullName=fullName;
+
+document.getElementById('dashName').textContent='Name: '+fullName;
+
+document.getElementById('welcomeName').textContent=fullName;
+
+output.textContent='Your profile name has been saved successfully!';
 
 }
 
@@ -470,7 +606,17 @@ async function logout(){
 
 const {error}=await db.auth.signOut();
 
-if(error){alert(error.message);return;}
+if(error){
+
+alert(error.message);
+
+return;
+
+}
+
+currentUser=null;
+
+currentFullName='';
 
 document.getElementById('app').classList.add('hidden');
 
@@ -482,7 +628,11 @@ showLogin();
 
 db.auth.onAuthStateChange((event,session)=>{
 
-if(session)openDashboard(session.user);
+if(session?.user){
+
+setTimeout(()=>openDashboard(session.user),0);
+
+}
 
 });
 
@@ -490,7 +640,11 @@ async function checkSession(){
 
 const {data,error}=await db.auth.getSession();
 
-if(!error&&data.session)openDashboard(data.session.user);
+if(!error&&data.session){
+
+await openDashboard(data.session.user);
+
+}
 
 }
 
