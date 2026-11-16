@@ -122,43 +122,43 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 <div id="authPage" class="auth">
 
-<div class="logo">GOLD INVESTMENT GHANA</div>
+  <div class="logo">GOLD INVESTMENT GHANA</div>
 
-<p class="subtitle">Welcome. Create an account or sign in to access your personal account.</p>
+  <p class="subtitle">Welcome. Create an account or sign in to access your personal account.</p>
 
-<div id="signup">
+  <div id="signup">
 
-<h3>Create Account</h3>
+    <h3>Create Account</h3>
 
-<input id="signupName" type="text" placeholder="Full name">
+    <input id="signupName" type="text" placeholder="Full name">
 
-<input id="signupEmail" type="email" placeholder="Email address">
+    <input id="signupEmail" type="email" placeholder="Email address">
 
-<input id="signupPassword" type="password" placeholder="Create password (minimum 6 characters)">
+    <input id="signupPassword" type="password" placeholder="Create password (minimum 6 characters)">
 
-<button class="btn" onclick="register()">Create Account</button>
+    <button class="btn" onclick="register()">Create Account</button>
 
-<p class="link" onclick="showLogin()">Already have an account? Login</p>
+    <p class="link" onclick="showLogin()">Already have an account? Login</p>
 
-</div>
+  </div>
 
-<div id="login" class="hidden">
+  <div id="login" class="hidden">
 
-<h3>Login to Your Account</h3>
+    <h3>Login to Your Account</h3>
 
-<input id="loginEmail" type="email" placeholder="Email address">
+    <input id="loginEmail" type="email" placeholder="Email address">
 
-<input id="loginPassword" type="password" placeholder="Password">
+    <input id="loginPassword" type="password" placeholder="Password">
 
-<button class="btn" onclick="signIn()">Login</button>
+    <button class="btn" onclick="signIn()">Login</button>
 
-<p class="link" onclick="resetPassword()">Forgot Password?</p>
+    <p class="link" onclick="resetPassword()">Forgot Password?</p>
 
-<p class="link" onclick="showSignup()">Create a new account</p>
+    <p class="link" onclick="showSignup()">Create a new account</p>
 
-</div>
+  </div>
 
-<p id="authMessage" class="message"></p>
+  <p id="authMessage" class="message"></p>
 
 </div>
 
@@ -166,9 +166,9 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 <header>
 
-<div class="logo">GOLD INVESTMENT GHANA</div>
+  <div class="logo">GOLD INVESTMENT GHANA</div>
 
-<small id="headerEmail"></small>
+  <small id="headerEmail"></small>
 
 </header>
 
@@ -176,19 +176,19 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 <aside class="sidebar">
 
-<button class="nav active" onclick="page('dashboard',this)">🏠 Dashboard</button>
+  <button class="nav active" onclick="page('dashboard',this)">🏠 Dashboard</button>
 
-<button class="nav" onclick="page('plans',this)">🪙 Investment Plans</button>
+  <button class="nav" onclick="page('plans',this)">🪙 Investment Plans</button>
 
-<button class="nav" onclick="page('investments',this)">📊 My Investments</button>
+  <button class="nav" onclick="page('investments',this)">📊 My Investments</button>
 
-<button class="nav" onclick="page('transactions',this)">💳 Transactions</button>
+  <button class="nav" onclick="page('transactions',this)">💳 Transactions</button>
 
-<button class="nav" onclick="page('profile',this)">👤 My Profile</button>
+  <button class="nav" onclick="page('profile',this)">👤 My Profile</button>
 
-<button id="adminNav" class="nav hidden" onclick="openAdminPage(this)">🔐 Admin Dashboard</button>
+  <button id="adminNav" class="nav hidden" onclick="openAdminPage(this)">🔐 Admin Dashboard</button>
 
-<button class="nav" onclick="logout()">🚪 Logout</button>
+  <button class="nav" onclick="logout()">🚪 Logout</button>
 
 </aside>
 
@@ -196,149 +196,149 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 <section id="dashboard">
 
-<div class="welcome">
+  <div class="welcome">
 
-<h1>Welcome, <span id="welcomeName">Customer</span>!</h1>
+    <h1>Welcome, <span id="welcomeName">Customer</span>!</h1>
 
-<p>Welcome to your Gold Investment Ghana dashboard.</p>
+    <p>Welcome to your Gold Investment Ghana dashboard.</p>
 
-<p>Manage your account and view your information here.</p>
+    <p>Manage your account and view your information here.</p>
 
-</div>
+  </div>
 
-<div class="cards">
+  <div class="cards">
 
-<div class="card">
+    <div class="card">
 
-<h3>My Account</h3>
+      <h3>My Account</h3>
 
-<p id="dashName"></p>
+      <p id="dashName"></p>
 
-<p id="dashEmail"></p>
+      <p id="dashEmail"></p>
 
-<span class="status">Account signed in</span>
+      <span class="status">Account signed in</span>
 
-</div>
+    </div>
 
-<div class="card">
+    <div class="card">
 
-<h3>My Investments</h3>
+      <h3>My Investments</h3>
 
-<p>View your investment records and updates here.</p>
+      <p>View your investment records and updates here.</p>
 
-<span class="status">No verified records yet</span>
+      <span class="status">No verified records yet</span>
 
-</div>
+    </div>
 
-<div class="card">
+    <div class="card">
 
-<h3>Transactions</h3>
+      <h3>Transactions</h3>
 
-<p>Review your confirmed payment records here.</p>
+      <p>Review your confirmed payment records here.</p>
 
-<span class="status">No verified transactions yet</span>
+      <span class="status">No verified transactions yet</span>
 
-</div>
+    </div>
 
-<div class="card">
+    <div class="card">
 
-<h3>Account Security</h3>
+      <h3>Account Security</h3>
 
-<p>Your account is connected to Supabase authentication.</p>
+      <p>Your account is connected to Supabase authentication.</p>
 
-<span class="status">Signed in</span>
+      <span class="status">Signed in</span>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
-<div class="section">
+  <div class="section">
 
-<h2>Welcome to Gold Investment Ghana</h2>
+    <h2>Welcome to Gold Investment Ghana</h2>
 
-<p>This is your personal account area. Access your profile, investment information and transaction records using the menu.</p>
+    <p>This is your personal account area. Access your profile, investment information and transaction records using the menu.</p>
 
-</div>
+  </div>
 
 </section>
 
 <section id="plans" class="hidden">
 
-<div class="section">
+  <div class="section">
 
-<h2>Investment Information</h2>
+    <h2>Investment Information</h2>
 
-<p>Explore information about gold investment, pricing, market risks and available opportunities.</p>
+    <p>Explore information about gold investment, pricing, market risks and available opportunities.</p>
 
-<div class="plan">
+    <div class="plan">
 
-<h3>Gold Investment</h3>
+      <h3>Gold Investment</h3>
 
-<p>Learn about gold ownership, market prices, potential risks and how legitimate gold investments operate.</p>
+      <p>Learn about gold ownership, market prices, potential risks and how legitimate gold investments operate.</p>
 
-<span class="status">Information only</span>
+      <span class="status">Information only</span>
 
-</div>
+    </div>
 
-<p>Investment terms, minimum deposits, fees and returns must be independently verified before any investment is offered.</p>
+    <p>Investment terms, minimum deposits, fees and returns must be independently verified before any investment is offered.</p>
 
-</div>
+  </div>
 
 </section>
 
 <section id="investments" class="hidden">
 
-<div class="section">
+  <div class="section">
 
-<h2>My Investments</h2>
+    <h2>My Investments</h2>
 
-<p>Your verified investment records will appear here when connected to the secure investment database.</p>
+    <p>Your verified investment records will appear here when connected to the secure investment database.</p>
 
-<span class="status">No verified investments recorded</span>
+    <span class="status">No verified investments recorded</span>
 
-</div>
+  </div>
 
 </section>
 
 <section id="transactions" class="hidden">
 
-<div class="section">
+  <div class="section">
 
-<h2>Transaction History</h2>
+    <h2>Transaction History</h2>
 
-<p>Your confirmed payment records will appear here after secure payment verification is connected.</p>
+    <p>Your confirmed payment records will appear here after secure payment verification is connected.</p>
 
-<span class="status">No verified transactions recorded</span>
+    <span class="status">No verified transactions recorded</span>
 
-</div>
+  </div>
 
 </section>
 
 <section id="profile" class="hidden">
 
-<div class="section">
+  <div class="section">
 
-<h2>My Profile</h2>
+    <h2>My Profile</h2>
 
-<p><strong>Full Name</strong></p>
+    <p><strong>Full Name</strong></p>
 
-<input id="profileName" type="text" placeholder="Enter your full name">
+    <input id="profileName" type="text" placeholder="Enter your full name">
 
-<p><strong>Email Address</strong></p>
+    <p><strong>Email Address</strong></p>
 
-<p id="profileEmail"></p>
+    <p id="profileEmail"></p>
 
-<p><strong>Member Since</strong></p>
+    <p><strong>Member Since</strong></p>
 
-<p id="memberDate"></p>
+    <p id="memberDate"></p>
 
-<button class="btn" onclick="saveProfile()">Save Profile</button>
+    <button class="btn" onclick="saveProfile()">Save Profile</button>
 
-<p id="profileMessage" class="message"></p>
+    <p id="profileMessage" class="message"></p>
 
-<button class="btn secondary" onclick="logout()">Logout</button>
+    <button class="btn secondary" onclick="logout()">Logout</button>
 
-</div>
+  </div>
 
 </section>
 
@@ -346,77 +346,125 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 <section id="adminPage" class="hidden">
 
-<div class="welcome">
+  <div class="welcome">
 
-<h1>Admin Dashboard 🔐</h1>
+    <h1>Admin Dashboard 🔐</h1>
 
-<p>Welcome to your private administration area.</p>
+    <p>Welcome to your private administration area.</p>
 
-<p>Manage and review registered customer accounts.</p>
+    <p>Manage and review registered customer accounts and investment records.</p>
 
-</div>
+  </div>
 
-<div class="cards">
+  <div class="cards">
 
-<div class="admin-stat">
+    <div class="admin-stat">
 
-<p>Total Registered Customers</p>
+      <p>Total Registered Customers</p>
 
-<strong id="customerCount">0</strong>
+      <strong id="customerCount">0</strong>
 
-</div>
+    </div>
 
-<div class="admin-stat">
+    <div class="admin-stat">
 
-<p>Your Administrator Account</p>
+      <p>Your Administrator Account</p>
 
-<strong style="font-size:18px">ADMIN</strong>
+      <strong style="font-size:18px">ADMIN</strong>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
-<div class="section">
+  <div class="section">
 
-<h2>Registered Customers</h2>
+    <h2>Registered Customers</h2>
 
-<p>Customer records retrieved from the secure administrator function.</p>
+    <p>Customer records retrieved from the secure administrator function.</p>
 
-<button class="btn" onclick="loadAdminCustomers()">Refresh Customer List</button>
+    <button class="btn" onclick="loadAdminCustomers()">Refresh Customer List</button>
 
-<p id="adminMessage" class="admin-message">Loading customer records...</p>
+    <p id="adminMessage" class="admin-message">Customer records have not been loaded yet.</p>
 
-<div class="table-wrap">
+    <div class="table-wrap">
 
-<table>
+      <table>
 
-<thead>
+        <thead>
 
-<tr>
+          <tr>
 
-<th>Full Name</th>
+            <th>Full Name</th>
 
-<th>Email Address</th>
+            <th>Email Address</th>
 
-<th>Registration Date</th>
+            <th>Registration Date</th>
 
-<th>Role</th>
+            <th>Role</th>
 
-</tr>
+          </tr>
 
-</thead>
+        </thead>
 
-<tbody id="customerTable">
+        <tbody id="customerTable">
 
-<tr><td colspan="4">Loading...</td></tr>
+          <tr><td colspan="4">No records loaded.</td></tr>
 
-</tbody>
+        </tbody>
 
-</table>
+      </table>
 
-</div>
+    </div>
 
-</div>
+  </div>
+
+  <!-- NEW INVESTMENT RECORDS SECTION -->
+
+  <div class="section">
+
+    <h2>Investment Records</h2>
+
+    <p>Review investment records linked to registered customer accounts.</p>
+
+    <button class="btn" onclick="loadAdminInvestments()">Refresh Investment Records</button>
+
+    <p id="investmentAdminMessage" class="admin-message">Investment records have not been loaded yet.</p>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+
+          <tr>
+
+            <th>Customer</th>
+
+            <th>Email</th>
+
+            <th>Plan</th>
+
+            <th>Amount (GHS)</th>
+
+            <th>Status</th>
+
+            <th>Date</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody id="adminInvestmentTable">
+
+          <tr><td colspan="6">No records loaded.</td></tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
 
 </section>
 
@@ -452,459 +500,571 @@ let openingDashboard=false;
 
 function msg(t){
 
-document.getElementById('authMessage').textContent=t;
+  document.getElementById('authMessage').textContent=t;
 
 }
 
 function showLogin(){
 
-document.getElementById('signup').classList.add('hidden');
+  document.getElementById('signup').classList.add('hidden');
 
-document.getElementById('login').classList.remove('hidden');
+  document.getElementById('login').classList.remove('hidden');
 
-msg('');
+  msg('');
 
 }
 
 function showSignup(){
 
-document.getElementById('login').classList.add('hidden');
+  document.getElementById('login').classList.add('hidden');
 
-document.getElementById('signup').classList.remove('hidden');
+  document.getElementById('signup').classList.remove('hidden');
 
-msg('');
+  msg('');
 
 }
 
 async function register(){
 
-const fullName=document.getElementById('signupName').value.trim();
+  const fullName=document.getElementById('signupName').value.trim();
 
-const email=document.getElementById('signupEmail').value.trim();
+  const email=document.getElementById('signupEmail').value.trim();
 
-const password=document.getElementById('signupPassword').value;
+  const password=document.getElementById('signupPassword').value;
 
-if(!fullName||!email||password.length<6){
+  if(!fullName||!email||password.length<6){
 
-msg('Enter your full name, valid email and password of at least 6 characters.');
+    msg('Enter your full name, valid email and password of at least 6 characters.');
 
-return;
+    return;
 
-}
+  }
 
-msg('Creating your account...');
+  msg('Creating your account...');
 
-const {data,error}=await db.auth.signUp({
+  const {data,error}=await db.auth.signUp({
 
-email,
+    email,
 
-password,
+    password,
 
-options:{
+    options:{
 
-data:{full_name:fullName},
+      data:{full_name:fullName},
 
-emailRedirectTo:window.location.origin
+      emailRedirectTo:window.location.origin
 
-}
+    }
 
-});
+  });
 
-if(error){
+  if(error){
 
-msg(error.message);
+    msg(error.message);
 
-return;
+    return;
 
-}
+  }
 
-if(data.session){
+  if(data.session){
 
-await openDashboard(data.user);
+    await openDashboard(data.user);
 
-}else{
+  }else{
 
-msg('Registration successful! Please check your email to confirm your account before logging in.');
+    msg('Registration successful! Please check your email to confirm your account before logging in.');
 
-}
+  }
 
 }
 
 async function signIn(){
 
-const email=document.getElementById('loginEmail').value.trim();
+  const email=document.getElementById('loginEmail').value.trim();
 
-const password=document.getElementById('loginPassword').value;
+  const password=document.getElementById('loginPassword').value;
 
-if(!email||!password){
+  if(!email||!password){
 
-msg('Enter your email and password.');
+    msg('Enter your email and password.');
 
-return;
+    return;
 
-}
+  }
 
-msg('Signing in...');
+  msg('Signing in...');
 
-const {data,error}=await db.auth.signInWithPassword({email,password});
+  const {data,error}=await db.auth.signInWithPassword({email,password});
 
-if(error){
+  if(error){
 
-msg(error.message);
+    msg(error.message);
 
-return;
+    return;
 
-}
+  }
 
-await openDashboard(data.user);
+  await openDashboard(data.user);
 
 }
 
 async function resetPassword(){
 
-const email=document.getElementById('loginEmail').value.trim();
+  const email=document.getElementById('loginEmail').value.trim();
 
-if(!email){
+  if(!email){
 
-msg('Enter your email address first.');
+    msg('Enter your email address first.');
 
-return;
+    return;
 
-}
+  }
 
-const {error}=await db.auth.resetPasswordForEmail(email,{
+  const {error}=await db.auth.resetPasswordForEmail(email,{
 
-redirectTo:window.location.origin
+    redirectTo:window.location.origin
 
-});
+  });
 
-msg(error?error.message:'Password reset instructions requested. Check your email.');
+  msg(error?error.message:'Password reset instructions requested. Check your email.');
 
 }
 
 async function openDashboard(user){
 
-if(!user||openingDashboard)return;
+  if(!user||openingDashboard)return;
 
-openingDashboard=true;
+  openingDashboard=true;
 
-currentUser=user;
+  currentUser=user;
 
-try{
+  try{
 
-document.getElementById('authPage').classList.add('hidden');
+    document.getElementById('authPage').classList.add('hidden');
 
-document.getElementById('app').classList.remove('hidden');
+    document.getElementById('app').classList.remove('hidden');
 
-document.getElementById('headerEmail').textContent=user.email||'';
+    document.getElementById('headerEmail').textContent=user.email||'';
 
-document.getElementById('profileEmail').textContent=user.email||'';
+    document.getElementById('profileEmail').textContent=user.email||'';
 
-document.getElementById('memberDate').textContent=
+    document.getElementById('memberDate').textContent=
 
-user.created_at?new Date(user.created_at).toLocaleDateString():'';
+      user.created_at?new Date(user.created_at).toLocaleDateString():'';
 
-const {data,error}=await db
+    const {data,error}=await db
 
-.from('profiles')
+      .from('profiles')
 
-.select('full_name,role')
+      .select('full_name,role')
 
-.eq('id',user.id)
+      .eq('id',user.id)
 
-.maybeSingle();
+      .maybeSingle();
 
-if(error){
+    if(error){
 
-console.error('Profile loading error:',error.message);
+      console.error('Profile loading error:',error.message);
 
-}
+    }
 
-currentFullName=data?.full_name||user.user_metadata?.full_name||'';
+    currentFullName=data?.full_name||user.user_metadata?.full_name||'';
 
-isAdmin=data?.role==='admin';
+    isAdmin=data?.role==='admin';
 
-document.getElementById('profileName').value=currentFullName;
+    document.getElementById('profileName').value=currentFullName;
 
-document.getElementById('dashName').textContent='Name: '+(currentFullName||'Not added yet');
+    document.getElementById('dashName').textContent='Name: '+(currentFullName||'Not added yet');
 
-document.getElementById('dashEmail').textContent='Email: '+(user.email||'');
+    document.getElementById('dashEmail').textContent='Email: '+(user.email||'');
 
-document.getElementById('welcomeName').textContent=currentFullName||'Customer';
+    document.getElementById('welcomeName').textContent=currentFullName||'Customer';
 
-document.getElementById('adminNav').classList.toggle('hidden',!isAdmin);
+    document.getElementById('adminNav').classList.toggle('hidden',!isAdmin);
 
-page('dashboard',document.querySelector('.nav'));
+    page('dashboard',document.querySelector('.nav'));
 
-}catch(e){
+  }catch(e){
 
-console.error(e);
+    console.error(e);
 
-}finally{
+  }finally{
 
-openingDashboard=false;
+    openingDashboard=false;
 
-}
+  }
 
 }
 
 async function saveProfile(){
 
-if(!currentUser)return;
+  if(!currentUser)return;
 
-const fullName=document.getElementById('profileName').value.trim();
+  const fullName=document.getElementById('profileName').value.trim();
 
-const output=document.getElementById('profileMessage');
+  const output=document.getElementById('profileMessage');
 
-if(!fullName){
+  if(!fullName){
 
-output.textContent='Please enter your full name.';
+    output.textContent='Please enter your full name.';
 
-return;
+    return;
 
-}
+  }
 
-output.textContent='Saving your profile...';
+  output.textContent='Saving your profile...';
 
-const {error}=await db
+  const {error}=await db
 
-.from('profiles')
+    .from('profiles')
 
-.update({full_name:fullName})
+    .update({full_name:fullName})
 
-.eq('id',currentUser.id);
+    .eq('id',currentUser.id);
 
-if(error){
+  if(error){
 
-output.textContent='Could not save your name: '+error.message;
+    output.textContent='Could not save your name: '+error.message;
 
-return;
+    return;
 
-}
+  }
 
-const {error:metadataError}=await db.auth.updateUser({
+  const {error:metadataError}=await db.auth.updateUser({
 
-data:{full_name:fullName}
+    data:{full_name:fullName}
 
-});
+  });
 
-if(metadataError){
+  if(metadataError){
 
-console.error('Metadata update error:',metadataError.message);
+    console.error('Metadata update error:',metadataError.message);
 
-}
+  }
 
-currentFullName=fullName;
+  currentFullName=fullName;
 
-document.getElementById('dashName').textContent='Name: '+fullName;
+  document.getElementById('dashName').textContent='Name: '+fullName;
 
-document.getElementById('welcomeName').textContent=fullName;
+  document.getElementById('welcomeName').textContent=fullName;
 
-output.textContent='Your profile name has been saved successfully!';
+  output.textContent='Your profile name has been saved successfully!';
 
 }
 
 function page(id,button){
 
-const sections=['dashboard','plans','investments','transactions','profile','adminPage'];
+  const sections=['dashboard','plans','investments','transactions','profile','adminPage'];
 
-sections.forEach(x=>{
+  sections.forEach(x=>{
 
-document.getElementById(x).classList.add('hidden');
+    document.getElementById(x).classList.add('hidden');
 
-});
+  });
 
-document.getElementById(id).classList.remove('hidden');
+  document.getElementById(id).classList.remove('hidden');
 
-document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));
 
-if(button)button.classList.add('active');
+  if(button)button.classList.add('active');
 
 }
 
 async function openAdminPage(button){
 
-if(!currentUser){
+  if(!currentUser){
 
-alert('Please sign in first.');
+    alert('Please sign in first.');
 
-return;
+    return;
 
-}
+  }
 
-if(!isAdmin){
+  if(!isAdmin){
 
-alert('Access denied. Administrator account only.');
+    alert('Access denied. Administrator account only.');
 
-return;
+    return;
 
-}
+  }
 
-page('adminPage',button);
+  page('adminPage',button);
 
-await loadAdminCustomers();
+  await Promise.all([
+
+    loadAdminCustomers(),
+
+    loadAdminInvestments()
+
+  ]);
 
 }
 
 async function loadAdminCustomers(){
 
-const message=document.getElementById('adminMessage');
+  const message=document.getElementById('adminMessage');
 
-const table=document.getElementById('customerTable');
+  const table=document.getElementById('customerTable');
 
-const count=document.getElementById('customerCount');
+  const count=document.getElementById('customerCount');
 
-if(!currentUser||!isAdmin){
+  if(!currentUser||!isAdmin){
 
-message.textContent='Access denied. Administrator account only.';
+    message.textContent='Access denied. Administrator account only.';
 
-return;
+    return;
+
+  }
+
+  message.textContent='Loading customer records...';
+
+  table.replaceChildren();
+
+  count.textContent='...';
+
+  const {data,error}=await db.rpc('admin_list_customers');
+
+  if(error){
+
+    console.error('Admin customer loading error:',error);
+
+    message.textContent='Could not load customers: '+error.message;
+
+    count.textContent='—';
+
+    const row=document.createElement('tr');
+
+    const cell=document.createElement('td');
+
+    cell.colSpan=4;
+
+    cell.textContent='Customer records could not be loaded.';
+
+    row.appendChild(cell);
+
+    table.appendChild(row);
+
+    return;
+
+  }
+
+  const customers=data||[];
+
+  count.textContent=customers.length;
+
+  if(customers.length===0){
+
+    message.textContent='No customer profiles found yet.';
+
+    const row=document.createElement('tr');
+
+    const cell=document.createElement('td');
+
+    cell.colSpan=4;
+
+    cell.textContent='No customer records available.';
+
+    row.appendChild(cell);
+
+    table.appendChild(row);
+
+    return;
+
+  }
+
+  message.textContent='Customer records loaded successfully.';
+
+  customers.forEach(customer=>{
+
+    const row=document.createElement('tr');
+
+    const name=document.createElement('td');
+
+    name.textContent=customer.full_name||'Name not added';
+
+    const email=document.createElement('td');
+
+    email.textContent=customer.email||'Not available';
+
+    const date=document.createElement('td');
+
+    date.textContent=customer.created_at
+
+      ?new Date(customer.created_at).toLocaleDateString()
+
+      :'Not available';
+
+    const role=document.createElement('td');
+
+    role.textContent=customer.role||'customer';
+
+    row.append(name,email,date,role);
+
+    table.appendChild(row);
+
+  });
 
 }
 
-message.textContent='Loading customer records...';
+/* LOAD ADMIN INVESTMENT RECORDS */
 
-table.replaceChildren();
+async function loadAdminInvestments(){
 
-count.textContent='...';
+  const message=document.getElementById('investmentAdminMessage');
 
-const {data,error}=await db.rpc('admin_list_customers');
+  const table=document.getElementById('adminInvestmentTable');
 
-if(error){
+  if(!currentUser||!isAdmin){
 
-console.error('Admin customer loading error:',error);
+    message.textContent='Access denied. Administrator account only.';
 
-message.textContent='Could not load customers: '+error.message;
+    return;
 
-count.textContent='—';
+  }
 
-const row=document.createElement('tr');
+  message.textContent='Loading investment records...';
 
-const cell=document.createElement('td');
+  table.replaceChildren();
 
-cell.colSpan=4;
+  const {data,error}=await db.rpc('admin_list_investments');
 
-cell.textContent='Customer records could not be loaded.';
+  if(error){
 
-row.appendChild(cell);
+    console.error('Investment loading error:',error);
 
-table.appendChild(row);
+    message.textContent='Could not load investment records: '+error.message;
 
-return;
+    const row=document.createElement('tr');
 
-}
+    const cell=document.createElement('td');
 
-const customers=data||[];
+    cell.colSpan=6;
 
-count.textContent=customers.length;
+    cell.textContent='Investment records could not be loaded.';
 
-if(customers.length===0){
+    row.appendChild(cell);
 
-message.textContent='No customer profiles found yet.';
+    table.appendChild(row);
 
-const row=document.createElement('tr');
+    return;
 
-const cell=document.createElement('td');
+  }
 
-cell.colSpan=4;
+  const records=data||[];
 
-cell.textContent='No customer records available.';
+  if(records.length===0){
 
-row.appendChild(cell);
+    message.textContent='No investment records found yet.';
 
-table.appendChild(row);
+    const row=document.createElement('tr');
 
-return;
+    const cell=document.createElement('td');
 
-}
+    cell.colSpan=6;
 
-message.textContent='Customer records loaded successfully.';
+    cell.textContent='No investment records available.';
 
-customers.forEach(customer=>{
+    row.appendChild(cell);
 
-const row=document.createElement('tr');
+    table.appendChild(row);
 
-const name=document.createElement('td');
+    return;
 
-name.textContent=customer.full_name||'Name not added';
+  }
 
-const email=document.createElement('td');
+  message.textContent=records.length+' investment record(s) loaded successfully.';
 
-email.textContent=customer.email||'Not available';
+  records.forEach(record=>{
 
-const date=document.createElement('td');
+    const row=document.createElement('tr');
 
-date.textContent=customer.created_at
+    [
 
-?new Date(customer.created_at).toLocaleDateString()
+      record.full_name||'Name not added',
 
-:'Not available';
+      record.email||'Not available',
 
-const role=document.createElement('td');
+      record.plan_name||'Not specified',
 
-role.textContent=customer.role||'customer';
+      Number(record.amount||0).toFixed(2),
 
-row.append(name,email,date,role);
+      record.status||'Pending',
 
-table.appendChild(row);
+      record.created_at
 
-});
+        ?new Date(record.created_at).toLocaleDateString()
+
+        :'Not available'
+
+    ].forEach(value=>{
+
+      const cell=document.createElement('td');
+
+      cell.textContent=String(value);
+
+      row.appendChild(cell);
+
+    });
+
+    table.appendChild(row);
+
+  });
 
 }
 
 async function logout(){
 
-const {error}=await db.auth.signOut();
+  const {error}=await db.auth.signOut();
 
-if(error){
+  if(error){
 
-alert(error.message);
+    alert(error.message);
 
-return;
+    return;
 
-}
+  }
 
-currentUser=null;
+  currentUser=null;
 
-currentFullName='';
+  currentFullName='';
 
-isAdmin=false;
+  isAdmin=false;
 
-document.getElementById('app').classList.add('hidden');
+  document.getElementById('app').classList.add('hidden');
 
-document.getElementById('authPage').classList.remove('hidden');
+  document.getElementById('authPage').classList.remove('hidden');
 
-document.getElementById('adminNav').classList.add('hidden');
+  document.getElementById('adminNav').classList.add('hidden');
 
-showLogin();
+  showLogin();
 
 }
 
 db.auth.onAuthStateChange((event,session)=>{
 
-if(session?.user){
+  if(session?.user){
 
-setTimeout(()=>openDashboard(session.user),0);
+    setTimeout(()=>openDashboard(session.user),0);
 
-}else if(event==='SIGNED_OUT'){
+  }else if(event==='SIGNED_OUT'){
 
-currentUser=null;
+    currentUser=null;
 
-isAdmin=false;
+    isAdmin=false;
 
-}
+  }
 
 });
 
 async function checkSession(){
 
-const {data,error}=await db.auth.getSession();
+  const {data,error}=await db.auth.getSession();
 
-if(!error&&data.session){
+  if(!error&&data.session){
 
-await openDashboard(data.session.user);
+    await openDashboard(data.session.user);
 
-}
+  }
 
 }
 
