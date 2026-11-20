@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -12,113 +10,63 @@
 
 <title>Gold Investment Ghana</title>
 
-<script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 
 <style>
 
 *{box-sizing:border-box;margin:0;padding:0}
 
-:root{--gold:#e5b63c;--panel:#1c1c1c;--muted:#aaa}
+:root{--gold:#e5b63c;--bg:#101114;--panel:#191b20;--muted:#a8a8a8}
 
-body{font-family:Arial,sans-serif;background:#101010;color:#fff;min-height:100vh}
+body{font-family:Arial,sans-serif;background:var(--bg);color:#fff;line-height:1.5}
+
+header{padding:20px;background:#17181c;border-bottom:1px solid #383128;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+
+.logo{color:var(--gold);font-size:20px;font-weight:bold}
+
+main{max-width:1000px;margin:25px auto;padding:15px}
+
+h1,h2,h3{margin-bottom:12px}
+
+h1{font-size:30px;color:var(--gold)}
+
+p{color:#c5c5c5;margin-bottom:12px}
+
+button,.btn{background:var(--gold);color:#171717;border:0;border-radius:8px;padding:12px 18px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
+
+button.secondary{background:#333;color:white}
+
+button.danger{background:#9d3434;color:white}
+
+input,select{width:100%;padding:13px;margin:7px 0 14px;border:1px solid #444;background:#101114;color:white;border-radius:7px}
+
+label{font-size:14px;color:#ddd}
+
+.card{background:var(--panel);border:1px solid #333;border-radius:12px;padding:20px;margin:15px 0}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
+
+.price{font-size:25px;color:var(--gold);font-weight:bold;margin:10px 0}
 
 .hidden{display:none!important}
 
-button,input,select{font:inherit}
+.notice{padding:13px;border:1px solid #665322;background:#292313;border-radius:8px;color:#f4d98c;margin:12px 0}
 
-button{cursor:pointer}
+.muted{color:var(--muted);font-size:13px}
 
-.auth{max-width:440px;margin:35px auto;padding:28px;background:var(--panel);border:1px solid #765d20;border-radius:15px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 
-.logo{color:var(--gold);font-size:23px;font-weight:bold;text-align:center;margin-bottom:14px}
+.row button{margin:4px 0}
 
-.subtitle{text-align:center;color:#ccc;line-height:1.5;margin-bottom:24px}
+hr{border:0;border-top:1px solid #383838;margin:18px 0}
 
-input,select{width:100%;padding:14px;margin:9px 0;background:#292929;border:1px solid #555;border-radius:7px;color:#fff}
+table{width:100%;border-collapse:collapse;margin-top:12px}
 
-.btn{width:100%;padding:14px;margin-top:12px;background:var(--gold);color:#111;border:0;border-radius:7px;font-weight:bold}
+td,th{padding:10px;border-bottom:1px solid #383838;text-align:left;font-size:13px}
 
-.secondary{background:#333;color:#fff}
+footer{text-align:center;color:#777;padding:25px}
 
-.link{text-align:center;color:var(--gold);margin-top:18px;cursor:pointer}
-
-.message{text-align:center;color:var(--gold);margin-top:15px;line-height:1.5;overflow-wrap:anywhere}
-
-header{background:#191919;border-bottom:1px solid #765d20;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-
-header .logo{margin:0;text-align:left;font-size:19px}
-
-header small{color:var(--muted)}
-
-.layout{max-width:1150px;margin:25px auto;padding:0 18px;display:grid;grid-template-columns:220px 1fr;gap:20px}
-
-.sidebar{background:var(--panel);padding:15px;border-radius:12px;height:max-content}
-
-.nav{display:block;width:100%;padding:14px;margin:5px 0;background:transparent;border:0;color:#ddd;text-align:left;border-radius:7px}
-
-.nav.active,.nav:hover{background:#3a301b;color:var(--gold)}
-
-.content{min-width:0}
-
-.welcome{background:linear-gradient(120deg,#302512,#191919);border:1px solid #765d20;border-radius:13px;padding:25px;margin-bottom:20px}
-
-.welcome h1{color:var(--gold);margin-bottom:10px}
-
-.welcome p,.card p,.section p{color:#ccc;line-height:1.6;overflow-wrap:anywhere}
-
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-bottom:20px}
-
-.card,.section{background:var(--panel);padding:20px;border:1px solid #333;border-radius:12px}
-
-.card h3,.section h2{color:var(--gold);margin-bottom:12px}
-
-.section{margin-bottom:18px}
-
-.section h2{margin-bottom:18px}
-
-.plan-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
-
-.plan{padding:18px;background:#292929;border:1px solid #4a402b;border-radius:10px}
-
-.plan h3{color:var(--gold);margin-bottom:8px}
-
-.plan .amount{font-size:23px;font-weight:bold;margin:12px 0}
-
-.status{display:inline-block;color:var(--gold);background:#3a301b;padding:7px 12px;border-radius:20px;font-size:12px;margin-top:10px}
-
-.table-wrap{width:100%;overflow-x:auto;margin-top:18px}
-
-table{width:100%;border-collapse:collapse;min-width:560px}
-
-th,td{padding:13px 10px;border-bottom:1px solid #444;text-align:left;font-size:13px}
-
-th{color:var(--gold);background:#292929}
-
-td{color:#ddd}
-
-.admin-stat{background:#292929;padding:18px;border-radius:9px;border:1px solid #765d20}
-
-.admin-stat strong{display:block;color:var(--gold);font-size:28px;margin-top:8px}
-
-.admin-message{color:var(--gold);margin-top:14px;line-height:1.5}
-
-.notice{border:1px solid #765d20;background:#292313;color:#e8d7a4;padding:13px;border-radius:8px;line-height:1.5;margin:14px 0}
-
-footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
-
-@media(max-width:650px){
-
-.layout{grid-template-columns:1fr;margin:15px auto}
-
-.sidebar{display:grid;grid-template-columns:repeat(2,1fr);gap:4px}
-
-.nav{font-size:13px;padding:12px 8px;text-align:center}
-
-.cards,.plan-grid{grid-template-columns:1fr}
-
-.auth{margin:25px 15px}
-
-}
+#message{margin:12px 0;color:var(--gold)}
 
 </style>
 
@@ -126,969 +74,613 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 <body>
 
-<div id="authPage" class="auth">
-
-  <div class="logo">GOLD INVESTMENT GHANA</div>
-
-  <p class="subtitle">Create an account or sign in to access your personal account.</p>
-
-  <div id="signup">
-
-    <h3>Create Account</h3>
-
-    <input id="signupName" type="text" placeholder="Full name" autocomplete="name">
-
-    <input id="signupEmail" type="email" placeholder="Email address" autocomplete="email">
-
-    <input id="signupPassword" type="password" placeholder="Create password (minimum 6 characters)" autocomplete="new-password">
-
-    <button class="btn" onclick="register()">Create Account</button>
-
-    <p class="link" onclick="showLogin()">Already have an account? Login</p>
-
-  </div>
-
-  <div id="login" class="hidden">
-
-    <h3>Login to Your Account</h3>
-
-    <input id="loginEmail" type="email" placeholder="Email address" autocomplete="email">
-
-    <input id="loginPassword" type="password" placeholder="Password" autocomplete="current-password">
-
-    <button class="btn" onclick="signIn()">Login</button>
-
-    <p class="link" onclick="resetPassword()">Forgot Password?</p>
-
-    <p class="link" onclick="showSignup()">Create a new account</p>
-
-  </div>
-
-  <p id="authMessage" class="message"></p>
-
-</div>
-
-<div id="app" class="hidden">
-
 <header>
 
-  <div class="logo">GOLD INVESTMENT GHANA</div>
+ <div class="logo">GOLD INVESTMENT GHANA</div>
 
-  <small id="headerEmail"></small>
+ <div class="row">
+
+  <button class="secondary" onclick="showSection('home')">Home</button>
+
+  <button onclick="showSection('auth')">Account</button>
+
+ </div>
 
 </header>
 
-<div class="layout">
+<main>
 
-<aside class="sidebar">
+<section id="home">
 
-  <button class="nav active" onclick="page('dashboard',this)">🏠 Dashboard</button>
+ <div class="card">
 
-  <button class="nav" onclick="page('plans',this)">🪙 Investment Plans</button>
+  <h1>Invest in Gold</h1>
 
-  <button class="nav" onclick="page('investments',this)">📊 My Investments</button>
+  <p>Welcome to Gold Investment Ghana. Create an account to access your customer area and view available plans.</p>
 
-  <button class="nav" onclick="page('transactions',this)">💳 Transactions</button>
+  <button onclick="showSection('auth')">Create Account / Login</button>
 
-  <button class="nav" onclick="page('profile',this)">👤 My Profile</button>
+ </div>
 
-  <button id="adminNav" class="nav hidden" onclick="openAdminPage(this)">🔐 Admin Dashboard</button>
+ <h2>Investment Plans</h2>
 
-  <button class="nav" onclick="logout()">🚪 Logout</button>
+ <div class="grid">
 
-</aside>
+  <div class="card">
 
-<main class="content">
+   <h3>Starter Plan</h3>
 
-<section id="dashboard">
+   <div class="price">GH₵50</div>
 
-  <div class="welcome">
+   <p>Starter plan selection.</p>
 
-    <h1>Welcome, <span id="welcomeName">Customer</span>!</h1>
-
-    <p>Your personal account dashboard.</p>
-
-    <p>View investment information and your account records here.</p>
+   <button onclick="choosePlan('Starter Plan',50)">Select Plan</button>
 
   </div>
 
-  <div class="cards">
+  <div class="card">
 
-    <div class="card">
+   <h3>Standard Plan</h3>
 
-      <h3>My Account</h3>
+   <div class="price">GH₵100</div>
 
-      <p id="dashName"></p>
+   <p>Standard plan selection.</p>
 
-      <p id="dashEmail"></p>
-
-      <span class="status">Signed in</span>
-
-    </div>
-
-    <div class="card">
-
-      <h3>My Investments</h3>
-
-      <p id="dashInvestmentCount">Loading records...</p>
-
-      <span class="status" id="dashInvestmentStatus">Checking records</span>
-
-    </div>
-
-    <div class="card">
-
-      <h3>Transactions</h3>
-
-      <p>Verified payment records will appear here when payment verification is connected.</p>
-
-      <span class="status">Verification not connected</span>
-
-    </div>
-
-    <div class="card">
-
-      <h3>Account Security</h3>
-
-      <p>Your account uses Supabase authentication.</p>
-
-      <span class="status">Signed in</span>
-
-    </div>
+   <button onclick="choosePlan('Standard Plan',100)">Select Plan</button>
 
   </div>
 
-  <div class="section">
+  <div class="card">
 
-    <h2>Account Overview</h2>
+   <h3>Premium Plan</h3>
 
-    <p>Use the menu to view investment information, your records and profile.</p>
+   <div class="price">GH₵500</div>
+
+   <p>Premium plan selection.</p>
+
+   <button onclick="choosePlan('Premium Plan',500)">Select Plan</button>
 
   </div>
+
+  <div class="card">
+
+   <h3>Custom Amount</h3>
+
+   <p>Choose an amount of your choice.</p>
+
+   <input id="customAmount" type="number" min="1" step="0.01" placeholder="Enter amount in GH₵">
+
+   <button onclick="chooseCustom()">Select Amount</button>
+
+  </div>
+
+ </div>
 
 </section>
 
-<section id="plans" class="hidden">
+<section id="auth" class="hidden">
 
-  <div class="section">
+ <div class="card">
 
-    <h2>Gold Investment Plans</h2>
+  <h2>Create Account</h2>
 
-    <p>Choose an amount to review. Selecting a plan does not charge you or create an investment.</p>
+  <label>Full name</label>
 
-    <div class="notice">
+  <input id="signupName" placeholder="Enter your full name">
 
-      Payment checkout is not active yet. No money will be collected and no investment will be recorded as confirmed from this page.
+  <label>Email address</label>
 
-    </div>
+  <input id="signupEmail" type="email" placeholder="Enter your email">
 
-    <div class="plan-grid">
+  <label>Password</label>
 
-      <div class="plan">
+  <input id="signupPassword" type="password" placeholder="Create a password">
 
-        <h3>Starter</h3>
+  <button onclick="signUp()">Sign Up</button>
 
-        <p>For customers exploring the available gold investment information.</p>
+ </div>
 
-        <div class="amount">GH₵ 50</div>
+ <div class="card">
 
-        <button class="btn" onclick="selectPlan('Starter',50)">Select plan</button>
+  <h2>Login</h2>
 
-      </div>
+  <label>Email address</label>
 
-      <div class="plan">
+  <input id="loginEmail" type="email" placeholder="Enter your email">
 
-        <h3>Standard</h3>
+  <label>Password</label>
 
-        <p>A higher amount option for review.</p>
+  <input id="loginPassword" type="password" placeholder="Enter your password">
 
-        <div class="amount">GH₵ 100</div>
+  <button onclick="logIn()">Login</button>
 
-        <button class="btn" onclick="selectPlan('Standard',100)">Select plan</button>
+  <button class="secondary" onclick="resetPassword()">Forgot Password?</button>
 
-      </div>
+ </div>
 
-      <div class="plan">
-
-        <h3>Premium</h3>
-
-        <p>An additional amount option for review.</p>
-
-        <div class="amount">GH₵ 500</div>
-
-        <button class="btn" onclick="selectPlan('Premium',500)">Select plan</button>
-
-      </div>
-
-      <div class="plan">
-
-        <h3>Custom</h3>
-
-        <p>Enter an amount you would like to review.</p>
-
-        <input id="customAmount" type="number" min="1" step="0.01" placeholder="Amount in GHS">
-
-        <button class="btn" onclick="selectCustomPlan()">Review custom amount</button>
-
-      </div>
-
-    </div>
-
-    <div id="selectedPlan" class="plan hidden" style="margin-top:18px">
-
-      <h3 id="selectedPlanName">Selected plan</h3>
-
-      <p id="selectedPlanAmount"></p>
-
-      <p class="notice">Checkout is awaiting a secure server-side Paystack integration. Do not send money to a personal account or treat this selection as a completed deposit.</p>
-
-      <button class="btn secondary" onclick="clearSelectedPlan()">Clear selection</button>
-
-    </div>
-
-    <p id="planMessage" class="message"></p>
-
-  </div>
+ <p id="message"></p>
 
 </section>
 
-<section id="investments" class="hidden">
+<section id="dashboard" class="hidden">
 
-  <div class="section">
+ <div class="card">
 
-    <h2>My Investments</h2>
+  <h2>Customer Dashboard</h2>
 
-    <p>Investment records linked to your signed-in account.</p>
+  <p>Welcome, <strong id="customerName">Customer</strong></p>
 
-    <button class="btn" onclick="loadMyInvestments()">Refresh My Investments</button>
+  <p id="customerEmail" class="muted"></p>
 
-    <p id="myInvestmentMessage" class="admin-message">Records have not been loaded yet.</p>
+  <div class="row">
 
-    <div class="table-wrap">
+   <button onclick="loadInvestments()">Refresh Investments</button>
 
-      <table>
-
-        <thead><tr><th>Plan</th><th>Amount (GHS)</th><th>Status</th><th>Date</th></tr></thead>
-
-        <tbody id="myInvestmentTable">
-
-          <tr><td colspan="4">No records loaded.</td></tr>
-
-        </tbody>
-
-      </table>
-
-    </div>
+   <button class="secondary" onclick="logOut()">Logout</button>
 
   </div>
+
+ </div>
+
+ <div class="card">
+
+  <h2>Choose an Investment Plan</h2>
+
+  <div class="grid">
+
+   <button onclick="choosePlan('Starter Plan',50)">Starter GH₵50</button>
+
+   <button onclick="choosePlan('Standard Plan',100)">Standard GH₵100</button>
+
+   <button onclick="choosePlan('Premium Plan',500)">Premium GH₵500</button>
+
+  </div>
+
+  <label>Custom amount (GH₵)</label>
+
+  <input id="dashboardCustomAmount" type="number" min="1" step="0.01" placeholder="Enter amount">
+
+  <button onclick="chooseDashboardCustom()">Select Custom Amount</button>
+
+ </div>
+
+ <div id="selectedPlan" class="card hidden">
+
+  <h2>Selected Plan</h2>
+
+  <p id="selectedPlanName"></p>
+
+  <div class="price" id="selectedPlanAmount"></div>
+
+  <div class="notice">Check that the amount is correct. Press PAY HERE to open the Paystack payment page. Enter the same amount on the payment page.</div>
+
+  <button onclick="payHere()">PAY HERE</button>
+
+  <button class="secondary" onclick="clearPlan()">Cancel</button>
+
+ </div>
+
+ <div class="card">
+
+  <h2>My Investments</h2>
+
+  <div id="investmentList"><p class="muted">Sign in to view your investment records.</p></div>
+
+ </div>
+
+ <div class="card">
+
+  <h2>Transactions</h2>
+
+  <p>Payment verification is not yet connected. Payments will not automatically appear as confirmed deposits in this dashboard.</p>
+
+ </div>
 
 </section>
 
-<section id="transactions" class="hidden">
+<section id="admin" class="hidden">
 
-  <div class="section">
+ <div class="card">
 
-    <h2>Transaction History</h2>
+  <h2>Admin Dashboard</h2>
 
-    <p>Only payments verified by the secure payment server should appear here.</p>
+  <p>Admin access is controlled by the role stored in your Supabase profile.</p>
 
-    <span class="status">Payment verification not connected</span>
+  <button onclick="loadAdminData()">Refresh Admin Data</button>
 
-    <div class="notice">Your account will not show a payment as successful until the payment provider confirms it on the server.</div>
+  <h3>Customers</h3>
 
-  </div>
+  <div id="adminCustomers"></div>
 
-</section>
+  <h3>Investment Records</h3>
 
-<section id="profile" class="hidden">
+  <div id="adminInvestments"></div>
 
-  <div class="section">
-
-    <h2>My Profile</h2>
-
-    <p><strong>Full Name</strong></p>
-
-    <input id="profileName" type="text" placeholder="Enter your full name">
-
-    <p><strong>Email Address</strong></p>
-
-    <p id="profileEmail"></p>
-
-    <p><strong>Member Since</strong></p>
-
-    <p id="memberDate"></p>
-
-    <button class="btn" onclick="saveProfile()">Save Profile</button>
-
-    <p id="profileMessage" class="message"></p>
-
-    <button class="btn secondary" onclick="logout()">Logout</button>
-
-  </div>
-
-</section>
-
-<section id="adminPage" class="hidden">
-
-  <div class="welcome">
-
-    <h1>Admin Dashboard 🔐</h1>
-
-    <p>Private administration area for reviewing customer accounts and investment records.</p>
-
-  </div>
-
-  <div class="cards">
-
-    <div class="admin-stat">
-
-      <p>Total Registered Customers</p>
-
-      <strong id="customerCount">0</strong>
-
-    </div>
-
-    <div class="admin-stat">
-
-      <p>Administrator Account</p>
-
-      <strong style="font-size:18px">ADMIN</strong>
-
-    </div>
-
-  </div>
-
-  <div class="section">
-
-    <h2>Registered Customers</h2>
-
-    <button class="btn" onclick="loadAdminCustomers()">Refresh Customer List</button>
-
-    <p id="adminMessage" class="admin-message">Not loaded yet.</p>
-
-    <div class="table-wrap">
-
-      <table>
-
-        <thead><tr><th>Full Name</th><th>Email Address</th><th>Registration Date</th><th>Role</th></tr></thead>
-
-        <tbody id="customerTable">
-
-          <tr><td colspan="4">No records loaded.</td></tr>
-
-        </tbody>
-
-      </table>
-
-    </div>
-
-  </div>
-
-  <div class="section">
-
-    <h2>Investment Records</h2>
-
-    <button class="btn" onclick="loadAdminInvestments()">Refresh Investment Records</button>
-
-    <p id="investmentAdminMessage" class="admin-message">Not loaded yet.</p>
-
-    <div class="table-wrap">
-
-      <table>
-
-        <thead><tr><th>Customer</th><th>Email</th><th>Plan</th><th>Amount (GHS)</th><th>Status</th><th>Date</th></tr></thead>
-
-        <tbody id="adminInvestmentTable">
-
-          <tr><td colspan="6">No records loaded.</td></tr>
-
-        </tbody>
-
-      </table>
-
-    </div>
-
-  </div>
+ </div>
 
 </section>
 
 </main>
 
-</div>
-
-<footer>
-
-Gold Investment Ghana<br>
-
-Investment information is not a promise of returns. Review all terms and risks before making a financial decision.
-
-</footer>
-
-</div>
+<footer>© 2026 Gold Investment Ghana</footer>
 
 <script>
 
-(() => {
+const SUPABASE_URL = "https://yvorlcgppaelcexwtiwf.supabase.co";
 
-  const SUPABASE_URL = "https://yvorlcgppaelcexwtiwf.supabase.co";
+const SUPABASE_KEY = "sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v";
 
-  const SUPABASE_KEY = "sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v";
+const PAYSTACK_PAYMENT_URL = "https://paystack.shop/pay/-egr5cbd19";
 
-  if (!window.supabase || typeof window.supabase.createClient !== "function") {
+let supabaseClient = null;
 
-    document.getElementById("authMessage").textContent =
+let currentUser = null;
 
-      "Supabase library did not load. Check your internet connection and reload this page.";
+let currentPlan = null;
 
-    console.error("Supabase browser library is unavailable. Check the CDN script.");
+function message(text){
 
-    return;
+ document.getElementById("message").textContent = text;
+
+}
+
+function showSection(id){
+
+ ["home","auth","dashboard","admin"].forEach(section=>{
+
+  document.getElementById(section).classList.add("hidden");
+
+ });
+
+ document.getElementById(id).classList.remove("hidden");
+
+}
+
+function money(amount){
+
+ return "GH₵" + Number(amount).toFixed(2);
+
+}
+
+function choosePlan(name,amount){
+
+ currentPlan={name,amount:Number(amount)};
+
+ document.getElementById("selectedPlanName").textContent=name;
+
+ document.getElementById("selectedPlanAmount").textContent=money(amount);
+
+ document.getElementById("selectedPlan").classList.remove("hidden");
+
+ document.getElementById("selectedPlan").scrollIntoView({behavior:"smooth"});
+
+}
+
+function chooseCustom(){
+
+ const amount=Number(document.getElementById("customAmount").value);
+
+ if(!Number.isFinite(amount)||amount<=0){
+
+  alert("Please enter a valid amount.");
+
+  return;
+
+ }
+
+ choosePlan("Custom Plan",amount);
+
+}
+
+function chooseDashboardCustom(){
+
+ const amount=Number(document.getElementById("dashboardCustomAmount").value);
+
+ if(!Number.isFinite(amount)||amount<=0){
+
+  alert("Please enter a valid amount.");
+
+  return;
+
+ }
+
+ choosePlan("Custom Plan",amount);
+
+}
+
+function clearPlan(){
+
+ currentPlan=null;
+
+ document.getElementById("selectedPlan").classList.add("hidden");
+
+}
+
+function payHere(){
+
+ if(!currentPlan){
+
+  alert("Please select a plan first.");
+
+  return;
+
+ }
+
+ alert("Your selected amount is "+money(currentPlan.amount)+". Enter this same amount on the PAY HERE page.");
+
+ window.location.href=PAYSTACK_PAYMENT_URL;
+
+}
+
+async function signUp(){
+
+ if(!supabaseClient)return;
+
+ const name=document.getElementById("signupName").value.trim();
+
+ const email=document.getElementById("signupEmail").value.trim();
+
+ const password=document.getElementById("signupPassword").value;
+
+ if(!name||!email||!password){
+
+  message("Please complete all signup fields.");
+
+  return;
+
+ }
+
+ if(password.length<6){
+
+  message("Password must contain at least 6 characters.");
+
+  return;
+
+ }
+
+ const {data,error}=await supabaseClient.auth.signUp({
+
+  email,password,
+
+  options:{data:{full_name:name}}
+
+ });
+
+ if(error){message(error.message);return;}
+
+ if(data.user){
+
+  message("Account created. Check your email if confirmation is required, then log in.");
+
+ }
+
+}
+
+async function logIn(){
+
+ if(!supabaseClient)return;
+
+ const email=document.getElementById("loginEmail").value.trim();
+
+ const password=document.getElementById("loginPassword").value;
+
+ const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
+
+ if(error){message(error.message);return;}
+
+ currentUser=data.user;
+
+ await openDashboard();
+
+}
+
+async function resetPassword(){
+
+ if(!supabaseClient)return;
+
+ const email=document.getElementById("loginEmail").value.trim();
+
+ if(!email){message("Enter your email address in the login email field first.");return;}
+
+ const {error}=await supabaseClient.auth.resetPasswordForEmail(email,{
+
+  redirectTo:window.location.origin+window.location.pathname
+
+ });
+
+ message(error?error.message:"Password reset instructions have been sent if the email exists.");
+
+}
+
+async function logOut(){
+
+ if(supabaseClient) await supabaseClient.auth.signOut();
+
+ currentUser=null;
+
+ showSection("home");
+
+}
+
+async function openDashboard(){
+
+ if(!currentUser)return;
+
+ showSection("dashboard");
+
+ document.getElementById("customerEmail").textContent=currentUser.email||"";
+
+ const {data:profile}=await supabaseClient.from("profiles")
+
+  .select("full_name,role").eq("id",currentUser.id).maybeSingle();
+
+ document.getElementById("customerName").textContent=
+
+  profile?.full_name || currentUser.user_metadata?.full_name || "Customer";
+
+ if(profile?.role==="admin"){
+
+  document.getElementById("admin").classList.remove("hidden");
+
+  loadAdminData();
+
+ }
+
+ await loadInvestments();
+
+}
+
+async function loadInvestments(){
+
+ if(!currentUser)return;
+
+ const target=document.getElementById("investmentList");
+
+ target.innerHTML="<p>Loading investment records...</p>";
+
+ const {data,error}=await supabaseClient.from("investment_records")
+
+  .select("id,plan_name,amount,status,created_at")
+
+  .eq("user_id",currentUser.id)
+
+  .order("created_at",{ascending:false});
+
+ if(error){
+
+  target.innerHTML="<p>Could not load records: "+escapeHTML(error.message)+"</p>";
+
+  return;
+
+ }
+
+ if(!data||data.length===0){
+
+  target.innerHTML="<p class='muted'>No investment records found yet.</p>";
+
+  return;
+
+ }
+
+ target.innerHTML=data.map(item=>`
+
+  <div class="card">
+
+   <strong>${escapeHTML(item.plan_name||"Investment")}</strong>
+
+   <p>${money(item.amount)}</p>
+
+   <p>Status: ${escapeHTML(item.status||"Pending")}</p>
+
+   <p class="muted">${item.created_at?new Date(item.created_at).toLocaleString():""}</p>
+
+  </div>
+
+ `).join("");
+
+}
+
+async function loadAdminData(){
+
+ if(!currentUser)return;
+
+ const {data:profile}=await supabaseClient.from("profiles")
+
+  .select("role").eq("id",currentUser.id).maybeSingle();
+
+ if(profile?.role!=="admin"){
+
+  alert("Admin access only.");
+
+  return;
+
+ }
+
+ const customers=document.getElementById("adminCustomers");
+
+ const investments=document.getElementById("adminInvestments");
+
+ customers.textContent="Loading...";
+
+ investments.textContent="Loading...";
+
+ const c=await supabaseClient.rpc("admin_list_customers");
+
+ customers.innerHTML=c.error
+
+  ?"<p>"+escapeHTML(c.error.message)+"</p>"
+
+  :"<pre>"+escapeHTML(JSON.stringify(c.data,null,2))+"</pre>";
+
+ const i=await supabaseClient.rpc("admin_list_investments");
+
+ investments.innerHTML=i.error
+
+  ?"<p>"+escapeHTML(i.error.message)+"</p>"
+
+  :"<pre>"+escapeHTML(JSON.stringify(i.data,null,2))+"</pre>";
+
+}
+
+function escapeHTML(value){
+
+ return String(value??"").replace(/[&<>"']/g,char=>({
+
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+
+ }[char]));
+
+}
+
+async function startApp(){
+
+ if(!window.supabase||typeof window.supabase.createClient!=="function"){
+
+  message("Supabase library did not load. Check your internet connection and refresh.");
+
+  return;
+
+ }
+
+ supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+
+ const {data}=await supabaseClient.auth.getSession();
+
+ if(data.session){
+
+  currentUser=data.session.user;
+
+  await openDashboard();
+
+ }else{
+
+  showSection("home");
+
+ }
+
+ supabaseClient.auth.onAuthStateChange(async(event,session)=>{
+
+  if(event==="SIGNED_IN"&&session){
+
+   currentUser=session.user;
+
+   await openDashboard();
 
   }
 
-  const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  if(event==="SIGNED_OUT"){
 
-  let currentUser = null;
+   currentUser=null;
 
-  let currentProfile = null;
-
-  function el(id){return document.getElementById(id)}
-
-  function showMessage(id,message){el(id).textContent=message}
-
-  window.showSignup = function(){
-
-    el("signup").classList.remove("hidden");
-
-    el("login").classList.add("hidden");
-
-    showMessage("authMessage","");
-
-  };
-
-  window.showLogin = function(){
-
-    el("login").classList.remove("hidden");
-
-    el("signup").classList.add("hidden");
-
-    showMessage("authMessage","");
-
-  };
-
-  window.register = async function(){
-
-    const name=el("signupName").value.trim();
-
-    const email=el("signupEmail").value.trim();
-
-    const password=el("signupPassword").value;
-
-    if(!name||!email||!password)
-
-      return showMessage("authMessage","Please complete all fields.");
-
-    if(password.length<6)
-
-      return showMessage("authMessage","Password must contain at least 6 characters.");
-
-    showMessage("authMessage","Creating your account...");
-
-    const {data,error}=await supabaseClient.auth.signUp({
-
-      email,
-
-      password,
-
-      options:{data:{full_name:name}}
-
-    });
-
-    if(error)return showMessage("authMessage",error.message);
-
-    if(data.session){
-
-      currentUser=data.user;
-
-      await loadApp();
-
-    }else{
-
-      showMessage("authMessage","Account created. Check your email to confirm your account, then log in.");
-
-    }
-
-  };
-
-  window.signIn = async function(){
-
-    const email=el("loginEmail").value.trim();
-
-    const password=el("loginPassword").value;
-
-    if(!email||!password)
-
-      return showMessage("authMessage","Enter your email and password.");
-
-    showMessage("authMessage","Signing in...");
-
-    const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
-
-    if(error)return showMessage("authMessage",error.message);
-
-    currentUser=data.user;
-
-    await loadApp();
-
-  };
-
-  window.resetPassword = async function(){
-
-    const email=el("loginEmail").value.trim();
-
-    if(!email)
-
-      return showMessage("authMessage","Enter your email address first.");
-
-    const {error}=await supabaseClient.auth.resetPasswordForEmail(email,{
-
-      redirectTo:window.location.origin+window.location.pathname
-
-    });
-
-    showMessage("authMessage",error?error.message:"Password reset instructions have been sent if the account exists.");
-
-  };
-
-  window.logout = async function(){
-
-    await supabaseClient.auth.signOut();
-
-    currentUser=null;
-
-    currentProfile=null;
-
-    el("app").classList.add("hidden");
-
-    el("authPage").classList.remove("hidden");
-
-    window.showLogin();
-
-  };
-
-  async function loadApp(){
-
-    if(!currentUser)return;
-
-    el("authPage").classList.add("hidden");
-
-    el("app").classList.remove("hidden");
-
-    el("headerEmail").textContent=currentUser.email||"";
-
-    el("dashEmail").textContent=currentUser.email||"";
-
-    el("profileEmail").textContent=currentUser.email||"";
-
-    el("memberDate").textContent=new Date(currentUser.created_at).toLocaleDateString();
-
-    await loadProfile();
-
-    await window.loadMyInvestments();
-
-    window.page("dashboard",document.querySelector(".nav"));
+   showSection("home");
 
   }
 
-  async function loadProfile(){
+ });
 
-    const {data,error}=await supabaseClient.from("profiles")
+}
 
-      .select("full_name,role")
-
-      .eq("id",currentUser.id)
-
-      .maybeSingle();
-
-    if(error){
-
-      showMessage("profileMessage","Could not load profile: "+error.message);
-
-      currentProfile={};
-
-      return;
-
-    }
-
-    currentProfile=data||{};
-
-    const name=currentProfile.full_name||currentUser.user_metadata?.full_name||"Customer";
-
-    el("welcomeName").textContent=name;
-
-    el("dashName").textContent="Name: "+name;
-
-    el("profileName").value=name;
-
-    el("adminNav").classList.toggle("hidden",currentProfile.role!=="admin");
-
-  }
-
-  window.saveProfile = async function(){
-
-    const name=el("profileName").value.trim();
-
-    if(!name)return showMessage("profileMessage","Enter your full name.");
-
-    const {error}=await supabaseClient.from("profiles").upsert({
-
-      id:currentUser.id,
-
-      full_name:name
-
-    },{onConflict:"id"});
-
-    if(error)return showMessage("profileMessage",error.message);
-
-    currentProfile={...currentProfile,full_name:name};
-
-    el("welcomeName").textContent=name;
-
-    el("dashName").textContent="Name: "+name;
-
-    showMessage("profileMessage","Profile updated successfully.");
-
-  };
-
-  window.page = function(name,button){
-
-    document.querySelectorAll("main.content section").forEach(section=>section.classList.add("hidden"));
-
-    el(name).classList.remove("hidden");
-
-    document.querySelectorAll(".nav").forEach(nav=>nav.classList.remove("active"));
-
-    if(button)button.classList.add("active");
-
-  };
-
-  window.selectPlan = function(name,amount){
-
-    el("selectedPlan").classList.remove("hidden");
-
-    el("selectedPlanName").textContent=name+" Plan";
-
-    el("selectedPlanAmount").textContent="Selected amount: GH₵ "+amount.toFixed(2);
-
-    showMessage("planMessage","Plan selected for review only. No payment has been made.");
-
-  };
-
-  window.selectCustomPlan = function(){
-
-    const amount=Number(el("customAmount").value);
-
-    if(!Number.isFinite(amount)||amount<1)
-
-      return showMessage("planMessage","Enter a valid amount.");
-
-    window.selectPlan("Custom",amount);
-
-  };
-
-  window.clearSelectedPlan = function(){
-
-    el("selectedPlan").classList.add("hidden");
-
-    showMessage("planMessage","");
-
-  };
-
-  window.loadMyInvestments = async function(){
-
-    if(!currentUser)return;
-
-    showMessage("myInvestmentMessage","Loading your records...");
-
-    el("myInvestmentTable").replaceChildren();
-
-    const {data,error}=await supabaseClient.from("investment_records")
-
-      .select("id,plan_name,amount,status,created_at")
-
-      .eq("user_id",currentUser.id)
-
-      .order("created_at",{ascending:false});
-
-    if(error){
-
-      showMessage("myInvestmentMessage","Could not load records: "+error.message);
-
-      el("dashInvestmentCount").textContent="Unable to load";
-
-      return;
-
-    }
-
-    el("dashInvestmentCount").textContent=(data||[]).length+" investment record(s)";
-
-    el("dashInvestmentStatus").textContent=(data||[]).length?"Records found":"No records yet";
-
-    if(!data||data.length===0){
-
-      const row=document.createElement("tr");
-
-      const cell=document.createElement("td");
-
-      cell.colSpan=4;
-
-      cell.textContent="No investment records found.";
-
-      row.appendChild(cell);
-
-      el("myInvestmentTable").appendChild(row);
-
-      showMessage("myInvestmentMessage","No investment records yet.");
-
-      return;
-
-    }
-
-    data.forEach(item=>{
-
-      const row=document.createElement("tr");
-
-      [
-
-        item.plan_name||"—",
-
-        Number(item.amount||0).toFixed(2),
-
-        item.status||"Pending",
-
-        item.created_at?new Date(item.created_at).toLocaleDateString():"—"
-
-      ].forEach(value=>{
-
-        const cell=document.createElement("td");
-
-        cell.textContent=String(value);
-
-        row.appendChild(cell);
-
-      });
-
-      el("myInvestmentTable").appendChild(row);
-
-    });
-
-    showMessage("myInvestmentMessage","Investment records loaded.");
-
-  };
-
-  window.openAdminPage = function(button){
-
-    if(currentProfile?.role!=="admin"){
-
-      alert("You do not have administrator access.");
-
-      return;
-
-    }
-
-    window.page("adminPage",button);
-
-    window.loadAdminCustomers();
-
-    window.loadAdminInvestments();
-
-  };
-
-  window.loadAdminCustomers = async function(){
-
-    if(currentProfile?.role!=="admin")return;
-
-    showMessage("adminMessage","Loading customers...");
-
-    const {data,error}=await supabaseClient.rpc("admin_list_customers");
-
-    if(error){
-
-      showMessage("adminMessage","Admin access or database function error: "+error.message);
-
-      return;
-
-    }
-
-    const rows=Array.isArray(data)?data:[];
-
-    el("customerCount").textContent=rows.length;
-
-    el("customerTable").replaceChildren();
-
-    if(!rows.length){
-
-      const row=document.createElement("tr");
-
-      const cell=document.createElement("td");
-
-      cell.colSpan=4;
-
-      cell.textContent="No customer records returned.";
-
-      row.appendChild(cell);
-
-      el("customerTable").appendChild(row);
-
-    }
-
-    rows.forEach(customer=>{
-
-      const row=document.createElement("tr");
-
-      [
-
-        customer.full_name||"—",
-
-        customer.email||"—",
-
-        customer.created_at?new Date(customer.created_at).toLocaleDateString():"—",
-
-        customer.role||"customer"
-
-      ].forEach(value=>{
-
-        const cell=document.createElement("td");
-
-        cell.textContent=String(value);
-
-        row.appendChild(cell);
-
-      });
-
-      el("customerTable").appendChild(row);
-
-    });
-
-    showMessage("adminMessage","Customer list loaded.");
-
-  };
-
-  window.loadAdminInvestments = async function(){
-
-    if(currentProfile?.role!=="admin")return;
-
-    showMessage("investmentAdminMessage","Loading investment records...");
-
-    const {data,error}=await supabaseClient.rpc("admin_list_investments");
-
-    if(error){
-
-      showMessage("investmentAdminMessage","Admin function error: "+error.message);
-
-      return;
-
-    }
-
-    const rows=Array.isArray(data)?data:[];
-
-    el("adminInvestmentTable").replaceChildren();
-
-    if(!rows.length){
-
-      const row=document.createElement("tr");
-
-      const cell=document.createElement("td");
-
-      cell.colSpan=6;
-
-      cell.textContent="No records returned.";
-
-      row.appendChild(cell);
-
-      el("adminInvestmentTable").appendChild(row);
-
-    }
-
-    rows.forEach(item=>{
-
-      const row=document.createElement("tr");
-
-      [
-
-        item.full_name||"—",
-
-        item.email||"—",
-
-        item.plan_name||"—",
-
-        Number(item.amount||0).toFixed(2),
-
-        item.status||"—",
-
-        item.created_at?new Date(item.created_at).toLocaleDateString():"—"
-
-      ].forEach(value=>{
-
-        const cell=document.createElement("td");
-
-        cell.textContent=String(value);
-
-        row.appendChild(cell);
-
-      });
-
-      el("adminInvestmentTable").appendChild(row);
-
-    });
-
-    showMessage("investmentAdminMessage","Investment records loaded.");
-
-  };
-
-  supabaseClient.auth.getSession().then(({data,error})=>{
-
-    if(error){
-
-      console.error(error);
-
-      showMessage("authMessage",error.message);
-
-      return;
-
-    }
-
-    if(data.session){
-
-      currentUser=data.session.user;
-
-      loadApp();
-
-    }
-
-  });
-
-  supabaseClient.auth.onAuthStateChange((event,session)=>{
-
-    if(event==="SIGNED_IN"&&session&&!currentUser){
-
-      currentUser=session.user;
-
-      loadApp();
-
-    }
-
-    if(event==="SIGNED_OUT"){
-
-      currentUser=null;
-
-      currentProfile=null;
-
-    }
-
-  });
-
-})();
+startApp();
 
 </script>
 
