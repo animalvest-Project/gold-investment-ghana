@@ -1,5 +1,7 @@
 
 
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -10,7 +12,7 @@
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<meta name="theme-color" content="#0b0c0f">
+<meta name="theme-color" content="#090a0d">
 
 <title>TOUR GOLD INVESTMENT</title>
 
@@ -20,129 +22,31 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 
-:root{
+:root{--gold:#e5b63c;--gold2:#ffe29a;--bg:#090a0d;--panel:#17191f;--muted:#a5a7ae}
 
---gold:#e5b63c;
-
---gold2:#ffe29a;
-
---bg:#090a0d;
-
---panel:#15171d;
-
---panel2:#1b1e25;
-
---muted:#a5a7ae;
-
---border:#34302a;
-
-}
-
-html{scroll-behavior:smooth}
-
-body{
-
-font-family:Arial,sans-serif;
-
-background:var(--bg);
-
-color:#fff;
-
-line-height:1.6;
-
-}
+body{font-family:Arial,sans-serif;background:var(--bg);color:#fff;line-height:1.6}
 
 button,input{font:inherit}
 
-button{
+button{background:linear-gradient(135deg,#ffe49b,#d5a12a);color:#17130a;border:0;padding:13px 18px;border-radius:9px;font-weight:800;cursor:pointer;margin:4px}
 
-background:linear-gradient(135deg,#ffe49b,#d5a12a);
+button:disabled{opacity:.5}
 
-color:#17130a;
+.secondary{background:#24262d;color:white;border:1px solid #444}
 
-border:0;
+input{width:100%;padding:14px;margin:7px 0 17px;background:#0c0d11;border:1px solid #444;color:white;border-radius:9px}
 
-padding:13px 19px;
+label{font-size:13px;color:#ddd;font-weight:bold}
 
-border-radius:9px;
+header{position:sticky;top:0;z-index:10;background:#101116f5;border-bottom:1px solid #514024;padding:14px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 
-font-weight:800;
+.logo{font-weight:900;color:var(--gold2);letter-spacing:1px}
 
-cursor:pointer;
+nav{display:flex;flex-wrap:wrap;gap:5px}
 
-transition:.25s;
+nav button{font-size:12px;padding:9px 12px}
 
-}
-
-button:hover{transform:translateY(-2px);filter:brightness(1.1)}
-
-button:disabled{opacity:.5;cursor:not-allowed}
-
-button.secondary{
-
-background:#24262d;
-
-color:white;
-
-border:1px solid #44464d;
-
-}
-
-header{
-
-position:sticky;
-
-top:0;
-
-z-index:20;
-
-background:#101116f5;
-
-backdrop-filter:blur(15px);
-
-border-bottom:1px solid #514024;
-
-padding:14px 5%;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-gap:15px;
-
-flex-wrap:wrap;
-
-}
-
-.logo{
-
-font-size:17px;
-
-font-weight:900;
-
-letter-spacing:1px;
-
-color:var(--gold2);
-
-}
-
-nav{display:flex;gap:7px;flex-wrap:wrap}
-
-nav button{padding:10px 14px;font-size:13px}
-
-main{
-
-max-width:1150px;
-
-margin:35px auto;
-
-padding:15px;
-
-min-height:65vh;
-
-}
+main{max-width:1150px;margin:30px auto;padding:15px;min-height:65vh}
 
 .hidden{display:none!important}
 
@@ -152,379 +56,47 @@ h1{color:var(--gold2)}
 
 p{color:#bfc0c6;margin-bottom:12px}
 
-.card{
+.hero{padding:65px 20px;text-align:center;border:1px solid #84662e;border-radius:22px;background:radial-gradient(ellipse at 50% 0%,#80601e,#382b18 40%,#17181d 80%)}
 
-background:linear-gradient(145deg,#1c1e25,#121419);
+.hero h1{font-size:clamp(32px,6vw,55px)}
 
-border:1px solid var(--border);
+.hero p{max-width:650px;margin:15px auto 25px}
 
-border-radius:17px;
+.tag,.plan-label{display:inline-block;padding:6px 14px;border:1px solid #b48a37;border-radius:30px;color:var(--gold2);font-size:12px}
 
-padding:23px;
+.card{background:linear-gradient(145deg,#1c1e25,#121419);border:1px solid #34302a;border-radius:15px;padding:22px;margin:16px 0}
 
-margin:16px 0;
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
 
-box-shadow:0 12px 35px #00000025;
+.plan{text-align:center}
 
-}
+.plan h3{color:var(--gold2)}
 
-.grid{
+.price,.stat{font-size:32px;font-weight:900;color:var(--gold2);margin:14px 0}
 
-display:grid;
+.plan button{width:100%}
 
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+.section-heading{text-align:center;margin:40px 0 20px}
 
-gap:17px;
-
-}
-
-.hero{
-
-position:relative;
-
-overflow:hidden;
-
-padding:75px 22px;
-
-text-align:center;
-
-border:1px solid #84662e;
-
-border-radius:23px;
-
-background:
-
-radial-gradient(ellipse at 50% 0%,#80601e 0%,#382b18 36%,#17181d 76%);
-
-}
-
-.hero:before{
-
-content:"";
-
-position:absolute;
-
-width:280px;
-
-height:280px;
-
-border:1px solid #e5b63c35;
-
-border-radius:50%;
-
-top:-160px;
-
-left:-100px;
-
-box-shadow:0 0 0 30px #e5b63c0c,0 0 0 65px #e5b63c08;
-
-pointer-events:none;
-
-}
-
-.hero-tag{
-
-display:inline-block;
-
-padding:7px 16px;
-
-border:1px solid #b48a37;
-
-border-radius:30px;
-
-color:var(--gold2);
-
-font-size:12px;
-
-letter-spacing:2px;
-
-margin-bottom:20px;
-
-}
-
-.hero h1{
-
-font-size:clamp(32px,6vw,55px);
-
-max-width:800px;
-
-margin:0 auto 18px;
-
-}
-
-.hero p{
-
-max-width:650px;
-
-margin:0 auto 25px;
-
-font-size:16px;
-
-}
-
-.hero-buttons{
-
-display:flex;
-
-justify-content:center;
-
-flex-wrap:wrap;
-
-gap:10px;
-
-}
-
-.hero-buttons button{min-width:150px}
-
-.section-heading{
-
-text-align:center;
-
-margin:48px 0 22px;
-
-}
-
-.section-heading p{font-size:14px}
-
-.feature{padding:22px}
-
-.feature-icon{
-
-font-size:30px;
-
-color:var(--gold2);
-
-margin-bottom:10px;
-
-}
-
-.feature h3,.plan h3{color:var(--gold2)}
-
-.feature p,.plan p{font-size:13px}
-
-.plan{
-
-text-align:center;
-
-position:relative;
-
-transition:.25s;
-
-}
-
-.plan:hover{
-
-transform:translateY(-5px);
-
-border-color:#b48a37;
-
-}
-
-.plan .price{
-
-font-size:34px;
-
-font-weight:900;
-
-color:var(--gold2);
-
-margin:17px 0;
-
-}
-
-.plan button{width:100%;margin-top:10px}
-
-.plan-label{
-
-display:inline-block;
-
-padding:5px 12px;
-
-background:#4b3a19;
-
-border-radius:20px;
-
-color:#ffe29a;
-
-font-size:11px;
-
-font-weight:bold;
-
-}
-
-input{
-
-width:100%;
-
-padding:14px;
-
-margin:7px 0 17px;
-
-background:#0c0d11;
-
-border:1px solid #44464e;
-
-border-radius:9px;
-
-color:white;
-
-outline:none;
-
-}
-
-input:focus{border-color:var(--gold)}
-
-label{
-
-font-size:13px;
-
-color:#ddd;
-
-font-weight:bold;
-
-}
-
-.card button{margin:4px 3px}
-
-.notice{
-
-padding:16px;
-
-background:#2b2516;
-
-border:1px solid #79602a;
-
-border-radius:10px;
-
-color:#f2d99c;
-
-margin:15px 0;
-
-font-size:13px;
-
-}
-
-.steps .step{
-
-padding:22px;
-
-background:#17191f;
-
-border:1px solid #39352c;
-
-border-radius:14px;
-
-}
-
-.step-number{
-
-color:var(--gold2);
-
-font-size:30px;
-
-font-weight:900;
-
-}
-
-.price,.stat{
-
-color:var(--gold2);
-
-font-size:30px;
-
-font-weight:900;
-
-}
-
-.dashboard-top{
-
-background:linear-gradient(120deg,#453419,#191a20 70%);
-
-border:1px solid #725728;
-
-}
+.notice{padding:15px;background:#2b2516;border:1px solid #79602a;border-radius:10px;color:#f2d99c;margin:15px 0;font-size:13px}
 
 .muted{color:#999;font-size:13px}
 
-#message{
-
-color:var(--gold2);
-
-overflow-wrap:anywhere;
-
-margin-top:12px;
-
-}
+#message{color:var(--gold2);overflow-wrap:anywhere;margin-top:12px}
 
 .table-wrap{overflow-x:auto}
 
-table{width:100%;border-collapse:collapse;min-width:600px}
+table{width:100%;border-collapse:collapse;min-width:550px}
 
-th,td{
-
-text-align:left;
-
-padding:13px;
-
-border-bottom:1px solid #393939;
-
-font-size:13px;
-
-}
+th,td{text-align:left;padding:12px;border-bottom:1px solid #393939;font-size:13px}
 
 th{color:var(--gold2)}
 
-footer{
+footer{text-align:center;padding:30px 15px;color:#777;border-top:1px solid #292929;margin-top:40px;font-size:13px}
 
-text-align:center;
+footer strong{color:var(--gold2)}
 
-padding:35px 15px;
-
-color:#777;
-
-border-top:1px solid #292929;
-
-margin-top:50px;
-
-font-size:13px;
-
-}
-
-.footer-logo{
-
-color:var(--gold2);
-
-font-weight:900;
-
-font-size:16px;
-
-margin-bottom:8px;
-
-}
-
-@media(max-width:600px){
-
-header{justify-content:center;padding:13px 10px}
-
-.logo{text-align:center;font-size:15px}
-
-nav{justify-content:center;width:100%}
-
-nav button{font-size:12px;padding:9px 12px}
-
-main{padding:10px;margin:20px auto}
-
-.hero{padding:55px 16px}
-
-.hero p{font-size:14px}
-
-.card{padding:17px}
-
-.grid{grid-template-columns:1fr}
-
-.plan .price{font-size:32px}
-
-}
+@media(max-width:600px){header{justify-content:center}.logo{text-align:center}nav{justify-content:center;width:100%}main{padding:10px;margin:15px auto}.hero{padding:45px 15px}.card{padding:16px}.grid{grid-template-columns:1fr}}
 
 </style>
 
@@ -542,7 +114,7 @@ main{padding:10px;margin:20px auto}
 
 <button onclick="showSection('auth')">Account</button>
 
-<button id="adminNav" class="hidden" onclick="showSection('admin')">Admin</button>
+<button id="adminNav" class="secondary hidden" onclick="showSection('admin')">Admin</button>
 
 </nav>
 
@@ -550,71 +122,29 @@ main{padding:10px;margin:20px auto}
 
 <main>
 
-<!-- HOME -->
-
 <section id="home">
 
 <div class="hero">
 
-<div class="hero-tag">WELCOME TO TOUR GOLD INVESTMENT</div>
+<div class="tag">WELCOME TO TOUR GOLD INVESTMENT</div>
 
 <h1>Your Financial Journey Starts Here</h1>
 
-<p>
-
-Welcome to TOUR GOLD INVESTMENT. Explore our platform,
-
-create your account and select a deposit amount that
-
-suits your plans.
-
-</p>
-
-<div class="hero-buttons">
+<p>Create your account, explore the available deposit options and manage your account from one place.</p>
 
 <button onclick="showSection('auth')">GET STARTED →</button>
 
-<button class="secondary" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">
-
-EXPLORE OPTIONS
-
-</button>
+<button class="secondary" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">EXPLORE OPTIONS</button>
 
 </div>
 
-</div>
+<div class="grid">
 
-<div class="grid" style="margin-top:20px">
+<div class="card"><h3>✦ Personal Account</h3><p>Create an account and access your dashboard.</p></div>
 
-<div class="card feature">
+<div class="card"><h3>₵ Flexible Deposits</h3><p>Choose an amount starting from GH₵50.</p></div>
 
-<div class="feature-icon">✦</div>
-
-<h3>Personal Account</h3>
-
-<p>Create your account and access your personal dashboard.</p>
-
-</div>
-
-<div class="card feature">
-
-<div class="feature-icon">₵</div>
-
-<h3>Flexible Deposits</h3>
-
-<p>Choose a listed amount or enter your preferred amount from GH₵50.</p>
-
-</div>
-
-<div class="card feature">
-
-<div class="feature-icon">▣</div>
-
-<h3>Paystack Checkout</h3>
-
-<p>Continue to our hosted Paystack payment page.</p>
-
-</div>
+<div class="card"><h3>▣ Paystack Checkout</h3><p>Continue to the hosted Paystack payment page.</p></div>
 
 </div>
 
@@ -622,7 +152,7 @@ EXPLORE OPTIONS
 
 <h2>Choose Your Deposit Amount</h2>
 
-<p>Select your preferred option below.</p>
+<p>Select your preferred amount.</p>
 
 </div>
 
@@ -630,11 +160,9 @@ EXPLORE OPTIONS
 
 <div class="card plan">
 
-<div class="plan-label">STARTER</div>
+<span class="plan-label">STARTER</span>
 
 <h3>Starter Plan</h3>
-
-<p>Starting deposit</p>
 
 <div class="price">GH₵50</div>
 
@@ -644,11 +172,9 @@ EXPLORE OPTIONS
 
 <div class="card plan">
 
-<div class="plan-label">STANDARD</div>
+<span class="plan-label">STANDARD</span>
 
 <h3>Standard Plan</h3>
-
-<p>Standard deposit</p>
 
 <div class="price">GH₵100</div>
 
@@ -658,11 +184,9 @@ EXPLORE OPTIONS
 
 <div class="card plan">
 
-<div class="plan-label">PREMIUM</div>
+<span class="plan-label">PREMIUM</span>
 
 <h3>Premium Plan</h3>
-
-<p>Higher deposit option</p>
 
 <div class="price">GH₵500</div>
 
@@ -672,11 +196,9 @@ EXPLORE OPTIONS
 
 <div class="card plan">
 
-<div class="plan-label">FLEXIBLE</div>
+<span class="plan-label">FLEXIBLE</span>
 
 <h3>Custom Amount</h3>
-
-<p>Choose your own amount</p>
 
 <div class="price">GH₵50+</div>
 
@@ -688,71 +210,21 @@ EXPLORE OPTIONS
 
 </div>
 
-<div class="section-heading">
-
-<h2>How It Works</h2>
-
-<p>Getting started on our platform.</p>
-
-</div>
-
-<div class="grid steps">
-
-<div class="step">
-
-<div class="step-number">01</div>
-
-<h3>Create Account</h3>
-
-<p>Register or log in to your personal account.</p>
-
-</div>
-
-<div class="step">
-
-<div class="step-number">02</div>
-
-<h3>Select Amount</h3>
-
-<p>Choose your preferred deposit amount.</p>
-
-</div>
-
-<div class="step">
-
-<div class="step-number">03</div>
-
-<h3>Payment</h3>
-
-<p>Continue to Paystack and review the payment details.</p>
-
-</div>
-
-</div>
-
 <div class="notice">
 
 <strong>Important Information</strong><br>
 
-Investment involves risk. No profit or return is guaranteed.
-
-Please review the investment terms, risks and conditions
-
-before making any payment. A payment is not confirmed
-
-simply by clicking the payment button.
+Investment involves risk. Returns are not guaranteed. Review all investment terms and conditions before making a payment. Selecting a payment option does not confirm that a payment has been made.
 
 </div>
 
 </section>
 
-<!-- ACCOUNT -->
-
 <section id="auth" class="hidden">
 
 <div class="section-heading">
 
-<h2>Welcome to Your Account</h2>
+<h2>Your Account</h2>
 
 <p>Register or log in to continue.</p>
 
@@ -764,17 +236,17 @@ simply by clicking the payment button.
 
 <label>Full Name</label>
 
-<input id="signupName" placeholder="Enter full name">
+<input id="signupName" placeholder="Enter your full name">
 
 <label>Email Address</label>
 
-<input id="signupEmail" type="email" placeholder="Enter email">
+<input id="signupEmail" type="email" placeholder="Enter email address">
 
 <label>Password</label>
 
 <input id="signupPassword" type="password" placeholder="At least 6 characters">
 
-<button onclick="signUp()">CREATE ACCOUNT</button>
+<button id="signupBtn" onclick="signUp()">CREATE ACCOUNT</button>
 
 </div>
 
@@ -784,13 +256,13 @@ simply by clicking the payment button.
 
 <label>Email Address</label>
 
-<input id="loginEmail" type="email" placeholder="Enter email">
+<input id="loginEmail" type="email" placeholder="Enter email address">
 
 <label>Password</label>
 
 <input id="loginPassword" type="password" placeholder="Enter password">
 
-<button onclick="logIn()">LOGIN TO ACCOUNT</button>
+<button id="loginBtn" onclick="logIn()">LOGIN TO ACCOUNT</button>
 
 <button class="secondary" onclick="resetPassword()">FORGOT PASSWORD?</button>
 
@@ -800,11 +272,9 @@ simply by clicking the payment button.
 
 </section>
 
-<!-- CUSTOMER DASHBOARD -->
-
 <section id="dashboard" class="hidden">
 
-<div class="card dashboard-top">
+<div class="card">
 
 <h2>Customer Dashboard</h2>
 
@@ -821,8 +291,6 @@ simply by clicking the payment button.
 <div class="card">
 
 <h2>Choose Your Amount</h2>
-
-<p>Select one of the available deposit options.</p>
 
 <div class="grid">
 
@@ -844,21 +312,13 @@ simply by clicking the payment button.
 
 <div id="selectedPlan" class="card hidden">
 
-<h2>Payment Details</h2>
+<h2>Selected Deposit</h2>
 
 <p id="planName"></p>
 
 <div id="planAmount" class="price"></div>
 
-<div class="notice">
-
-You will be redirected to Paystack. Check the amount
-
-displayed on the payment page before confirming.
-
-If the amount does not match your selection, do not proceed.
-
-</div>
+<div class="notice">Before paying, check that the Paystack checkout page displays the correct amount. Do not proceed if the amount is different.</div>
 
 <button onclick="payHere()">CONTINUE TO PAYSTACK →</button>
 
@@ -878,33 +338,23 @@ If the amount does not match your selection, do not proceed.
 
 <h2>Payment Information</h2>
 
-<p>Check your payment status through your Paystack receipt and transaction history.</p>
+<p>Only payments verified through Paystack should be marked as successful.</p>
 
-<div class="notice">
-
-Automatic payment verification is not yet enabled.
-
-A payment is not confirmed in this dashboard simply by
-
-clicking the payment button.
-
-</div>
+<div class="notice">Automatic payment verification is not yet connected. This dashboard does not confirm a payment just because you visit Paystack.</div>
 
 </div>
 
 </section>
 
-<!-- ADMIN DASHBOARD -->
-
 <section id="admin" class="hidden">
 
-<div class="card dashboard-top">
+<div class="card">
 
 <h1>Admin Dashboard</h1>
 
 <p id="adminWelcome"></p>
 
-<button onclick="loadAdminData()">REFRESH DASHBOARD</button>
+<button onclick="loadAdminData()">REFRESH</button>
 
 <button class="secondary" onclick="showSection('dashboard')">CUSTOMER DASHBOARD</button>
 
@@ -916,63 +366,19 @@ clicking the payment button.
 
 <div class="grid">
 
-<div class="card">
+<div class="card"><p>Total Customers</p><div class="stat" id="totalCustomers">—</div></div>
 
-<p>Total Customers</p>
+<div class="card"><p>Investment Records</p><div class="stat" id="totalInvestments">—</div></div>
 
-<div class="stat" id="totalCustomers">—</div>
-
-</div>
-
-<div class="card">
-
-<p>Investment Records</p>
-
-<div class="stat" id="totalInvestments">—</div>
+<div class="card"><p>Pending Records</p><div class="stat" id="pendingInvestments">—</div></div>
 
 </div>
 
-<div class="card">
+<div class="card"><h2>Customer Management</h2><div id="adminCustomers">Loading...</div></div>
 
-<p>Pending Records</p>
+<div class="card"><h2>Investment Records</h2><div id="adminInvestments">Loading...</div></div>
 
-<div class="stat" id="pendingInvestments">—</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>Customer Management</h2>
-
-<div id="adminCustomers">Loading...</div>
-
-</div>
-
-<div class="card">
-
-<h2>Investment Records</h2>
-
-<div id="adminInvestments">Loading...</div>
-
-</div>
-
-<div class="card">
-
-<h2>Payment Verification</h2>
-
-<div class="notice">
-
-Only payments confirmed through Paystack's secure
-
-transaction records should be treated as successful.
-
-</div>
-
-<p>Automatic payment verification is not connected yet.</p>
-
-</div>
+<div class="notice">Admin access is restricted to accounts with the admin role in the Supabase profiles table. Payment verification must be handled securely on the server.</div>
 
 </section>
 
@@ -980,7 +386,7 @@ transaction records should be treated as successful.
 
 <footer>
 
-<div class="footer-logo">✦ TOUR GOLD INVESTMENT</div>
+<strong>✦ TOUR GOLD INVESTMENT</strong>
 
 <p>Professional account and payment platform.</p>
 
@@ -990,13 +396,15 @@ transaction records should be treated as successful.
 
 <script>
 
-// SUPABASE CONNECTION
+"use strict";
+
+// SUPABASE CONFIGURATION
 
 const SUPABASE_URL="https://yvorlcgppaelcexwtiwf.supabase.co";
 
 const SUPABASE_KEY="sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v";
 
-// PAYSTACK PAYMENT PAGE
+// PAYSTACK HOSTED PAYMENT PAGE
 
 const PAYSTACK_PAYMENT_URL="https://paystack.shop/pay/-egr5cbd19";
 
@@ -1006,143 +414,131 @@ let currentUser=null;
 
 let selectedPlan=null;
 
-function money(n){
+function money(amount){
 
-return "GH₵"+Number(n||0).toFixed(2);
-
-}
-
-function esc(v){
-
-return String(v??"").replace(/[&<>"']/g,c=>({
-
-"&":"&amp;",
-
-"<":"&lt;",
-
-">":"&gt;",
-
-'"':"&quot;",
-
-"'":"&#39;"
-
-}[c]));
+ return "GH₵"+Number(amount).toFixed(2);
 
 }
 
 function showSection(id){
 
-["home","auth","dashboard","admin"].forEach(x=>{
+ ["home","auth","dashboard","admin"].forEach(section=>{
 
-document.getElementById(x).classList.add("hidden");
+  document.getElementById(section).classList.add("hidden");
 
-});
+ });
 
-document.getElementById(id).classList.remove("hidden");
+ document.getElementById(id).classList.remove("hidden");
 
-window.scrollTo(0,0);
+ window.scrollTo(0,0);
+
+}
+
+function message(text){
+
+ document.getElementById("message").textContent=text;
 
 }
 
 function choosePlan(name,amount){
 
-if(!Number.isFinite(Number(amount))||Number(amount)<50){
+ amount=Number(amount);
 
-alert("Minimum amount is GH₵50.");
+ if(!Number.isFinite(amount)||amount<50){
 
-return;
+  alert("Minimum amount is GH₵50.");
 
-}
+  return;
 
-selectedPlan={
+ }
 
-name,
+ selectedPlan={name:name,amount:amount};
 
-amount:Number(amount)
+ if(!currentUser){
 
-};
+  showSection("auth");
 
-document.getElementById("planName").textContent=name;
+  message("Please create an account or log in to continue.");
 
-document.getElementById("planAmount").textContent=money(amount);
+  return;
 
-document.getElementById("selectedPlan").classList.remove("hidden");
+ }
 
-if(!currentUser){
-
-showSection("auth");
-
-return;
+ displaySelectedPlan();
 
 }
 
-document.getElementById("selectedPlan").scrollIntoView({
+function displaySelectedPlan(){
 
-behavior:"smooth"
+ if(!selectedPlan)return;
 
-});
+ document.getElementById("planName").textContent=selectedPlan.name;
+
+ document.getElementById("planAmount").textContent=money(selectedPlan.amount);
+
+ document.getElementById("selectedPlan").classList.remove("hidden");
+
+ document.getElementById("selectedPlan").scrollIntoView({behavior:"smooth"});
 
 }
 
 function customPlan(id){
 
-const amount=Number(document.getElementById(id).value);
+ const amount=Number(document.getElementById(id).value);
 
-if(!Number.isFinite(amount)||amount<50){
+ if(!Number.isFinite(amount)||amount<50){
 
-alert("Enter a valid amount of at least GH₵50.");
+  alert("Enter a valid amount of at least GH₵50.");
 
-return;
+  return;
 
-}
+ }
 
-choosePlan("Custom Plan",amount);
+ choosePlan("Custom Plan",amount);
 
 }
 
 function clearPlan(){
 
-selectedPlan=null;
+ selectedPlan=null;
 
-document.getElementById("selectedPlan").classList.add("hidden");
+ document.getElementById("selectedPlan").classList.add("hidden");
 
 }
 
 function payHere(){
 
-if(!currentUser){
+ if(!currentUser){
 
-alert("Please log in first.");
+  showSection("auth");
 
-showSection("auth");
+  message("Please log in first.");
 
-return;
+  return;
 
-}
+ }
 
-if(!selectedPlan){
+ if(!selectedPlan){
 
-alert("Select an amount first.");
+  alert("Please select an amount first.");
 
-return;
+  return;
 
-}
+ }
 
-alert(
+ const confirmed=confirm(
 
-"Your selected amount is "+money(selectedPlan.amount)+
+  "Your selected amount is "+money(selectedPlan.amount)+
 
-". Check that the Paystack page displays the correct amount before paying."
+  ". The hosted Paystack page may use its own configured amount. Check the amount carefully before paying. Continue?"
 
-);
+ );
 
-window.location.href=PAYSTACK_PAYMENT_URL;
+ if(confirmed){
 
-}
+  window.location.href=PAYSTACK_PAYMENT_URL;
 
-function message(t){
-
-document.getElementById("message").textContent=t;
+ }
 
 }
 
@@ -1150,45 +546,67 @@ document.getElementById("message").textContent=t;
 
 async function signUp(){
 
-const name=document.getElementById("signupName").value.trim();
+ const name=document.getElementById("signupName").value.trim();
 
-const email=document.getElementById("signupEmail").value.trim();
+ const email=document.getElementById("signupEmail").value.trim();
 
-const password=document.getElementById("signupPassword").value;
+ const password=document.getElementById("signupPassword").value;
 
-if(!name||!email||!password){
+ if(!name||!email||!password){
 
-message("Complete all fields.");
+  message("Please complete all fields.");
 
-return;
+  return;
 
-}
+ }
 
-if(password.length<6){
+ if(password.length<6){
 
-message("Password must contain at least 6 characters.");
+  message("Password must contain at least 6 characters.");
 
-return;
+  return;
 
-}
+ }
 
-const {error}=await db.auth.signUp({
+ const btn=document.getElementById("signupBtn");
 
-email,
+ btn.disabled=true;
 
-password,
+ message("Creating your account...");
 
-options:{
+ try{
 
-data:{full_name:name}
+  const {data,error}=await db.auth.signUp({
 
-}
+   email,password,
 
-});
+   options:{data:{full_name:name}}
 
-message(error?error.message:
+  });
 
-"Account created. Check your email if confirmation is required.");
+  if(error)throw error;
+
+  if(data.session){
+
+   currentUser=data.user;
+
+   await openDashboard();
+
+  }else{
+
+   message("Account created. Check your email if email confirmation is required, then log in.");
+
+  }
+
+ }catch(error){
+
+  message(error.message);
+
+ }finally{
+
+  btn.disabled=false;
+
+ }
 
 }
 
@@ -1196,29 +614,43 @@ message(error?error.message:
 
 async function logIn(){
 
-const email=document.getElementById("loginEmail").value.trim();
+ const email=document.getElementById("loginEmail").value.trim();
 
-const password=document.getElementById("loginPassword").value;
+ const password=document.getElementById("loginPassword").value;
 
-const {data,error}=await db.auth.signInWithPassword({
+ if(!email||!password){
 
-email,
+  message("Enter your email and password.");
 
-password
+  return;
 
-});
+ }
 
-if(error){
+ const btn=document.getElementById("loginBtn");
 
-message(error.message);
+ btn.disabled=true;
 
-return;
+ message("Logging in...");
 
-}
+ try{
 
-currentUser=data.user;
+  const {data,error}=await db.auth.signInWithPassword({email,password});
 
-await openDashboard();
+  if(error)throw error;
+
+  currentUser=data.user;
+
+  await openDashboard();
+
+ }catch(error){
+
+  message(error.message);
+
+ }finally{
+
+  btn.disabled=false;
+
+ }
 
 }
 
@@ -1226,25 +658,23 @@ await openDashboard();
 
 async function resetPassword(){
 
-const email=document.getElementById("loginEmail").value.trim();
+ const email=document.getElementById("loginEmail").value.trim();
 
-if(!email){
+ if(!email){
 
-message("Enter your email first.");
+  message("Enter your email address first.");
 
-return;
+  return;
 
-}
+ }
 
-const {error}=await db.auth.resetPasswordForEmail(email,{
+ const {error}=await db.auth.resetPasswordForEmail(email,{
 
-redirectTo:location.origin+location.pathname
+  redirectTo:location.origin+location.pathname
 
-});
+ });
 
-message(error?error.message:
-
-"If the account exists, reset instructions have been sent.");
+ message(error?error.message:"If the account exists, password reset instructions have been sent.");
 
 }
 
@@ -1252,15 +682,15 @@ message(error?error.message:
 
 async function logOut(){
 
-await db.auth.signOut();
+ await db.auth.signOut();
 
-currentUser=null;
+ currentUser=null;
 
-document.getElementById("adminNav").classList.add("hidden");
+ document.getElementById("adminNav").classList.add("hidden");
 
-clearPlan();
+ clearPlan();
 
-showSection("home");
+ showSection("home");
 
 }
 
@@ -1268,265 +698,257 @@ showSection("home");
 
 async function openDashboard(){
 
-showSection("dashboard");
+ showSection("dashboard");
 
-document.getElementById("customerEmail").textContent=
+ document.getElementById("customerEmail").textContent=currentUser.email||"";
 
-currentUser.email||"";
+ document.getElementById("customerName").textContent=
 
-const {data:profile,error}=await db.from("profiles")
+ currentUser.user_metadata?.full_name||"Customer";
 
-.select("full_name,role")
+ try{
 
-.eq("id",currentUser.id)
+  const {data:profile,error}=await db.from("profiles")
 
-.maybeSingle();
+   .select("full_name,role")
 
-document.getElementById("customerName").textContent=
+   .eq("id",currentUser.id)
 
-profile?.full_name||
+   .maybeSingle();
 
-currentUser.user_metadata?.full_name||
+  if(!error&&profile){
 
-"Customer";
+   document.getElementById("customerName").textContent=
 
-if(!error&&profile?.role==="admin"){
+    profile.full_name||currentUser.user_metadata?.full_name||"Customer";
 
-document.getElementById("adminNav").classList.remove("hidden");
+   if(profile.role==="admin"){
 
-document.getElementById("adminWelcome").textContent=
+    document.getElementById("adminNav").classList.remove("hidden");
 
-"Signed in as "+(profile.full_name||currentUser.email);
+    document.getElementById("adminWelcome").textContent=
 
-await loadAdminData();
+     "Signed in as "+(profile.full_name||currentUser.email);
 
-}else{
+   }else{
 
-document.getElementById("adminNav").classList.add("hidden");
+    document.getElementById("adminNav").classList.add("hidden");
+
+   }
+
+  }else{
+
+   document.getElementById("adminNav").classList.add("hidden");
+
+  }
+
+ }catch(error){
+
+  console.error("Profile error:",error);
+
+ }
+
+ await loadInvestments();
+
+ if(selectedPlan)displaySelectedPlan();
 
 }
 
-await loadInvestments();
-
-if(selectedPlan){
-
-document.getElementById("planName").textContent=selectedPlan.name;
-
-document.getElementById("planAmount").textContent=
-
-money(selectedPlan.amount);
-
-document.getElementById("selectedPlan").classList.remove("hidden");
-
-}
-
-}
-
-// INVESTMENT RECORDS
+// CUSTOMER RECORDS
 
 async function loadInvestments(){
 
-if(!currentUser)return;
+ if(!currentUser)return;
 
-const box=document.getElementById("investmentList");
+ const box=document.getElementById("investmentList");
 
-box.textContent="Loading...";
+ box.textContent="Loading...";
 
-const {data,error}=await db.from("investment_records")
+ const {data,error}=await db.from("investment_records")
 
-.select("id,plan_name,amount,status,created_at")
+  .select("id,plan_name,amount,status,created_at")
 
-.eq("user_id",currentUser.id)
+  .eq("user_id",currentUser.id)
 
-.order("created_at",{ascending:false});
+  .order("created_at",{ascending:false});
 
-if(error){
+ if(error){
 
-box.textContent="Could not load records: "+error.message;
+  box.textContent="Could not load records: "+error.message;
 
-return;
+  return;
 
-}
+ }
 
-if(!data?.length){
+ if(!data||!data.length){
 
-box.textContent="No investment records found yet.";
+  box.textContent="No investment records found yet.";
 
-return;
+  return;
 
-}
+ }
 
-box.innerHTML=data.map(x=>`
+ box.innerHTML=data.map(item=>`
 
-<div class="card">
+  <div class="card">
 
-<strong>${esc(x.plan_name)}</strong>
+   <strong>${escapeHTML(item.plan_name)}</strong>
 
-<p>${money(x.amount)}</p>
+   <p>${money(item.amount)}</p>
 
-<p>Status: ${esc(x.status)}</p>
+   <p>Status: ${escapeHTML(item.status)}</p>
 
-<p class="muted">
+   <p class="muted">${item.created_at?new Date(item.created_at).toLocaleString():""}</p>
 
-${x.created_at?new Date(x.created_at).toLocaleString():""}
+  </div>
 
-</p>
-
-</div>
-
-`).join("");
+ `).join("");
 
 }
 
-// TABLE RENDERING
+function escapeHTML(value){
 
-function renderTable(container,rows,columns,emptyText){
+ return String(value??"").replace(/[&<>"']/g,char=>({
 
-const box=document.getElementById(container);
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
 
-if(!Array.isArray(rows)||!rows.length){
-
-box.textContent=emptyText;
-
-return;
+ }[char]));
 
 }
 
-box.innerHTML=
+// ADMIN TABLES
 
-'<div class="table-wrap"><table><thead><tr>'+
+function renderTable(id,rows,columns,emptyText){
 
-columns.map(k=>"<th>"+esc(k.label)+"</th>").join("")+
+ const box=document.getElementById(id);
 
-"</tr></thead><tbody>"+
+ if(!Array.isArray(rows)||!rows.length){
 
-rows.map(row=>"<tr>"+columns.map(k=>{
+  box.textContent=emptyText;
 
-let val=row[k.key];
+  return;
 
-if(k.key==="amount"&&val!==null&&val!==undefined){
+ }
 
-val=money(val);
+ box.innerHTML='<div class="table-wrap"><table><thead><tr>'+
+
+ columns.map(column=>"<th>"+escapeHTML(column.label)+"</th>").join("")+
+
+ "</tr></thead><tbody>"+
+
+ rows.map(row=>"<tr>"+columns.map(column=>{
+
+  let value=row[column.key];
+
+  if(column.key==="amount"&&value!=null)value=money(value);
+
+  if(column.key==="created_at"&&value)value=new Date(value).toLocaleString();
+
+  return "<td>"+escapeHTML(value??"—")+"</td>";
+
+ }).join("")+"</tr>").join("")+
+
+ "</tbody></table></div>";
 
 }
 
-if(k.key==="created_at"&&val){
-
-val=new Date(val).toLocaleString();
-
-}
-
-return "<td>"+esc(val??"—")+"</td>";
-
-}).join("")+"</tr>").join("")+
-
-"</tbody></table></div>";
-
-}
-
-// ADMIN DASHBOARD
+// ADMIN DATA
 
 async function loadAdminData(){
 
-if(!currentUser)return;
+ if(!currentUser)return;
 
-const {data:profile,error:profileError}=await db.from("profiles")
+ const {data:profile,error}=await db.from("profiles")
 
-.select("role")
+  .select("role")
 
-.eq("id",currentUser.id)
+  .eq("id",currentUser.id)
 
-.maybeSingle();
+  .maybeSingle();
 
-if(profileError||profile?.role!=="admin"){
+ if(error||profile?.role!=="admin"){
 
-alert("Admin access only.");
+  alert("Admin access only.");
 
-showSection("dashboard");
+  showSection("dashboard");
 
-return;
+  return;
 
-}
+ }
 
-document.getElementById("adminCustomers").textContent="Loading...";
+ document.getElementById("adminCustomers").textContent="Loading...";
 
-document.getElementById("adminInvestments").textContent="Loading...";
+ document.getElementById("adminInvestments").textContent="Loading...";
 
-const [customerResult,investmentResult]=await Promise.all([
+ const [customersResult,recordsResult]=await Promise.all([
 
-db.rpc("admin_list_customers"),
+  db.rpc("admin_list_customers"),
 
-db.rpc("admin_list_investments")
+  db.rpc("admin_list_investments")
 
-]);
+ ]);
 
-if(customerResult.error){
+ if(customersResult.error){
 
-document.getElementById("adminCustomers").textContent=
+  document.getElementById("adminCustomers").textContent=
 
-"Customer loading error: "+customerResult.error.message;
+   "Customer loading error: "+customersResult.error.message;
 
-}else{
+ }else{
 
-const customers=customerResult.data||[];
+  const customers=customersResult.data||[];
 
-document.getElementById("totalCustomers").textContent=
+  document.getElementById("totalCustomers").textContent=customers.length;
 
-customers.length;
+  renderTable("adminCustomers",customers,[
 
-renderTable("adminCustomers",customers,[
+   {key:"full_name",label:"Customer"},
 
-{key:"full_name",label:"Customer"},
+   {key:"email",label:"Email"},
 
-{key:"email",label:"Email"},
+   {key:"role",label:"Role"},
 
-{key:"role",label:"Role"},
+   {key:"created_at",label:"Joined"}
 
-{key:"created_at",label:"Joined"}
+  ],"No customers found.");
 
-],"No customers found.");
+ }
 
-}
+ if(recordsResult.error){
 
-if(investmentResult.error){
+  document.getElementById("adminInvestments").textContent=
 
-document.getElementById("adminInvestments").textContent=
+   "Investment loading error: "+recordsResult.error.message;
 
-"Investment loading error: "+investmentResult.error.message;
+ }else{
 
-}else{
+  const records=recordsResult.data||[];
 
-const records=investmentResult.data||[];
+  const pending=records.filter(item=>
 
-const pending=records.filter(x=>
+   String(item.status||"").toLowerCase()==="pending"
 
-String(x.status||"").toLowerCase()==="pending"
+  ).length;
 
-).length;
+  document.getElementById("totalInvestments").textContent=records.length;
 
-document.getElementById("totalInvestments").textContent=
+  document.getElementById("pendingInvestments").textContent=pending;
 
-records.length;
+  renderTable("adminInvestments",records,[
 
-document.getElementById("pendingInvestments").textContent=
+   {key:"plan_name",label:"Plan"},
 
-pending;
+   {key:"amount",label:"Amount"},
 
-renderTable("adminInvestments",records,[
+   {key:"status",label:"Status"},
 
-{key:"plan_name",label:"Plan"},
+   {key:"user_id",label:"Customer ID"},
 
-{key:"amount",label:"Amount"},
+   {key:"created_at",label:"Date"}
 
-{key:"status",label:"Status"},
+  ],"No investment records found.");
 
-{key:"user_id",label:"Customer ID"},
-
-{key:"created_at",label:"Date"}
-
-],"No investment records found.");
-
-}
+ }
 
 }
 
@@ -1534,53 +956,49 @@ renderTable("adminInvestments",records,[
 
 async function start(){
 
-if(!window.supabase||!window.supabase.createClient){
+ if(!window.supabase||!window.supabase.createClient){
 
-message("Supabase failed to load. Refresh the page.");
+  message("Supabase failed to load. Check your internet connection and refresh.");
 
-return;
+  return;
 
-}
+ }
 
-db=window.supabase.createClient(
+ db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 
-SUPABASE_URL,
+ const {data,error}=await db.auth.getSession();
 
-SUPABASE_KEY
+ if(error){
 
-);
+  console.error(error);
 
-const {data,error}=await db.auth.getSession();
+  message("Could not check your session. Please refresh.");
 
-if(error){
+  return;
 
-console.error(error);
+ }
 
-return;
+ if(data.session){
 
-}
+  currentUser=data.session.user;
 
-if(data.session){
+  await openDashboard();
 
-currentUser=data.session.user;
+ }
 
-await openDashboard();
+ db.auth.onAuthStateChange((event,session)=>{
 
-}
+  if(event==="SIGNED_OUT"){
 
-db.auth.onAuthStateChange((event,session)=>{
+   currentUser=null;
 
-if(event==="SIGNED_OUT"){
+   document.getElementById("adminNav").classList.add("hidden");
 
-currentUser=null;
+   showSection("home");
 
-document.getElementById("adminNav").classList.add("hidden");
+  }
 
-showSection("home");
-
-}
-
-});
+ });
 
 }
 
