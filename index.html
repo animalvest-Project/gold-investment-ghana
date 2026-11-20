@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -10,7 +12,7 @@
 
 <title>Gold Investment Ghana</title>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 
 <style>
 
@@ -20,7 +22,11 @@
 
 body{font-family:Arial,sans-serif;background:#101010;color:#fff;min-height:100vh}
 
-.hidden{display:none!important}button,input,select{font:inherit}button{cursor:pointer}
+.hidden{display:none!important}
+
+button,input,select{font:inherit}
+
+button{cursor:pointer}
 
 .auth{max-width:440px;margin:35px auto;padding:28px;background:var(--panel);border:1px solid #765d20;border-radius:15px}
 
@@ -32,13 +38,17 @@ input,select{width:100%;padding:14px;margin:9px 0;background:#292929;border:1px 
 
 .btn{width:100%;padding:14px;margin-top:12px;background:var(--gold);color:#111;border:0;border-radius:7px;font-weight:bold}
 
-.secondary{background:#333;color:#fff}.link{text-align:center;color:var(--gold);margin-top:18px;cursor:pointer}
+.secondary{background:#333;color:#fff}
+
+.link{text-align:center;color:var(--gold);margin-top:18px;cursor:pointer}
 
 .message{text-align:center;color:var(--gold);margin-top:15px;line-height:1.5;overflow-wrap:anywhere}
 
 header{background:#191919;border-bottom:1px solid #765d20;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 
-header .logo{margin:0;text-align:left;font-size:19px}header small{color:var(--muted)}
+header .logo{margin:0;text-align:left;font-size:19px}
+
+header small{color:var(--muted)}
 
 .layout{max-width:1150px;margin:25px auto;padding:0 18px;display:grid;grid-template-columns:220px 1fr;gap:20px}
 
@@ -48,29 +58,43 @@ header .logo{margin:0;text-align:left;font-size:19px}header small{color:var(--mu
 
 .nav.active,.nav:hover{background:#3a301b;color:var(--gold)}
 
-.content{min-width:0}.welcome{background:linear-gradient(120deg,#302512,#191919);border:1px solid #765d20;border-radius:13px;padding:25px;margin-bottom:20px}
+.content{min-width:0}
 
-.welcome h1{color:var(--gold);margin-bottom:10px}.welcome p,.card p,.section p{color:#ccc;line-height:1.6;overflow-wrap:anywhere}
+.welcome{background:linear-gradient(120deg,#302512,#191919);border:1px solid #765d20;border-radius:13px;padding:25px;margin-bottom:20px}
+
+.welcome h1{color:var(--gold);margin-bottom:10px}
+
+.welcome p,.card p,.section p{color:#ccc;line-height:1.6;overflow-wrap:anywhere}
 
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-bottom:20px}
 
 .card,.section{background:var(--panel);padding:20px;border:1px solid #333;border-radius:12px}
 
-.card h3,.section h2{color:var(--gold);margin-bottom:12px}.section{margin-bottom:18px}.section h2{margin-bottom:18px}
+.card h3,.section h2{color:var(--gold);margin-bottom:12px}
+
+.section{margin-bottom:18px}
+
+.section h2{margin-bottom:18px}
 
 .plan-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
 
 .plan{padding:18px;background:#292929;border:1px solid #4a402b;border-radius:10px}
 
-.plan h3{color:var(--gold);margin-bottom:8px}.plan .amount{font-size:23px;font-weight:bold;margin:12px 0}
+.plan h3{color:var(--gold);margin-bottom:8px}
+
+.plan .amount{font-size:23px;font-weight:bold;margin:12px 0}
 
 .status{display:inline-block;color:var(--gold);background:#3a301b;padding:7px 12px;border-radius:20px;font-size:12px;margin-top:10px}
 
-.table-wrap{width:100%;overflow-x:auto;margin-top:18px}table{width:100%;border-collapse:collapse;min-width:560px}
+.table-wrap{width:100%;overflow-x:auto;margin-top:18px}
+
+table{width:100%;border-collapse:collapse;min-width:560px}
 
 th,td{padding:13px 10px;border-bottom:1px solid #444;text-align:left;font-size:13px}
 
-th{color:var(--gold);background:#292929}td{color:#ddd}
+th{color:var(--gold);background:#292929}
+
+td{color:#ddd}
 
 .admin-stat{background:#292929;padding:18px;border-radius:9px;border:1px solid #765d20}
 
@@ -82,7 +106,19 @@ th{color:var(--gold);background:#292929}td{color:#ddd}
 
 footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
-@media(max-width:650px){.layout{grid-template-columns:1fr;margin:15px auto}.sidebar{display:grid;grid-template-columns:repeat(2,1fr);gap:4px}.nav{font-size:13px;padding:12px 8px;text-align:center}.cards,.plan-grid{grid-template-columns:1fr}.auth{margin:25px 15px}}
+@media(max-width:650px){
+
+.layout{grid-template-columns:1fr;margin:15px auto}
+
+.sidebar{display:grid;grid-template-columns:repeat(2,1fr);gap:4px}
+
+.nav{font-size:13px;padding:12px 8px;text-align:center}
+
+.cards,.plan-grid{grid-template-columns:1fr}
+
+.auth{margin:25px 15px}
+
+}
 
 </style>
 
@@ -134,7 +170,13 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 <div id="app" class="hidden">
 
-<header><div class="logo">GOLD INVESTMENT GHANA</div><small id="headerEmail"></small></header>
+<header>
+
+  <div class="logo">GOLD INVESTMENT GHANA</div>
+
+  <small id="headerEmail"></small>
+
+</header>
 
 <div class="layout">
 
@@ -160,21 +202,69 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 <section id="dashboard">
 
-  <div class="welcome"><h1>Welcome, <span id="welcomeName">Customer</span>!</h1><p>Your personal account dashboard.</p><p>View investment information and your account records here.</p></div>
+  <div class="welcome">
 
-  <div class="cards">
+    <h1>Welcome, <span id="welcomeName">Customer</span>!</h1>
 
-    <div class="card"><h3>My Account</h3><p id="dashName"></p><p id="dashEmail"></p><span class="status">Signed in</span></div>
+    <p>Your personal account dashboard.</p>
 
-    <div class="card"><h3>My Investments</h3><p id="dashInvestmentCount">Loading records...</p><span class="status" id="dashInvestmentStatus">Checking records</span></div>
-
-    <div class="card"><h3>Transactions</h3><p>Verified payment records will appear here when payment verification is connected.</p><span class="status">Verification not connected</span></div>
-
-    <div class="card"><h3>Account Security</h3><p>Your account uses Supabase authentication.</p><span class="status">Signed in</span></div>
+    <p>View investment information and your account records here.</p>
 
   </div>
 
-  <div class="section"><h2>Account Overview</h2><p>Use the menu to view investment information, your records and profile.</p></div>
+  <div class="cards">
+
+    <div class="card">
+
+      <h3>My Account</h3>
+
+      <p id="dashName"></p>
+
+      <p id="dashEmail"></p>
+
+      <span class="status">Signed in</span>
+
+    </div>
+
+    <div class="card">
+
+      <h3>My Investments</h3>
+
+      <p id="dashInvestmentCount">Loading records...</p>
+
+      <span class="status" id="dashInvestmentStatus">Checking records</span>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Transactions</h3>
+
+      <p>Verified payment records will appear here when payment verification is connected.</p>
+
+      <span class="status">Verification not connected</span>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Account Security</h3>
+
+      <p>Your account uses Supabase authentication.</p>
+
+      <span class="status">Signed in</span>
+
+    </div>
+
+  </div>
+
+  <div class="section">
+
+    <h2>Account Overview</h2>
+
+    <p>Use the menu to view investment information, your records and profile.</p>
+
+  </div>
 
 </section>
 
@@ -186,23 +276,69 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
     <p>Choose an amount to review. Selecting a plan does not charge you or create an investment.</p>
 
-    <div class="notice">Payment checkout is not active yet. No money will be collected and no investment will be recorded as confirmed from this page.</div>
+    <div class="notice">
+
+      Payment checkout is not active yet. No money will be collected and no investment will be recorded as confirmed from this page.
+
+    </div>
 
     <div class="plan-grid">
 
-      <div class="plan"><h3>Starter</h3><p>For customers exploring the available gold investment information.</p><div class="amount">GH₵ 50</div><button class="btn" onclick="selectPlan('Starter',50)">Select plan</button></div>
+      <div class="plan">
 
-      <div class="plan"><h3>Standard</h3><p>A higher amount option for review.</p><div class="amount">GH₵ 100</div><button class="btn" onclick="selectPlan('Standard',100)">Select plan</button></div>
+        <h3>Starter</h3>
 
-      <div class="plan"><h3>Premium</h3><p>An additional amount option for review.</p><div class="amount">GH₵ 500</div><button class="btn" onclick="selectPlan('Premium',500)">Select plan</button></div>
+        <p>For customers exploring the available gold investment information.</p>
 
-      <div class="plan"><h3>Custom</h3><p>Enter an amount you would like to review.</p><input id="customAmount" type="number" min="1" step="0.01" placeholder="Amount in GHS"><button class="btn" onclick="selectCustomPlan()">Review custom amount</button></div>
+        <div class="amount">GH₵ 50</div>
+
+        <button class="btn" onclick="selectPlan('Starter',50)">Select plan</button>
+
+      </div>
+
+      <div class="plan">
+
+        <h3>Standard</h3>
+
+        <p>A higher amount option for review.</p>
+
+        <div class="amount">GH₵ 100</div>
+
+        <button class="btn" onclick="selectPlan('Standard',100)">Select plan</button>
+
+      </div>
+
+      <div class="plan">
+
+        <h3>Premium</h3>
+
+        <p>An additional amount option for review.</p>
+
+        <div class="amount">GH₵ 500</div>
+
+        <button class="btn" onclick="selectPlan('Premium',500)">Select plan</button>
+
+      </div>
+
+      <div class="plan">
+
+        <h3>Custom</h3>
+
+        <p>Enter an amount you would like to review.</p>
+
+        <input id="customAmount" type="number" min="1" step="0.01" placeholder="Amount in GHS">
+
+        <button class="btn" onclick="selectCustomPlan()">Review custom amount</button>
+
+      </div>
 
     </div>
 
     <div id="selectedPlan" class="plan hidden" style="margin-top:18px">
 
-      <h3 id="selectedPlanName">Selected plan</h3><p id="selectedPlanAmount"></p>
+      <h3 id="selectedPlanName">Selected plan</h3>
+
+      <p id="selectedPlanAmount"></p>
 
       <p class="notice">Checkout is awaiting a secure server-side Paystack integration. Do not send money to a personal account or treat this selection as a completed deposit.</p>
 
@@ -218,13 +354,31 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 <section id="investments" class="hidden">
 
-  <div class="section"><h2>My Investments</h2><p>Investment records linked to your signed-in account.</p>
+  <div class="section">
+
+    <h2>My Investments</h2>
+
+    <p>Investment records linked to your signed-in account.</p>
 
     <button class="btn" onclick="loadMyInvestments()">Refresh My Investments</button>
 
     <p id="myInvestmentMessage" class="admin-message">Records have not been loaded yet.</p>
 
-    <div class="table-wrap"><table><thead><tr><th>Plan</th><th>Amount (GHS)</th><th>Status</th><th>Date</th></tr></thead><tbody id="myInvestmentTable"><tr><td colspan="4">No records loaded.</td></tr></tbody></table></div>
+    <div class="table-wrap">
+
+      <table>
+
+        <thead><tr><th>Plan</th><th>Amount (GHS)</th><th>Status</th><th>Date</th></tr></thead>
+
+        <tbody id="myInvestmentTable">
+
+          <tr><td colspan="4">No records loaded.</td></tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
 
   </div>
 
@@ -232,30 +386,712 @@ footer{text-align:center;color:#888;padding:25px;font-size:12px;line-height:1.7}
 
 <section id="transactions" class="hidden">
 
-  <div class="section"><h2>Transaction History</h2><p>Only payments verified by the secure payment server should appear here.</p><span class="status">Payment verification not connected</span><div class="notice">Your account will not show a payment as successful until the payment provider confirms it on the server.</div></div>
+  <div class="section">
+
+    <h2>Transaction History</h2>
+
+    <p>Only payments verified by the secure payment server should appear here.</p>
+
+    <span class="status">Payment verification not connected</span>
+
+    <div class="notice">Your account will not show a payment as successful until the payment provider confirms it on the server.</div>
+
+  </div>
 
 </section>
 
 <section id="profile" class="hidden">
 
-  <div class="section"><h2>My Profile</h2><p><strong>Full Name</strong></p><input id="profileName" type="text" placeholder="Enter your full name"><p><strong>Email Address</strong></p><p id="profileEmail"></p><p><strong>Member Since</strong></p><p id="memberDate"></p><button class="btn" onclick="saveProfile()">Save Profile</button><p id="profileMessage" class="message"></p><button class="btn secondary" onclick="logout()">Logout</button></div>
+  <div class="section">
+
+    <h2>My Profile</h2>
+
+    <p><strong>Full Name</strong></p>
+
+    <input id="profileName" type="text" placeholder="Enter your full name">
+
+    <p><strong>Email Address</strong></p>
+
+    <p id="profileEmail"></p>
+
+    <p><strong>Member Since</strong></p>
+
+    <p id="memberDate"></p>
+
+    <button class="btn" onclick="saveProfile()">Save Profile</button>
+
+    <p id="profileMessage" class="message"></p>
+
+    <button class="btn secondary" onclick="logout()">Logout</button>
+
+  </div>
 
 </section>
 
 <section id="adminPage" class="hidden">
 
-  <div class="welcome"><h1>Admin Dashboard 🔐</h1><p>Private administration area for reviewing customer accounts and investment records.</p></div>
+  <div class="welcome">
 
-  <div class="cards"><div class="admin-stat"><p>Total Registered Customers</p><strong id="customerCount">0</strong></div><div class="admin-stat"><p>Administrator Account</p><strong style="font-size:18px">ADMIN</strong></div></div>
+    <h1>Admin Dashboard 🔐</h1>
 
-  <div class="section"><h2>Registered Customers</h2><button class="btn" onclick="loadAdminCustomers()">Refresh Customer List</button><p id="adminMessage" class="admin-message">Not loaded yet.</p><div class="table-wrap"><table><thead><tr><th>Full Name</th><th>Email Address</th><th>Registration Date</th><th>Role</th></tr></thead><tbody id="customerTable"><tr><td colspan="4">No records loaded.</td></tr></tbody></table></div></div>
+    <p>Private administration area for reviewing customer accounts and investment records.</p>
 
-  <div class="section"><h2>Investment Records</h2><button class="btn" onclick="loadAdminInvestments()">Refresh Investment Records</button><p id="investmentAdminMessage" class="admin-message">Not loaded yet.</p><div class="table-wrap"><table><thead><tr><th>Customer</th><th>Email</th><th>Plan</th><th>Amount (GHS)</th><th>Status</th><th>Date</th></tr></thead><tbody id="adminInvestmentTable"><tr><td colspan="6">No records loaded.</td></tr></tbody></table></div></div>
+  </div>
+
+  <div class="cards">
+
+    <div class="admin-stat">
+
+      <p>Total Registered Customers</p>
+
+      <strong id="customerCount">0</strong>
+
+    </div>
+
+    <div class="admin-stat">
+
+      <p>Administrator Account</p>
+
+      <strong style="font-size:18px">ADMIN</strong>
+
+    </div>
+
+  </div>
+
+  <div class="section">
+
+    <h2>Registered Customers</h2>
+
+    <button class="btn" onclick="loadAdminCustomers()">Refresh Customer List</button>
+
+    <p id="adminMessage" class="admin-message">Not loaded yet.</p>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead><tr><th>Full Name</th><th>Email Address</th><th>Registration Date</th><th>Role</th></tr></thead>
+
+        <tbody id="customerTable">
+
+          <tr><td colspan="4">No records loaded.</td></tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <div class="section">
+
+    <h2>Investment Records</h2>
+
+    <button class="btn" onclick="loadAdminInvestments()">Refresh Investment Records</button>
+
+    <p id="investmentAdminMessage" class="admin-message">Not loaded yet.</p>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead><tr><th>Customer</th><th>Email</th><th>Plan</th><th>Amount (GHS)</th><th>Status</th><th>Date</th></tr></thead>
+
+        <tbody id="adminInvestmentTable">
+
+          <tr><td colspan="6">No records loaded.</td></tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
 
 </section>
 
-</main></div>
-
-<footer>Gold Investment Ghana<br>Investment information is not a promise of returns. Review all terms and risks before making a financial decision.</footer>
+</main>
 
 </div>
+
+<footer>
+
+Gold Investment Ghana<br>
+
+Investment information is not a promise of returns. Review all terms and risks before making a financial decision.
+
+</footer>
+
+</div>
+
+<script>
+
+(() => {
+
+  const SUPABASE_URL = "https://yvorlcgppaelcexwtiwf.supabase.co";
+
+  const SUPABASE_KEY = "sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v";
+
+  if (!window.supabase || typeof window.supabase.createClient !== "function") {
+
+    document.getElementById("authMessage").textContent =
+
+      "Supabase library did not load. Check your internet connection and reload this page.";
+
+    console.error("Supabase browser library is unavailable. Check the CDN script.");
+
+    return;
+
+  }
+
+  const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  let currentUser = null;
+
+  let currentProfile = null;
+
+  function el(id){return document.getElementById(id)}
+
+  function showMessage(id,message){el(id).textContent=message}
+
+  window.showSignup = function(){
+
+    el("signup").classList.remove("hidden");
+
+    el("login").classList.add("hidden");
+
+    showMessage("authMessage","");
+
+  };
+
+  window.showLogin = function(){
+
+    el("login").classList.remove("hidden");
+
+    el("signup").classList.add("hidden");
+
+    showMessage("authMessage","");
+
+  };
+
+  window.register = async function(){
+
+    const name=el("signupName").value.trim();
+
+    const email=el("signupEmail").value.trim();
+
+    const password=el("signupPassword").value;
+
+    if(!name||!email||!password)
+
+      return showMessage("authMessage","Please complete all fields.");
+
+    if(password.length<6)
+
+      return showMessage("authMessage","Password must contain at least 6 characters.");
+
+    showMessage("authMessage","Creating your account...");
+
+    const {data,error}=await supabaseClient.auth.signUp({
+
+      email,
+
+      password,
+
+      options:{data:{full_name:name}}
+
+    });
+
+    if(error)return showMessage("authMessage",error.message);
+
+    if(data.session){
+
+      currentUser=data.user;
+
+      await loadApp();
+
+    }else{
+
+      showMessage("authMessage","Account created. Check your email to confirm your account, then log in.");
+
+    }
+
+  };
+
+  window.signIn = async function(){
+
+    const email=el("loginEmail").value.trim();
+
+    const password=el("loginPassword").value;
+
+    if(!email||!password)
+
+      return showMessage("authMessage","Enter your email and password.");
+
+    showMessage("authMessage","Signing in...");
+
+    const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
+
+    if(error)return showMessage("authMessage",error.message);
+
+    currentUser=data.user;
+
+    await loadApp();
+
+  };
+
+  window.resetPassword = async function(){
+
+    const email=el("loginEmail").value.trim();
+
+    if(!email)
+
+      return showMessage("authMessage","Enter your email address first.");
+
+    const {error}=await supabaseClient.auth.resetPasswordForEmail(email,{
+
+      redirectTo:window.location.origin+window.location.pathname
+
+    });
+
+    showMessage("authMessage",error?error.message:"Password reset instructions have been sent if the account exists.");
+
+  };
+
+  window.logout = async function(){
+
+    await supabaseClient.auth.signOut();
+
+    currentUser=null;
+
+    currentProfile=null;
+
+    el("app").classList.add("hidden");
+
+    el("authPage").classList.remove("hidden");
+
+    window.showLogin();
+
+  };
+
+  async function loadApp(){
+
+    if(!currentUser)return;
+
+    el("authPage").classList.add("hidden");
+
+    el("app").classList.remove("hidden");
+
+    el("headerEmail").textContent=currentUser.email||"";
+
+    el("dashEmail").textContent=currentUser.email||"";
+
+    el("profileEmail").textContent=currentUser.email||"";
+
+    el("memberDate").textContent=new Date(currentUser.created_at).toLocaleDateString();
+
+    await loadProfile();
+
+    await window.loadMyInvestments();
+
+    window.page("dashboard",document.querySelector(".nav"));
+
+  }
+
+  async function loadProfile(){
+
+    const {data,error}=await supabaseClient.from("profiles")
+
+      .select("full_name,role")
+
+      .eq("id",currentUser.id)
+
+      .maybeSingle();
+
+    if(error){
+
+      showMessage("profileMessage","Could not load profile: "+error.message);
+
+      currentProfile={};
+
+      return;
+
+    }
+
+    currentProfile=data||{};
+
+    const name=currentProfile.full_name||currentUser.user_metadata?.full_name||"Customer";
+
+    el("welcomeName").textContent=name;
+
+    el("dashName").textContent="Name: "+name;
+
+    el("profileName").value=name;
+
+    el("adminNav").classList.toggle("hidden",currentProfile.role!=="admin");
+
+  }
+
+  window.saveProfile = async function(){
+
+    const name=el("profileName").value.trim();
+
+    if(!name)return showMessage("profileMessage","Enter your full name.");
+
+    const {error}=await supabaseClient.from("profiles").upsert({
+
+      id:currentUser.id,
+
+      full_name:name
+
+    },{onConflict:"id"});
+
+    if(error)return showMessage("profileMessage",error.message);
+
+    currentProfile={...currentProfile,full_name:name};
+
+    el("welcomeName").textContent=name;
+
+    el("dashName").textContent="Name: "+name;
+
+    showMessage("profileMessage","Profile updated successfully.");
+
+  };
+
+  window.page = function(name,button){
+
+    document.querySelectorAll("main.content section").forEach(section=>section.classList.add("hidden"));
+
+    el(name).classList.remove("hidden");
+
+    document.querySelectorAll(".nav").forEach(nav=>nav.classList.remove("active"));
+
+    if(button)button.classList.add("active");
+
+  };
+
+  window.selectPlan = function(name,amount){
+
+    el("selectedPlan").classList.remove("hidden");
+
+    el("selectedPlanName").textContent=name+" Plan";
+
+    el("selectedPlanAmount").textContent="Selected amount: GH₵ "+amount.toFixed(2);
+
+    showMessage("planMessage","Plan selected for review only. No payment has been made.");
+
+  };
+
+  window.selectCustomPlan = function(){
+
+    const amount=Number(el("customAmount").value);
+
+    if(!Number.isFinite(amount)||amount<1)
+
+      return showMessage("planMessage","Enter a valid amount.");
+
+    window.selectPlan("Custom",amount);
+
+  };
+
+  window.clearSelectedPlan = function(){
+
+    el("selectedPlan").classList.add("hidden");
+
+    showMessage("planMessage","");
+
+  };
+
+  window.loadMyInvestments = async function(){
+
+    if(!currentUser)return;
+
+    showMessage("myInvestmentMessage","Loading your records...");
+
+    el("myInvestmentTable").replaceChildren();
+
+    const {data,error}=await supabaseClient.from("investment_records")
+
+      .select("id,plan_name,amount,status,created_at")
+
+      .eq("user_id",currentUser.id)
+
+      .order("created_at",{ascending:false});
+
+    if(error){
+
+      showMessage("myInvestmentMessage","Could not load records: "+error.message);
+
+      el("dashInvestmentCount").textContent="Unable to load";
+
+      return;
+
+    }
+
+    el("dashInvestmentCount").textContent=(data||[]).length+" investment record(s)";
+
+    el("dashInvestmentStatus").textContent=(data||[]).length?"Records found":"No records yet";
+
+    if(!data||data.length===0){
+
+      const row=document.createElement("tr");
+
+      const cell=document.createElement("td");
+
+      cell.colSpan=4;
+
+      cell.textContent="No investment records found.";
+
+      row.appendChild(cell);
+
+      el("myInvestmentTable").appendChild(row);
+
+      showMessage("myInvestmentMessage","No investment records yet.");
+
+      return;
+
+    }
+
+    data.forEach(item=>{
+
+      const row=document.createElement("tr");
+
+      [
+
+        item.plan_name||"—",
+
+        Number(item.amount||0).toFixed(2),
+
+        item.status||"Pending",
+
+        item.created_at?new Date(item.created_at).toLocaleDateString():"—"
+
+      ].forEach(value=>{
+
+        const cell=document.createElement("td");
+
+        cell.textContent=String(value);
+
+        row.appendChild(cell);
+
+      });
+
+      el("myInvestmentTable").appendChild(row);
+
+    });
+
+    showMessage("myInvestmentMessage","Investment records loaded.");
+
+  };
+
+  window.openAdminPage = function(button){
+
+    if(currentProfile?.role!=="admin"){
+
+      alert("You do not have administrator access.");
+
+      return;
+
+    }
+
+    window.page("adminPage",button);
+
+    window.loadAdminCustomers();
+
+    window.loadAdminInvestments();
+
+  };
+
+  window.loadAdminCustomers = async function(){
+
+    if(currentProfile?.role!=="admin")return;
+
+    showMessage("adminMessage","Loading customers...");
+
+    const {data,error}=await supabaseClient.rpc("admin_list_customers");
+
+    if(error){
+
+      showMessage("adminMessage","Admin access or database function error: "+error.message);
+
+      return;
+
+    }
+
+    const rows=Array.isArray(data)?data:[];
+
+    el("customerCount").textContent=rows.length;
+
+    el("customerTable").replaceChildren();
+
+    if(!rows.length){
+
+      const row=document.createElement("tr");
+
+      const cell=document.createElement("td");
+
+      cell.colSpan=4;
+
+      cell.textContent="No customer records returned.";
+
+      row.appendChild(cell);
+
+      el("customerTable").appendChild(row);
+
+    }
+
+    rows.forEach(customer=>{
+
+      const row=document.createElement("tr");
+
+      [
+
+        customer.full_name||"—",
+
+        customer.email||"—",
+
+        customer.created_at?new Date(customer.created_at).toLocaleDateString():"—",
+
+        customer.role||"customer"
+
+      ].forEach(value=>{
+
+        const cell=document.createElement("td");
+
+        cell.textContent=String(value);
+
+        row.appendChild(cell);
+
+      });
+
+      el("customerTable").appendChild(row);
+
+    });
+
+    showMessage("adminMessage","Customer list loaded.");
+
+  };
+
+  window.loadAdminInvestments = async function(){
+
+    if(currentProfile?.role!=="admin")return;
+
+    showMessage("investmentAdminMessage","Loading investment records...");
+
+    const {data,error}=await supabaseClient.rpc("admin_list_investments");
+
+    if(error){
+
+      showMessage("investmentAdminMessage","Admin function error: "+error.message);
+
+      return;
+
+    }
+
+    const rows=Array.isArray(data)?data:[];
+
+    el("adminInvestmentTable").replaceChildren();
+
+    if(!rows.length){
+
+      const row=document.createElement("tr");
+
+      const cell=document.createElement("td");
+
+      cell.colSpan=6;
+
+      cell.textContent="No records returned.";
+
+      row.appendChild(cell);
+
+      el("adminInvestmentTable").appendChild(row);
+
+    }
+
+    rows.forEach(item=>{
+
+      const row=document.createElement("tr");
+
+      [
+
+        item.full_name||"—",
+
+        item.email||"—",
+
+        item.plan_name||"—",
+
+        Number(item.amount||0).toFixed(2),
+
+        item.status||"—",
+
+        item.created_at?new Date(item.created_at).toLocaleDateString():"—"
+
+      ].forEach(value=>{
+
+        const cell=document.createElement("td");
+
+        cell.textContent=String(value);
+
+        row.appendChild(cell);
+
+      });
+
+      el("adminInvestmentTable").appendChild(row);
+
+    });
+
+    showMessage("investmentAdminMessage","Investment records loaded.");
+
+  };
+
+  supabaseClient.auth.getSession().then(({data,error})=>{
+
+    if(error){
+
+      console.error(error);
+
+      showMessage("authMessage",error.message);
+
+      return;
+
+    }
+
+    if(data.session){
+
+      currentUser=data.session.user;
+
+      loadApp();
+
+    }
+
+  });
+
+  supabaseClient.auth.onAuthStateChange((event,session)=>{
+
+    if(event==="SIGNED_IN"&&session&&!currentUser){
+
+      currentUser=session.user;
+
+      loadApp();
+
+    }
+
+    if(event==="SIGNED_OUT"){
+
+      currentUser=null;
+
+      currentProfile=null;
+
+    }
+
+  });
+
+})();
+
+</script>
+
+</body>
+
+</html>
