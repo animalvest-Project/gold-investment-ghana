@@ -10,7 +10,7 @@
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<meta name="theme-color" content="#101114">
+<meta name="theme-color" content="#0b0c0f">
 
 <title>TOUR GOLD INVESTMENT</title>
 
@@ -20,115 +20,509 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 
-:root{--gold:#e5b63c;--gold2:#f8d978;--bg:#0b0c0f;--panel:#17191e;--muted:#a7a7a7}
+:root{
 
-body{font-family:Arial,sans-serif;background:var(--bg);color:white;line-height:1.6}
+--gold:#e5b63c;
 
-header{position:sticky;top:0;z-index:10;padding:15px 5%;background:#111216ed;backdrop-filter:blur(12px);border-bottom:1px solid #393024;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+--gold2:#ffe29a;
 
-.logo{color:var(--gold2);font-size:17px;font-weight:900;letter-spacing:1px}
+--bg:#090a0d;
 
-nav{display:flex;gap:5px;flex-wrap:wrap}
+--panel:#15171d;
 
-button{background:linear-gradient(135deg,#f6d779,#d5a52c);color:#17130a;border:0;padding:12px 17px;border-radius:7px;font-weight:bold;cursor:pointer;margin:3px;transition:.2s}
+--panel2:#1b1e25;
 
-button:hover{filter:brightness(1.1);transform:translateY(-1px)}
+--muted:#a5a7ae;
 
-button.secondary{background:#292b31;color:white;border:1px solid #444}
+--border:#34302a;
 
-button:disabled{opacity:.5}
+}
 
-main{max-width:1120px;margin:28px auto;padding:15px}
+html{scroll-behavior:smooth}
 
-h1,h2,h3{line-height:1.25;margin-bottom:12px}
+body{
 
-h1{color:var(--gold2)}
+font-family:Arial,sans-serif;
 
-p{color:#bdbdc2;margin-bottom:12px}
+background:var(--bg);
 
-input{width:100%;padding:14px;margin:7px 0 14px;background:#0d0e11;border:1px solid #45454b;border-radius:8px;color:white}
+color:#fff;
 
-label{font-size:14px;color:#ddd}
+line-height:1.6;
 
-.card{background:linear-gradient(145deg,#1b1d22,#141519);border:1px solid #34343a;border-radius:14px;padding:21px;margin:15px 0}
+}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:15px}
+button,input{font:inherit}
 
-.price,.stat{font-size:28px;color:var(--gold2);font-weight:bold}
+button{
 
-.muted{color:#999;font-size:13px}
+background:linear-gradient(135deg,#ffe49b,#d5a12a);
+
+color:#17130a;
+
+border:0;
+
+padding:13px 19px;
+
+border-radius:9px;
+
+font-weight:800;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+button:hover{transform:translateY(-2px);filter:brightness(1.1)}
+
+button:disabled{opacity:.5;cursor:not-allowed}
+
+button.secondary{
+
+background:#24262d;
+
+color:white;
+
+border:1px solid #44464d;
+
+}
+
+header{
+
+position:sticky;
+
+top:0;
+
+z-index:20;
+
+background:#101116f5;
+
+backdrop-filter:blur(15px);
+
+border-bottom:1px solid #514024;
+
+padding:14px 5%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+.logo{
+
+font-size:17px;
+
+font-weight:900;
+
+letter-spacing:1px;
+
+color:var(--gold2);
+
+}
+
+nav{display:flex;gap:7px;flex-wrap:wrap}
+
+nav button{padding:10px 14px;font-size:13px}
+
+main{
+
+max-width:1150px;
+
+margin:35px auto;
+
+padding:15px;
+
+min-height:65vh;
+
+}
 
 .hidden{display:none!important}
 
-.notice{padding:14px;background:#292313;border:1px solid #665322;border-radius:9px;color:#f4d98c;margin:14px 0}
+h1,h2,h3{line-height:1.3;margin-bottom:12px}
 
-.hero{position:relative;overflow:hidden;padding:65px 22px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#60491b 0%,#282014 35%,#15161a 75%);border:1px solid #715a2b;border-radius:19px}
+h1{color:var(--gold2)}
 
-.hero:after{content:"";position:absolute;width:240px;height:240px;border:1px solid #c59b3c33;border-radius:50%;top:-130px;right:-70px;box-shadow:0 0 0 25px #c59b3c0d,0 0 0 50px #c59b3c08}
+p{color:#bfc0c6;margin-bottom:12px}
 
-.hero h1{font-size:clamp(29px,5vw,46px);max-width:750px;margin:0 auto 15px}
+.card{
 
-.hero p{max-width:620px;margin:0 auto 22px;font-size:16px}
+background:linear-gradient(145deg,#1c1e25,#121419);
 
-.hero-tag{display:inline-block;color:var(--gold2);border:1px solid #9c792f;padding:6px 13px;border-radius:30px;font-size:12px;letter-spacing:1px;margin-bottom:17px}
+border:1px solid var(--border);
 
-.hero-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
+border-radius:17px;
 
-.section-heading{text-align:center;margin:38px 0 20px}
+padding:23px;
+
+margin:16px 0;
+
+box-shadow:0 12px 35px #00000025;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:17px;
+
+}
+
+.hero{
+
+position:relative;
+
+overflow:hidden;
+
+padding:75px 22px;
+
+text-align:center;
+
+border:1px solid #84662e;
+
+border-radius:23px;
+
+background:
+
+radial-gradient(ellipse at 50% 0%,#80601e 0%,#382b18 36%,#17181d 76%);
+
+}
+
+.hero:before{
+
+content:"";
+
+position:absolute;
+
+width:280px;
+
+height:280px;
+
+border:1px solid #e5b63c35;
+
+border-radius:50%;
+
+top:-160px;
+
+left:-100px;
+
+box-shadow:0 0 0 30px #e5b63c0c,0 0 0 65px #e5b63c08;
+
+pointer-events:none;
+
+}
+
+.hero-tag{
+
+display:inline-block;
+
+padding:7px 16px;
+
+border:1px solid #b48a37;
+
+border-radius:30px;
+
+color:var(--gold2);
+
+font-size:12px;
+
+letter-spacing:2px;
+
+margin-bottom:20px;
+
+}
+
+.hero h1{
+
+font-size:clamp(32px,6vw,55px);
+
+max-width:800px;
+
+margin:0 auto 18px;
+
+}
+
+.hero p{
+
+max-width:650px;
+
+margin:0 auto 25px;
+
+font-size:16px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+}
+
+.hero-buttons button{min-width:150px}
+
+.section-heading{
+
+text-align:center;
+
+margin:48px 0 22px;
+
+}
 
 .section-heading p{font-size:14px}
 
-.plan{text-align:center;position:relative;transition:.2s}
+.feature{padding:22px}
 
-.plan:hover{border-color:#a98232;transform:translateY(-3px)}
+.feature-icon{
 
-.plan h3{color:#f5e1a8}
+font-size:30px;
 
-.plan .price{margin:15px 0}
+color:var(--gold2);
 
-.plan p{font-size:13px}
+margin-bottom:10px;
 
-.plan button{width:100%;margin:8px 0 0}
+}
 
-.feature{padding:18px}
+.feature h3,.plan h3{color:var(--gold2)}
 
-.feature-icon{font-size:25px;color:var(--gold2);margin-bottom:8px}
+.feature p,.plan p{font-size:13px}
 
-.feature h3{font-size:16px;color:#f5e1a8}
+.plan{
 
-.feature p{font-size:13px;margin:0}
+text-align:center;
 
-.steps{counter-reset:step}
+position:relative;
 
-.step{padding:18px;border:1px solid #34343a;background:#17191e;border-radius:12px}
+transition:.25s;
 
-.step-number{color:var(--gold2);font-size:23px;font-weight:bold}
+}
 
-footer{text-align:center;padding:30px 15px;color:#777;border-top:1px solid #292929;margin-top:35px;font-size:13px}
+.plan:hover{
 
-table{width:100%;border-collapse:collapse;min-width:600px}
+transform:translateY(-5px);
 
-th,td{text-align:left;padding:11px;border-bottom:1px solid #383838;font-size:13px}
+border-color:#b48a37;
 
-th{color:var(--gold2)}
+}
+
+.plan .price{
+
+font-size:34px;
+
+font-weight:900;
+
+color:var(--gold2);
+
+margin:17px 0;
+
+}
+
+.plan button{width:100%;margin-top:10px}
+
+.plan-label{
+
+display:inline-block;
+
+padding:5px 12px;
+
+background:#4b3a19;
+
+border-radius:20px;
+
+color:#ffe29a;
+
+font-size:11px;
+
+font-weight:bold;
+
+}
+
+input{
+
+width:100%;
+
+padding:14px;
+
+margin:7px 0 17px;
+
+background:#0c0d11;
+
+border:1px solid #44464e;
+
+border-radius:9px;
+
+color:white;
+
+outline:none;
+
+}
+
+input:focus{border-color:var(--gold)}
+
+label{
+
+font-size:13px;
+
+color:#ddd;
+
+font-weight:bold;
+
+}
+
+.card button{margin:4px 3px}
+
+.notice{
+
+padding:16px;
+
+background:#2b2516;
+
+border:1px solid #79602a;
+
+border-radius:10px;
+
+color:#f2d99c;
+
+margin:15px 0;
+
+font-size:13px;
+
+}
+
+.steps .step{
+
+padding:22px;
+
+background:#17191f;
+
+border:1px solid #39352c;
+
+border-radius:14px;
+
+}
+
+.step-number{
+
+color:var(--gold2);
+
+font-size:30px;
+
+font-weight:900;
+
+}
+
+.price,.stat{
+
+color:var(--gold2);
+
+font-size:30px;
+
+font-weight:900;
+
+}
+
+.dashboard-top{
+
+background:linear-gradient(120deg,#453419,#191a20 70%);
+
+border:1px solid #725728;
+
+}
+
+.muted{color:#999;font-size:13px}
+
+#message{
+
+color:var(--gold2);
+
+overflow-wrap:anywhere;
+
+margin-top:12px;
+
+}
 
 .table-wrap{overflow-x:auto}
 
-#message{color:var(--gold2);overflow-wrap:anywhere}
+table{width:100%;border-collapse:collapse;min-width:600px}
+
+th,td{
+
+text-align:left;
+
+padding:13px;
+
+border-bottom:1px solid #393939;
+
+font-size:13px;
+
+}
+
+th{color:var(--gold2)}
+
+footer{
+
+text-align:center;
+
+padding:35px 15px;
+
+color:#777;
+
+border-top:1px solid #292929;
+
+margin-top:50px;
+
+font-size:13px;
+
+}
+
+.footer-logo{
+
+color:var(--gold2);
+
+font-weight:900;
+
+font-size:16px;
+
+margin-bottom:8px;
+
+}
 
 @media(max-width:600px){
 
-header{justify-content:center}
+header{justify-content:center;padding:13px 10px}
 
-nav{justify-content:center}
+.logo{text-align:center;font-size:15px}
 
-main{padding:10px}
+nav{justify-content:center;width:100%}
 
-.hero{padding:48px 16px}
+nav button{font-size:12px;padding:9px 12px}
+
+main{padding:10px;margin:20px auto}
+
+.hero{padding:55px 16px}
 
 .hero p{font-size:14px}
 
-.card{padding:16px}
+.card{padding:17px}
+
+.grid{grid-template-columns:1fr}
+
+.plan .price{font-size:32px}
 
 }
 
@@ -140,361 +534,445 @@ main{padding:10px}
 
 <header>
 
- <div class="logo">✦ TOUR GOLD INVESTMENT</div>
+<div class="logo">✦ TOUR GOLD INVESTMENT</div>
 
- <nav>
+<nav>
 
-  <button class="secondary" onclick="showSection('home')">Home</button>
+<button class="secondary" onclick="showSection('home')">Home</button>
 
-  <button onclick="showSection('auth')">Account</button>
+<button onclick="showSection('auth')">Account</button>
 
-  <button id="adminNav" class="hidden" onclick="showSection('admin')">Admin</button>
+<button id="adminNav" class="hidden" onclick="showSection('admin')">Admin</button>
 
- </nav>
+</nav>
 
 </header>
 
 <main>
 
+<!-- HOME -->
+
 <section id="home">
 
- <div class="hero">
+<div class="hero">
 
-  <div class="hero-tag">WELCOME TO TOUR GOLD INVESTMENT</div>
+<div class="hero-tag">WELCOME TO TOUR GOLD INVESTMENT</div>
 
-  <h1>Build Your Financial Future With Confidence</h1>
+<h1>Your Financial Journey Starts Here</h1>
 
-  <p>Explore our gold investment platform and choose a deposit amount that suits your plans.</p>
+<p>
 
-  <div class="hero-buttons">
+Welcome to TOUR GOLD INVESTMENT. Explore our platform,
 
-   <button onclick="showSection('auth')">GET STARTED</button>
+create your account and select a deposit amount that
 
-   <button class="secondary" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">VIEW OPTIONS</button>
+suits your plans.
 
-  </div>
+</p>
 
- </div>
+<div class="hero-buttons">
 
- <div class="grid" style="margin-top:18px">
+<button onclick="showSection('auth')">GET STARTED →</button>
 
-  <div class="card feature">
+<button class="secondary" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">
 
-   <div class="feature-icon">◆</div>
+EXPLORE OPTIONS
 
-   <h3>Account Access</h3>
+</button>
 
-   <p>Create an account and access your personal dashboard.</p>
+</div>
 
-  </div>
+</div>
 
-  <div class="card feature">
+<div class="grid" style="margin-top:20px">
 
-   <div class="feature-icon">₵</div>
+<div class="card feature">
 
-   <h3>Flexible Amounts</h3>
+<div class="feature-icon">✦</div>
 
-   <p>Choose a listed amount or enter a custom amount from GH₵50.</p>
+<h3>Personal Account</h3>
 
-  </div>
+<p>Create your account and access your personal dashboard.</p>
 
-  <div class="card feature">
+</div>
 
-   <div class="feature-icon">▣</div>
+<div class="card feature">
 
-   <h3>Paystack Checkout</h3>
+<div class="feature-icon">₵</div>
 
-   <p>Continue to the hosted Paystack payment page.</p>
+<h3>Flexible Deposits</h3>
 
-  </div>
+<p>Choose a listed amount or enter your preferred amount from GH₵50.</p>
 
- </div>
+</div>
 
- <div id="plans" class="section-heading">
+<div class="card feature">
 
-  <h2>Choose Your Deposit Amount</h2>
+<div class="feature-icon">▣</div>
 
-  <p>Select an option to get started.</p>
+<h3>Paystack Checkout</h3>
 
- </div>
+<p>Continue to our hosted Paystack payment page.</p>
 
- <div class="grid">
+</div>
 
-  <div class="card plan">
+</div>
 
-   <h3>STARTER</h3>
+<div id="plans" class="section-heading">
 
-   <p>Start with a smaller deposit</p>
+<h2>Choose Your Deposit Amount</h2>
 
-   <div class="price">GH₵50</div>
+<p>Select your preferred option below.</p>
 
-   <button onclick="choosePlan('Starter Plan',50)">SELECT PLAN</button>
+</div>
 
-  </div>
+<div class="grid">
 
-  <div class="card plan">
+<div class="card plan">
 
-   <h3>STANDARD</h3>
+<div class="plan-label">STARTER</div>
 
-   <p>Choose a standard deposit</p>
+<h3>Starter Plan</h3>
 
-   <div class="price">GH₵100</div>
+<p>Starting deposit</p>
 
-   <button onclick="choosePlan('Standard Plan',100)">SELECT PLAN</button>
+<div class="price">GH₵50</div>
 
-  </div>
+<button onclick="choosePlan('Starter Plan',50)">SELECT PLAN</button>
 
-  <div class="card plan">
+</div>
 
-   <h3>PREMIUM</h3>
+<div class="card plan">
 
-   <p>Choose a larger deposit</p>
+<div class="plan-label">STANDARD</div>
 
-   <div class="price">GH₵500</div>
+<h3>Standard Plan</h3>
 
-   <button onclick="choosePlan('Premium Plan',500)">SELECT PLAN</button>
+<p>Standard deposit</p>
 
-  </div>
+<div class="price">GH₵100</div>
 
-  <div class="card plan">
+<button onclick="choosePlan('Standard Plan',100)">SELECT PLAN</button>
 
-   <h3>CUSTOM AMOUNT</h3>
+</div>
 
-   <p>Enter your preferred amount</p>
+<div class="card plan">
 
-   <input id="homeCustom" type="number" min="50" placeholder="Minimum GH₵50">
+<div class="plan-label">PREMIUM</div>
 
-   <button onclick="customPlan('homeCustom')">CONTINUE</button>
+<h3>Premium Plan</h3>
 
-  </div>
+<p>Higher deposit option</p>
 
- </div>
+<div class="price">GH₵500</div>
 
- <div class="section-heading">
+<button onclick="choosePlan('Premium Plan',500)">SELECT PLAN</button>
 
-  <h2>How It Works</h2>
+</div>
 
-  <p>Three simple steps to get started.</p>
+<div class="card plan">
 
- </div>
+<div class="plan-label">FLEXIBLE</div>
 
- <div class="grid steps">
+<h3>Custom Amount</h3>
 
-  <div class="step">
+<p>Choose your own amount</p>
 
-   <div class="step-number">01</div>
+<div class="price">GH₵50+</div>
 
-   <h3>Create Your Account</h3>
+<input id="homeCustom" type="number" min="50" placeholder="Enter amount">
 
-   <p>Register or log in to access your customer dashboard.</p>
+<button onclick="customPlan('homeCustom')">CONTINUE</button>
 
-  </div>
+</div>
 
-  <div class="step">
+</div>
 
-   <div class="step-number">02</div>
+<div class="section-heading">
 
-   <h3>Choose Your Amount</h3>
+<h2>How It Works</h2>
 
-   <p>Select one of the available deposit options or enter a custom amount.</p>
+<p>Getting started on our platform.</p>
 
-  </div>
+</div>
 
-  <div class="step">
+<div class="grid steps">
 
-   <div class="step-number">03</div>
+<div class="step">
 
-   <h3>Continue to Payment</h3>
+<div class="step-number">01</div>
 
-   <p>Proceed to the hosted Paystack page and check the amount before paying.</p>
+<h3>Create Account</h3>
 
-  </div>
+<p>Register or log in to your personal account.</p>
 
- </div>
+</div>
 
- <div class="notice">
+<div class="step">
 
-  Important: Investment involves risk. No profit or return is guaranteed. Review all investment terms before making a payment. A payment is not confirmed by simply clicking the payment button.
+<div class="step-number">02</div>
 
- </div>
+<h3>Select Amount</h3>
+
+<p>Choose your preferred deposit amount.</p>
+
+</div>
+
+<div class="step">
+
+<div class="step-number">03</div>
+
+<h3>Payment</h3>
+
+<p>Continue to Paystack and review the payment details.</p>
+
+</div>
+
+</div>
+
+<div class="notice">
+
+<strong>Important Information</strong><br>
+
+Investment involves risk. No profit or return is guaranteed.
+
+Please review the investment terms, risks and conditions
+
+before making any payment. A payment is not confirmed
+
+simply by clicking the payment button.
+
+</div>
 
 </section>
+
+<!-- ACCOUNT -->
 
 <section id="auth" class="hidden">
 
- <div class="card">
+<div class="section-heading">
 
-  <h2>Create Your Account</h2>
+<h2>Welcome to Your Account</h2>
 
-  <label>Full Name</label>
+<p>Register or log in to continue.</p>
 
-  <input id="signupName" placeholder="Enter full name">
+</div>
 
-  <label>Email Address</label>
+<div class="card">
 
-  <input id="signupEmail" type="email" placeholder="Enter email">
+<h2>Create Your Account</h2>
 
-  <label>Password</label>
+<label>Full Name</label>
 
-  <input id="signupPassword" type="password" placeholder="At least 6 characters">
+<input id="signupName" placeholder="Enter full name">
 
-  <button onclick="signUp()">CREATE ACCOUNT</button>
+<label>Email Address</label>
 
- </div>
+<input id="signupEmail" type="email" placeholder="Enter email">
 
- <div class="card">
+<label>Password</label>
 
-  <h2>Login</h2>
+<input id="signupPassword" type="password" placeholder="At least 6 characters">
 
-  <label>Email Address</label>
+<button onclick="signUp()">CREATE ACCOUNT</button>
 
-  <input id="loginEmail" type="email" placeholder="Enter email">
+</div>
 
-  <label>Password</label>
+<div class="card">
 
-  <input id="loginPassword" type="password" placeholder="Enter password">
+<h2>Customer Login</h2>
 
-  <button onclick="logIn()">LOGIN</button>
+<label>Email Address</label>
 
-  <button class="secondary" onclick="resetPassword()">Forgot Password?</button>
+<input id="loginEmail" type="email" placeholder="Enter email">
 
-  <p id="message"></p>
+<label>Password</label>
 
- </div>
+<input id="loginPassword" type="password" placeholder="Enter password">
+
+<button onclick="logIn()">LOGIN TO ACCOUNT</button>
+
+<button class="secondary" onclick="resetPassword()">FORGOT PASSWORD?</button>
+
+<p id="message"></p>
+
+</div>
 
 </section>
+
+<!-- CUSTOMER DASHBOARD -->
 
 <section id="dashboard" class="hidden">
 
- <div class="card">
+<div class="card dashboard-top">
 
-  <h2>Customer Dashboard</h2>
+<h2>Customer Dashboard</h2>
 
-  <p>Welcome, <strong id="customerName"></strong></p>
+<p>Welcome back, <strong id="customerName"></strong></p>
 
-  <p id="customerEmail" class="muted"></p>
+<p id="customerEmail" class="muted"></p>
 
-  <button onclick="loadInvestments()">Refresh</button>
+<button onclick="loadInvestments()">↻ REFRESH</button>
 
-  <button class="secondary" onclick="logOut()">Logout</button>
+<button class="secondary" onclick="logOut()">LOGOUT</button>
 
- </div>
+</div>
 
- <div class="card">
+<div class="card">
 
-  <h2>Choose Your Amount</h2>
+<h2>Choose Your Amount</h2>
 
-  <div class="grid">
+<p>Select one of the available deposit options.</p>
 
-   <button onclick="choosePlan('Starter Plan',50)">Starter GH₵50</button>
+<div class="grid">
 
-   <button onclick="choosePlan('Standard Plan',100)">Standard GH₵100</button>
+<button onclick="choosePlan('Starter Plan',50)">STARTER GH₵50</button>
 
-   <button onclick="choosePlan('Premium Plan',500)">Premium GH₵500</button>
+<button onclick="choosePlan('Standard Plan',100)">STANDARD GH₵100</button>
 
-  </div>
+<button onclick="choosePlan('Premium Plan',500)">PREMIUM GH₵500</button>
 
-  <label>Custom Amount (minimum GH₵50)</label>
+</div>
 
-  <input id="dashboardCustom" type="number" min="50" placeholder="Enter amount">
+<label>Custom Amount (Minimum GH₵50)</label>
 
-  <button onclick="customPlan('dashboardCustom')">SELECT AMOUNT</button>
+<input id="dashboardCustom" type="number" min="50" placeholder="Enter amount">
 
- </div>
+<button onclick="customPlan('dashboardCustom')">SELECT AMOUNT</button>
 
- <div id="selectedPlan" class="card hidden">
+</div>
 
-  <h2>Payment Details</h2>
+<div id="selectedPlan" class="card hidden">
 
-  <p id="planName"></p>
+<h2>Payment Details</h2>
 
-  <div id="planAmount" class="price"></div>
+<p id="planName"></p>
 
-  <div class="notice">
+<div id="planAmount" class="price"></div>
 
-   You will be redirected to Paystack. Check the amount displayed on the payment page before confirming. If it does not match your selected amount, do not proceed.
+<div class="notice">
 
-  </div>
+You will be redirected to Paystack. Check the amount
 
-  <button onclick="payHere()">CONTINUE TO PAYSTACK</button>
+displayed on the payment page before confirming.
 
-  <button class="secondary" onclick="clearPlan()">Cancel</button>
+If the amount does not match your selection, do not proceed.
 
- </div>
+</div>
 
- <div class="card">
+<button onclick="payHere()">CONTINUE TO PAYSTACK →</button>
 
-  <h2>My Investment Records</h2>
+<button class="secondary" onclick="clearPlan()">CANCEL</button>
 
-  <div id="investmentList">Loading...</div>
+</div>
 
- </div>
+<div class="card">
 
- <div class="card">
+<h2>My Investment Records</h2>
 
-  <h2>Payment Information</h2>
+<div id="investmentList">Loading...</div>
 
-  <p>Check your payment status through your Paystack receipt and transaction history.</p>
+</div>
 
-  <p>Website payment verification is not yet automated. A payment is not confirmed in this dashboard simply by clicking the payment button.</p>
+<div class="card">
 
- </div>
+<h2>Payment Information</h2>
+
+<p>Check your payment status through your Paystack receipt and transaction history.</p>
+
+<div class="notice">
+
+Automatic payment verification is not yet enabled.
+
+A payment is not confirmed in this dashboard simply by
+
+clicking the payment button.
+
+</div>
+
+</div>
 
 </section>
 
+<!-- ADMIN DASHBOARD -->
+
 <section id="admin" class="hidden">
 
- <div class="card">
+<div class="card dashboard-top">
 
-  <h1>Admin Dashboard</h1>
+<h1>Admin Dashboard</h1>
 
-  <p id="adminWelcome"></p>
+<p id="adminWelcome"></p>
 
-  <button onclick="loadAdminData()">Refresh Dashboard</button>
+<button onclick="loadAdminData()">REFRESH DASHBOARD</button>
 
-  <button class="secondary" onclick="showSection('dashboard')">Customer Dashboard</button>
+<button class="secondary" onclick="showSection('dashboard')">CUSTOMER DASHBOARD</button>
 
-  <button class="secondary" onclick="logOut()">Logout</button>
+<button class="secondary" onclick="logOut()">LOGOUT</button>
 
- </div>
+</div>
 
- <h2>Platform Overview</h2>
+<h2>Platform Overview</h2>
 
- <div class="grid">
+<div class="grid">
 
-  <div class="card"><p>Total Customers</p><div class="stat" id="totalCustomers">—</div></div>
+<div class="card">
 
-  <div class="card"><p>Investment Records</p><div class="stat" id="totalInvestments">—</div></div>
+<p>Total Customers</p>
 
-  <div class="card"><p>Pending Records</p><div class="stat" id="pendingInvestments">—</div></div>
+<div class="stat" id="totalCustomers">—</div>
 
- </div>
+</div>
 
- <div class="card">
+<div class="card">
 
-  <h2>Customer Management</h2>
+<p>Investment Records</p>
 
-  <div id="adminCustomers">Loading...</div>
+<div class="stat" id="totalInvestments">—</div>
 
- </div>
+</div>
 
- <div class="card">
+<div class="card">
 
-  <h2>Investment Records</h2>
+<p>Pending Records</p>
 
-  <div id="adminInvestments">Loading...</div>
+<div class="stat" id="pendingInvestments">—</div>
 
- </div>
+</div>
 
- <div class="card">
+</div>
 
-  <h2>Payment Verification</h2>
+<div class="card">
 
-  <div class="notice">Only payments confirmed through Paystack's secure transaction records should be treated as successful.</div>
+<h2>Customer Management</h2>
 
-  <p>Automatic payment verification is not connected yet.</p>
+<div id="adminCustomers">Loading...</div>
 
- </div>
+</div>
+
+<div class="card">
+
+<h2>Investment Records</h2>
+
+<div id="adminInvestments">Loading...</div>
+
+</div>
+
+<div class="card">
+
+<h2>Payment Verification</h2>
+
+<div class="notice">
+
+Only payments confirmed through Paystack's secure
+
+transaction records should be treated as successful.
+
+</div>
+
+<p>Automatic payment verification is not connected yet.</p>
+
+</div>
 
 </section>
 
@@ -502,17 +980,23 @@ main{padding:10px}
 
 <footer>
 
- <div class="logo">✦ TOUR GOLD INVESTMENT</div>
+<div class="footer-logo">✦ TOUR GOLD INVESTMENT</div>
 
- <p style="margin-top:8px">© 2026 TOUR GOLD INVESTMENT. All rights reserved.</p>
+<p>Professional account and payment platform.</p>
+
+<p>© 2026 TOUR GOLD INVESTMENT. All rights reserved.</p>
 
 </footer>
 
 <script>
 
+// SUPABASE CONNECTION
+
 const SUPABASE_URL="https://yvorlcgppaelcexwtiwf.supabase.co";
 
 const SUPABASE_KEY="sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v";
+
+// PAYSTACK PAYMENT PAGE
 
 const PAYSTACK_PAYMENT_URL="https://paystack.shop/pay/-egr5cbd19";
 
@@ -524,491 +1008,579 @@ let selectedPlan=null;
 
 function money(n){
 
- return "GH₵"+Number(n||0).toFixed(2);
+return "GH₵"+Number(n||0).toFixed(2);
 
 }
 
 function esc(v){
 
- return String(v??"").replace(/[&<>"']/g,c=>({
+return String(v??"").replace(/[&<>"']/g,c=>({
 
- "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+"&":"&amp;",
 
- }[c]));
+"<":"&lt;",
+
+">":"&gt;",
+
+'"':"&quot;",
+
+"'":"&#39;"
+
+}[c]));
 
 }
 
 function showSection(id){
 
- ["home","auth","dashboard","admin"].forEach(x=>{
+["home","auth","dashboard","admin"].forEach(x=>{
 
-  document.getElementById(x).classList.add("hidden");
+document.getElementById(x).classList.add("hidden");
 
- });
+});
 
- document.getElementById(id).classList.remove("hidden");
+document.getElementById(id).classList.remove("hidden");
 
- window.scrollTo(0,0);
+window.scrollTo(0,0);
 
 }
 
 function choosePlan(name,amount){
 
- if(!Number.isFinite(Number(amount))||Number(amount)<50){
+if(!Number.isFinite(Number(amount))||Number(amount)<50){
 
-  alert("Minimum amount is GH₵50.");
+alert("Minimum amount is GH₵50.");
 
-  return;
+return;
 
- }
+}
 
- selectedPlan={name,amount:Number(amount)};
+selectedPlan={
 
- document.getElementById("planName").textContent=name;
+name,
 
- document.getElementById("planAmount").textContent=money(amount);
+amount:Number(amount)
 
- document.getElementById("selectedPlan").classList.remove("hidden");
+};
 
- if(!currentUser){
+document.getElementById("planName").textContent=name;
 
-  showSection("auth");
+document.getElementById("planAmount").textContent=money(amount);
 
-  return;
+document.getElementById("selectedPlan").classList.remove("hidden");
 
- }
+if(!currentUser){
 
- document.getElementById("selectedPlan").scrollIntoView({behavior:"smooth"});
+showSection("auth");
+
+return;
+
+}
+
+document.getElementById("selectedPlan").scrollIntoView({
+
+behavior:"smooth"
+
+});
 
 }
 
 function customPlan(id){
 
- const amount=Number(document.getElementById(id).value);
+const amount=Number(document.getElementById(id).value);
 
- if(!Number.isFinite(amount)||amount<50){
+if(!Number.isFinite(amount)||amount<50){
 
-  alert("Enter a valid amount of at least GH₵50.");
+alert("Enter a valid amount of at least GH₵50.");
 
-  return;
+return;
 
- }
+}
 
- choosePlan("Custom Plan",amount);
+choosePlan("Custom Plan",amount);
 
 }
 
 function clearPlan(){
 
- selectedPlan=null;
+selectedPlan=null;
 
- document.getElementById("selectedPlan").classList.add("hidden");
+document.getElementById("selectedPlan").classList.add("hidden");
 
 }
 
 function payHere(){
 
- if(!currentUser){
+if(!currentUser){
 
-  alert("Please log in first.");
+alert("Please log in first.");
 
-  showSection("auth");
+showSection("auth");
 
-  return;
+return;
 
- }
+}
 
- if(!selectedPlan){
+if(!selectedPlan){
 
-  alert("Select an amount first.");
+alert("Select an amount first.");
 
-  return;
+return;
 
- }
+}
 
- alert("Your selected amount is "+money(selectedPlan.amount)+
+alert(
 
- ". Check that the Paystack page displays the correct amount before paying.");
+"Your selected amount is "+money(selectedPlan.amount)+
 
- window.location.href=PAYSTACK_PAYMENT_URL;
+". Check that the Paystack page displays the correct amount before paying."
+
+);
+
+window.location.href=PAYSTACK_PAYMENT_URL;
 
 }
 
 function message(t){
 
- document.getElementById("message").textContent=t;
+document.getElementById("message").textContent=t;
 
 }
+
+// SIGN UP
 
 async function signUp(){
 
- const name=document.getElementById("signupName").value.trim();
+const name=document.getElementById("signupName").value.trim();
 
- const email=document.getElementById("signupEmail").value.trim();
+const email=document.getElementById("signupEmail").value.trim();
 
- const password=document.getElementById("signupPassword").value;
+const password=document.getElementById("signupPassword").value;
 
- if(!name||!email||!password){
+if(!name||!email||!password){
 
-  message("Complete all fields.");
+message("Complete all fields.");
 
-  return;
-
- }
-
- if(password.length<6){
-
-  message("Password must contain at least 6 characters.");
-
-  return;
-
- }
-
- const {error}=await db.auth.signUp({
-
-  email,password,
-
-  options:{data:{full_name:name}}
-
- });
-
- message(error?error.message:
-
- "Account created. Check your email if confirmation is required.");
+return;
 
 }
+
+if(password.length<6){
+
+message("Password must contain at least 6 characters.");
+
+return;
+
+}
+
+const {error}=await db.auth.signUp({
+
+email,
+
+password,
+
+options:{
+
+data:{full_name:name}
+
+}
+
+});
+
+message(error?error.message:
+
+"Account created. Check your email if confirmation is required.");
+
+}
+
+// LOGIN
 
 async function logIn(){
 
- const email=document.getElementById("loginEmail").value.trim();
+const email=document.getElementById("loginEmail").value.trim();
 
- const password=document.getElementById("loginPassword").value;
+const password=document.getElementById("loginPassword").value;
 
- const {data,error}=await db.auth.signInWithPassword({email,password});
+const {data,error}=await db.auth.signInWithPassword({
 
- if(error){
+email,
 
-  message(error.message);
+password
 
-  return;
+});
 
- }
+if(error){
 
- currentUser=data.user;
+message(error.message);
 
- await openDashboard();
+return;
 
 }
+
+currentUser=data.user;
+
+await openDashboard();
+
+}
+
+// PASSWORD RESET
 
 async function resetPassword(){
 
- const email=document.getElementById("loginEmail").value.trim();
+const email=document.getElementById("loginEmail").value.trim();
 
- if(!email){
+if(!email){
 
-  message("Enter your email first.");
+message("Enter your email first.");
 
-  return;
-
- }
-
- const {error}=await db.auth.resetPasswordForEmail(email,{
-
-  redirectTo:location.origin+location.pathname
-
- });
-
- message(error?error.message:"If the account exists, reset instructions have been sent.");
+return;
 
 }
+
+const {error}=await db.auth.resetPasswordForEmail(email,{
+
+redirectTo:location.origin+location.pathname
+
+});
+
+message(error?error.message:
+
+"If the account exists, reset instructions have been sent.");
+
+}
+
+// LOGOUT
 
 async function logOut(){
 
- await db.auth.signOut();
+await db.auth.signOut();
 
- currentUser=null;
+currentUser=null;
 
- document.getElementById("adminNav").classList.add("hidden");
+document.getElementById("adminNav").classList.add("hidden");
 
- clearPlan();
+clearPlan();
 
- showSection("home");
+showSection("home");
 
 }
+
+// CUSTOMER DASHBOARD
 
 async function openDashboard(){
 
- showSection("dashboard");
+showSection("dashboard");
 
- document.getElementById("customerEmail").textContent=currentUser.email||"";
+document.getElementById("customerEmail").textContent=
 
- const {data:profile,error}=await db.from("profiles")
+currentUser.email||"";
 
-  .select("full_name,role")
+const {data:profile,error}=await db.from("profiles")
 
-  .eq("id",currentUser.id)
+.select("full_name,role")
 
-  .maybeSingle();
+.eq("id",currentUser.id)
 
- document.getElementById("customerName").textContent=
+.maybeSingle();
 
-  profile?.full_name||currentUser.user_metadata?.full_name||"Customer";
+document.getElementById("customerName").textContent=
 
- if(!error&&profile?.role==="admin"){
+profile?.full_name||
 
-  document.getElementById("adminNav").classList.remove("hidden");
+currentUser.user_metadata?.full_name||
 
-  document.getElementById("adminWelcome").textContent=
+"Customer";
 
-   "Signed in as "+(profile.full_name||currentUser.email);
+if(!error&&profile?.role==="admin"){
 
-  await loadAdminData();
+document.getElementById("adminNav").classList.remove("hidden");
 
- }else{
+document.getElementById("adminWelcome").textContent=
 
-  document.getElementById("adminNav").classList.add("hidden");
+"Signed in as "+(profile.full_name||currentUser.email);
 
- }
+await loadAdminData();
 
- await loadInvestments();
+}else{
 
- if(selectedPlan){
-
-  document.getElementById("planName").textContent=selectedPlan.name;
-
-  document.getElementById("planAmount").textContent=money(selectedPlan.amount);
-
-  document.getElementById("selectedPlan").classList.remove("hidden");
-
- }
+document.getElementById("adminNav").classList.add("hidden");
 
 }
+
+await loadInvestments();
+
+if(selectedPlan){
+
+document.getElementById("planName").textContent=selectedPlan.name;
+
+document.getElementById("planAmount").textContent=
+
+money(selectedPlan.amount);
+
+document.getElementById("selectedPlan").classList.remove("hidden");
+
+}
+
+}
+
+// INVESTMENT RECORDS
 
 async function loadInvestments(){
 
- if(!currentUser)return;
+if(!currentUser)return;
 
- const box=document.getElementById("investmentList");
+const box=document.getElementById("investmentList");
 
- box.textContent="Loading...";
+box.textContent="Loading...";
 
- const {data,error}=await db.from("investment_records")
+const {data,error}=await db.from("investment_records")
 
-  .select("id,plan_name,amount,status,created_at")
+.select("id,plan_name,amount,status,created_at")
 
-  .eq("user_id",currentUser.id)
+.eq("user_id",currentUser.id)
 
-  .order("created_at",{ascending:false});
+.order("created_at",{ascending:false});
 
- if(error){
+if(error){
 
-  box.textContent="Could not load records: "+error.message;
+box.textContent="Could not load records: "+error.message;
 
-  return;
-
- }
-
- if(!data?.length){
-
-  box.textContent="No investment records found yet.";
-
-  return;
-
- }
-
- box.innerHTML=data.map(x=>`
-
-  <div class="card">
-
-   <strong>${esc(x.plan_name)}</strong>
-
-   <p>${money(x.amount)}</p>
-
-   <p>Status: ${esc(x.status)}</p>
-
-   <p class="muted">${x.created_at?new Date(x.created_at).toLocaleString():""}</p>
-
-  </div>
-
- `).join("");
+return;
 
 }
+
+if(!data?.length){
+
+box.textContent="No investment records found yet.";
+
+return;
+
+}
+
+box.innerHTML=data.map(x=>`
+
+<div class="card">
+
+<strong>${esc(x.plan_name)}</strong>
+
+<p>${money(x.amount)}</p>
+
+<p>Status: ${esc(x.status)}</p>
+
+<p class="muted">
+
+${x.created_at?new Date(x.created_at).toLocaleString():""}
+
+</p>
+
+</div>
+
+`).join("");
+
+}
+
+// TABLE RENDERING
 
 function renderTable(container,rows,columns,emptyText){
 
- const box=document.getElementById(container);
+const box=document.getElementById(container);
 
- if(!Array.isArray(rows)||!rows.length){
+if(!Array.isArray(rows)||!rows.length){
 
-  box.textContent=emptyText;
+box.textContent=emptyText;
 
-  return;
-
- }
-
- box.innerHTML='<div class="table-wrap"><table><thead><tr>'+
-
- columns.map(k=>"<th>"+esc(k.label)+"</th>").join("")+
-
- "</tr></thead><tbody>"+
-
- rows.map(row=>"<tr>"+columns.map(k=>{
-
-  let val=row[k.key];
-
-  if(k.key==="amount"&&val!==null&&val!==undefined)val=money(val);
-
-  if(k.key==="created_at"&&val)val=new Date(val).toLocaleString();
-
-  return "<td>"+esc(val??"—")+"</td>";
-
- }).join("")+"</tr>").join("")+
-
- "</tbody></table></div>";
+return;
 
 }
+
+box.innerHTML=
+
+'<div class="table-wrap"><table><thead><tr>'+
+
+columns.map(k=>"<th>"+esc(k.label)+"</th>").join("")+
+
+"</tr></thead><tbody>"+
+
+rows.map(row=>"<tr>"+columns.map(k=>{
+
+let val=row[k.key];
+
+if(k.key==="amount"&&val!==null&&val!==undefined){
+
+val=money(val);
+
+}
+
+if(k.key==="created_at"&&val){
+
+val=new Date(val).toLocaleString();
+
+}
+
+return "<td>"+esc(val??"—")+"</td>";
+
+}).join("")+"</tr>").join("")+
+
+"</tbody></table></div>";
+
+}
+
+// ADMIN DASHBOARD
 
 async function loadAdminData(){
 
- if(!currentUser)return;
+if(!currentUser)return;
 
- const {data:profile,error:profileError}=await db.from("profiles")
+const {data:profile,error:profileError}=await db.from("profiles")
 
-  .select("role")
+.select("role")
 
-  .eq("id",currentUser.id)
+.eq("id",currentUser.id)
 
-  .maybeSingle();
+.maybeSingle();
 
- if(profileError||profile?.role!=="admin"){
+if(profileError||profile?.role!=="admin"){
 
-  alert("Admin access only.");
+alert("Admin access only.");
 
-  showSection("dashboard");
+showSection("dashboard");
 
-  return;
-
- }
-
- document.getElementById("adminCustomers").textContent="Loading...";
-
- document.getElementById("adminInvestments").textContent="Loading...";
-
- const [customerResult,investmentResult]=await Promise.all([
-
-  db.rpc("admin_list_customers"),
-
-  db.rpc("admin_list_investments")
-
- ]);
-
- if(customerResult.error){
-
-  document.getElementById("adminCustomers").textContent=
-
-   "Customer loading error: "+customerResult.error.message;
-
- }else{
-
-  const customers=customerResult.data||[];
-
-  document.getElementById("totalCustomers").textContent=customers.length;
-
-  renderTable("adminCustomers",customers,[
-
-   {key:"full_name",label:"Customer"},
-
-   {key:"email",label:"Email"},
-
-   {key:"role",label:"Role"},
-
-   {key:"created_at",label:"Joined"}
-
-  ],"No customers found.");
-
- }
-
- if(investmentResult.error){
-
-  document.getElementById("adminInvestments").textContent=
-
-   "Investment loading error: "+investmentResult.error.message;
-
- }else{
-
-  const records=investmentResult.data||[];
-
-  const pending=records.filter(x=>
-
-   String(x.status||"").toLowerCase()==="pending"
-
-  ).length;
-
-  document.getElementById("totalInvestments").textContent=records.length;
-
-  document.getElementById("pendingInvestments").textContent=pending;
-
-  renderTable("adminInvestments",records,[
-
-   {key:"plan_name",label:"Plan"},
-
-   {key:"amount",label:"Amount"},
-
-   {key:"status",label:"Status"},
-
-   {key:"user_id",label:"Customer ID"},
-
-   {key:"created_at",label:"Date"}
-
-  ],"No investment records found.");
-
- }
+return;
 
 }
 
+document.getElementById("adminCustomers").textContent="Loading...";
+
+document.getElementById("adminInvestments").textContent="Loading...";
+
+const [customerResult,investmentResult]=await Promise.all([
+
+db.rpc("admin_list_customers"),
+
+db.rpc("admin_list_investments")
+
+]);
+
+if(customerResult.error){
+
+document.getElementById("adminCustomers").textContent=
+
+"Customer loading error: "+customerResult.error.message;
+
+}else{
+
+const customers=customerResult.data||[];
+
+document.getElementById("totalCustomers").textContent=
+
+customers.length;
+
+renderTable("adminCustomers",customers,[
+
+{key:"full_name",label:"Customer"},
+
+{key:"email",label:"Email"},
+
+{key:"role",label:"Role"},
+
+{key:"created_at",label:"Joined"}
+
+],"No customers found.");
+
+}
+
+if(investmentResult.error){
+
+document.getElementById("adminInvestments").textContent=
+
+"Investment loading error: "+investmentResult.error.message;
+
+}else{
+
+const records=investmentResult.data||[];
+
+const pending=records.filter(x=>
+
+String(x.status||"").toLowerCase()==="pending"
+
+).length;
+
+document.getElementById("totalInvestments").textContent=
+
+records.length;
+
+document.getElementById("pendingInvestments").textContent=
+
+pending;
+
+renderTable("adminInvestments",records,[
+
+{key:"plan_name",label:"Plan"},
+
+{key:"amount",label:"Amount"},
+
+{key:"status",label:"Status"},
+
+{key:"user_id",label:"Customer ID"},
+
+{key:"created_at",label:"Date"}
+
+],"No investment records found.");
+
+}
+
+}
+
+// START APPLICATION
+
 async function start(){
 
- if(!window.supabase||!window.supabase.createClient){
+if(!window.supabase||!window.supabase.createClient){
 
-  message("Supabase failed to load. Refresh the page.");
+message("Supabase failed to load. Refresh the page.");
 
-  return;
+return;
 
- }
+}
 
- db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+db=window.supabase.createClient(
 
- const {data,error}=await db.auth.getSession();
+SUPABASE_URL,
 
- if(error){
+SUPABASE_KEY
 
-  console.error(error);
+);
 
-  return;
+const {data,error}=await db.auth.getSession();
 
- }
+if(error){
 
- if(data.session){
+console.error(error);
 
-  currentUser=data.session.user;
+return;
 
-  await openDashboard();
+}
 
- }
+if(data.session){
 
- db.auth.onAuthStateChange((event,session)=>{
+currentUser=data.session.user;
 
-  if(event==="SIGNED_OUT"){
+await openDashboard();
 
-   currentUser=null;
+}
 
-   document.getElementById("adminNav").classList.add("hidden");
+db.auth.onAuthStateChange((event,session)=>{
 
-   showSection("home");
+if(event==="SIGNED_OUT"){
 
-  }
+currentUser=null;
 
- });
+document.getElementById("adminNav").classList.add("hidden");
+
+showSection("home");
+
+}
+
+});
 
 }
 
