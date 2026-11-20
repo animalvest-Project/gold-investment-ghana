@@ -10,6 +10,8 @@
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
+<meta name="theme-color" content="#101114">
+
 <title>TOUR GOLD INVESTMENT</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
@@ -18,63 +20,101 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 
-:root{--gold:#e5b63c;--bg:#101114;--panel:#191b20}
+:root{--gold:#e5b63c;--gold2:#f8d978;--bg:#0b0c0f;--panel:#17191e;--muted:#a7a7a7}
 
-body{font-family:Arial,sans-serif;background:var(--bg);color:#fff;line-height:1.6}
+body{font-family:Arial,sans-serif;background:var(--bg);color:white;line-height:1.6}
 
-header{padding:16px;background:#191b20;border-bottom:1px solid #383838;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+header{position:sticky;top:0;z-index:10;padding:15px 5%;background:#111216ed;backdrop-filter:blur(12px);border-bottom:1px solid #393024;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 
-.logo{color:var(--gold);font-size:18px;font-weight:bold}
+.logo{color:var(--gold2);font-size:17px;font-weight:900;letter-spacing:1px}
 
 nav{display:flex;gap:5px;flex-wrap:wrap}
 
-main{max-width:1100px;margin:25px auto;padding:15px}
+button{background:linear-gradient(135deg,#f6d779,#d5a52c);color:#17130a;border:0;padding:12px 17px;border-radius:7px;font-weight:bold;cursor:pointer;margin:3px;transition:.2s}
 
-h1,h2,h3{margin-bottom:12px}
+button:hover{filter:brightness(1.1);transform:translateY(-1px)}
 
-h1{color:var(--gold)}
-
-p{color:#bbb;margin-bottom:12px}
-
-button{background:var(--gold);color:#171717;border:0;padding:12px 17px;border-radius:7px;font-weight:bold;cursor:pointer;margin:3px}
-
-button.secondary{background:#353535;color:white}
+button.secondary{background:#292b31;color:white;border:1px solid #444}
 
 button:disabled{opacity:.5}
 
-input{width:100%;padding:13px;margin:7px 0 14px;background:#101114;border:1px solid #444;border-radius:7px;color:white}
+main{max-width:1120px;margin:28px auto;padding:15px}
 
-label{font-size:14px}
+h1,h2,h3{line-height:1.25;margin-bottom:12px}
 
-.card{background:var(--panel);border:1px solid #333;border-radius:12px;padding:20px;margin:15px 0}
+h1{color:var(--gold2)}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:13px}
+p{color:#bdbdc2;margin-bottom:12px}
 
-.price,.stat{font-size:27px;color:var(--gold);font-weight:bold}
+input{width:100%;padding:14px;margin:7px 0 14px;background:#0d0e11;border:1px solid #45454b;border-radius:8px;color:white}
+
+label{font-size:14px;color:#ddd}
+
+.card{background:linear-gradient(145deg,#1b1d22,#141519);border:1px solid #34343a;border-radius:14px;padding:21px;margin:15px 0}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:15px}
+
+.price,.stat{font-size:28px;color:var(--gold2);font-weight:bold}
 
 .muted{color:#999;font-size:13px}
 
 .hidden{display:none!important}
 
-.notice{padding:13px;background:#292313;border:1px solid #665322;border-radius:8px;color:#f4d98c;margin:12px 0}
+.notice{padding:14px;background:#292313;border:1px solid #665322;border-radius:9px;color:#f4d98c;margin:14px 0}
+
+.hero{position:relative;overflow:hidden;padding:65px 22px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#60491b 0%,#282014 35%,#15161a 75%);border:1px solid #715a2b;border-radius:19px}
+
+.hero:after{content:"";position:absolute;width:240px;height:240px;border:1px solid #c59b3c33;border-radius:50%;top:-130px;right:-70px;box-shadow:0 0 0 25px #c59b3c0d,0 0 0 50px #c59b3c08}
+
+.hero h1{font-size:clamp(29px,5vw,46px);max-width:750px;margin:0 auto 15px}
+
+.hero p{max-width:620px;margin:0 auto 22px;font-size:16px}
+
+.hero-tag{display:inline-block;color:var(--gold2);border:1px solid #9c792f;padding:6px 13px;border-radius:30px;font-size:12px;letter-spacing:1px;margin-bottom:17px}
+
+.hero-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
+
+.section-heading{text-align:center;margin:38px 0 20px}
+
+.section-heading p{font-size:14px}
+
+.plan{text-align:center;position:relative;transition:.2s}
+
+.plan:hover{border-color:#a98232;transform:translateY(-3px)}
+
+.plan h3{color:#f5e1a8}
+
+.plan .price{margin:15px 0}
+
+.plan p{font-size:13px}
+
+.plan button{width:100%;margin:8px 0 0}
+
+.feature{padding:18px}
+
+.feature-icon{font-size:25px;color:var(--gold2);margin-bottom:8px}
+
+.feature h3{font-size:16px;color:#f5e1a8}
+
+.feature p{font-size:13px;margin:0}
+
+.steps{counter-reset:step}
+
+.step{padding:18px;border:1px solid #34343a;background:#17191e;border-radius:12px}
+
+.step-number{color:var(--gold2);font-size:23px;font-weight:bold}
+
+footer{text-align:center;padding:30px 15px;color:#777;border-top:1px solid #292929;margin-top:35px;font-size:13px}
 
 table{width:100%;border-collapse:collapse;min-width:600px}
 
 th,td{text-align:left;padding:11px;border-bottom:1px solid #383838;font-size:13px}
 
-th{color:var(--gold)}
+th{color:var(--gold2)}
 
 .table-wrap{overflow-x:auto}
 
-footer{text-align:center;padding:25px;color:#777}
-
-.hero{padding:35px 20px;text-align:center;background:linear-gradient(135deg,#252015,#191b20);border:1px solid #665322;border-radius:14px}
-
-.hero h1{font-size:32px}
-
-.plan{text-align:center}
-
-#message{color:var(--gold);overflow-wrap:anywhere}
+#message{color:var(--gold2);overflow-wrap:anywhere}
 
 @media(max-width:600px){
 
@@ -82,9 +122,13 @@ header{justify-content:center}
 
 nav{justify-content:center}
 
-.hero h1{font-size:25px}
-
 main{padding:10px}
+
+.hero{padding:48px 16px}
+
+.hero p{font-size:14px}
+
+.card{padding:16px}
 
 }
 
@@ -96,7 +140,7 @@ main{padding:10px}
 
 <header>
 
- <div class="logo">TOUR GOLD INVESTMENT</div>
+ <div class="logo">✦ TOUR GOLD INVESTMENT</div>
 
  <nav>
 
@@ -116,57 +160,153 @@ main{padding:10px}
 
  <div class="hero">
 
-  <h1>TOUR GOLD INVESTMENT</h1>
+  <div class="hero-tag">WELCOME TO TOUR GOLD INVESTMENT</div>
 
-  <p>Welcome to our gold investment platform.</p>
+  <h1>Build Your Financial Future With Confidence</h1>
 
-  <button onclick="showSection('auth')">Create Account / Login</button>
+  <p>Explore our gold investment platform and choose a deposit amount that suits your plans.</p>
+
+  <div class="hero-buttons">
+
+   <button onclick="showSection('auth')">GET STARTED</button>
+
+   <button class="secondary" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">VIEW OPTIONS</button>
+
+  </div>
 
  </div>
 
- <h2 style="margin-top:25px">Our Deposit Options</h2>
+ <div class="grid" style="margin-top:18px">
 
- <p>Select an amount to continue.</p>
+  <div class="card feature">
+
+   <div class="feature-icon">◆</div>
+
+   <h3>Account Access</h3>
+
+   <p>Create an account and access your personal dashboard.</p>
+
+  </div>
+
+  <div class="card feature">
+
+   <div class="feature-icon">₵</div>
+
+   <h3>Flexible Amounts</h3>
+
+   <p>Choose a listed amount or enter a custom amount from GH₵50.</p>
+
+  </div>
+
+  <div class="card feature">
+
+   <div class="feature-icon">▣</div>
+
+   <h3>Paystack Checkout</h3>
+
+   <p>Continue to the hosted Paystack payment page.</p>
+
+  </div>
+
+ </div>
+
+ <div id="plans" class="section-heading">
+
+  <h2>Choose Your Deposit Amount</h2>
+
+  <p>Select an option to get started.</p>
+
+ </div>
 
  <div class="grid">
 
   <div class="card plan">
 
-   <h3>Starter Plan</h3>
+   <h3>STARTER</h3>
+
+   <p>Start with a smaller deposit</p>
 
    <div class="price">GH₵50</div>
 
-   <button onclick="choosePlan('Starter Plan',50)">Select Plan</button>
+   <button onclick="choosePlan('Starter Plan',50)">SELECT PLAN</button>
 
   </div>
 
   <div class="card plan">
 
-   <h3>Standard Plan</h3>
+   <h3>STANDARD</h3>
+
+   <p>Choose a standard deposit</p>
 
    <div class="price">GH₵100</div>
 
-   <button onclick="choosePlan('Standard Plan',100)">Select Plan</button>
+   <button onclick="choosePlan('Standard Plan',100)">SELECT PLAN</button>
 
   </div>
 
   <div class="card plan">
 
-   <h3>Premium Plan</h3>
+   <h3>PREMIUM</h3>
+
+   <p>Choose a larger deposit</p>
 
    <div class="price">GH₵500</div>
 
-   <button onclick="choosePlan('Premium Plan',500)">Select Plan</button>
+   <button onclick="choosePlan('Premium Plan',500)">SELECT PLAN</button>
 
   </div>
 
   <div class="card plan">
 
-   <h3>Custom Amount</h3>
+   <h3>CUSTOM AMOUNT</h3>
+
+   <p>Enter your preferred amount</p>
 
    <input id="homeCustom" type="number" min="50" placeholder="Minimum GH₵50">
 
-   <button onclick="customPlan('homeCustom')">Continue</button>
+   <button onclick="customPlan('homeCustom')">CONTINUE</button>
+
+  </div>
+
+ </div>
+
+ <div class="section-heading">
+
+  <h2>How It Works</h2>
+
+  <p>Three simple steps to get started.</p>
+
+ </div>
+
+ <div class="grid steps">
+
+  <div class="step">
+
+   <div class="step-number">01</div>
+
+   <h3>Create Your Account</h3>
+
+   <p>Register or log in to access your customer dashboard.</p>
+
+  </div>
+
+  <div class="step">
+
+   <div class="step-number">02</div>
+
+   <h3>Choose Your Amount</h3>
+
+   <p>Select one of the available deposit options or enter a custom amount.</p>
+
+  </div>
+
+  <div class="step">
+
+   <div class="step-number">03</div>
+
+   <h3>Continue to Payment</h3>
+
+   <p>Proceed to the hosted Paystack page and check the amount before paying.</p>
 
   </div>
 
@@ -174,7 +314,7 @@ main{padding:10px}
 
  <div class="notice">
 
-  Investment involves risk. No profit or return is guaranteed. Review the investment terms before making any payment.
+  Important: Investment involves risk. No profit or return is guaranteed. Review all investment terms before making a payment. A payment is not confirmed by simply clicking the payment button.
 
  </div>
 
@@ -198,7 +338,7 @@ main{padding:10px}
 
   <input id="signupPassword" type="password" placeholder="At least 6 characters">
 
-  <button onclick="signUp()">Create Account</button>
+  <button onclick="signUp()">CREATE ACCOUNT</button>
 
  </div>
 
@@ -214,7 +354,7 @@ main{padding:10px}
 
   <input id="loginPassword" type="password" placeholder="Enter password">
 
-  <button onclick="logIn()">Login</button>
+  <button onclick="logIn()">LOGIN</button>
 
   <button class="secondary" onclick="resetPassword()">Forgot Password?</button>
 
@@ -258,7 +398,7 @@ main{padding:10px}
 
   <input id="dashboardCustom" type="number" min="50" placeholder="Enter amount">
 
-  <button onclick="customPlan('dashboardCustom')">Select Amount</button>
+  <button onclick="customPlan('dashboardCustom')">SELECT AMOUNT</button>
 
  </div>
 
@@ -360,7 +500,13 @@ main{padding:10px}
 
 </main>
 
-<footer>© 2026 TOUR GOLD INVESTMENT</footer>
+<footer>
+
+ <div class="logo">✦ TOUR GOLD INVESTMENT</div>
+
+ <p style="margin-top:8px">© 2026 TOUR GOLD INVESTMENT. All rights reserved.</p>
+
+</footer>
 
 <script>
 
