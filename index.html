@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -6,7 +8,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>Gold Investment Ghana</title>
 
@@ -16,57 +18,55 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 
-:root{--gold:#e5b63c;--bg:#101114;--panel:#191b20;--muted:#a8a8a8}
+:root{--gold:#e5b63c;--bg:#101114;--panel:#191b20}
 
-body{font-family:Arial,sans-serif;background:var(--bg);color:#fff;line-height:1.5}
+body{font-family:Arial,sans-serif;background:var(--bg);color:white;line-height:1.5}
 
-header{padding:20px;background:#17181c;border-bottom:1px solid #383128;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+header{padding:18px;background:#191b20;border-bottom:1px solid #383838;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
 
-.logo{color:var(--gold);font-size:20px;font-weight:bold}
+.logo{color:var(--gold);font-weight:bold;font-size:19px}
 
-main{max-width:1000px;margin:25px auto;padding:15px}
+main{max-width:1100px;margin:25px auto;padding:15px}
 
-h1,h2,h3{margin-bottom:12px}
+h1,h2,h3{margin-bottom:13px}
 
-h1{font-size:30px;color:var(--gold)}
+h1{color:var(--gold)}
 
-p{color:#c5c5c5;margin-bottom:12px}
+p{color:#bbb;margin-bottom:12px}
 
-button,.btn{background:var(--gold);color:#171717;border:0;border-radius:8px;padding:12px 18px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
+button{background:var(--gold);color:#171717;border:0;padding:12px 16px;border-radius:7px;font-weight:bold;cursor:pointer;margin:3px}
 
-button.secondary{background:#333;color:white}
+.secondary{background:#353535;color:white}
 
-button.danger{background:#9d3434;color:white}
+input{width:100%;padding:13px;margin:7px 0 14px;background:#101114;border:1px solid #444;border-radius:7px;color:white}
 
-input,select{width:100%;padding:13px;margin:7px 0 14px;border:1px solid #444;background:#101114;color:white;border-radius:7px}
+label{font-size:14px}
 
-label{font-size:14px;color:#ddd}
+.card{background:var(--panel);border:1px solid #333;border-radius:12px;padding:19px;margin:15px 0}
 
-.card{background:var(--panel);border:1px solid #333;border-radius:12px;padding:20px;margin:15px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:13px}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
+.stat{font-size:28px;color:var(--gold);font-weight:bold}
 
-.price{font-size:25px;color:var(--gold);font-weight:bold;margin:10px 0}
+.muted{color:#999;font-size:13px}
 
 .hidden{display:none!important}
 
-.notice{padding:13px;border:1px solid #665322;background:#292313;border-radius:8px;color:#f4d98c;margin:12px 0}
+.notice{padding:13px;background:#292313;border:1px solid #665322;border-radius:8px;color:#f4d98c;margin:12px 0}
 
-.muted{color:var(--muted);font-size:13px}
+.price{font-size:25px;color:var(--gold);font-weight:bold}
 
-.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+table{width:100%;border-collapse:collapse;min-width:600px}
 
-.row button{margin:4px 0}
+th,td{text-align:left;padding:11px;border-bottom:1px solid #383838;font-size:13px}
 
-hr{border:0;border-top:1px solid #383838;margin:18px 0}
+th{color:var(--gold)}
 
-table{width:100%;border-collapse:collapse;margin-top:12px}
+.table-wrap{overflow-x:auto}
 
-td,th{padding:10px;border-bottom:1px solid #383838;text-align:left;font-size:13px}
+.status{color:#e5b63c}
 
-footer{text-align:center;color:#777;padding:25px}
-
-#message{margin:12px 0;color:var(--gold)}
+footer{text-align:center;padding:25px;color:#777}
 
 </style>
 
@@ -78,11 +78,13 @@ footer{text-align:center;color:#777;padding:25px}
 
  <div class="logo">GOLD INVESTMENT GHANA</div>
 
- <div class="row">
+ <div>
 
   <button class="secondary" onclick="showSection('home')">Home</button>
 
   <button onclick="showSection('auth')">Account</button>
+
+  <button id="adminNav" class="hidden" onclick="showSection('admin')">Admin</button>
 
  </div>
 
@@ -96,7 +98,7 @@ footer{text-align:center;color:#777;padding:25px}
 
   <h1>Invest in Gold</h1>
 
-  <p>Welcome to Gold Investment Ghana. Create an account to access your customer area and view available plans.</p>
+  <p>Welcome to Gold Investment Ghana.</p>
 
   <button onclick="showSection('auth')">Create Account / Login</button>
 
@@ -106,53 +108,13 @@ footer{text-align:center;color:#777;padding:25px}
 
  <div class="grid">
 
-  <div class="card">
+  <div class="card"><h3>Starter Plan</h3><div class="price">GH₵50</div><button onclick="choosePlan('Starter Plan',50)">Select Plan</button></div>
 
-   <h3>Starter Plan</h3>
+  <div class="card"><h3>Standard Plan</h3><div class="price">GH₵100</div><button onclick="choosePlan('Standard Plan',100)">Select Plan</button></div>
 
-   <div class="price">GH₵50</div>
+  <div class="card"><h3>Premium Plan</h3><div class="price">GH₵500</div><button onclick="choosePlan('Premium Plan',500)">Select Plan</button></div>
 
-   <p>Starter plan selection.</p>
-
-   <button onclick="choosePlan('Starter Plan',50)">Select Plan</button>
-
-  </div>
-
-  <div class="card">
-
-   <h3>Standard Plan</h3>
-
-   <div class="price">GH₵100</div>
-
-   <p>Standard plan selection.</p>
-
-   <button onclick="choosePlan('Standard Plan',100)">Select Plan</button>
-
-  </div>
-
-  <div class="card">
-
-   <h3>Premium Plan</h3>
-
-   <div class="price">GH₵500</div>
-
-   <p>Premium plan selection.</p>
-
-   <button onclick="choosePlan('Premium Plan',500)">Select Plan</button>
-
-  </div>
-
-  <div class="card">
-
-   <h3>Custom Amount</h3>
-
-   <p>Choose an amount of your choice.</p>
-
-   <input id="customAmount" type="number" min="1" step="0.01" placeholder="Enter amount in GH₵">
-
-   <button onclick="chooseCustom()">Select Amount</button>
-
-  </div>
+  <div class="card"><h3>Custom Plan</h3><input id="homeCustom" type="number" min="1" step=".01" placeholder="Enter amount"><button onclick="customPlan('homeCustom')">Select Amount</button></div>
 
  </div>
 
@@ -164,17 +126,11 @@ footer{text-align:center;color:#777;padding:25px}
 
   <h2>Create Account</h2>
 
-  <label>Full name</label>
+  <label>Full name</label><input id="signupName" placeholder="Full name">
 
-  <input id="signupName" placeholder="Enter your full name">
+  <label>Email</label><input id="signupEmail" type="email" placeholder="Email address">
 
-  <label>Email address</label>
-
-  <input id="signupEmail" type="email" placeholder="Enter your email">
-
-  <label>Password</label>
-
-  <input id="signupPassword" type="password" placeholder="Create a password">
+  <label>Password</label><input id="signupPassword" type="password" placeholder="At least 6 characters">
 
   <button onclick="signUp()">Sign Up</button>
 
@@ -184,21 +140,17 @@ footer{text-align:center;color:#777;padding:25px}
 
   <h2>Login</h2>
 
-  <label>Email address</label>
+  <label>Email</label><input id="loginEmail" type="email" placeholder="Email address">
 
-  <input id="loginEmail" type="email" placeholder="Enter your email">
-
-  <label>Password</label>
-
-  <input id="loginPassword" type="password" placeholder="Enter your password">
+  <label>Password</label><input id="loginPassword" type="password" placeholder="Password">
 
   <button onclick="logIn()">Login</button>
 
   <button class="secondary" onclick="resetPassword()">Forgot Password?</button>
 
- </div>
+  <p id="message"></p>
 
- <p id="message"></p>
+ </div>
 
 </section>
 
@@ -208,17 +160,13 @@ footer{text-align:center;color:#777;padding:25px}
 
   <h2>Customer Dashboard</h2>
 
-  <p>Welcome, <strong id="customerName">Customer</strong></p>
+  <p>Welcome, <strong id="customerName"></strong></p>
 
   <p id="customerEmail" class="muted"></p>
 
-  <div class="row">
+  <button onclick="loadInvestments()">Refresh Investments</button>
 
-   <button onclick="loadInvestments()">Refresh Investments</button>
-
-   <button class="secondary" onclick="logOut()">Logout</button>
-
-  </div>
+  <button class="secondary" onclick="logOut()">Logout</button>
 
  </div>
 
@@ -238,9 +186,9 @@ footer{text-align:center;color:#777;padding:25px}
 
   <label>Custom amount (GH₵)</label>
 
-  <input id="dashboardCustomAmount" type="number" min="1" step="0.01" placeholder="Enter amount">
+  <input id="dashboardCustom" type="number" min="1" step=".01" placeholder="Enter amount">
 
-  <button onclick="chooseDashboardCustom()">Select Custom Amount</button>
+  <button onclick="customPlan('dashboardCustom')">Select Custom Amount</button>
 
  </div>
 
@@ -248,11 +196,11 @@ footer{text-align:center;color:#777;padding:25px}
 
   <h2>Selected Plan</h2>
 
-  <p id="selectedPlanName"></p>
+  <p id="planName"></p>
 
-  <div class="price" id="selectedPlanAmount"></div>
+  <div id="planAmount" class="price"></div>
 
-  <div class="notice">Check that the amount is correct. Press PAY HERE to open the Paystack payment page. Enter the same amount on the payment page.</div>
+  <div class="notice">Enter the same selected amount on the Paystack payment page. Selecting a plan does not make a payment or create an investment record.</div>
 
   <button onclick="payHere()">PAY HERE</button>
 
@@ -264,7 +212,7 @@ footer{text-align:center;color:#777;padding:25px}
 
   <h2>My Investments</h2>
 
-  <div id="investmentList"><p class="muted">Sign in to view your investment records.</p></div>
+  <div id="investmentList">Loading...</div>
 
  </div>
 
@@ -272,7 +220,7 @@ footer{text-align:center;color:#777;padding:25px}
 
   <h2>Transactions</h2>
 
-  <p>Payment verification is not yet connected. Payments will not automatically appear as confirmed deposits in this dashboard.</p>
+  <p>Payment verification is not yet connected. Only payments verified by a secure server should be recorded as confirmed deposits.</p>
 
  </div>
 
@@ -282,19 +230,59 @@ footer{text-align:center;color:#777;padding:25px}
 
  <div class="card">
 
-  <h2>Admin Dashboard</h2>
+  <h1>Admin Dashboard</h1>
 
-  <p>Admin access is controlled by the role stored in your Supabase profile.</p>
+  <p>Administrator control panel</p>
 
-  <button onclick="loadAdminData()">Refresh Admin Data</button>
+  <p id="adminWelcome" class="muted"></p>
 
-  <h3>Customers</h3>
+  <button onclick="loadAdminData()">Refresh Dashboard</button>
 
-  <div id="adminCustomers"></div>
+  <button class="secondary" onclick="showSection('dashboard')">Customer Dashboard</button>
 
-  <h3>Investment Records</h3>
+  <button class="secondary" onclick="logOut()">Logout</button>
 
-  <div id="adminInvestments"></div>
+ </div>
+
+ <h2>Platform Overview</h2>
+
+ <div class="grid">
+
+  <div class="card"><p>Total Customers</p><div class="stat" id="totalCustomers">—</div></div>
+
+  <div class="card"><p>Investment Records</p><div class="stat" id="totalInvestments">—</div></div>
+
+  <div class="card"><p>Pending Records</p><div class="stat" id="pendingInvestments">—</div></div>
+
+ </div>
+
+ <div class="card">
+
+  <h2>Customer Management</h2>
+
+  <p class="muted">Registered customer accounts and their roles.</p>
+
+  <div id="adminCustomers">Loading customers...</div>
+
+ </div>
+
+ <div class="card">
+
+  <h2>Investment Records</h2>
+
+  <p class="muted">Investment records returned by your Supabase admin function.</p>
+
+  <div id="adminInvestments">Loading investment records...</div>
+
+ </div>
+
+ <div class="card">
+
+  <h2>Payment Verification</h2>
+
+  <div class="notice">Paystack server-side verification and webhook processing are not connected yet. This dashboard does not confirm payments or credit customer balances.</div>
+
+  <p>Once secure verification is connected, verified payment history can be displayed here.</p>
 
  </div>
 
@@ -306,49 +294,37 @@ footer{text-align:center;color:#777;padding:25px}
 
 <script>
 
-const SUPABASE_URL = "https://yvorlcgppaelcexwtiwf.supabase.co";
+const SUPABASE_URL="https://yvorlcgppaelcexwtiwf.supabase.co";
 
-const SUPABASE_KEY = "sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v";
+const SUPABASE_KEY="sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v";
 
-const PAYSTACK_PAYMENT_URL = "https://paystack.shop/pay/-egr5cbd19";
+const PAYSTACK_PAYMENT_URL="https://paystack.shop/pay/-egr5cbd19";
 
-let supabaseClient = null;
+let db=null;
 
-let currentUser = null;
+let currentUser=null;
 
-let currentPlan = null;
+let selectedPlan=null;
 
-function message(text){
+function money(n){return "GH₵"+Number(n||0).toFixed(2)}
 
- document.getElementById("message").textContent = text;
-
-}
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 
 function showSection(id){
 
- ["home","auth","dashboard","admin"].forEach(section=>{
-
-  document.getElementById(section).classList.add("hidden");
-
- });
+ ["home","auth","dashboard","admin"].forEach(x=>document.getElementById(x).classList.add("hidden"));
 
  document.getElementById(id).classList.remove("hidden");
 
 }
 
-function money(amount){
-
- return "GH₵" + Number(amount).toFixed(2);
-
-}
-
 function choosePlan(name,amount){
 
- currentPlan={name,amount:Number(amount)};
+ selectedPlan={name,amount:Number(amount)};
 
- document.getElementById("selectedPlanName").textContent=name;
+ document.getElementById("planName").textContent=name;
 
- document.getElementById("selectedPlanAmount").textContent=money(amount);
+ document.getElementById("planAmount").textContent=money(amount);
 
  document.getElementById("selectedPlan").classList.remove("hidden");
 
@@ -356,41 +332,21 @@ function choosePlan(name,amount){
 
 }
 
-function chooseCustom(){
+function customPlan(id){
 
- const amount=Number(document.getElementById("customAmount").value);
+ const amount=Number(document.getElementById(id).value);
 
- if(!Number.isFinite(amount)||amount<=0){
-
-  alert("Please enter a valid amount.");
-
-  return;
-
- }
+ if(!Number.isFinite(amount)||amount<=0){alert("Enter a valid amount.");return}
 
  choosePlan("Custom Plan",amount);
 
-}
-
-function chooseDashboardCustom(){
-
- const amount=Number(document.getElementById("dashboardCustomAmount").value);
-
- if(!Number.isFinite(amount)||amount<=0){
-
-  alert("Please enter a valid amount.");
-
-  return;
-
- }
-
- choosePlan("Custom Plan",amount);
+ if(!currentUser)showSection("auth");
 
 }
 
 function clearPlan(){
 
- currentPlan=null;
+ selectedPlan=null;
 
  document.getElementById("selectedPlan").classList.add("hidden");
 
@@ -398,15 +354,9 @@ function clearPlan(){
 
 function payHere(){
 
- if(!currentPlan){
+ if(!selectedPlan){alert("Select a plan first.");return}
 
-  alert("Please select a plan first.");
-
-  return;
-
- }
-
- alert("Your selected amount is "+money(currentPlan.amount)+". Enter this same amount on the PAY HERE page.");
+ alert("Your selected amount is "+money(selectedPlan.amount)+". Enter this same amount on Paystack.");
 
  window.location.href=PAYSTACK_PAYMENT_URL;
 
@@ -414,59 +364,33 @@ function payHere(){
 
 async function signUp(){
 
- if(!supabaseClient)return;
-
  const name=document.getElementById("signupName").value.trim();
 
  const email=document.getElementById("signupEmail").value.trim();
 
  const password=document.getElementById("signupPassword").value;
 
- if(!name||!email||!password){
+ if(!name||!email||!password){message("Complete all fields.");return}
 
-  message("Please complete all signup fields.");
+ if(password.length<6){message("Password must be at least 6 characters.");return}
 
-  return;
+ const {error}=await db.auth.signUp({email,password,options:{data:{full_name:name}}});
 
- }
-
- if(password.length<6){
-
-  message("Password must contain at least 6 characters.");
-
-  return;
-
- }
-
- const {data,error}=await supabaseClient.auth.signUp({
-
-  email,password,
-
-  options:{data:{full_name:name}}
-
- });
-
- if(error){message(error.message);return;}
-
- if(data.user){
-
-  message("Account created. Check your email if confirmation is required, then log in.");
-
- }
+ message(error?error.message:"Account created. Check your email if confirmation is required.");
 
 }
 
-async function logIn(){
+function message(t){document.getElementById("message").textContent=t}
 
- if(!supabaseClient)return;
+async function logIn(){
 
  const email=document.getElementById("loginEmail").value.trim();
 
  const password=document.getElementById("loginPassword").value;
 
- const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
+ const {data,error}=await db.auth.signInWithPassword({email,password});
 
- if(error){message(error.message);return;}
+ if(error){message(error.message);return}
 
  currentUser=data.user;
 
@@ -476,27 +400,23 @@ async function logIn(){
 
 async function resetPassword(){
 
- if(!supabaseClient)return;
-
  const email=document.getElementById("loginEmail").value.trim();
 
- if(!email){message("Enter your email address in the login email field first.");return;}
+ if(!email){message("Enter your email first.");return}
 
- const {error}=await supabaseClient.auth.resetPasswordForEmail(email,{
+ const {error}=await db.auth.resetPasswordForEmail(email,{redirectTo:location.origin+location.pathname});
 
-  redirectTo:window.location.origin+window.location.pathname
-
- });
-
- message(error?error.message:"Password reset instructions have been sent if the email exists.");
+ message(error?error.message:"Password reset instructions sent if the account exists.");
 
 }
 
 async function logOut(){
 
- if(supabaseClient) await supabaseClient.auth.signOut();
+ await db.auth.signOut();
 
  currentUser=null;
+
+ document.getElementById("adminNav").classList.add("hidden");
 
  showSection("home");
 
@@ -504,25 +424,25 @@ async function logOut(){
 
 async function openDashboard(){
 
- if(!currentUser)return;
-
  showSection("dashboard");
 
  document.getElementById("customerEmail").textContent=currentUser.email||"";
 
- const {data:profile}=await supabaseClient.from("profiles")
+ const {data:profile,error}=await db.from("profiles").select("full_name,role").eq("id",currentUser.id).maybeSingle();
 
-  .select("full_name,role").eq("id",currentUser.id).maybeSingle();
+ document.getElementById("customerName").textContent=profile?.full_name||currentUser.user_metadata?.full_name||"Customer";
 
- document.getElementById("customerName").textContent=
+ if(!error&&profile?.role==="admin"){
 
-  profile?.full_name || currentUser.user_metadata?.full_name || "Customer";
+  document.getElementById("adminNav").classList.remove("hidden");
 
- if(profile?.role==="admin"){
+  document.getElementById("adminWelcome").textContent="Signed in as "+(profile.full_name||currentUser.email);
 
-  document.getElementById("admin").classList.remove("hidden");
+  await loadAdminData();
 
-  loadAdminData();
+ }else{
+
+  document.getElementById("adminNav").classList.add("hidden");
 
  }
 
@@ -534,49 +454,63 @@ async function loadInvestments(){
 
  if(!currentUser)return;
 
- const target=document.getElementById("investmentList");
+ const box=document.getElementById("investmentList");
 
- target.innerHTML="<p>Loading investment records...</p>";
+ box.textContent="Loading...";
 
- const {data,error}=await supabaseClient.from("investment_records")
+ const {data,error}=await db.from("investment_records")
 
   .select("id,plan_name,amount,status,created_at")
 
-  .eq("user_id",currentUser.id)
+  .eq("user_id",currentUser.id).order("created_at",{ascending:false});
 
-  .order("created_at",{ascending:false});
+ if(error){box.textContent="Could not load records: "+error.message;return}
 
- if(error){
+ if(!data?.length){box.textContent="No investment records found yet.";return}
 
-  target.innerHTML="<p>Could not load records: "+escapeHTML(error.message)+"</p>";
-
-  return;
-
- }
-
- if(!data||data.length===0){
-
-  target.innerHTML="<p class='muted'>No investment records found yet.</p>";
-
-  return;
-
- }
-
- target.innerHTML=data.map(item=>`
+ box.innerHTML=data.map(x=>`
 
   <div class="card">
 
-   <strong>${escapeHTML(item.plan_name||"Investment")}</strong>
+   <strong>${esc(x.plan_name)}</strong>
 
-   <p>${money(item.amount)}</p>
+   <p>${money(x.amount)}</p>
 
-   <p>Status: ${escapeHTML(item.status||"Pending")}</p>
+   <p>Status: ${esc(x.status)}</p>
 
-   <p class="muted">${item.created_at?new Date(item.created_at).toLocaleString():""}</p>
+   <p class="muted">${x.created_at?new Date(x.created_at).toLocaleString():""}</p>
 
-  </div>
+  </div>`).join("");
 
- `).join("");
+}
+
+function renderTable(container,rows,columns,emptyText){
+
+ const box=document.getElementById(container);
+
+ if(!Array.isArray(rows)||!rows.length){box.innerHTML="<p>"+emptyText+"</p>";return}
+
+ const keys=columns;
+
+ box.innerHTML='<div class="table-wrap"><table><thead><tr>'+
+
+ keys.map(k=>"<th>"+esc(k.label)+"</th>").join("")+
+
+ "</tr></thead><tbody>"+
+
+ rows.map(row=>"<tr>"+keys.map(k=>{
+
+  let val=row[k.key];
+
+  if(k.key==="amount"&&val!==null&&val!==undefined)val=money(val);
+
+  if(k.key==="created_at"&&val)val=new Date(val).toLocaleString();
+
+  return "<td>"+esc(val??"—")+"</td>";
+
+ }).join("")+"</tr>").join("")+
+
+ "</tbody></table></div>";
 
 }
 
@@ -584,67 +518,101 @@ async function loadAdminData(){
 
  if(!currentUser)return;
 
- const {data:profile}=await supabaseClient.from("profiles")
+ const {data:profile,error:profileError}=await db.from("profiles")
 
   .select("role").eq("id",currentUser.id).maybeSingle();
 
- if(profile?.role!=="admin"){
+ if(profileError||profile?.role!=="admin"){
 
   alert("Admin access only.");
 
-  return;
-
- }
-
- const customers=document.getElementById("adminCustomers");
-
- const investments=document.getElementById("adminInvestments");
-
- customers.textContent="Loading...";
-
- investments.textContent="Loading...";
-
- const c=await supabaseClient.rpc("admin_list_customers");
-
- customers.innerHTML=c.error
-
-  ?"<p>"+escapeHTML(c.error.message)+"</p>"
-
-  :"<pre>"+escapeHTML(JSON.stringify(c.data,null,2))+"</pre>";
-
- const i=await supabaseClient.rpc("admin_list_investments");
-
- investments.innerHTML=i.error
-
-  ?"<p>"+escapeHTML(i.error.message)+"</p>"
-
-  :"<pre>"+escapeHTML(JSON.stringify(i.data,null,2))+"</pre>";
-
-}
-
-function escapeHTML(value){
-
- return String(value??"").replace(/[&<>"']/g,char=>({
-
-  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-
- }[char]));
-
-}
-
-async function startApp(){
-
- if(!window.supabase||typeof window.supabase.createClient!=="function"){
-
-  message("Supabase library did not load. Check your internet connection and refresh.");
+  showSection("dashboard");
 
   return;
 
  }
 
- supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+ document.getElementById("adminCustomers").textContent="Loading customers...";
 
- const {data}=await supabaseClient.auth.getSession();
+ document.getElementById("adminInvestments").textContent="Loading investment records...";
+
+ const [customerResult,investmentResult]=await Promise.all([
+
+  db.rpc("admin_list_customers"),
+
+  db.rpc("admin_list_investments")
+
+ ]);
+
+ if(customerResult.error){
+
+  document.getElementById("adminCustomers").textContent="Customer loading error: "+customerResult.error.message;
+
+ }else{
+
+  const customers=customerResult.data||[];
+
+  document.getElementById("totalCustomers").textContent=customers.length;
+
+  renderTable("adminCustomers",customers,[
+
+   {key:"full_name",label:"Customer"},
+
+   {key:"email",label:"Email"},
+
+   {key:"role",label:"Role"},
+
+   {key:"created_at",label:"Joined"}
+
+  ],"No customers found.");
+
+ }
+
+ if(investmentResult.error){
+
+  document.getElementById("adminInvestments").textContent="Investment loading error: "+investmentResult.error.message;
+
+ }else{
+
+  const records=investmentResult.data||[];
+
+  const pending=records.filter(x=>String(x.status||"").toLowerCase()==="pending").length;
+
+  document.getElementById("totalInvestments").textContent=records.length;
+
+  document.getElementById("pendingInvestments").textContent=pending;
+
+  renderTable("adminInvestments",records,[
+
+   {key:"plan_name",label:"Plan"},
+
+   {key:"amount",label:"Amount"},
+
+   {key:"status",label:"Status"},
+
+   {key:"user_id",label:"Customer ID"},
+
+   {key:"created_at",label:"Date"}
+
+  ],"No investment records found.");
+
+ }
+
+}
+
+async function start(){
+
+ if(!window.supabase||!window.supabase.createClient){
+
+  message("Supabase library failed to load. Refresh the page.");
+
+  return;
+
+ }
+
+ db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+
+ const {data}=await db.auth.getSession();
 
  if(data.session){
 
@@ -652,25 +620,15 @@ async function startApp(){
 
   await openDashboard();
 
- }else{
-
-  showSection("home");
-
  }
 
- supabaseClient.auth.onAuthStateChange(async(event,session)=>{
-
-  if(event==="SIGNED_IN"&&session){
-
-   currentUser=session.user;
-
-   await openDashboard();
-
-  }
+ db.auth.onAuthStateChange((event,session)=>{
 
   if(event==="SIGNED_OUT"){
 
    currentUser=null;
+
+   document.getElementById("adminNav").classList.add("hidden");
 
    showSection("home");
 
@@ -680,7 +638,7 @@ async function startApp(){
 
 }
 
-startApp();
+start();
 
 </script>
 
