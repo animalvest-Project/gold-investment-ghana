@@ -2,6 +2,8 @@
 
 
 
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -22,27 +24,61 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 
-:root{--gold:#e5b63c;--gold2:#ffe29a;--bg:#090a0d;--panel:#17191f;--muted:#a5a7ae}
+:root{
 
-body{font-family:Arial,sans-serif;background:var(--bg);color:#fff;line-height:1.6}
+--gold:#e5b63c;
 
-button,input{font:inherit}
+--gold2:#ffe29a;
 
-button{background:linear-gradient(135deg,#ffe49b,#d5a12a);color:#17130a;border:0;padding:13px 18px;border-radius:9px;font-weight:800;cursor:pointer;margin:4px}
+--bg:#090a0d;
 
-button:disabled{opacity:.5}
+--panel:#17191f;
+
+--muted:#a5a7ae;
+
+--border:#39342a;
+
+}
+
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+
+body{font-family:Arial,sans-serif;background:var(--bg);color:white;line-height:1.7}
+
+button,input,textarea{font:inherit}
+
+button{
+
+background:linear-gradient(135deg,#ffe49b,#d5a12a);
+
+color:#17130a;border:0;padding:13px 18px;
+
+border-radius:9px;font-weight:800;cursor:pointer;
+
+transition:.2s;margin:4px;
+
+}
+
+button:hover{transform:translateY(-2px)}
+
+button:disabled{opacity:.5;cursor:not-allowed}
 
 .secondary{background:#24262d;color:white;border:1px solid #444}
 
-input{width:100%;padding:14px;margin:7px 0 17px;background:#0c0d11;border:1px solid #444;color:white;border-radius:9px}
+header{
 
-label{font-size:13px;color:#ddd;font-weight:bold}
+position:sticky;top:0;z-index:20;background:#101116f5;
 
-header{position:sticky;top:0;z-index:10;background:#101116f5;border-bottom:1px solid #514024;padding:14px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+backdrop-filter:blur(15px);border-bottom:1px solid #514024;
 
-.logo{font-weight:900;color:var(--gold2);letter-spacing:1px}
+padding:13px 4%;display:flex;align-items:center;
 
-nav{display:flex;flex-wrap:wrap;gap:5px}
+justify-content:space-between;gap:12px;flex-wrap:wrap
+
+}
+
+.logo{font-weight:900;letter-spacing:1px;color:var(--gold2);font-size:16px}
+
+nav{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
 
 nav button{font-size:12px;padding:9px 12px}
 
@@ -50,35 +86,103 @@ main{max-width:1150px;margin:30px auto;padding:15px;min-height:65vh}
 
 .hidden{display:none!important}
 
-h1,h2,h3{line-height:1.3;margin-bottom:12px}
+h1,h2,h3{line-height:1.35;margin-bottom:13px}
 
-h1{color:var(--gold2)}
+h1,h2{color:var(--gold2)}
 
-p{color:#bfc0c6;margin-bottom:12px}
+p{color:#c1c1c6;margin-bottom:13px}
 
-.hero{padding:65px 20px;text-align:center;border:1px solid #84662e;border-radius:22px;background:radial-gradient(ellipse at 50% 0%,#80601e,#382b18 40%,#17181d 80%)}
+.hero{
 
-.hero h1{font-size:clamp(32px,6vw,55px)}
+padding:75px 20px;text-align:center;border:1px solid #84662e;
 
-.hero p{max-width:650px;margin:15px auto 25px}
+border-radius:23px;background:
 
-.tag,.plan-label{display:inline-block;padding:6px 14px;border:1px solid #b48a37;border-radius:30px;color:var(--gold2);font-size:12px}
+radial-gradient(ellipse at 50% 0%,#80601e,#382b18 40%,#17181d 80%);
 
-.card{background:linear-gradient(145deg,#1c1e25,#121419);border:1px solid #34302a;border-radius:15px;padding:22px;margin:16px 0}
+}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.hero-tag{
 
-.plan{text-align:center}
+display:inline-block;padding:7px 16px;border:1px solid #b48a37;
 
-.plan h3{color:var(--gold2)}
+border-radius:30px;color:var(--gold2);font-size:12px;
 
-.price,.stat{font-size:32px;font-weight:900;color:var(--gold2);margin:14px 0}
+letter-spacing:2px;margin-bottom:20px
+
+}
+
+.hero h1{font-size:clamp(34px,6vw,55px);max-width:850px;margin:auto}
+
+.hero p{max-width:680px;margin:18px auto 25px}
+
+.hero-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
+
+.hero-buttons button{min-width:150px}
+
+.section-heading{text-align:center;margin:55px 0 25px}
+
+.section-heading p{font-size:14px}
+
+.card{
+
+background:linear-gradient(145deg,#1c1e25,#121419);
+
+border:1px solid var(--border);border-radius:16px;
+
+padding:23px;margin:16px 0
+
+}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+
+.feature-icon{font-size:30px;color:var(--gold2);margin-bottom:10px}
+
+.feature h3,.plan h3{color:var(--gold2)}
+
+.plan{text-align:center;transition:.2s}
+
+.plan:hover{border-color:#b48a37;transform:translateY(-3px)}
+
+.plan-label{
+
+display:inline-block;padding:5px 13px;background:#4b3a19;
+
+border-radius:20px;color:#ffe29a;font-size:11px;font-weight:bold
+
+}
+
+.price,.stat{font-size:32px;font-weight:900;color:var(--gold2);margin:15px 0}
 
 .plan button{width:100%}
 
-.section-heading{text-align:center;margin:40px 0 20px}
+input,textarea{
 
-.notice{padding:15px;background:#2b2516;border:1px solid #79602a;border-radius:10px;color:#f2d99c;margin:15px 0;font-size:13px}
+width:100%;padding:14px;margin:7px 0 17px;
+
+background:#0c0d11;border:1px solid #44464e;
+
+border-radius:9px;color:white;outline:none
+
+}
+
+textarea{min-height:130px;resize:vertical}
+
+input:focus,textarea:focus{border-color:var(--gold)}
+
+label{font-size:13px;color:#ddd;font-weight:bold}
+
+.notice{
+
+padding:16px;background:#2b2516;border:1px solid #79602a;
+
+border-radius:10px;color:#f2d99c;margin:15px 0;font-size:13px
+
+}
+
+.step-number{font-size:30px;font-weight:900;color:var(--gold2)}
+
+.step{background:#17191f;border:1px solid #39352c;border-radius:14px;padding:22px}
 
 .muted{color:#999;font-size:13px}
 
@@ -92,11 +196,45 @@ th,td{text-align:left;padding:12px;border-bottom:1px solid #393939;font-size:13p
 
 th{color:var(--gold2)}
 
-footer{text-align:center;padding:30px 15px;color:#777;border-top:1px solid #292929;margin-top:40px;font-size:13px}
+.faq-item{padding:18px 0;border-bottom:1px solid #393939}
 
-footer strong{color:var(--gold2)}
+.faq-item h3{font-size:16px;color:var(--gold2)}
 
-@media(max-width:600px){header{justify-content:center}.logo{text-align:center}nav{justify-content:center;width:100%}main{padding:10px;margin:15px auto}.hero{padding:45px 15px}.card{padding:16px}.grid{grid-template-columns:1fr}}
+.contact-email{color:var(--gold2);font-weight:bold;overflow-wrap:anywhere}
+
+footer{
+
+text-align:center;padding:40px 15px;color:#777;
+
+border-top:1px solid #292929;margin-top:50px;font-size:13px
+
+}
+
+.footer-logo{font-size:18px;color:var(--gold2);font-weight:900;margin-bottom:10px}
+
+.footer-links{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin:15px}
+
+.footer-links a{color:var(--gold2);text-decoration:none}
+
+@media(max-width:650px){
+
+header{justify-content:center;padding:12px 8px}
+
+.logo{text-align:center}
+
+nav{width:100%}
+
+nav button{font-size:11px;padding:8px 10px}
+
+main{padding:10px;margin:15px auto}
+
+.hero{padding:50px 15px}
+
+.card{padding:17px}
+
+.grid{grid-template-columns:1fr}
+
+}
 
 </style>
 
@@ -112,7 +250,11 @@ footer strong{color:var(--gold2)}
 
 <button class="secondary" onclick="showSection('home')">Home</button>
 
-<button onclick="showSection('auth')">Account</button>
+<button class="secondary" onclick="showSection('auth')">Account</button>
+
+<button class="secondary" onclick="showSection('about')">About</button>
+
+<button class="secondary" onclick="showSection('contact')">Contact</button>
 
 <button id="adminNav" class="secondary hidden" onclick="showSection('admin')">Admin</button>
 
@@ -122,29 +264,71 @@ footer strong{color:var(--gold2)}
 
 <main>
 
+<!-- HOME PAGE -->
+
 <section id="home">
 
 <div class="hero">
 
-<div class="tag">WELCOME TO TOUR GOLD INVESTMENT</div>
+<div class="hero-tag">WELCOME TO TOUR GOLD INVESTMENT</div>
 
 <h1>Your Financial Journey Starts Here</h1>
 
-<p>Create your account, explore the available deposit options and manage your account from one place.</p>
+<p>
+
+Welcome to TOUR GOLD INVESTMENT. Explore our platform,
+
+create your account and learn about our deposit options.
+
+Our goal is to provide a clear and accessible way to manage
+
+your account and payment information.
+
+</p>
+
+<div class="hero-buttons">
 
 <button onclick="showSection('auth')">GET STARTED →</button>
 
 <button class="secondary" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">EXPLORE OPTIONS</button>
 
+<button class="secondary" onclick="showSection('about')">LEARN MORE</button>
+
+</div>
+
 </div>
 
 <div class="grid">
 
-<div class="card"><h3>✦ Personal Account</h3><p>Create an account and access your dashboard.</p></div>
+<div class="card">
 
-<div class="card"><h3>₵ Flexible Deposits</h3><p>Choose an amount starting from GH₵50.</p></div>
+<div class="feature-icon">✦</div>
 
-<div class="card"><h3>▣ Paystack Checkout</h3><p>Continue to the hosted Paystack payment page.</p></div>
+<h3>Personal Account</h3>
+
+<p>Create an account and access your personal dashboard.</p>
+
+</div>
+
+<div class="card">
+
+<div class="feature-icon">₵</div>
+
+<h3>Flexible Deposits</h3>
+
+<p>Choose a listed amount or enter your preferred amount from GH₵50.</p>
+
+</div>
+
+<div class="card">
+
+<div class="feature-icon">▣</div>
+
+<h3>Paystack Checkout</h3>
+
+<p>Continue to our hosted Paystack payment page and review its payment details.</p>
+
+</div>
 
 </div>
 
@@ -152,7 +336,7 @@ footer strong{color:var(--gold2)}
 
 <h2>Choose Your Deposit Amount</h2>
 
-<p>Select your preferred amount.</p>
+<p>Select your preferred option below.</p>
 
 </div>
 
@@ -163,6 +347,8 @@ footer strong{color:var(--gold2)}
 <span class="plan-label">STARTER</span>
 
 <h3>Starter Plan</h3>
+
+<p>Starting deposit</p>
 
 <div class="price">GH₵50</div>
 
@@ -176,6 +362,8 @@ footer strong{color:var(--gold2)}
 
 <h3>Standard Plan</h3>
 
+<p>Standard deposit</p>
+
 <div class="price">GH₵100</div>
 
 <button onclick="choosePlan('Standard Plan',100)">SELECT PLAN</button>
@@ -187,6 +375,8 @@ footer strong{color:var(--gold2)}
 <span class="plan-label">PREMIUM</span>
 
 <h3>Premium Plan</h3>
+
+<p>Higher deposit option</p>
 
 <div class="price">GH₵500</div>
 
@@ -200,6 +390,8 @@ footer strong{color:var(--gold2)}
 
 <h3>Custom Amount</h3>
 
+<p>Choose your own amount</p>
+
 <div class="price">GH₵50+</div>
 
 <input id="homeCustom" type="number" min="50" placeholder="Enter amount">
@@ -210,21 +402,729 @@ footer strong{color:var(--gold2)}
 
 </div>
 
+<div class="section-heading">
+
+<h2>How It Works</h2>
+
+<p>Learn the basic steps for using our platform.</p>
+
+</div>
+
+<div class="grid">
+
+<div class="step">
+
+<div class="step-number">01</div>
+
+<h3>Create an Account</h3>
+
+<p>Register with your name, email and password to access your customer account.</p>
+
+</div>
+
+<div class="step">
+
+<div class="step-number">02</div>
+
+<h3>Choose an Amount</h3>
+
+<p>Review the available deposit options and select an amount that suits your plans.</p>
+
+</div>
+
+<div class="step">
+
+<div class="step-number">03</div>
+
+<h3>Review Payment</h3>
+
+<p>Continue to the hosted Paystack page and check the payment details before proceeding.</p>
+
+</div>
+
+</div>
+
 <div class="notice">
 
 <strong>Important Information</strong><br>
 
-Investment involves risk. Returns are not guaranteed. Review all investment terms and conditions before making a payment. Selecting a payment option does not confirm that a payment has been made.
+Investment involves risk. No profit or return is guaranteed.
+
+Please read the relevant terms and risks before making any payment.
+
+A payment is not confirmed simply by clicking a payment button.
 
 </div>
 
 </section>
 
+<!-- ABOUT US -->
+
+<section id="about" class="hidden">
+
+<div class="hero">
+
+<div class="hero-tag">ABOUT OUR PLATFORM</div>
+
+<h1>About TOUR GOLD INVESTMENT</h1>
+
+<p>
+
+A platform designed to provide customers with an accessible
+
+account experience, clear payment information and straightforward
+
+ways to explore available deposit options.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Who We Are</h2>
+
+<p>
+
+TOUR GOLD INVESTMENT is presented as an online platform where
+
+customers can create accounts, review available deposit options
+
+and access their account information.
+
+</p>
+
+<p>
+
+We believe that customers should have access to clear information
+
+about payment procedures, account management and the risks
+
+associated with financial activities.
+
+</p>
+
+<p>
+
+Before making a deposit, customers should understand exactly
+
+what the deposit represents, how funds are handled, what
+
+conditions apply and whether the relevant investment activity
+
+is properly authorised.
+
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="feature-icon">🎯</div>
+
+<h2>Our Mission</h2>
+
+<p>
+
+To provide clear platform information, accessible customer
+
+accounts and transparent communication about payment processes
+
+and associated risks.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="feature-icon">✦</div>
+
+<h2>Our Vision</h2>
+
+<p>
+
+To develop a platform experience built around clarity,
+
+responsible communication, customer support and accountability.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Our Commitment to Customers</h2>
+
+<p>We aim to make important platform information easy to find.</p>
+
+<ul>
+
+<li>Clear information about available deposit options.</li>
+
+<li>Accessible customer registration and login.</li>
+
+<li>Account access through a personal dashboard.</li>
+
+<li>Payment information through our hosted checkout provider.</li>
+
+<li>Email communication for customer questions.</li>
+
+<li>Clear communication about risks and payment status.</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Important Financial Information</h2>
+
+<p>
+
+The existence of an account or deposit option does not itself
+
+establish that an investment product is licensed, profitable
+
+or guaranteed. Customers should independently review the
+
+business, its authorisations, the underlying investment activity
+
+and all applicable terms before transferring money.
+
+</p>
+
+</div>
+
+<button onclick="showSection('home')">BACK TO HOME</button>
+
+</section>
+
+<!-- INVESTMENT INFORMATION -->
+
+<section id="investmentInfo" class="hidden">
+
+<div class="section-heading">
+
+<h1>Investment Information</h1>
+
+<p>Understand the available options and important risks.</p>
+
+</div>
+
+<div class="card">
+
+<h2>Available Deposit Options</h2>
+
+<p>Our website displays the following selectable amounts:</p>
+
+<ul>
+
+<li>Starter: GH₵50</li>
+
+<li>Standard: GH₵100</li>
+
+<li>Premium: GH₵500</li>
+
+<li>Custom: GH₵50 minimum</li>
+
+</ul>
+
+<p>
+
+These are payment selection amounts only. They do not represent
+
+promised returns, guaranteed profits or a statement of what
+
+a customer will earn.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Understanding Investment Risk</h2>
+
+<p>
+
+Any genuine investment can involve financial risk, including
+
+the possibility of losing some or all of the money invested.
+
+Past performance does not guarantee future results.
+
+</p>
+
+<p>
+
+Do not invest money you cannot afford to lose. Seek independent
+
+financial advice where appropriate.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Before You Make a Payment</h2>
+
+<ul>
+
+<li>Understand the business and the actual investment activity.</li>
+
+<li>Read the applicable agreement and conditions.</li>
+
+<li>Check the payment amount on Paystack.</li>
+
+<li>Understand how funds are held and used.</li>
+
+<li>Ask questions if any information is unclear.</li>
+
+<li>Keep your payment receipt.</li>
+
+</ul>
+
+</div>
+
+<div class="notice">
+
+Do not treat a deposit as a confirmed investment until the
+
+transaction and the relevant investment agreement have been
+
+properly verified.
+
+</div>
+
+<button onclick="showSection('home')">BACK TO HOME</button>
+
+</section>
+
+<!-- PAYMENT INFORMATION -->
+
+<section id="paymentInfo" class="hidden">
+
+<div class="section-heading">
+
+<h1>Payment Instructions</h1>
+
+<p>Important information about using our hosted payment page.</p>
+
+</div>
+
+<div class="card">
+
+<h2>Step 1: Create Your Account</h2>
+
+<p>Register or log in to your existing customer account.</p>
+
+</div>
+
+<div class="card">
+
+<h2>Step 2: Select Your Amount</h2>
+
+<p>Choose Starter, Standard, Premium or a custom amount.</p>
+
+</div>
+
+<div class="card">
+
+<h2>Step 3: Open Paystack</h2>
+
+<p>
+
+Continue to our hosted Paystack checkout page. Carefully
+
+check the amount displayed there before confirming payment.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Step 4: Keep Your Receipt</h2>
+
+<p>
+
+Save your transaction receipt and reference for your records.
+
+Contact customer support if you have questions about a payment.
+
+</p>
+
+</div>
+
+<div class="notice">
+
+<strong>Payment verification notice</strong><br>
+
+The current website redirects to a hosted Paystack payment page.
+
+The selected amount is not dynamically transmitted by this
+
+basic redirect, and automatic transaction verification is
+
+not yet connected. Do not assume that a payment has been
+
+recorded in your dashboard until secure verification is enabled.
+
+</div>
+
+<button onclick="showSection('home')">BACK TO HOME</button>
+
+</section>
+
+<!-- FAQ -->
+
+<section id="faq" class="hidden">
+
+<div class="section-heading">
+
+<h1>Frequently Asked Questions</h1>
+
+<p>Answers to common questions about the platform.</p>
+
+</div>
+
+<div class="card">
+
+<div class="faq-item">
+
+<h3>1. What is TOUR GOLD INVESTMENT?</h3>
+
+<p>It is an online platform with customer registration, account access and displayed deposit options.</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>2. What is the minimum displayed deposit?</h3>
+
+<p>The minimum amount displayed on the website is GH₵50.</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>3. Can I choose my own amount?</h3>
+
+<p>Yes. The custom amount field accepts amounts starting from GH₵50.</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>4. How do I create an account?</h3>
+
+<p>Open Account, enter your name, email and password, and follow the registration instructions.</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>5. How do I log in?</h3>
+
+<p>Use the email address and password associated with your account.</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>6. How do I make a payment?</h3>
+
+<p>Choose an amount, continue to the hosted Paystack page and review the checkout details carefully.</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>7. Are profits guaranteed?</h3>
+
+<p>No. This website does not promise or guarantee any profit or financial return.</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>8. What if my payment does not appear?</h3>
+
+<p>Keep your Paystack receipt and contact customer support with your transaction reference. A redirect alone does not confirm payment.</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>9. How can I contact support?</h3>
+
+<p>Email us at ziddrisu341@gmail.com.</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>10. Should I share my password?</h3>
+
+<p>No. Never share your password or private account credentials with anyone.</p>
+
+</div>
+
+</div>
+
+<button onclick="showSection('home')">BACK TO HOME</button>
+
+</section>
+
+<!-- TERMS -->
+
+<section id="terms" class="hidden">
+
+<div class="section-heading">
+
+<h1>Terms and Conditions</h1>
+
+<p>Important information for users of this website.</p>
+
+</div>
+
+<div class="card">
+
+<h2>1. Use of the Platform</h2>
+
+<p>
+
+By using this website, you agree to use it lawfully and
+
+provide accurate information when creating an account.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>2. Customer Accounts</h2>
+
+<p>
+
+You are responsible for protecting your login credentials
+
+and notifying the platform if you suspect unauthorised access.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>3. Deposit Options</h2>
+
+<p>
+
+The amounts displayed on this website are selectable
+
+payment amounts. They do not constitute a promise of
+
+profit or a guaranteed financial outcome.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>4. Payments</h2>
+
+<p>
+
+Payments are processed through the hosted payment provider.
+
+Customers must review the checkout amount and retain their
+
+receipts. Payment confirmation requires transaction verification.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>5. Financial Risk</h2>
+
+<p>
+
+Financial activities and investments can involve loss.
+
+No guaranteed return is offered through this website.
+
+Customers should review all relevant information and
+
+obtain independent advice before making financial decisions.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>6. Privacy and Security</h2>
+
+<p>
+
+Do not disclose passwords or sensitive account information.
+
+Account information should only be accessed by authorised users.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>7. Contact and Complaints</h2>
+
+<p>
+
+For questions or complaints, contact
+
+<a class="contact-email" href="mailto:ziddrisu341@gmail.com">ziddrisu341@gmail.com</a>.
+
+</p>
+
+</div>
+
+<div class="notice">
+
+These are general website terms, not a substitute for a
+
+complete legal agreement. Before accepting customer funds,
+
+publish legally reviewed terms covering the actual product,
+
+operator, regulatory status, custody of funds, fees,
+
+withdrawals, refunds and dispute procedures.
+
+</div>
+
+<button onclick="showSection('home')">BACK TO HOME</button>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="hidden">
+
+<div class="hero">
+
+<div class="hero-tag">WE ARE HERE TO HELP</div>
+
+<h1>Contact Our Support Team</h1>
+
+<p>
+
+Have a question about your account or payment?
+
+Send us an email and our team can respond.
+
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="feature-icon">✉</div>
+
+<h2>Email Support</h2>
+
+<p>Contact us directly using our support email.</p>
+
+<a class="contact-email" href="mailto:ziddrisu341@gmail.com">ziddrisu341@gmail.com</a>
+
+<p style="margin-top:15px">
+
+<button onclick="window.location.href='mailto:ziddrisu341@gmail.com'">SEND EMAIL</button>
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="feature-icon">🔒</div>
+
+<h2>Account Support</h2>
+
+<p>
+
+For account questions, include the email address
+
+associated with your account. Never send your password.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Send Us a Message</h2>
+
+<p>Complete the fields below. Your email application will open with your message prepared.</p>
+
+<form id="contactForm">
+
+<label>Your Full Name</label>
+
+<input id="contactName" required placeholder="Enter your name">
+
+<label>Your Email Address</label>
+
+<input id="contactEmail" type="email" required placeholder="Enter your email">
+
+<label>Subject</label>
+
+<input id="contactSubject" required placeholder="What is your message about?">
+
+<label>Your Message</label>
+
+<textarea id="contactMessage" required placeholder="Write your message here..."></textarea>
+
+<button type="submit">SEND MESSAGE →</button>
+
+</form>
+
+<p class="muted">This form opens your email application. It does not send messages automatically from the website.</p>
+
+</div>
+
+<div class="notice">
+
+<strong>Customer Support Email</strong><br>
+
+ziddrisu341@gmail.com
+
+</div>
+
+</section>
+
+<!-- ACCOUNT -->
+
 <section id="auth" class="hidden">
 
 <div class="section-heading">
 
-<h2>Your Account</h2>
+<h2>Welcome to Your Account</h2>
 
 <p>Register or log in to continue.</p>
 
@@ -236,11 +1136,11 @@ Investment involves risk. Returns are not guaranteed. Review all investment term
 
 <label>Full Name</label>
 
-<input id="signupName" placeholder="Enter your full name">
+<input id="signupName" placeholder="Enter full name">
 
 <label>Email Address</label>
 
-<input id="signupEmail" type="email" placeholder="Enter email address">
+<input id="signupEmail" type="email" placeholder="Enter email">
 
 <label>Password</label>
 
@@ -256,7 +1156,7 @@ Investment involves risk. Returns are not guaranteed. Review all investment term
 
 <label>Email Address</label>
 
-<input id="loginEmail" type="email" placeholder="Enter email address">
+<input id="loginEmail" type="email" placeholder="Enter email">
 
 <label>Password</label>
 
@@ -271,6 +1171,8 @@ Investment involves risk. Returns are not guaranteed. Review all investment term
 </div>
 
 </section>
+
+<!-- CUSTOMER DASHBOARD -->
 
 <section id="dashboard" class="hidden">
 
@@ -292,6 +1194,8 @@ Investment involves risk. Returns are not guaranteed. Review all investment term
 
 <h2>Choose Your Amount</h2>
 
+<p>Select one of the available deposit options.</p>
+
 <div class="grid">
 
 <button onclick="choosePlan('Starter Plan',50)">STARTER GH₵50</button>
@@ -312,13 +1216,17 @@ Investment involves risk. Returns are not guaranteed. Review all investment term
 
 <div id="selectedPlan" class="card hidden">
 
-<h2>Selected Deposit</h2>
+<h2>Payment Details</h2>
 
 <p id="planName"></p>
 
 <div id="planAmount" class="price"></div>
 
-<div class="notice">Before paying, check that the Paystack checkout page displays the correct amount. Do not proceed if the amount is different.</div>
+<div class="notice">
+
+Check the amount displayed on the Paystack page before confirming payment.
+
+</div>
 
 <button onclick="payHere()">CONTINUE TO PAYSTACK →</button>
 
@@ -338,13 +1246,23 @@ Investment involves risk. Returns are not guaranteed. Review all investment term
 
 <h2>Payment Information</h2>
 
-<p>Only payments verified through Paystack should be marked as successful.</p>
+<p>Keep your Paystack receipt and transaction reference.</p>
 
-<div class="notice">Automatic payment verification is not yet connected. This dashboard does not confirm a payment just because you visit Paystack.</div>
+<div class="notice">
+
+Automatic payment verification is not yet enabled.
+
+A payment is not confirmed in this dashboard simply by
+
+clicking the payment button.
+
+</div>
 
 </div>
 
 </section>
+
+<!-- ADMIN -->
 
 <section id="admin" class="hidden">
 
@@ -354,7 +1272,7 @@ Investment involves risk. Returns are not guaranteed. Review all investment term
 
 <p id="adminWelcome"></p>
 
-<button onclick="loadAdminData()">REFRESH</button>
+<button onclick="loadAdminData()">REFRESH DASHBOARD</button>
 
 <button class="secondary" onclick="showSection('dashboard')">CUSTOMER DASHBOARD</button>
 
@@ -378,7 +1296,15 @@ Investment involves risk. Returns are not guaranteed. Review all investment term
 
 <div class="card"><h2>Investment Records</h2><div id="adminInvestments">Loading...</div></div>
 
-<div class="notice">Admin access is restricted to accounts with the admin role in the Supabase profiles table. Payment verification must be handled securely on the server.</div>
+<div class="card">
+
+<h2>Payment Verification</h2>
+
+<p>Only payments confirmed through secure Paystack transaction verification should be treated as successful.</p>
+
+<div class="notice">Automatic payment verification is not connected yet.</div>
+
+</div>
 
 </section>
 
@@ -386,9 +1312,27 @@ Investment involves risk. Returns are not guaranteed. Review all investment term
 
 <footer>
 
-<strong>✦ TOUR GOLD INVESTMENT</strong>
+<div class="footer-logo">✦ TOUR GOLD INVESTMENT</div>
 
-<p>Professional account and payment platform.</p>
+<p>Account access, payment information and customer support.</p>
+
+<div class="footer-links">
+
+<a href="#" onclick="showSection('about');return false">About Us</a>
+
+<a href="#" onclick="showSection('investmentInfo');return false">Investment Information</a>
+
+<a href="#" onclick="showSection('paymentInfo');return false">Payments</a>
+
+<a href="#" onclick="showSection('faq');return false">FAQs</a>
+
+<a href="#" onclick="showSection('terms');return false">Terms</a>
+
+<a href="#" onclick="showSection('contact');return false">Contact</a>
+
+</div>
+
+<p>Support: ziddrisu341@gmail.com</p>
 
 <p>© 2026 TOUR GOLD INVESTMENT. All rights reserved.</p>
 
@@ -398,13 +1342,13 @@ Investment involves risk. Returns are not guaranteed. Review all investment term
 
 "use strict";
 
-// SUPABASE CONFIGURATION
+// SUPABASE CONNECTION
 
 const SUPABASE_URL="https://yvorlcgppaelcexwtiwf.supabase.co";
 
 const SUPABASE_KEY="sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v";
 
-// PAYSTACK HOSTED PAYMENT PAGE
+// PAYSTACK PAYMENT PAGE
 
 const PAYSTACK_PAYMENT_URL="https://paystack.shop/pay/-egr5cbd19";
 
@@ -414,29 +1358,37 @@ let currentUser=null;
 
 let selectedPlan=null;
 
-function money(amount){
+function money(n){
 
- return "GH₵"+Number(amount).toFixed(2);
+ return "GH₵"+Number(n||0).toFixed(2);
+
+}
+
+function esc(v){
+
+ return String(v??"").replace(/[&<>"']/g,c=>({
+
+ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+
+ }[c]));
 
 }
 
 function showSection(id){
 
- ["home","auth","dashboard","admin"].forEach(section=>{
+ const sections=[
 
-  document.getElementById(section).classList.add("hidden");
+ "home","auth","dashboard","admin","about",
 
- });
+ "investmentInfo","paymentInfo","faq","terms","contact"
+
+ ];
+
+ sections.forEach(x=>document.getElementById(x).classList.add("hidden"));
 
  document.getElementById(id).classList.remove("hidden");
 
  window.scrollTo(0,0);
-
-}
-
-function message(text){
-
- document.getElementById("message").textContent=text;
 
 }
 
@@ -452,13 +1404,13 @@ function choosePlan(name,amount){
 
  }
 
- selectedPlan={name:name,amount:amount};
+ selectedPlan={name,amount};
 
  if(!currentUser){
 
   showSection("auth");
 
-  message("Please create an account or log in to continue.");
+  message("Please log in or create an account to continue.");
 
   return;
 
@@ -520,7 +1472,7 @@ function payHere(){
 
  if(!selectedPlan){
 
-  alert("Please select an amount first.");
+  alert("Select an amount first.");
 
   return;
 
@@ -528,19 +1480,61 @@ function payHere(){
 
  const confirmed=confirm(
 
-  "Your selected amount is "+money(selectedPlan.amount)+
+  "Selected amount: "+money(selectedPlan.amount)+
 
-  ". The hosted Paystack page may use its own configured amount. Check the amount carefully before paying. Continue?"
+  ". The hosted Paystack page may have a separately configured amount. Check it carefully before paying. Continue?"
 
  );
 
- if(confirmed){
+ if(confirmed)window.location.href=PAYSTACK_PAYMENT_URL;
 
-  window.location.href=PAYSTACK_PAYMENT_URL;
+}
+
+function message(t){
+
+ document.getElementById("message").textContent=t;
+
+}
+
+// CONTACT FORM
+
+document.getElementById("contactForm").addEventListener("submit",function(event){
+
+ event.preventDefault();
+
+ const name=document.getElementById("contactName").value.trim();
+
+ const email=document.getElementById("contactEmail").value.trim();
+
+ const subject=document.getElementById("contactSubject").value.trim();
+
+ const body=document.getElementById("contactMessage").value.trim();
+
+ if(!name||!email||!subject||!body){
+
+  alert("Please complete all contact fields.");
+
+  return;
 
  }
 
-}
+ const mailBody=
+
+ "Name: "+name+"\n"+
+
+ "Customer Email: "+email+"\n\n"+
+
+ "Message:\n"+body;
+
+ const mailto="mailto:ziddrisu341@gmail.com"+
+
+ "?subject="+encodeURIComponent(subject)+
+
+ "&body="+encodeURIComponent(mailBody);
+
+ window.location.href=mailto;
+
+});
 
 // SIGN UP
 
@@ -554,7 +1548,7 @@ async function signUp(){
 
  if(!name||!email||!password){
 
-  message("Please complete all fields.");
+  message("Complete all fields.");
 
   return;
 
@@ -594,7 +1588,7 @@ async function signUp(){
 
   }else{
 
-   message("Account created. Check your email if email confirmation is required, then log in.");
+   message("Account created. Check your email if confirmation is required, then log in.");
 
   }
 
@@ -662,7 +1656,7 @@ async function resetPassword(){
 
  if(!email){
 
-  message("Enter your email address first.");
+  message("Enter your email first.");
 
   return;
 
@@ -674,7 +1668,7 @@ async function resetPassword(){
 
  });
 
- message(error?error.message:"If the account exists, password reset instructions have been sent.");
+ message(error?error.message:"If the account exists, reset instructions have been sent.");
 
 }
 
@@ -706,35 +1700,27 @@ async function openDashboard(){
 
  currentUser.user_metadata?.full_name||"Customer";
 
- try{
+ const {data:profile,error}=await db.from("profiles")
 
-  const {data:profile,error}=await db.from("profiles")
+ .select("full_name,role")
 
-   .select("full_name,role")
+ .eq("id",currentUser.id)
 
-   .eq("id",currentUser.id)
+ .maybeSingle();
 
-   .maybeSingle();
+ if(!error&&profile){
 
-  if(!error&&profile){
+  document.getElementById("customerName").textContent=
 
-   document.getElementById("customerName").textContent=
+   profile.full_name||currentUser.user_metadata?.full_name||"Customer";
 
-    profile.full_name||currentUser.user_metadata?.full_name||"Customer";
+  if(profile.role==="admin"){
 
-   if(profile.role==="admin"){
+   document.getElementById("adminNav").classList.remove("hidden");
 
-    document.getElementById("adminNav").classList.remove("hidden");
+   document.getElementById("adminWelcome").textContent=
 
-    document.getElementById("adminWelcome").textContent=
-
-     "Signed in as "+(profile.full_name||currentUser.email);
-
-   }else{
-
-    document.getElementById("adminNav").classList.add("hidden");
-
-   }
+    "Signed in as "+(profile.full_name||currentUser.email);
 
   }else{
 
@@ -742,9 +1728,9 @@ async function openDashboard(){
 
   }
 
- }catch(error){
+ }else{
 
-  console.error("Profile error:",error);
+  document.getElementById("adminNav").classList.add("hidden");
 
  }
 
@@ -754,7 +1740,7 @@ async function openDashboard(){
 
 }
 
-// CUSTOMER RECORDS
+// INVESTMENT RECORDS
 
 async function loadInvestments(){
 
@@ -766,11 +1752,11 @@ async function loadInvestments(){
 
  const {data,error}=await db.from("investment_records")
 
-  .select("id,plan_name,amount,status,created_at")
+ .select("id,plan_name,amount,status,created_at")
 
-  .eq("user_id",currentUser.id)
+ .eq("user_id",currentUser.id)
 
-  .order("created_at",{ascending:false});
+ .order("created_at",{ascending:false});
 
  if(error){
 
@@ -780,7 +1766,7 @@ async function loadInvestments(){
 
  }
 
- if(!data||!data.length){
+ if(!data?.length){
 
   box.textContent="No investment records found yet.";
 
@@ -788,17 +1774,17 @@ async function loadInvestments(){
 
  }
 
- box.innerHTML=data.map(item=>`
+ box.innerHTML=data.map(x=>`
 
   <div class="card">
 
-   <strong>${escapeHTML(item.plan_name)}</strong>
+   <strong>${esc(x.plan_name)}</strong>
 
-   <p>${money(item.amount)}</p>
+   <p>${money(x.amount)}</p>
 
-   <p>Status: ${escapeHTML(item.status)}</p>
+   <p>Status: ${esc(x.status)}</p>
 
-   <p class="muted">${item.created_at?new Date(item.created_at).toLocaleString():""}</p>
+   <p class="muted">${x.created_at?new Date(x.created_at).toLocaleString():""}</p>
 
   </div>
 
@@ -806,21 +1792,11 @@ async function loadInvestments(){
 
 }
 
-function escapeHTML(value){
+// ADMIN TABLE
 
- return String(value??"").replace(/[&<>"']/g,char=>({
+function renderTable(container,rows,columns,emptyText){
 
-  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-
- }[char]));
-
-}
-
-// ADMIN TABLES
-
-function renderTable(id,rows,columns,emptyText){
-
- const box=document.getElementById(id);
+ const box=document.getElementById(container);
 
  if(!Array.isArray(rows)||!rows.length){
 
@@ -830,21 +1806,23 @@ function renderTable(id,rows,columns,emptyText){
 
  }
 
- box.innerHTML='<div class="table-wrap"><table><thead><tr>'+
+ box.innerHTML=
 
- columns.map(column=>"<th>"+escapeHTML(column.label)+"</th>").join("")+
+ '<div class="table-wrap"><table><thead><tr>'+
+
+ columns.map(k=>"<th>"+esc(k.label)+"</th>").join("")+
 
  "</tr></thead><tbody>"+
 
- rows.map(row=>"<tr>"+columns.map(column=>{
+ rows.map(row=>"<tr>"+columns.map(k=>{
 
-  let value=row[column.key];
+  let val=row[k.key];
 
-  if(column.key==="amount"&&value!=null)value=money(value);
+  if(k.key==="amount"&&val!=null)val=money(val);
 
-  if(column.key==="created_at"&&value)value=new Date(value).toLocaleString();
+  if(k.key==="created_at"&&val)val=new Date(val).toLocaleString();
 
-  return "<td>"+escapeHTML(value??"—")+"</td>";
+  return "<td>"+esc(val??"—")+"</td>";
 
  }).join("")+"</tr>").join("")+
 
@@ -852,7 +1830,7 @@ function renderTable(id,rows,columns,emptyText){
 
 }
 
-// ADMIN DATA
+// ADMIN DASHBOARD
 
 async function loadAdminData(){
 
@@ -860,11 +1838,11 @@ async function loadAdminData(){
 
  const {data:profile,error}=await db.from("profiles")
 
-  .select("role")
+ .select("role")
 
-  .eq("id",currentUser.id)
+ .eq("id",currentUser.id)
 
-  .maybeSingle();
+ .maybeSingle();
 
  if(error||profile?.role!=="admin"){
 
@@ -880,7 +1858,7 @@ async function loadAdminData(){
 
  document.getElementById("adminInvestments").textContent="Loading...";
 
- const [customersResult,recordsResult]=await Promise.all([
+ const [customerResult,investmentResult]=await Promise.all([
 
   db.rpc("admin_list_customers"),
 
@@ -888,15 +1866,15 @@ async function loadAdminData(){
 
  ]);
 
- if(customersResult.error){
+ if(customerResult.error){
 
   document.getElementById("adminCustomers").textContent=
 
-   "Customer loading error: "+customersResult.error.message;
+   "Customer loading error: "+customerResult.error.message;
 
  }else{
 
-  const customers=customersResult.data||[];
+  const customers=customerResult.data||[];
 
   document.getElementById("totalCustomers").textContent=customers.length;
 
@@ -914,25 +1892,21 @@ async function loadAdminData(){
 
  }
 
- if(recordsResult.error){
+ if(investmentResult.error){
 
   document.getElementById("adminInvestments").textContent=
 
-   "Investment loading error: "+recordsResult.error.message;
+   "Investment loading error: "+investmentResult.error.message;
 
  }else{
 
-  const records=recordsResult.data||[];
-
-  const pending=records.filter(item=>
-
-   String(item.status||"").toLowerCase()==="pending"
-
-  ).length;
+  const records=investmentResult.data||[];
 
   document.getElementById("totalInvestments").textContent=records.length;
 
-  document.getElementById("pendingInvestments").textContent=pending;
+  document.getElementById("pendingInvestments").textContent=
+
+   records.filter(x=>String(x.status||"").toLowerCase()==="pending").length;
 
   renderTable("adminInvestments",records,[
 
@@ -958,7 +1932,7 @@ async function start(){
 
  if(!window.supabase||!window.supabase.createClient){
 
-  message("Supabase failed to load. Check your internet connection and refresh.");
+  message("Supabase failed to load. Refresh the page.");
 
   return;
 
@@ -971,8 +1945,6 @@ async function start(){
  if(error){
 
   console.error(error);
-
-  message("Could not check your session. Please refresh.");
 
   return;
 
