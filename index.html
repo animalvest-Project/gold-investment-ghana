@@ -1,5 +1,7 @@
 
 
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -20,61 +22,21 @@
 
 <style>
 
-:root {
-
-  --gold:#d6ad55;
-
-  --gold2:#f3d58a;
-
-  --dark:#090a0d;
-
-  --panel:#14161b;
-
-  --muted:#a6a6a6;
-
-  --border:rgba(214,173,85,.25);
-
-}
+:root{--gold:#d6ad55;--gold2:#f3d58a;--dark:#090a0d;--panel:#14161b;--muted:#aaa;--border:rgba(214,173,85,.25)}
 
 *{box-sizing:border-box}
 
 html{scroll-behavior:smooth}
 
-body{
+body{margin:0;background:var(--dark);color:#fff;font-family:Arial,Helvetica,sans-serif;line-height:1.6}
 
-  margin:0;background:var(--dark);color:#fff;
-
-  font-family:Arial,Helvetica,sans-serif;line-height:1.6;
-
-}
-
-header{
-
-  position:sticky;top:0;z-index:20;
-
-  background:rgba(9,10,13,.96);
-
-  border-bottom:1px solid var(--border);
-
-  padding:14px 5%;
-
-  display:flex;align-items:center;justify-content:space-between;
-
-  gap:15px;flex-wrap:wrap;
-
-}
+header{position:sticky;top:0;z-index:20;background:rgba(9,10,13,.97);border-bottom:1px solid var(--border);padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
 
 .brand{font-size:19px;font-weight:900;color:var(--gold2);letter-spacing:1px}
 
 nav{display:flex;gap:8px;flex-wrap:wrap}
 
-nav button{
-
-  border:0;background:transparent;color:#ddd;padding:9px 11px;
-
-  cursor:pointer;font-weight:bold;border-radius:7px;
-
-}
+nav button{border:0;background:transparent;color:#ddd;padding:9px 11px;cursor:pointer;font-weight:bold;border-radius:7px}
 
 nav button:hover{color:var(--gold2);background:#202127}
 
@@ -84,87 +46,37 @@ section{display:none}
 
 section.active{display:block}
 
-.hero{
-
-  min-height:390px;display:flex;flex-direction:column;
-
-  justify-content:center;align-items:center;text-align:center;
-
-  padding:45px 20px;border:1px solid var(--border);
-
-  border-radius:18px;
-
-  background:radial-gradient(ellipse at top,rgba(214,173,85,.18),transparent 65%),#111319;
-
-}
+.hero{min-height:390px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:45px 20px;border:1px solid var(--border);border-radius:18px;background:radial-gradient(ellipse at top,rgba(214,173,85,.18),transparent 65%),#111319}
 
 .eyebrow{color:var(--gold2);font-weight:bold;letter-spacing:3px}
 
 h1{font-size:clamp(34px,7vw,62px);line-height:1.1;margin:12px 0}
 
-h2{color:var(--gold2)}
-
-h3{color:var(--gold2)}
+h2,h3{color:var(--gold2)}
 
 p{color:#ccc}
 
 .gold{color:var(--gold2)}
 
-.btn{
-
-  display:inline-block;padding:12px 20px;border:0;border-radius:8px;
-
-  background:linear-gradient(135deg,var(--gold2),var(--gold));
-
-  color:#15120a;font-weight:900;text-decoration:none;cursor:pointer;
-
-  margin:5px;
-
-}
+.btn{display:inline-block;padding:12px 20px;border:0;border-radius:8px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#15120a;font-weight:900;text-decoration:none;cursor:pointer;margin:5px;font-size:15px}
 
 .btn.secondary{background:#24262d;color:#fff;border:1px solid var(--border)}
 
 .btn.danger{background:#8d2929;color:white}
 
-.cards{
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:22px 0}
 
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
-  gap:16px;margin:22px 0;
-
-}
-
-.card{
-
-  background:var(--panel);border:1px solid var(--border);
-
-  border-radius:13px;padding:20px;
-
-}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:13px;padding:20px}
 
 .price{font-size:29px;color:var(--gold2);font-weight:900}
 
-input,select,textarea{
-
-  width:100%;padding:13px;margin:7px 0 14px;
-
-  border-radius:8px;border:1px solid #393b42;
-
-  background:#0c0e12;color:white;font-size:15px;
-
-}
+input,select,textarea{width:100%;padding:13px;margin:7px 0 14px;border-radius:8px;border:1px solid #393b42;background:#0c0e12;color:white;font-size:15px}
 
 label{font-weight:bold;color:#ddd}
 
 .form-box{max-width:520px;margin:20px auto}
 
-.notice{
-
-  border:1px solid var(--border);background:#17150f;
-
-  padding:14px;border-radius:9px;color:#e7d5a8;margin:15px 0;
-
-}
+.notice{border:1px solid var(--border);background:#17150f;padding:14px;border-radius:9px;color:#e7d5a8;margin:15px 0}
 
 .muted{color:var(--muted);font-size:14px}
 
@@ -180,31 +92,13 @@ th{color:var(--gold2)}
 
 .table-wrap{overflow-x:auto}
 
-footer{
-
-  border-top:1px solid var(--border);padding:25px 5%;
-
-  text-align:center;color:#999;font-size:13px;
-
-}
+footer{border-top:1px solid var(--border);padding:25px 5%;text-align:center;color:#999;font-size:13px}
 
 footer a{color:var(--gold2)}
 
 hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
-@media(max-width:600px){
-
- header{justify-content:center}
-
- nav{justify-content:center}
-
- nav button{padding:8px}
-
- main{padding-top:18px}
-
- .hero{min-height:330px}
-
-}
+@media(max-width:600px){header{justify-content:center}nav{justify-content:center}nav button{padding:8px}main{padding-top:18px}.hero{min-height:330px}}
 
 </style>
 
@@ -218,21 +112,19 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
   <nav>
 
-    <button onclick="showSection('home')">Home</button>
+    <button type="button" onclick="showSection('home')">Home</button>
 
-    <button onclick="showSection('auth')">Account</button>
+    <button type="button" onclick="openAccount()">Account</button>
 
-    <button onclick="showSection('about')">About</button>
+    <button type="button" onclick="showSection('about')">About</button>
 
-    <button onclick="showSection('contact')">Contact</button>
+    <button type="button" onclick="showSection('contact')">Contact</button>
 
   </nav>
 
 </header>
 
 <main>
-
-<!-- HOME -->
 
 <section id="home" class="active">
 
@@ -246,9 +138,9 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
     <div>
 
-      <button class="btn" onclick="showSection('auth')">Get Started</button>
+      <button type="button" class="btn" onclick="openAccount()">Get Started</button>
 
-      <button class="btn secondary" onclick="showSection('about')">Learn More</button>
+      <button type="button" class="btn secondary" onclick="showSection('about')">Learn More</button>
 
     </div>
 
@@ -296,7 +188,7 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
       <div class="price">GH₵50</div>
 
-      <button class="btn" onclick="beginPayment(50)">Continue</button>
+      <button class="btn" type="button" onclick="beginPayment(50)">Continue</button>
 
     </div>
 
@@ -306,7 +198,7 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
       <div class="price">GH₵100</div>
 
-      <button class="btn" onclick="beginPayment(100)">Continue</button>
+      <button class="btn" type="button" onclick="beginPayment(100)">Continue</button>
 
     </div>
 
@@ -316,7 +208,7 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
       <div class="price">GH₵500</div>
 
-      <button class="btn" onclick="beginPayment(500)">Continue</button>
+      <button class="btn" type="button" onclick="beginPayment(500)">Continue</button>
 
     </div>
 
@@ -328,21 +220,15 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
       <input id="customAmount" type="number" min="50" placeholder="Enter amount">
 
-      <button class="btn" onclick="customPayment()">Continue</button>
+      <button class="btn" type="button" onclick="customPayment()">Continue</button>
 
     </div>
 
   </div>
 
-  <div class="notice">
-
-    Please read the investment information and payment instructions before making any payment. Payments are not automatically verified or credited to your account by this website.
-
-  </div>
+  <div class="notice">Please read the investment information and payment instructions before making any payment. Payments are not automatically verified or credited to your account by this website.</div>
 
 </section>
-
-<!-- ACCOUNT -->
 
 <section id="auth">
 
@@ -356,13 +242,9 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
       <div class="card">
 
-        <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn" type="button" onclick="showAuthForm('signup')">Create Account</button>
 
-          <button class="btn" onclick="showAuthForm('signup')">Create Account</button>
-
-          <button class="btn secondary" onclick="showAuthForm('login')">Customer Login</button>
-
-        </div>
+        <button class="btn secondary" type="button" onclick="showAuthForm('login')">Customer Login</button>
 
         <form id="signupForm">
 
@@ -414,17 +296,15 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
       <p id="loggedInEmail"></p>
 
-      <button class="btn" onclick="openDashboard()">Open My Dashboard</button>
+      <button class="btn" type="button" onclick="openDashboard()">Open My Dashboard</button>
 
-      <button class="btn secondary" onclick="logout()">Logout</button>
+      <button class="btn secondary" type="button" onclick="logout()">Logout</button>
 
     </div>
 
   </div>
 
 </section>
-
-<!-- CUSTOMER DASHBOARD -->
 
 <section id="dashboard">
 
@@ -436,33 +316,19 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
     <p id="customerEmail"></p>
 
-    <p class="muted">Your account area</p>
+    <button class="btn secondary" type="button" onclick="loadCustomerRecords()">Refresh</button>
 
-    <button class="btn secondary" onclick="loadCustomerRecords()">Refresh</button>
+    <button class="btn secondary" type="button" onclick="showSection('home')">Home</button>
 
-    <button class="btn secondary" onclick="showSection('home')">Home</button>
-
-    <button class="btn danger" onclick="logout()">Logout</button>
+    <button class="btn danger" type="button" onclick="logout()">Logout</button>
 
   </div>
 
   <div class="cards">
 
-    <div class="card">
+    <div class="card"><p>Account Status</p><div class="stat">Active</div></div>
 
-      <p>Account Status</p>
-
-      <div class="stat">Active</div>
-
-    </div>
-
-    <div class="card">
-
-      <p>Investment Records</p>
-
-      <div class="stat" id="recordCount">0</div>
-
-    </div>
+    <div class="card"><p>Investment Records</p><div class="stat" id="recordCount">0</div></div>
 
   </div>
 
@@ -476,11 +342,7 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
         <thead><tr><th>Date</th><th>Amount</th><th>Status</th></tr></thead>
 
-        <tbody id="customerRecords">
-
-          <tr><td colspan="3">No records loaded yet.</td></tr>
-
-        </tbody>
+        <tbody id="customerRecords"><tr><td colspan="3">No records loaded yet.</td></tr></tbody>
 
       </table>
 
@@ -496,13 +358,11 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
     <p>Use the payment page provided on the Home page. Keep your payment receipt for your records.</p>
 
-    <button class="btn" onclick="beginPayment(50)">Open Payment Page</button>
+    <button class="btn" type="button" onclick="beginPayment(50)">Open Payment Page</button>
 
   </div>
 
 </section>
-
-<!-- ADMIN -->
 
 <section id="admin">
 
@@ -514,11 +374,11 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
     <p id="adminEmail"></p>
 
-    <button class="btn secondary" onclick="loadAdminData()">Refresh Data</button>
+    <button class="btn secondary" type="button" onclick="loadAdminData()">Refresh Data</button>
 
-    <button class="btn secondary" onclick="showSection('home')">Home</button>
+    <button class="btn secondary" type="button" onclick="showSection('home')">Home</button>
 
-    <button class="btn danger" onclick="logout()">Logout</button>
+    <button class="btn danger" type="button" onclick="logout()">Logout</button>
 
   </div>
 
@@ -562,8 +422,6 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
 </section>
 
-<!-- ABOUT -->
-
 <section id="about">
 
   <h2>About TOUR GOLD INVESTMENT</h2>
@@ -597,8 +455,6 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
   </div>
 
 </section>
-
-<!-- CONTACT -->
 
 <section id="contact">
 
@@ -666,29 +522,19 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
 <script>
 
-// SUPABASE CONFIGURATION
-
 const SUPABASE_URL = "https://yvorlcgppaelcexwtiwf.supabase.co";
 
 const SUPABASE_KEY = "sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v";
 
-// PAYSTACK HOSTED PAYMENT PAGE
-
 const PAYSTACK_PAYMENT_URL = "https://paystack.shop/pay/-egr5cbd19";
 
-const supabase = window.supabase.createClient(
-
-  SUPABASE_URL,
-
-  SUPABASE_KEY
-
-);
+const supabase = window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 
 let currentUser = null;
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// SECTION NAVIGATION
+// MAIN PAGE NAVIGATION
 
 function showSection(id) {
 
@@ -700,9 +546,21 @@ function showSection(id) {
 
   const target = document.getElementById(id);
 
-  if (target) target.classList.add("active");
+  if(target) target.classList.add("active");
 
   window.scrollTo({top:0,behavior:"smooth"});
+
+}
+
+// GET STARTED AND ACCOUNT BUTTONS
+
+function openAccount() {
+
+  showSection("auth");
+
+  showAuthForm("signup");
+
+  updateAccountDisplay();
 
 }
 
@@ -710,9 +568,9 @@ function showSection(id) {
 
 function showAuthForm(type) {
 
-  document.getElementById("signupForm").classList.toggle("hidden", type !== "signup");
+  document.getElementById("signupForm").classList.toggle("hidden",type !== "signup");
 
-  document.getElementById("loginForm").classList.toggle("hidden", type !== "login");
+  document.getElementById("loginForm").classList.toggle("hidden",type !== "login");
 
   document.getElementById("authMessage").textContent = "";
 
@@ -726,7 +584,7 @@ function setAuthMessage(message) {
 
 // REGISTRATION
 
-document.getElementById("signupForm").addEventListener("submit", async function(e) {
+document.getElementById("signupForm").addEventListener("submit",async function(e) {
 
   e.preventDefault();
 
@@ -744,11 +602,7 @@ document.getElementById("signupForm").addEventListener("submit", async function(
 
     password,
 
-    options:{
-
-      data:{full_name:name}
-
-    }
+    options:{data:{full_name:name}}
 
   });
 
@@ -762,7 +616,7 @@ document.getElementById("signupForm").addEventListener("submit", async function(
 
   if(data.user) {
 
-    await supabase.from("profiles").upsert({
+    const {error:profileError} = await supabase.from("profiles").upsert({
 
       id:data.user.id,
 
@@ -772,11 +626,9 @@ document.getElementById("signupForm").addEventListener("submit", async function(
 
     });
 
-    setAuthMessage(
+    if(profileError) console.error("Profile save:",profileError);
 
-      "Registration submitted. Check your email if email confirmation is required."
-
-    );
+    setAuthMessage("Registration submitted. Check your email if email confirmation is required.");
 
   }
 
@@ -784,7 +636,7 @@ document.getElementById("signupForm").addEventListener("submit", async function(
 
 // LOGIN
 
-document.getElementById("loginForm").addEventListener("submit", async function(e) {
+document.getElementById("loginForm").addEventListener("submit",async function(e) {
 
   e.preventDefault();
 
@@ -794,13 +646,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
 
   setAuthMessage("Logging in...");
 
-  const {data,error} = await supabase.auth.signInWithPassword({
-
-    email,
-
-    password
-
-  });
+  const {data,error} = await supabase.auth.signInWithPassword({email,password});
 
   if(error) {
 
@@ -868,13 +714,13 @@ function updateAccountDisplay() {
 
 }
 
-// OPEN CUSTOMER DASHBOARD
+// CUSTOMER DASHBOARD
 
 async function openDashboard() {
 
   if(!currentUser) {
 
-    showSection("auth");
+    openAccount();
 
     return;
 
@@ -1032,7 +878,7 @@ async function loadAdminData() {
 
 }
 
-// PAYMENT REDIRECT
+// PAYMENT PAGE
 
 function beginPayment(amount) {
 
@@ -1052,11 +898,7 @@ function beginPayment(amount) {
 
   );
 
-  if(confirmed) {
-
-    window.location.href = PAYSTACK_PAYMENT_URL;
-
-  }
+  if(confirmed) window.location.href = PAYSTACK_PAYMENT_URL;
 
 }
 
@@ -1080,17 +922,9 @@ function customPayment() {
 
 function safeText(value) {
 
-  return String(value ?? "").replace(/[&<>"']/g, char => ({
+  return String(value ?? "").replace(/[&<>"']/g,char => ({
 
-    "&":"&amp;",
-
-    "<":"&lt;",
-
-    ">":"&gt;",
-
-    '"':"&quot;",
-
-    "'":"&#39;"
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
 
   })[char]);
 
@@ -1120,13 +954,9 @@ async function logout() {
 
 }
 
-// STARTUP
+// STARTUP: ALWAYS OPEN HOME FIRST
 
 async function start() {
-
-  // IMPORTANT: ALWAYS SHOW HOME FIRST.
-
-  // A saved login session must not automatically open the account page.
 
   showSection("home");
 
@@ -1146,7 +976,7 @@ async function start() {
 
     updateAccountDisplay();
 
-    // Keep the homepage visible even if the visitor is already logged in.
+    // Do not automatically send an existing user to Account or Dashboard.
 
     showSection("home");
 
@@ -1159,10 +989,6 @@ async function start() {
   }
 
 }
-
-// Update account state when authentication changes.
-
-// Do not automatically redirect to the dashboard.
 
 supabase.auth.onAuthStateChange((event,session) => {
 
