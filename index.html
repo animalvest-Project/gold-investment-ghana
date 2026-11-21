@@ -6,6 +6,8 @@
 
 
 
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -58,17 +60,7 @@
 
 html{scroll-behavior:smooth;scroll-padding-top:100px}
 
-body{
-
-font-family:Arial,sans-serif;
-
-background:var(--bg);
-
-color:white;
-
-line-height:1.7
-
-}
+body{font-family:Arial,sans-serif;background:var(--bg);color:white;line-height:1.7}
 
 button,input,textarea{font:inherit}
 
@@ -76,21 +68,9 @@ button{
 
 background:linear-gradient(135deg,#ffe49b,#d5a12a);
 
-color:#17130a;
+color:#17130a;border:0;padding:13px 18px;border-radius:9px;
 
-border:0;
-
-padding:13px 18px;
-
-border-radius:9px;
-
-font-weight:800;
-
-cursor:pointer;
-
-transition:.2s;
-
-margin:4px
+font-weight:800;cursor:pointer;transition:.2s;margin:4px
 
 }
 
@@ -102,83 +82,31 @@ button:disabled{opacity:.5;cursor:not-allowed}
 
 header{
 
-position:sticky;
+position:sticky;top:0;z-index:100;background:#101116f5;
 
-top:0;
+backdrop-filter:blur(15px);border-bottom:1px solid #514024;
 
-z-index:100;
+padding:13px 4%;display:flex;align-items:center;
 
-background:#101116f5;
-
-backdrop-filter:blur(15px);
-
-border-bottom:1px solid #514024;
-
-padding:13px 4%;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-gap:12px;
-
-flex-wrap:wrap
+justify-content:space-between;gap:12px;flex-wrap:wrap
 
 }
 
-.logo{
+.logo{font-weight:900;letter-spacing:1px;color:var(--gold2);font-size:16px}
 
-font-weight:900;
-
-letter-spacing:1px;
-
-color:var(--gold2);
-
-font-size:16px
-
-}
-
-nav{
-
-display:flex;
-
-gap:5px;
-
-flex-wrap:wrap;
-
-justify-content:center
-
-}
+nav{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
 
 nav button{font-size:12px;padding:9px 12px}
 
 .menu-toggle{
 
-display:none;
+display:none;background:#24262d;color:var(--gold2);
 
-background:#24262d;
-
-color:var(--gold2);
-
-border:1px solid #514024;
-
-padding:10px 16px
+border:1px solid #514024;padding:10px 16px
 
 }
 
-main{
-
-max-width:1150px;
-
-margin:30px auto;
-
-padding:15px;
-
-min-height:65vh
-
-}
+main{max-width:1150px;margin:30px auto;padding:15px;min-height:65vh}
 
 .hidden{display:none!important}
 
@@ -190,11 +118,7 @@ p{color:#c1c1c6;margin-bottom:13px}
 
 .hero{
 
-padding:55px 20px;
-
-text-align:center;
-
-border:1px solid #84662e;
+padding:55px 20px;text-align:center;border:1px solid #84662e;
 
 border-radius:23px;
 
@@ -204,19 +128,9 @@ background:radial-gradient(ellipse at 50% 0%,#80601e,#382b18 40%,#17181d 80%)
 
 .hero-banner{
 
-display:block;
+display:block;width:100%;max-width:1000px;height:auto;
 
-width:100%;
-
-max-width:1000px;
-
-height:auto;
-
-margin:0 auto 18px;
-
-border-radius:16px;
-
-border:1px solid #b48a37;
+margin:0 auto 18px;border-radius:16px;border:1px solid #b48a37;
 
 box-shadow:0 10px 35px #0009
 
@@ -228,21 +142,11 @@ box-shadow:0 10px 35px #0009
 
 .hero-tag{
 
-display:inline-block;
+display:inline-block;padding:7px 16px;border:1px solid #b48a37;
 
-padding:7px 16px;
+border-radius:30px;color:var(--gold2);font-size:12px;
 
-border:1px solid #b48a37;
-
-border-radius:30px;
-
-color:var(--gold2);
-
-font-size:12px;
-
-letter-spacing:2px;
-
-margin-bottom:20px
+letter-spacing:2px;margin-bottom:20px
 
 }
 
@@ -262,13 +166,7 @@ margin-bottom:20px
 
 background:linear-gradient(145deg,#1c1e25,#121419);
 
-border:1px solid var(--border);
-
-border-radius:16px;
-
-padding:23px;
-
-margin:16px 0
+border:1px solid var(--border);border-radius:16px;padding:23px;margin:16px 0
 
 }
 
@@ -284,19 +182,9 @@ margin:16px 0
 
 .plan-label{
 
-display:inline-block;
+display:inline-block;padding:5px 13px;background:#4b3a19;
 
-padding:5px 13px;
-
-background:#4b3a19;
-
-border-radius:20px;
-
-color:#ffe29a;
-
-font-size:11px;
-
-font-weight:bold
+border-radius:20px;color:#ffe29a;font-size:11px;font-weight:bold
 
 }
 
@@ -306,21 +194,9 @@ font-weight:bold
 
 input,textarea{
 
-width:100%;
+width:100%;padding:14px;margin:7px 0 17px;background:#0c0d11;
 
-padding:14px;
-
-margin:7px 0 17px;
-
-background:#0c0d11;
-
-border:1px solid #44464e;
-
-border-radius:9px;
-
-color:white;
-
-outline:none
+border:1px solid #44464e;border-radius:9px;color:white;outline:none
 
 }
 
@@ -332,19 +208,9 @@ label{font-size:13px;color:#ddd;font-weight:bold}
 
 .notice{
 
-padding:16px;
+padding:16px;background:#2b2516;border:1px solid #79602a;
 
-background:#2b2516;
-
-border:1px solid #79602a;
-
-border-radius:10px;
-
-color:#f2d99c;
-
-margin:15px 0;
-
-font-size:13px
+border-radius:10px;color:#f2d99c;margin:15px 0;font-size:13px
 
 }
 
@@ -372,17 +238,9 @@ th{color:var(--gold2)}
 
 footer{
 
-text-align:center;
+text-align:center;padding:40px 15px;color:#777;
 
-padding:40px 15px;
-
-color:#777;
-
-border-top:1px solid #292929;
-
-margin-top:50px;
-
-font-size:13px
+border-top:1px solid #292929;margin-top:50px;font-size:13px
 
 }
 
@@ -392,7 +250,11 @@ font-size:13px
 
 .footer-links a{color:var(--gold2);text-decoration:none}
 
-/* Reliable mobile navigation */
+.footer-links a:hover{text-decoration:underline}
+
+.policy-list{padding-left:22px;color:#c1c1c6;margin:10px 0 18px}
+
+.policy-list li{margin-bottom:8px}
 
 @media(max-width:650px){
 
@@ -402,19 +264,7 @@ header{justify-content:space-between;padding:12px 8px}
 
 .menu-toggle{display:block}
 
-#mainNav{
-
-display:none;
-
-width:100%;
-
-flex-direction:column;
-
-gap:7px;
-
-order:3
-
-}
+#mainNav{display:none;width:100%;flex-direction:column;gap:7px;order:3}
 
 #mainNav.open{display:flex}
 
@@ -638,6 +488,162 @@ main{padding:10px;margin:15px auto}
 
 </section>
 
+<!-- NEW PRIVACY POLICY SECTION -->
+
+<section id="privacy" class="hidden">
+
+<div class="section-heading">
+
+<h1>Privacy Policy</h1>
+
+<p>How TOUR GOLD INVESTMENT handles personal information.</p>
+
+</div>
+
+<div class="card">
+
+<p><strong>Last updated: 21 November 2026</strong></p>
+
+<p>This Privacy Policy explains how TOUR GOLD INVESTMENT may collect, use and handle personal information when you visit or use this website.</p>
+
+</div>
+
+<div class="card">
+
+<h2>1. Information We May Collect</h2>
+
+<p>When you use this website, information may include:</p>
+
+<ul class="policy-list">
+
+<li>Your name and email address when you create an account.</li>
+
+<li>Account information associated with your Supabase login.</li>
+
+<li>Information you provide when contacting customer support.</li>
+
+<li>Payment references or transaction information where provided to us by the payment provider or by you.</li>
+
+<li>Basic technical information needed for the website and account services to operate.</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>2. How Information May Be Used</h2>
+
+<p>Information may be used to:</p>
+
+<ul class="policy-list">
+
+<li>Create and manage customer accounts.</li>
+
+<li>Provide access to account features.</li>
+
+<li>Respond to questions and support requests.</li>
+
+<li>Maintain relevant account and transaction records.</li>
+
+<li>Protect the website and investigate suspected misuse.</li>
+
+<li>Meet applicable legal and regulatory obligations.</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>3. Payment Information</h2>
+
+<p>Payments are directed to a hosted Paystack payment page. Payment information entered on that hosted checkout is handled by Paystack under its own privacy and security practices.</p>
+
+<p>Do not send your card PIN, password, mobile money PIN or other payment credentials to our support email or through this website.</p>
+
+<p>Keep your payment receipt and transaction reference for your records.</p>
+
+</div>
+
+<div class="card">
+
+<h2>4. Service Providers</h2>
+
+<p>This website uses Supabase for account-related services and Paystack for hosted payment checkout. These providers may process information as needed to provide their services, subject to their own terms and privacy policies.</p>
+
+</div>
+
+<div class="card">
+
+<h2>5. Sharing of Information</h2>
+
+<p>We do not offer personal information for sale. Information may be disclosed to relevant service providers where necessary to operate the website, process payments, provide support, protect users or comply with applicable law.</p>
+
+</div>
+
+<div class="card">
+
+<h2>6. Data Security</h2>
+
+<p>We aim to handle personal information responsibly and use the security features provided by our service providers. However, no website or electronic storage system can guarantee absolute security.</p>
+
+<p>You should protect your password and sign out when using a shared device.</p>
+
+</div>
+
+<div class="card">
+
+<h2>7. Data Retention</h2>
+
+<p>Information may be retained for as long as reasonably necessary for account operation, customer support, record keeping, security and applicable legal obligations.</p>
+
+</div>
+
+<div class="card">
+
+<h2>8. Your Privacy Choices</h2>
+
+<p>You may contact us to ask about personal information associated with your account, request corrections or raise a privacy concern. Requests will be handled subject to applicable law and legitimate record-keeping requirements.</p>
+
+</div>
+
+<div class="card">
+
+<h2>9. Children's Privacy</h2>
+
+<p>This website is not intended for children who are not legally able to enter into the relevant financial arrangements. We do not knowingly seek to collect personal information from children for such purposes.</p>
+
+</div>
+
+<div class="card">
+
+<h2>10. Changes to This Policy</h2>
+
+<p>This Privacy Policy may be updated when the website or its services change. The latest version will be published on this page with an updated date where appropriate.</p>
+
+</div>
+
+<div class="card">
+
+<h2>11. Contact Us About Privacy</h2>
+
+<p>For privacy questions or requests, contact:</p>
+
+<p><a class="contact-email" href="mailto:ziddrisu341@gmail.com">ziddrisu341@gmail.com</a></p>
+
+</div>
+
+<div class="notice">
+
+This is a general website privacy notice and should be reviewed against the actual data practices of the business and applicable Ghanaian data protection requirements before relying on it as a formal compliance policy.
+
+</div>
+
+<button onclick="navigate('home')">BACK TO HOME</button>
+
+</section>
+
 <section id="contact" class="hidden">
 
 <div class="hero"><div class="hero-tag">WE ARE HERE TO HELP</div><h1>Contact Our Support Team</h1><p>Have a question about your account or payment? Send us an email and our team can respond.</p></div>
@@ -828,6 +834,8 @@ main{padding:10px;margin:15px auto}
 
 <a href="#" onclick="navigate('terms');return false">Terms</a>
 
+<a href="#" onclick="navigate('privacy');return false">Privacy Policy</a>
+
 <a href="#" onclick="navigate('contact');return false">Contact</a>
 
 </div>
@@ -853,8 +861,6 @@ let db=null;
 let currentUser=null;
 
 let selectedPlan=null;
-
-/* Mobile menu fix */
 
 function toggleMenu(){
 
@@ -918,9 +924,11 @@ const sections=[
 
 "about","investmentInfo","paymentInfo",
 
-"faq","terms","contact"
+"faq","terms","privacy","contact"
 
 ];
+
+if(!sections.includes(id))id="home";
 
 sections.forEach(x=>document.getElementById(x).classList.add("hidden"));
 
