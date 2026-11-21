@@ -4,6 +4,8 @@
 
 
 
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -30,15 +32,7 @@
 
 <meta property="og:image" content="https://animalvest-project.github.io/gold-investment-ghana/B8A8A5E1-3E6A-43BD-A8A7-9328B1AE5548.png">
 
-<meta property="og:image:alt" content="TOUR GOLD INVESTMENT promotional banner">
-
 <meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title" content="TOUR GOLD INVESTMENT">
-
-<meta name="twitter:description" content="Account access, payment information and customer support.">
-
-<meta name="twitter:image" content="https://animalvest-project.github.io/gold-investment-ghana/B8A8A5E1-3E6A-43BD-A8A7-9328B1AE5548.png">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 
@@ -62,13 +56,7 @@
 
 }
 
-html{
-
-scroll-behavior:smooth;
-
-scroll-padding-top:100px
-
-}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
 
 body{
 
@@ -108,23 +96,9 @@ margin:4px
 
 button:hover{transform:translateY(-2px)}
 
-button:disabled{
+button:disabled{opacity:.5;cursor:not-allowed}
 
-opacity:.5;
-
-cursor:not-allowed
-
-}
-
-.secondary{
-
-background:#24262d;
-
-color:white;
-
-border:1px solid #444
-
-}
+.secondary{background:#24262d;color:white;border:1px solid #444}
 
 header{
 
@@ -132,7 +106,7 @@ position:sticky;
 
 top:0;
 
-z-index:20;
+z-index:100;
 
 background:#101116f5;
 
@@ -180,8 +154,6 @@ justify-content:center
 
 nav button{font-size:12px;padding:9px 12px}
 
-/* Mobile navigation */
-
 .menu-toggle{
 
 display:none;
@@ -210,13 +182,7 @@ min-height:65vh
 
 .hidden{display:none!important}
 
-h1,h2,h3{
-
-line-height:1.35;
-
-margin-bottom:13px
-
-}
+h1,h2,h3{line-height:1.35;margin-bottom:13px}
 
 h1,h2{color:var(--gold2)}
 
@@ -258,17 +224,7 @@ box-shadow:0 10px 35px #0009
 
 .banner-action{text-align:center;margin:0 auto 25px}
 
-.banner-action button{
-
-min-width:220px;
-
-padding:16px 28px;
-
-font-size:16px;
-
-letter-spacing:1px
-
-}
+.banner-action button{min-width:220px;padding:16px 28px;font-size:16px;letter-spacing:1px}
 
 .hero-tag{
 
@@ -290,29 +246,11 @@ margin-bottom:20px
 
 }
 
-.hero h1{
-
-font-size:clamp(34px,6vw,55px);
-
-max-width:850px;
-
-margin:auto
-
-}
+.hero h1{font-size:clamp(34px,6vw,55px);max-width:850px;margin:auto}
 
 .hero p{max-width:680px;margin:18px auto 25px}
 
-.hero-buttons{
-
-display:flex;
-
-justify-content:center;
-
-flex-wrap:wrap;
-
-gap:8px
-
-}
+.hero-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
 
 .hero-buttons button{min-width:150px}
 
@@ -334,25 +272,9 @@ margin:16px 0
 
 }
 
-.grid{
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
-gap:16px
-
-}
-
-.feature-icon{
-
-font-size:30px;
-
-color:var(--gold2);
-
-margin-bottom:10px
-
-}
+.feature-icon{font-size:30px;color:var(--gold2);margin-bottom:10px}
 
 .feature h3,.plan h3{color:var(--gold2)}
 
@@ -378,17 +300,7 @@ font-weight:bold
 
 }
 
-.price,.stat{
-
-font-size:32px;
-
-font-weight:900;
-
-color:var(--gold2);
-
-margin:15px 0
-
-}
+.price,.stat{font-size:32px;font-weight:900;color:var(--gold2);margin:15px 0}
 
 .plan button{width:100%}
 
@@ -436,63 +348,19 @@ font-size:13px
 
 }
 
-.step-number{
+.step-number{font-size:30px;font-weight:900;color:var(--gold2)}
 
-font-size:30px;
-
-font-weight:900;
-
-color:var(--gold2)
-
-}
-
-.step{
-
-background:#17191f;
-
-border:1px solid #39352c;
-
-border-radius:14px;
-
-padding:22px
-
-}
+.step{background:#17191f;border:1px solid #39352c;border-radius:14px;padding:22px}
 
 .muted{color:#999;font-size:13px}
 
-#message{
-
-color:var(--gold2);
-
-overflow-wrap:anywhere;
-
-margin-top:12px
-
-}
+#message{color:var(--gold2);overflow-wrap:anywhere;margin-top:12px}
 
 .table-wrap{overflow-x:auto}
 
-table{
+table{width:100%;border-collapse:collapse;min-width:550px}
 
-width:100%;
-
-border-collapse:collapse;
-
-min-width:550px
-
-}
-
-th,td{
-
-text-align:left;
-
-padding:12px;
-
-border-bottom:1px solid #393939;
-
-font-size:13px
-
-}
+th,td{text-align:left;padding:12px;border-bottom:1px solid #393939;font-size:13px}
 
 th{color:var(--gold2)}
 
@@ -500,15 +368,7 @@ th{color:var(--gold2)}
 
 .faq-item h3{font-size:16px;color:var(--gold2)}
 
-.contact-email{
-
-color:var(--gold2);
-
-font-weight:bold;
-
-overflow-wrap:anywhere
-
-}
+.contact-email{color:var(--gold2);font-weight:bold;overflow-wrap:anywhere}
 
 footer{
 
@@ -526,43 +386,17 @@ font-size:13px
 
 }
 
-.footer-logo{
+.footer-logo{font-size:18px;color:var(--gold2);font-weight:900;margin-bottom:10px}
 
-font-size:18px;
-
-color:var(--gold2);
-
-font-weight:900;
-
-margin-bottom:10px
-
-}
-
-.footer-links{
-
-display:flex;
-
-justify-content:center;
-
-gap:15px;
-
-flex-wrap:wrap;
-
-margin:15px
-
-}
+.footer-links{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin:15px}
 
 .footer-links a{color:var(--gold2);text-decoration:none}
 
+/* Reliable mobile navigation */
+
 @media(max-width:650px){
 
-header{
-
-justify-content:space-between;
-
-padding:12px 8px
-
-}
+header{justify-content:space-between;padding:12px 8px}
 
 .logo{text-align:center;font-size:14px}
 
@@ -576,19 +410,15 @@ width:100%;
 
 flex-direction:column;
 
-gap:7px
+gap:7px;
+
+order:3
 
 }
 
 #mainNav.open{display:flex}
 
-#mainNav button{
-
-width:100%;
-
-padding:12px
-
-}
+#mainNav button{width:100%;padding:12px}
 
 main{padding:10px;margin:15px auto}
 
@@ -610,11 +440,7 @@ main{padding:10px;margin:15px auto}
 
 <div class="logo">✦ TOUR GOLD INVESTMENT</div>
 
-<button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation menu">
-
-☰ MENU
-
-</button>
+<button type="button" id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="mainNav">☰ MENU</button>
 
 <nav id="mainNav">
 
@@ -638,19 +464,9 @@ main{padding:10px;margin:15px auto}
 
 <div class="hero">
 
-<img class="hero-banner"
+<img class="hero-banner" src="B8A8A5E1-3E6A-43BD-A8A7-9328B1AE5548.png" alt="TOUR GOLD INVESTMENT promotional banner" loading="eager">
 
-src="B8A8A5E1-3E6A-43BD-A8A7-9328B1AE5548.png"
-
-alt="TOUR GOLD INVESTMENT promotional banner"
-
-loading="eager">
-
-<div class="banner-action">
-
-<button onclick="navigate('auth')">INVEST NOW →</button>
-
-</div>
+<div class="banner-action"><button onclick="navigate('auth')">INVEST NOW →</button></div>
 
 <div class="hero-tag">WELCOME TO TOUR GOLD INVESTMENT</div>
 
@@ -680,13 +496,7 @@ loading="eager">
 
 </div>
 
-<div id="plans" class="section-heading">
-
-<h2>Choose Your Deposit Amount</h2>
-
-<p>Select your preferred option below.</p>
-
-</div>
+<div id="plans" class="section-heading"><h2>Choose Your Deposit Amount</h2><p>Select your preferred option below.</p></div>
 
 <div class="grid">
 
@@ -1044,19 +854,37 @@ let currentUser=null;
 
 let selectedPlan=null;
 
-/* Mobile menu */
+/* Mobile menu fix */
 
 function toggleMenu(){
 
-document.getElementById("mainNav").classList.toggle("open");
+const nav=document.getElementById("mainNav");
+
+const btn=document.getElementById("menuToggle");
+
+const isOpen=nav.classList.toggle("open");
+
+btn.setAttribute("aria-expanded",String(isOpen));
+
+btn.textContent=isOpen?"✕ CLOSE":"☰ MENU";
 
 }
 
 function closeMenu(){
 
-document.getElementById("mainNav").classList.remove("open");
+const nav=document.getElementById("mainNav");
+
+const btn=document.getElementById("menuToggle");
+
+nav.classList.remove("open");
+
+btn.setAttribute("aria-expanded","false");
+
+btn.textContent="☰ MENU";
 
 }
+
+document.getElementById("menuToggle").addEventListener("click",toggleMenu);
 
 function navigate(id){
 
@@ -1076,17 +904,9 @@ function esc(v){
 
 return String(v??"").replace(/[&<>"']/g,c=>({
 
-"&":"&amp;",
+"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
 
-"<":"&lt;",
-
-">":"&gt;",
-
-'"':"&quot;",
-
-"'":"&#39;"
-
-}[c])));
+}[c]));
 
 }
 
@@ -1102,11 +922,7 @@ const sections=[
 
 ];
 
-sections.forEach(x=>{
-
-document.getElementById(x).classList.add("hidden");
-
-});
+sections.forEach(x=>document.getElementById(x).classList.add("hidden"));
 
 document.getElementById(id).classList.remove("hidden");
 
@@ -1208,11 +1024,7 @@ const confirmed=confirm(
 
 );
 
-if(confirmed){
-
-window.location.href=PAYSTACK_PAYMENT_URL;
-
-}
+if(confirmed)window.location.href=PAYSTACK_PAYMENT_URL;
 
 }
 
@@ -1288,11 +1100,7 @@ try{
 
 const {data,error}=await db.auth.signUp({
 
-email,
-
-password,
-
-options:{data:{full_name:name}}
+email,password,options:{data:{full_name:name}}
 
 });
 
@@ -1408,9 +1216,7 @@ document.getElementById("customerEmail").textContent=currentUser.email||"";
 
 document.getElementById("customerName").textContent=currentUser.user_metadata?.full_name||"Customer";
 
-const {data:profile,error}=await db
-
-.from("profiles")
+const {data:profile,error}=await db.from("profiles")
 
 .select("full_name,role")
 
@@ -1458,9 +1264,7 @@ const box=document.getElementById("investmentList");
 
 box.textContent="Loading...";
 
-const {data,error}=await db
-
-.from("investment_records")
+const {data,error}=await db.from("investment_records")
 
 .select("id,plan_name,amount,status,created_at")
 
@@ -1540,9 +1344,7 @@ async function loadAdminData(){
 
 if(!currentUser)return;
 
-const {data:profile,error}=await db
-
-.from("profiles")
+const {data:profile,error}=await db.from("profiles")
 
 .select("role")
 
