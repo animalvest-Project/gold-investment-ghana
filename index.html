@@ -8,6 +8,8 @@
 
 
 
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -42,21 +44,7 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 
-:root{
-
---gold:#e5b63c;
-
---gold2:#ffe29a;
-
---bg:#090a0d;
-
---panel:#17191f;
-
---muted:#a5a7ae;
-
---border:#39342a
-
-}
+:root{--gold:#e5b63c;--gold2:#ffe29a;--bg:#090a0d;--panel:#17191f;--muted:#a5a7ae;--border:#39342a}
 
 html{scroll-behavior:smooth;scroll-padding-top:100px}
 
@@ -64,15 +52,7 @@ body{font-family:Arial,sans-serif;background:var(--bg);color:white;line-height:1
 
 button,input,textarea{font:inherit}
 
-button{
-
-background:linear-gradient(135deg,#ffe49b,#d5a12a);
-
-color:#17130a;border:0;padding:13px 18px;border-radius:9px;
-
-font-weight:800;cursor:pointer;transition:.2s;margin:4px
-
-}
+button{background:linear-gradient(135deg,#ffe49b,#d5a12a);color:#17130a;border:0;padding:13px 18px;border-radius:9px;font-weight:800;cursor:pointer;transition:.2s;margin:4px}
 
 button:hover{transform:translateY(-2px)}
 
@@ -80,17 +60,7 @@ button:disabled{opacity:.5;cursor:not-allowed}
 
 .secondary{background:#24262d;color:white;border:1px solid #444}
 
-header{
-
-position:sticky;top:0;z-index:100;background:#101116f5;
-
-backdrop-filter:blur(15px);border-bottom:1px solid #514024;
-
-padding:13px 4%;display:flex;align-items:center;
-
-justify-content:space-between;gap:12px;flex-wrap:wrap
-
-}
+header{position:sticky;top:0;z-index:100;background:#101116f5;backdrop-filter:blur(15px);border-bottom:1px solid #514024;padding:13px 4%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 .logo{font-weight:900;letter-spacing:1px;color:var(--gold2);font-size:16px}
 
@@ -98,13 +68,7 @@ nav{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
 
 nav button{font-size:12px;padding:9px 12px}
 
-.menu-toggle{
-
-display:none;background:#24262d;color:var(--gold2);
-
-border:1px solid #514024;padding:10px 16px
-
-}
+.menu-toggle{display:none;background:#24262d;color:var(--gold2);border:1px solid #514024;padding:10px 16px}
 
 main{max-width:1150px;margin:30px auto;padding:15px;min-height:65vh}
 
@@ -116,39 +80,15 @@ h1,h2{color:var(--gold2)}
 
 p{color:#c1c1c6;margin-bottom:13px}
 
-.hero{
+.hero{padding:55px 20px;text-align:center;border:1px solid #84662e;border-radius:23px;background:radial-gradient(ellipse at 50% 0%,#80601e,#382b18 40%,#17181d 80%)}
 
-padding:55px 20px;text-align:center;border:1px solid #84662e;
-
-border-radius:23px;
-
-background:radial-gradient(ellipse at 50% 0%,#80601e,#382b18 40%,#17181d 80%)
-
-}
-
-.hero-banner{
-
-display:block;width:100%;max-width:1000px;height:auto;
-
-margin:0 auto 18px;border-radius:16px;border:1px solid #b48a37;
-
-box-shadow:0 10px 35px #0009
-
-}
+.hero-banner{display:block;width:100%;max-width:1000px;height:auto;margin:0 auto 18px;border-radius:16px;border:1px solid #b48a37;box-shadow:0 10px 35px #0009}
 
 .banner-action{text-align:center;margin:0 auto 25px}
 
 .banner-action button{min-width:220px;padding:16px 28px;font-size:16px;letter-spacing:1px}
 
-.hero-tag{
-
-display:inline-block;padding:7px 16px;border:1px solid #b48a37;
-
-border-radius:30px;color:var(--gold2);font-size:12px;
-
-letter-spacing:2px;margin-bottom:20px
-
-}
+.hero-tag{display:inline-block;padding:7px 16px;border:1px solid #b48a37;border-radius:30px;color:var(--gold2);font-size:12px;letter-spacing:2px;margin-bottom:20px}
 
 .hero h1{font-size:clamp(34px,6vw,55px);max-width:850px;margin:auto}
 
@@ -162,13 +102,7 @@ letter-spacing:2px;margin-bottom:20px
 
 .section-heading p{font-size:14px}
 
-.card{
-
-background:linear-gradient(145deg,#1c1e25,#121419);
-
-border:1px solid var(--border);border-radius:16px;padding:23px;margin:16px 0
-
-}
+.card{background:linear-gradient(145deg,#1c1e25,#121419);border:1px solid var(--border);border-radius:16px;padding:23px;margin:16px 0}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 
@@ -180,25 +114,13 @@ border:1px solid var(--border);border-radius:16px;padding:23px;margin:16px 0
 
 .plan:hover{border-color:#b48a37;transform:translateY(-3px)}
 
-.plan-label{
-
-display:inline-block;padding:5px 13px;background:#4b3a19;
-
-border-radius:20px;color:#ffe29a;font-size:11px;font-weight:bold
-
-}
+.plan-label{display:inline-block;padding:5px 13px;background:#4b3a19;border-radius:20px;color:#ffe29a;font-size:11px;font-weight:bold}
 
 .price,.stat{font-size:32px;font-weight:900;color:var(--gold2);margin:15px 0}
 
 .plan button{width:100%}
 
-input,textarea{
-
-width:100%;padding:14px;margin:7px 0 17px;background:#0c0d11;
-
-border:1px solid #44464e;border-radius:9px;color:white;outline:none
-
-}
+input,textarea{width:100%;padding:14px;margin:7px 0 17px;background:#0c0d11;border:1px solid #44464e;border-radius:9px;color:white;outline:none}
 
 textarea{min-height:130px;resize:vertical}
 
@@ -206,13 +128,7 @@ input:focus,textarea:focus{border-color:var(--gold)}
 
 label{font-size:13px;color:#ddd;font-weight:bold}
 
-.notice{
-
-padding:16px;background:#2b2516;border:1px solid #79602a;
-
-border-radius:10px;color:#f2d99c;margin:15px 0;font-size:13px
-
-}
+.notice{padding:16px;background:#2b2516;border:1px solid #79602a;border-radius:10px;color:#f2d99c;margin:15px 0;font-size:13px}
 
 .step-number{font-size:30px;font-weight:900;color:var(--gold2)}
 
@@ -236,13 +152,7 @@ th{color:var(--gold2)}
 
 .contact-email{color:var(--gold2);font-weight:bold;overflow-wrap:anywhere}
 
-footer{
-
-text-align:center;padding:40px 15px;color:#777;
-
-border-top:1px solid #292929;margin-top:50px;font-size:13px
-
-}
+footer{text-align:center;padding:40px 15px;color:#777;border-top:1px solid #292929;margin-top:50px;font-size:13px}
 
 .footer-logo{font-size:18px;color:var(--gold2);font-weight:900;margin-bottom:10px}
 
@@ -488,157 +398,35 @@ main{padding:10px;margin:15px auto}
 
 </section>
 
-<!-- NEW PRIVACY POLICY SECTION -->
-
 <section id="privacy" class="hidden">
 
-<div class="section-heading">
+<div class="section-heading"><h1>Privacy Policy</h1><p>How TOUR GOLD INVESTMENT handles personal information.</p></div>
 
-<h1>Privacy Policy</h1>
+<div class="card"><p><strong>Last updated: 21 November 2026</strong></p><p>This Privacy Policy explains how TOUR GOLD INVESTMENT may collect, use and handle personal information when you visit or use this website.</p></div>
 
-<p>How TOUR GOLD INVESTMENT handles personal information.</p>
+<div class="card"><h2>1. Information We May Collect</h2><p>When you use this website, information may include:</p><ul class="policy-list"><li>Your name and email address when you create an account.</li><li>Account information associated with your Supabase login.</li><li>Information you provide when contacting customer support.</li><li>Payment references or transaction information where provided to us by the payment provider or by you.</li><li>Basic technical information needed for the website and account services to operate.</li></ul></div>
 
-</div>
+<div class="card"><h2>2. How Information May Be Used</h2><p>Information may be used to:</p><ul class="policy-list"><li>Create and manage customer accounts.</li><li>Provide access to account features.</li><li>Respond to questions and support requests.</li><li>Maintain relevant account and transaction records.</li><li>Protect the website and investigate suspected misuse.</li><li>Meet applicable legal and regulatory obligations.</li></ul></div>
 
-<div class="card">
+<div class="card"><h2>3. Payment Information</h2><p>Payments are directed to a hosted Paystack payment page. Payment information entered on that hosted checkout is handled by Paystack under its own privacy and security practices.</p><p>Do not send your card PIN, password, mobile money PIN or other payment credentials to our support email or through this website.</p><p>Keep your payment receipt and transaction reference for your records.</p></div>
 
-<p><strong>Last updated: 21 November 2026</strong></p>
+<div class="card"><h2>4. Service Providers</h2><p>This website uses Supabase for account-related services and Paystack for hosted payment checkout. These providers may process information as needed to provide their services, subject to their own terms and privacy policies.</p></div>
 
-<p>This Privacy Policy explains how TOUR GOLD INVESTMENT may collect, use and handle personal information when you visit or use this website.</p>
+<div class="card"><h2>5. Sharing of Information</h2><p>We do not offer personal information for sale. Information may be disclosed to relevant service providers where necessary to operate the website, process payments, provide support, protect users or comply with applicable law.</p></div>
 
-</div>
+<div class="card"><h2>6. Data Security</h2><p>We aim to handle personal information responsibly and use the security features provided by our service providers. However, no website or electronic storage system can guarantee absolute security.</p><p>You should protect your password and sign out when using a shared device.</p></div>
 
-<div class="card">
+<div class="card"><h2>7. Data Retention</h2><p>Information may be retained for as long as reasonably necessary for account operation, customer support, record keeping, security and applicable legal obligations.</p></div>
 
-<h2>1. Information We May Collect</h2>
+<div class="card"><h2>8. Your Privacy Choices</h2><p>You may contact us to ask about personal information associated with your account, request corrections or raise a privacy concern. Requests will be handled subject to applicable law and legitimate record-keeping requirements.</p></div>
 
-<p>When you use this website, information may include:</p>
+<div class="card"><h2>9. Children's Privacy</h2><p>This website is not intended for children who are not legally able to enter into the relevant financial arrangements. We do not knowingly seek to collect personal information from children for such purposes.</p></div>
 
-<ul class="policy-list">
+<div class="card"><h2>10. Changes to This Policy</h2><p>This Privacy Policy may be updated when the website or its services change. The latest version will be published on this page with an updated date where appropriate.</p></div>
 
-<li>Your name and email address when you create an account.</li>
+<div class="card"><h2>11. Contact Us About Privacy</h2><p>For privacy questions or requests, contact:</p><p><a class="contact-email" href="mailto:ziddrisu341@gmail.com">ziddrisu341@gmail.com</a></p></div>
 
-<li>Account information associated with your Supabase login.</li>
-
-<li>Information you provide when contacting customer support.</li>
-
-<li>Payment references or transaction information where provided to us by the payment provider or by you.</li>
-
-<li>Basic technical information needed for the website and account services to operate.</li>
-
-</ul>
-
-</div>
-
-<div class="card">
-
-<h2>2. How Information May Be Used</h2>
-
-<p>Information may be used to:</p>
-
-<ul class="policy-list">
-
-<li>Create and manage customer accounts.</li>
-
-<li>Provide access to account features.</li>
-
-<li>Respond to questions and support requests.</li>
-
-<li>Maintain relevant account and transaction records.</li>
-
-<li>Protect the website and investigate suspected misuse.</li>
-
-<li>Meet applicable legal and regulatory obligations.</li>
-
-</ul>
-
-</div>
-
-<div class="card">
-
-<h2>3. Payment Information</h2>
-
-<p>Payments are directed to a hosted Paystack payment page. Payment information entered on that hosted checkout is handled by Paystack under its own privacy and security practices.</p>
-
-<p>Do not send your card PIN, password, mobile money PIN or other payment credentials to our support email or through this website.</p>
-
-<p>Keep your payment receipt and transaction reference for your records.</p>
-
-</div>
-
-<div class="card">
-
-<h2>4. Service Providers</h2>
-
-<p>This website uses Supabase for account-related services and Paystack for hosted payment checkout. These providers may process information as needed to provide their services, subject to their own terms and privacy policies.</p>
-
-</div>
-
-<div class="card">
-
-<h2>5. Sharing of Information</h2>
-
-<p>We do not offer personal information for sale. Information may be disclosed to relevant service providers where necessary to operate the website, process payments, provide support, protect users or comply with applicable law.</p>
-
-</div>
-
-<div class="card">
-
-<h2>6. Data Security</h2>
-
-<p>We aim to handle personal information responsibly and use the security features provided by our service providers. However, no website or electronic storage system can guarantee absolute security.</p>
-
-<p>You should protect your password and sign out when using a shared device.</p>
-
-</div>
-
-<div class="card">
-
-<h2>7. Data Retention</h2>
-
-<p>Information may be retained for as long as reasonably necessary for account operation, customer support, record keeping, security and applicable legal obligations.</p>
-
-</div>
-
-<div class="card">
-
-<h2>8. Your Privacy Choices</h2>
-
-<p>You may contact us to ask about personal information associated with your account, request corrections or raise a privacy concern. Requests will be handled subject to applicable law and legitimate record-keeping requirements.</p>
-
-</div>
-
-<div class="card">
-
-<h2>9. Children's Privacy</h2>
-
-<p>This website is not intended for children who are not legally able to enter into the relevant financial arrangements. We do not knowingly seek to collect personal information from children for such purposes.</p>
-
-</div>
-
-<div class="card">
-
-<h2>10. Changes to This Policy</h2>
-
-<p>This Privacy Policy may be updated when the website or its services change. The latest version will be published on this page with an updated date where appropriate.</p>
-
-</div>
-
-<div class="card">
-
-<h2>11. Contact Us About Privacy</h2>
-
-<p>For privacy questions or requests, contact:</p>
-
-<p><a class="contact-email" href="mailto:ziddrisu341@gmail.com">ziddrisu341@gmail.com</a></p>
-
-</div>
-
-<div class="notice">
-
-This is a general website privacy notice and should be reviewed against the actual data practices of the business and applicable Ghanaian data protection requirements before relying on it as a formal compliance policy.
-
-</div>
+<div class="notice">This is a general website privacy notice and should be reviewed against the actual data practices of the business and applicable Ghanaian data protection requirements before relying on it as a formal compliance policy.</div>
 
 <button onclick="navigate('home')">BACK TO HOME</button>
 
@@ -658,9 +446,7 @@ This is a general website privacy notice and should be reviewed against the actu
 
 <div class="card">
 
-<h2>Send Us a Message</h2>
-
-<p>Complete the fields below. Your email application will open with your message prepared.</p>
+<h2>Send Us a Message</h2><p>Complete the fields below. Your email application will open with your message prepared.</p>
 
 <form id="contactForm">
 
@@ -918,15 +704,7 @@ return String(v??"").replace(/[&<>"']/g,c=>({
 
 function showSection(id){
 
-const sections=[
-
-"home","auth","dashboard","admin",
-
-"about","investmentInfo","paymentInfo",
-
-"faq","terms","privacy","contact"
-
-];
+const sections=["home","auth","dashboard","admin","about","investmentInfo","paymentInfo","faq","terms","privacy","contact"];
 
 if(!sections.includes(id))id="home";
 
@@ -1024,13 +802,7 @@ return;
 
 }
 
-const confirmed=confirm(
-
-"Selected amount: "+money(selectedPlan.amount)+
-
-". The hosted Paystack page may have a separately configured amount. Check it carefully before paying. Continue?"
-
-);
+const confirmed=confirm("Selected amount: "+money(selectedPlan.amount)+". The hosted Paystack page may have a separately configured amount. Check it carefully before paying. Continue?");
 
 if(confirmed)window.location.href=PAYSTACK_PAYMENT_URL;
 
@@ -1064,11 +836,7 @@ return;
 
 const mailBody="Name: "+name+"\nCustomer Email: "+email+"\n\nMessage:\n"+body;
 
-const mailto="mailto:ziddrisu341@gmail.com"+
-
-"?subject="+encodeURIComponent(subject)+
-
-"&body="+encodeURIComponent(mailBody);
+const mailto="mailto:ziddrisu341@gmail.com"+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(mailBody);
 
 window.location.href=mailto;
 
@@ -1106,11 +874,7 @@ message("Creating your account...");
 
 try{
 
-const {data,error}=await db.auth.signUp({
-
-email,password,options:{data:{full_name:name}}
-
-});
+const {data,error}=await db.auth.signUp({email,password,options:{data:{full_name:name}}});
 
 if(error)throw error;
 
@@ -1192,11 +956,7 @@ return;
 
 }
 
-const {error}=await db.auth.resetPasswordForEmail(email,{
-
-redirectTo:location.origin+location.pathname
-
-});
+const {error}=await db.auth.resetPasswordForEmail(email,{redirectTo:location.origin+location.pathname});
 
 message(error?error.message:"If the account exists, reset instructions have been sent.");
 
@@ -1224,27 +984,17 @@ document.getElementById("customerEmail").textContent=currentUser.email||"";
 
 document.getElementById("customerName").textContent=currentUser.user_metadata?.full_name||"Customer";
 
-const {data:profile,error}=await db.from("profiles")
-
-.select("full_name,role")
-
-.eq("id",currentUser.id)
-
-.maybeSingle();
+const {data:profile,error}=await db.from("profiles").select("full_name,role").eq("id",currentUser.id).maybeSingle();
 
 if(!error&&profile){
 
-document.getElementById("customerName").textContent=
-
-profile.full_name||currentUser.user_metadata?.full_name||"Customer";
+document.getElementById("customerName").textContent=profile.full_name||currentUser.user_metadata?.full_name||"Customer";
 
 if(profile.role==="admin"){
 
 document.getElementById("adminNav").classList.remove("hidden");
 
-document.getElementById("adminWelcome").textContent=
-
-"Signed in as "+(profile.full_name||currentUser.email);
+document.getElementById("adminWelcome").textContent="Signed in as "+(profile.full_name||currentUser.email);
 
 }else{
 
@@ -1272,13 +1022,7 @@ const box=document.getElementById("investmentList");
 
 box.textContent="Loading...";
 
-const {data,error}=await db.from("investment_records")
-
-.select("id,plan_name,amount,status,created_at")
-
-.eq("user_id",currentUser.id)
-
-.order("created_at",{ascending:false});
+const {data,error}=await db.from("investment_records").select("id,plan_name,amount,status,created_at").eq("user_id",currentUser.id).order("created_at",{ascending:false});
 
 if(error){
 
@@ -1352,13 +1096,7 @@ async function loadAdminData(){
 
 if(!currentUser)return;
 
-const {data:profile,error}=await db.from("profiles")
-
-.select("role")
-
-.eq("id",currentUser.id)
-
-.maybeSingle();
+const {data:profile,error}=await db.from("profiles").select("role").eq("id",currentUser.id).maybeSingle();
 
 if(error||profile?.role!=="admin"){
 
@@ -1384,9 +1122,7 @@ db.rpc("admin_list_investments")
 
 if(customerResult.error){
 
-document.getElementById("adminCustomers").textContent=
-
-"Customer loading error: "+customerResult.error.message;
+document.getElementById("adminCustomers").textContent="Customer loading error: "+customerResult.error.message;
 
 }else{
 
@@ -1410,9 +1146,7 @@ renderTable("adminCustomers",customers,[
 
 if(investmentResult.error){
 
-document.getElementById("adminInvestments").textContent=
-
-"Investment loading error: "+investmentResult.error.message;
+document.getElementById("adminInvestments").textContent="Investment loading error: "+investmentResult.error.message;
 
 }else{
 
@@ -1420,9 +1154,7 @@ const records=investmentResult.data||[];
 
 document.getElementById("totalInvestments").textContent=records.length;
 
-document.getElementById("pendingInvestments").textContent=
-
-records.filter(x=>String(x.status||"").toLowerCase()==="pending").length;
+document.getElementById("pendingInvestments").textContent=records.filter(x=>String(x.status||"").toLowerCase()==="pending").length;
 
 renderTable("adminInvestments",records,[
 
@@ -1446,7 +1178,7 @@ async function start(){
 
 if(!window.supabase||!window.supabase.createClient){
 
-message("Supabase failed to load. Refresh the page.");
+console.error("Supabase failed to load.");
 
 return;
 
@@ -1464,13 +1196,27 @@ return;
 
 }
 
+/*
+
+IMPORTANT FIX:
+
+Restore the saved user session without opening the dashboard.
+
+Visitors now remain on the Home page when the website loads.
+
+The dashboard still opens after a user logs in.
+
+*/
+
 if(data.session){
 
 currentUser=data.session.user;
 
-await openDashboard();
-
 }
+
+/* Always start on the homepage. */
+
+showSection("home");
 
 db.auth.onAuthStateChange((event,session)=>{
 
@@ -1481,6 +1227,10 @@ currentUser=null;
 document.getElementById("adminNav").classList.add("hidden");
 
 navigate("home");
+
+}else if(session){
+
+currentUser=session.user;
 
 }
 
