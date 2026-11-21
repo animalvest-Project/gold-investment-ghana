@@ -2,6 +2,8 @@
 
 
 
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -10,7 +12,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <meta name="theme-color" content="#090a0d">
 
@@ -22,43 +24,47 @@
 
 <style>
 
-:root{--gold:#d6ad55;--gold2:#f3d58a;--dark:#090a0d;--panel:#14161b;--muted:#aaa;--border:rgba(214,173,85,.25)}
+:root{--gold:#d6ad55;--light:#f3d58a;--dark:#090a0d;--panel:#14161b;--border:rgba(214,173,85,.25)}
 
 *{box-sizing:border-box}
 
 html{scroll-behavior:smooth}
 
-body{margin:0;background:var(--dark);color:#fff;font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+body{margin:0;background:var(--dark);color:#fff;font-family:Arial,sans-serif;line-height:1.6}
 
-header{position:sticky;top:0;z-index:20;background:rgba(9,10,13,.97);border-bottom:1px solid var(--border);padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+header{position:sticky;top:0;z-index:20;background:#090a0df5;border-bottom:1px solid var(--border);padding:14px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 
-.brand{font-size:19px;font-weight:900;color:var(--gold2);letter-spacing:1px}
+.brand{font-weight:900;color:var(--light);letter-spacing:1px;font-size:19px}
 
 nav{display:flex;gap:8px;flex-wrap:wrap}
 
-nav button{border:0;background:transparent;color:#ddd;padding:9px 11px;cursor:pointer;font-weight:bold;border-radius:7px}
+nav a{color:#ddd;text-decoration:none;padding:8px 11px;border-radius:7px;font-weight:bold}
 
-nav button:hover{color:var(--gold2);background:#202127}
+nav a:hover{background:#25262c;color:var(--light)}
 
 main{max-width:1100px;margin:auto;padding:28px 5% 70px}
 
-section{display:none}
+main section{display:none}
 
-section.active{display:block}
+main section.active{display:block}
 
-.hero{min-height:390px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:45px 20px;border:1px solid var(--border);border-radius:18px;background:radial-gradient(ellipse at top,rgba(214,173,85,.18),transparent 65%),#111319}
+main section:target{display:block}
 
-.eyebrow{color:var(--gold2);font-weight:bold;letter-spacing:3px}
+main:has(section:target) section.active:not(:target){display:none}
+
+.hero{min-height:390px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 20px;border:1px solid var(--border);border-radius:18px;background:radial-gradient(ellipse at top,rgba(214,173,85,.18),transparent 65%),#111319}
+
+.eyebrow{color:var(--light);font-weight:bold;letter-spacing:3px}
 
 h1{font-size:clamp(34px,7vw,62px);line-height:1.1;margin:12px 0}
 
-h2,h3{color:var(--gold2)}
+h2,h3{color:var(--light)}
 
 p{color:#ccc}
 
-.gold{color:var(--gold2)}
+.gold{color:var(--light)}
 
-.btn{display:inline-block;padding:12px 20px;border:0;border-radius:8px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#15120a;font-weight:900;text-decoration:none;cursor:pointer;margin:5px;font-size:15px}
+.btn{display:inline-block;padding:12px 20px;border:0;border-radius:8px;background:linear-gradient(135deg,var(--light),var(--gold));color:#15120a;font-weight:900;text-decoration:none;cursor:pointer;margin:5px;font-size:15px}
 
 .btn.secondary{background:#24262d;color:#fff;border:1px solid var(--border)}
 
@@ -68,9 +74,9 @@ p{color:#ccc}
 
 .card{background:var(--panel);border:1px solid var(--border);border-radius:13px;padding:20px}
 
-.price{font-size:29px;color:var(--gold2);font-weight:900}
+.price{font-size:29px;color:var(--light);font-weight:900}
 
-input,select,textarea{width:100%;padding:13px;margin:7px 0 14px;border-radius:8px;border:1px solid #393b42;background:#0c0e12;color:white;font-size:15px}
+input{width:100%;padding:13px;margin:7px 0 14px;border-radius:8px;border:1px solid #393b42;background:#0c0e12;color:white;font-size:15px}
 
 label{font-weight:bold;color:#ddd}
 
@@ -78,27 +84,27 @@ label{font-weight:bold;color:#ddd}
 
 .notice{border:1px solid var(--border);background:#17150f;padding:14px;border-radius:9px;color:#e7d5a8;margin:15px 0}
 
-.muted{color:var(--muted);font-size:14px}
+.muted{color:#aaa;font-size:14px}
 
 .hidden{display:none!important}
 
-.stat{font-size:25px;color:var(--gold2);font-weight:bold}
+.stat{font-size:25px;color:var(--light);font-weight:bold}
 
 table{width:100%;border-collapse:collapse;min-width:500px}
 
 th,td{padding:12px;text-align:left;border-bottom:1px solid #333}
 
-th{color:var(--gold2)}
+th{color:var(--light)}
 
 .table-wrap{overflow-x:auto}
 
 footer{border-top:1px solid var(--border);padding:25px 5%;text-align:center;color:#999;font-size:13px}
 
-footer a{color:var(--gold2)}
+footer a{color:var(--light)}
 
 hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
-@media(max-width:600px){header{justify-content:center}nav{justify-content:center}nav button{padding:8px}main{padding-top:18px}.hero{min-height:330px}}
+@media(max-width:600px){header{justify-content:center}nav{justify-content:center}main{padding-top:18px}.hero{min-height:330px}}
 
 </style>
 
@@ -112,13 +118,13 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
   <nav>
 
-    <button type="button" onclick="showSection('home')">Home</button>
+    <a href="#home">Home</a>
 
-    <button type="button" onclick="openAccount()">Account</button>
+    <a href="#auth">Account</a>
 
-    <button type="button" onclick="showSection('about')">About</button>
+    <a href="#about">About</a>
 
-    <button type="button" onclick="showSection('contact')">Contact</button>
+    <a href="#contact">Contact</a>
 
   </nav>
 
@@ -138,9 +144,9 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
     <div>
 
-      <button type="button" class="btn" onclick="openAccount()">Get Started</button>
+      <a class="btn" href="#auth">Get Started</a>
 
-      <button type="button" class="btn secondary" onclick="showSection('about')">Learn More</button>
+      <a class="btn secondary" href="#about">Learn More</a>
 
     </div>
 
@@ -148,31 +154,11 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
   <div class="cards">
 
-    <div class="card">
+    <div class="card"><h3>FINE GOLD</h3><div class="price">999.9</div><p>Gold-focused investment information.</p></div>
 
-      <h3>FINE GOLD</h3>
+    <div class="card"><h3>Secure Account Access</h3><p>Create an account and access your personal account area.</p></div>
 
-      <div class="price">999.9</div>
-
-      <p>Gold-focused investment information.</p>
-
-    </div>
-
-    <div class="card">
-
-      <h3>Secure Account Access</h3>
-
-      <p>Create an account and access your personal account area.</p>
-
-    </div>
-
-    <div class="card">
-
-      <h3>Payment Options</h3>
-
-      <p>Payment instructions are provided through our payment page.</p>
-
-    </div>
+    <div class="card"><h3>Payment Options</h3><p>Payment instructions are provided through our payment page.</p></div>
 
   </div>
 
@@ -182,47 +168,13 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
   <div class="cards">
 
-    <div class="card">
+    <div class="card"><h3>Starter</h3><div class="price">GH₵50</div><button class="btn" onclick="beginPayment(50)">Continue</button></div>
 
-      <h3>Starter</h3>
+    <div class="card"><h3>Standard</h3><div class="price">GH₵100</div><button class="btn" onclick="beginPayment(100)">Continue</button></div>
 
-      <div class="price">GH₵50</div>
+    <div class="card"><h3>Premium</h3><div class="price">GH₵500</div><button class="btn" onclick="beginPayment(500)">Continue</button></div>
 
-      <button class="btn" type="button" onclick="beginPayment(50)">Continue</button>
-
-    </div>
-
-    <div class="card">
-
-      <h3>Standard</h3>
-
-      <div class="price">GH₵100</div>
-
-      <button class="btn" type="button" onclick="beginPayment(100)">Continue</button>
-
-    </div>
-
-    <div class="card">
-
-      <h3>Premium</h3>
-
-      <div class="price">GH₵500</div>
-
-      <button class="btn" type="button" onclick="beginPayment(500)">Continue</button>
-
-    </div>
-
-    <div class="card">
-
-      <h3>Custom Amount</h3>
-
-      <label for="customAmount">Amount in GH₵</label>
-
-      <input id="customAmount" type="number" min="50" placeholder="Enter amount">
-
-      <button class="btn" type="button" onclick="customPayment()">Continue</button>
-
-    </div>
+    <div class="card"><h3>Custom Amount</h3><label for="customAmount">Amount in GH₵</label><input id="customAmount" type="number" min="50" placeholder="Enter amount"><button class="btn" onclick="customPayment()">Continue</button></div>
 
   </div>
 
@@ -296,9 +248,9 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
       <p id="loggedInEmail"></p>
 
-      <button class="btn" type="button" onclick="openDashboard()">Open My Dashboard</button>
+      <button class="btn" onclick="openDashboard()">Open My Dashboard</button>
 
-      <button class="btn secondary" type="button" onclick="logout()">Logout</button>
+      <button class="btn secondary" onclick="logout()">Logout</button>
 
     </div>
 
@@ -316,11 +268,11 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
     <p id="customerEmail"></p>
 
-    <button class="btn secondary" type="button" onclick="loadCustomerRecords()">Refresh</button>
+    <button class="btn secondary" onclick="loadCustomerRecords()">Refresh</button>
 
-    <button class="btn secondary" type="button" onclick="showSection('home')">Home</button>
+    <a class="btn secondary" href="#home">Home</a>
 
-    <button class="btn danger" type="button" onclick="logout()">Logout</button>
+    <button class="btn danger" onclick="logout()">Logout</button>
 
   </div>
 
@@ -338,13 +290,9 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
     <div class="table-wrap">
 
-      <table>
+      <table><thead><tr><th>Date</th><th>Amount</th><th>Status</th></tr></thead>
 
-        <thead><tr><th>Date</th><th>Amount</th><th>Status</th></tr></thead>
-
-        <tbody id="customerRecords"><tr><td colspan="3">No records loaded yet.</td></tr></tbody>
-
-      </table>
+      <tbody id="customerRecords"><tr><td colspan="3">No records loaded yet.</td></tr></tbody></table>
 
     </div>
 
@@ -358,7 +306,7 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
     <p>Use the payment page provided on the Home page. Keep your payment receipt for your records.</p>
 
-    <button class="btn" type="button" onclick="beginPayment(50)">Open Payment Page</button>
+    <button class="btn" onclick="beginPayment(50)">Open Payment Page</button>
 
   </div>
 
@@ -370,15 +318,13 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
   <div class="card">
 
-    <p>Administrator account</p>
+    <p>Administrator account</p><p id="adminEmail"></p>
 
-    <p id="adminEmail"></p>
+    <button class="btn secondary" onclick="loadAdminData()">Refresh Data</button>
 
-    <button class="btn secondary" type="button" onclick="loadAdminData()">Refresh Data</button>
+    <a class="btn secondary" href="#home">Home</a>
 
-    <button class="btn secondary" type="button" onclick="showSection('home')">Home</button>
-
-    <button class="btn danger" type="button" onclick="logout()">Logout</button>
+    <button class="btn danger" onclick="logout()">Logout</button>
 
   </div>
 
@@ -386,17 +332,7 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
     <h3>Customers</h3>
 
-    <div class="table-wrap">
-
-      <table>
-
-        <thead><tr><th>Customer</th><th>Email</th></tr></thead>
-
-        <tbody id="adminCustomers"><tr><td colspan="2">No data loaded.</td></tr></tbody>
-
-      </table>
-
-    </div>
+    <div class="table-wrap"><table><thead><tr><th>Customer</th><th>Email</th></tr></thead><tbody id="adminCustomers"><tr><td colspan="2">No data loaded.</td></tr></tbody></table></div>
 
   </div>
 
@@ -404,17 +340,7 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
     <h3>Investment Records</h3>
 
-    <div class="table-wrap">
-
-      <table>
-
-        <thead><tr><th>Customer</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead>
-
-        <tbody id="adminInvestments"><tr><td colspan="4">No data loaded.</td></tr></tbody>
-
-      </table>
-
-    </div>
+    <div class="table-wrap"><table><thead><tr><th>Customer</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead><tbody id="adminInvestments"><tr><td colspan="4">No data loaded.</td></tr></tbody></table></div>
 
     <p id="adminMessage" class="muted"></p>
 
@@ -474,37 +400,19 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
     <h3>Frequently Asked Questions</h3>
 
-    <p><strong>How do I create an account?</strong><br>Open Account and select Create Account.</p>
+    <p><strong>How do I create an account?</strong><br>Open Account and select Create Account.</p><hr>
 
-    <hr>
+    <p><strong>How do I log in?</strong><br>Open Account and enter your registered email and password.</p><hr>
 
-    <p><strong>How do I log in?</strong><br>Open Account and enter your registered email and password.</p>
-
-    <hr>
-
-    <p><strong>How do I make a payment?</strong><br>Select an amount on the Home page and continue to the payment page.</p>
-
-    <hr>
+    <p><strong>How do I make a payment?</strong><br>Select an amount on the Home page and continue to the payment page.</p><hr>
 
     <p><strong>Does a payment redirect mean my account has been credited?</strong><br>No. A redirect does not verify or credit a payment.</p>
 
   </div>
 
-  <div class="card">
+  <div class="card"><h3>Privacy</h3><p>Account authentication is handled by Supabase. Do not share your password with anyone. Contact support if you need help with your account.</p></div>
 
-    <h3>Privacy</h3>
-
-    <p>Account authentication is handled by Supabase. Do not share your password with anyone. Contact support if you need help with your account.</p>
-
-  </div>
-
-  <div class="card">
-
-    <h3>Terms</h3>
-
-    <p>Use of this website does not guarantee investment returns. Any investment must be subject to clear written terms, applicable laws and appropriate authorisation.</p>
-
-  </div>
+  <div class="card"><h3>Terms</h3><p>Use of this website does not guarantee investment returns. Any investment must be subject to clear written terms, applicable laws and appropriate authorisation.</p></div>
 
 </section>
 
@@ -522,215 +430,141 @@ hr{border:0;border-top:1px solid #303138;margin:25px 0}
 
 <script>
 
-const SUPABASE_URL = "https://yvorlcgppaelcexwtiwf.supabase.co";
+const SUPABASE_URL="https://yvorlcgppaelcexwtiwf.supabase.co";
 
-const SUPABASE_KEY = "sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v";
+const SUPABASE_KEY="sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v";
 
-const PAYSTACK_PAYMENT_URL = "https://paystack.shop/pay/-egr5cbd19";
+const PAYSTACK_PAYMENT_URL="https://paystack.shop/pay/-egr5cbd19";
 
-const supabase = window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+let supabaseClient=null;
 
-let currentUser = null;
+let currentUser=null;
 
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent=new Date().getFullYear();
 
-// MAIN PAGE NAVIGATION
+function showSection(id){
 
-function showSection(id) {
+  document.querySelectorAll("main section").forEach(s=>s.classList.remove("active"));
 
-  document.querySelectorAll("main section").forEach(section => {
+  const target=document.getElementById(id);
 
-    section.classList.remove("active");
-
-  });
-
-  const target = document.getElementById(id);
-
-  if(target) target.classList.add("active");
+  if(target)target.classList.add("active");
 
   window.scrollTo({top:0,behavior:"smooth"});
 
 }
 
-// GET STARTED AND ACCOUNT BUTTONS
+function showAuthForm(type){
 
-function openAccount() {
+  document.getElementById("signupForm").classList.toggle("hidden",type!=="signup");
 
-  showSection("auth");
+  document.getElementById("loginForm").classList.toggle("hidden",type!=="login");
 
-  showAuthForm("signup");
-
-  updateAccountDisplay();
+  document.getElementById("authMessage").textContent="";
 
 }
 
-// AUTH FORM SWITCHING
+function setAuthMessage(message){
 
-function showAuthForm(type) {
-
-  document.getElementById("signupForm").classList.toggle("hidden",type !== "signup");
-
-  document.getElementById("loginForm").classList.toggle("hidden",type !== "login");
-
-  document.getElementById("authMessage").textContent = "";
+  document.getElementById("authMessage").textContent=message;
 
 }
 
-function setAuthMessage(message) {
+function updateAccountDisplay(){
 
-  document.getElementById("authMessage").textContent = message;
+  if(!document.getElementById("loggedInBox"))return;
+
+  document.getElementById("authForms").classList.toggle("hidden",!!currentUser);
+
+  document.getElementById("loggedInBox").classList.toggle("hidden",!currentUser);
+
+  document.getElementById("loggedInEmail").textContent=currentUser?.email||"";
 
 }
 
-// REGISTRATION
-
-document.getElementById("signupForm").addEventListener("submit",async function(e) {
+document.getElementById("signupForm").addEventListener("submit",async e=>{
 
   e.preventDefault();
 
-  const name = document.getElementById("signupName").value.trim();
+  if(!supabaseClient){setAuthMessage("Account service is unavailable. Please refresh and try again.");return;}
 
-  const email = document.getElementById("signupEmail").value.trim();
+  const name=document.getElementById("signupName").value.trim();
 
-  const password = document.getElementById("signupPassword").value;
+  const email=document.getElementById("signupEmail").value.trim();
+
+  const password=document.getElementById("signupPassword").value;
 
   setAuthMessage("Creating your account...");
 
-  const {data,error} = await supabase.auth.signUp({
+  try{
 
-    email,
+    const {data,error}=await supabaseClient.auth.signUp({email,password,options:{data:{full_name:name}}});
 
-    password,
+    if(error)throw error;
 
-    options:{data:{full_name:name}}
+    if(data.user){
 
-  });
+      const {error:profileError}=await supabaseClient.from("profiles").upsert({id:data.user.id,full_name:name,email});
 
-  if(error) {
+      if(profileError)console.error("Profile save:",profileError);
 
-    setAuthMessage(error.message);
+      setAuthMessage("Registration submitted. Check your email if email confirmation is required.");
 
-    return;
+    }
 
-  }
-
-  if(data.user) {
-
-    const {error:profileError} = await supabase.from("profiles").upsert({
-
-      id:data.user.id,
-
-      full_name:name,
-
-      email:email
-
-    });
-
-    if(profileError) console.error("Profile save:",profileError);
-
-    setAuthMessage("Registration submitted. Check your email if email confirmation is required.");
-
-  }
+  }catch(error){setAuthMessage(error.message||"Registration failed.");}
 
 });
 
-// LOGIN
-
-document.getElementById("loginForm").addEventListener("submit",async function(e) {
+document.getElementById("loginForm").addEventListener("submit",async e=>{
 
   e.preventDefault();
 
-  const email = document.getElementById("loginEmail").value.trim();
+  if(!supabaseClient){setAuthMessage("Account service is unavailable. Please refresh and try again.");return;}
 
-  const password = document.getElementById("loginPassword").value;
+  const email=document.getElementById("loginEmail").value.trim();
+
+  const password=document.getElementById("loginPassword").value;
 
   setAuthMessage("Logging in...");
 
-  const {data,error} = await supabase.auth.signInWithPassword({email,password});
+  try{
 
-  if(error) {
+    const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
 
-    setAuthMessage(error.message);
+    if(error)throw error;
 
-    return;
+    currentUser=data.user;
 
-  }
+    updateAccountDisplay();
 
-  currentUser = data.user;
+    await openDashboard();
 
-  updateAccountDisplay();
-
-  await openDashboard();
+  }catch(error){setAuthMessage(error.message||"Login failed.");}
 
 });
 
-// PASSWORD RESET
+async function resetPassword(){
 
-async function resetPassword() {
+  if(!supabaseClient){setAuthMessage("Account service is unavailable.");return;}
 
-  const email = document.getElementById("loginEmail").value.trim();
+  const email=document.getElementById("loginEmail").value.trim();
 
-  if(!email) {
+  if(!email){setAuthMessage("Enter your email address first.");return;}
 
-    setAuthMessage("Enter your email address first.");
+  const {error}=await supabaseClient.auth.resetPasswordForEmail(email,{redirectTo:window.location.origin});
 
-    return;
-
-  }
-
-  const {error} = await supabase.auth.resetPasswordForEmail(email,{
-
-    redirectTo:window.location.origin
-
-  });
-
-  setAuthMessage(error ? error.message : "Password reset instructions have been sent if the email is registered.");
+  setAuthMessage(error?error.message:"Password reset instructions have been sent if the email is registered.");
 
 }
 
-// ACCOUNT DISPLAY
+async function openDashboard(){
 
-function updateAccountDisplay() {
+  if(!currentUser){window.location.hash="auth";return;}
 
-  const loggedInBox = document.getElementById("loggedInBox");
+  document.getElementById("customerEmail").textContent=currentUser.email||"";
 
-  const authForms = document.getElementById("authForms");
-
-  if(currentUser) {
-
-    authForms.classList.add("hidden");
-
-    loggedInBox.classList.remove("hidden");
-
-    document.getElementById("loggedInEmail").textContent = currentUser.email || "";
-
-  } else {
-
-    authForms.classList.remove("hidden");
-
-    loggedInBox.classList.add("hidden");
-
-  }
-
-}
-
-// CUSTOMER DASHBOARD
-
-async function openDashboard() {
-
-  if(!currentUser) {
-
-    openAccount();
-
-    return;
-
-  }
-
-  document.getElementById("customerEmail").textContent = currentUser.email || "";
-
-  document.getElementById("customerName").textContent =
-
-    currentUser.user_metadata?.full_name || "Customer";
+  document.getElementById("customerName").textContent=currentUser.user_metadata?.full_name||"Customer";
 
   showSection("dashboard");
 
@@ -738,265 +572,161 @@ async function openDashboard() {
 
 }
 
-// CUSTOMER RECORDS
+async function loadCustomerRecords(){
 
-async function loadCustomerRecords() {
+  if(!currentUser||!supabaseClient)return;
 
-  if(!currentUser) return;
+  const body=document.getElementById("customerRecords");
 
-  const body = document.getElementById("customerRecords");
+  const message=document.getElementById("recordsMessage");
 
-  const message = document.getElementById("recordsMessage");
+  body.innerHTML="<tr><td colspan='3'>Loading records...</td></tr>";
 
-  body.innerHTML = "<tr><td colspan='3'>Loading records...</td></tr>";
+  message.textContent="";
 
-  message.textContent = "";
+  const {data,error}=await supabaseClient.from("investment_records").select("*").eq("user_id",currentUser.id).order("created_at",{ascending:false});
 
-  const {data,error} = await supabase
+  if(error){body.innerHTML="<tr><td colspan='3'>Records could not be loaded.</td></tr>";message.textContent=error.message;return;}
 
-    .from("investment_records")
+  document.getElementById("recordCount").textContent=data.length;
 
-    .select("*")
+  if(!data.length){body.innerHTML="<tr><td colspan='3'>No investment records found.</td></tr>";return;}
 
-    .eq("user_id",currentUser.id)
-
-    .order("created_at",{ascending:false});
-
-  if(error) {
-
-    body.innerHTML = "<tr><td colspan='3'>Records could not be loaded.</td></tr>";
-
-    message.textContent = error.message;
-
-    return;
-
-  }
-
-  document.getElementById("recordCount").textContent = data.length;
-
-  if(!data.length) {
-
-    body.innerHTML = "<tr><td colspan='3'>No investment records found.</td></tr>";
-
-    return;
-
-  }
-
-  body.innerHTML = data.map(record => `
-
-    <tr>
-
-      <td>${safeDate(record.created_at)}</td>
-
-      <td>${safeText(record.amount ?? "—")}</td>
-
-      <td>${safeText(record.status ?? "Pending")}</td>
-
-    </tr>
-
-  `).join("");
+  body.innerHTML=data.map(r=>`<tr><td>${safeDate(r.created_at)}</td><td>${safeText(r.amount??"—")}</td><td>${safeText(r.status??"Pending")}</td></tr>`).join("");
 
 }
 
-// ADMIN DATA
+async function loadAdminData(){
 
-async function loadAdminData() {
+  if(!currentUser||!supabaseClient)return;
 
-  if(!currentUser) return;
+  document.getElementById("adminEmail").textContent=currentUser.email||"";
 
-  const message = document.getElementById("adminMessage");
+  const message=document.getElementById("adminMessage");
 
-  message.textContent = "Loading administrator data...";
+  message.textContent="Loading administrator data...";
 
-  const [customersResult,investmentsResult] = await Promise.all([
+  const [customersResult,investmentsResult]=await Promise.all([
 
-    supabase.rpc("admin_list_customers"),
+    supabaseClient.rpc("admin_list_customers"),
 
-    supabase.rpc("admin_list_investments")
+    supabaseClient.rpc("admin_list_investments")
 
   ]);
 
-  if(customersResult.error) {
+  if(customersResult.error){
 
-    document.getElementById("adminCustomers").innerHTML =
+    document.getElementById("adminCustomers").innerHTML="<tr><td colspan='2'>Could not load customers.</td></tr>";
 
-      "<tr><td colspan='2'>Could not load customers.</td></tr>";
+  }else{
 
-  } else {
+    const customers=customersResult.data||[];
 
-    const customers = customersResult.data || [];
-
-    document.getElementById("adminCustomers").innerHTML =
-
-      customers.map(customer => `
-
-        <tr>
-
-          <td>${safeText(customer.full_name ?? customer.name ?? "Customer")}</td>
-
-          <td>${safeText(customer.email ?? "")}</td>
-
-        </tr>
-
-      `).join("") || "<tr><td colspan='2'>No customers found.</td></tr>";
+    document.getElementById("adminCustomers").innerHTML=customers.map(c=>`<tr><td>${safeText(c.full_name??c.name??"Customer")}</td><td>${safeText(c.email??"")}</td></tr>`).join("")||"<tr><td colspan='2'>No customers found.</td></tr>";
 
   }
 
-  if(investmentsResult.error) {
+  if(investmentsResult.error){
 
-    document.getElementById("adminInvestments").innerHTML =
+    document.getElementById("adminInvestments").innerHTML="<tr><td colspan='4'>Could not load investment records.</td></tr>";
 
-      "<tr><td colspan='4'>Could not load investment records.</td></tr>";
+    message.textContent=investmentsResult.error.message;
 
-    message.textContent = investmentsResult.error.message;
+  }else{
 
-  } else {
+    const investments=investmentsResult.data||[];
 
-    const investments = investmentsResult.data || [];
+    document.getElementById("adminInvestments").innerHTML=investments.map(i=>`<tr><td>${safeText(i.email??i.user_email??i.full_name??"Customer")}</td><td>${safeText(i.amount??"—")}</td><td>${safeText(i.status??"—")}</td><td>${safeDate(i.created_at)}</td></tr>`).join("")||"<tr><td colspan='4'>No investment records found.</td></tr>";
 
-    document.getElementById("adminInvestments").innerHTML =
-
-      investments.map(item => `
-
-        <tr>
-
-          <td>${safeText(item.email ?? item.user_email ?? item.full_name ?? "Customer")}</td>
-
-          <td>${safeText(item.amount ?? "—")}</td>
-
-          <td>${safeText(item.status ?? "—")}</td>
-
-          <td>${safeDate(item.created_at)}</td>
-
-        </tr>
-
-      `).join("") || "<tr><td colspan='4'>No investment records found.</td></tr>";
-
-    message.textContent = "Administrator data refreshed.";
+    message.textContent="Administrator data refreshed.";
 
   }
 
 }
 
-// PAYMENT PAGE
+function beginPayment(amount){
 
-function beginPayment(amount) {
+  if(!Number.isFinite(Number(amount))||Number(amount)<50){alert("The minimum amount is GH₵50.");return;}
 
-  if(!Number.isFinite(Number(amount)) || Number(amount) < 50) {
+  if(confirm("You selected GH₵"+Number(amount).toFixed(2)+". Continue to the hosted payment page?")){
 
-    alert("The minimum amount is GH₵50.");
-
-    return;
+    window.location.href=PAYSTACK_PAYMENT_URL;
 
   }
-
-  const confirmed = confirm(
-
-    "You selected GH₵" + Number(amount).toFixed(2) +
-
-    ". Continue to the hosted payment page?"
-
-  );
-
-  if(confirmed) window.location.href = PAYSTACK_PAYMENT_URL;
 
 }
 
-function customPayment() {
+function customPayment(){
 
-  const amount = Number(document.getElementById("customAmount").value);
+  const amount=Number(document.getElementById("customAmount").value);
 
-  if(!Number.isFinite(amount) || amount < 50) {
-
-    alert("Please enter an amount of at least GH₵50.");
-
-    return;
-
-  }
+  if(!Number.isFinite(amount)||amount<50){alert("Please enter an amount of at least GH₵50.");return;}
 
   beginPayment(amount);
 
 }
 
-// SAFE DISPLAY HELPERS
+function safeText(value){
 
-function safeText(value) {
-
-  return String(value ?? "").replace(/[&<>"']/g,char => ({
-
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-
-  })[char]);
+  return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 
 }
 
-function safeDate(value) {
+function safeDate(value){
 
-  if(!value) return "—";
+  if(!value)return "—";
 
-  const date = new Date(value);
+  const date=new Date(value);
 
-  return Number.isNaN(date.getTime()) ? "—" : date.toLocaleDateString();
+  return Number.isNaN(date.getTime())?"—":date.toLocaleDateString();
 
 }
 
-// LOGOUT
+async function logout(){
 
-async function logout() {
+  if(supabaseClient)await supabaseClient.auth.signOut();
 
-  await supabase.auth.signOut();
-
-  currentUser = null;
+  currentUser=null;
 
   updateAccountDisplay();
 
-  showSection("home");
+  window.location.hash="home";
 
 }
 
-// STARTUP: ALWAYS OPEN HOME FIRST
+async function start(){
 
-async function start() {
+  // Home is the initial page. A saved login never redirects visitors automatically.
 
-  showSection("home");
+  if(!window.location.hash)showSection("home");
 
-  try {
+  try{
 
-    const {data,error} = await supabase.auth.getSession();
+    if(!window.supabase||!window.supabase.createClient){
 
-    if(error) {
-
-      console.error("Session error:",error);
+      console.error("Supabase library did not load.");
 
       return;
 
     }
 
-    currentUser = data.session ? data.session.user : null;
+    supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+
+    const {data,error}=await supabaseClient.auth.getSession();
+
+    if(error)console.error("Session error:",error);
+
+    currentUser=data?.session?.user||null;
 
     updateAccountDisplay();
 
-    // Do not automatically send an existing user to Account or Dashboard.
-
-    showSection("home");
-
-  } catch(error) {
+  }catch(error){
 
     console.error("Startup error:",error);
-
-    showSection("home");
 
   }
 
 }
-
-supabase.auth.onAuthStateChange((event,session) => {
-
-  currentUser = session ? session.user : null;
-
-  updateAccountDisplay();
-
-});
 
 start();
 
