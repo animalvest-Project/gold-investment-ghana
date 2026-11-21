@@ -2,6 +2,8 @@
 
 
 
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -44,55 +46,273 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 
-:root{--gold:#e5b63c;--gold2:#ffe29a;--bg:#090a0d;--panel:#17191f;--muted:#a5a7ae;--border:#39342a}
+:root{
 
-html{scroll-behavior:smooth;scroll-padding-top:100px}
+--gold:#e5b63c;
 
-body{font-family:Arial,sans-serif;background:var(--bg);color:white;line-height:1.7}
+--gold2:#ffe29a;
+
+--bg:#090a0d;
+
+--panel:#17191f;
+
+--muted:#a5a7ae;
+
+--border:#39342a
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+scroll-padding-top:100px
+
+}
+
+body{
+
+font-family:Arial,sans-serif;
+
+background:var(--bg);
+
+color:white;
+
+line-height:1.7
+
+}
 
 button,input,textarea{font:inherit}
 
-button{background:linear-gradient(135deg,#ffe49b,#d5a12a);color:#17130a;border:0;padding:13px 18px;border-radius:9px;font-weight:800;cursor:pointer;transition:.2s;margin:4px}
+button{
+
+background:linear-gradient(135deg,#ffe49b,#d5a12a);
+
+color:#17130a;
+
+border:0;
+
+padding:13px 18px;
+
+border-radius:9px;
+
+font-weight:800;
+
+cursor:pointer;
+
+transition:.2s;
+
+margin:4px
+
+}
 
 button:hover{transform:translateY(-2px)}
 
-button:disabled{opacity:.5;cursor:not-allowed}
+button:disabled{
 
-.secondary{background:#24262d;color:white;border:1px solid #444}
+opacity:.5;
 
-header{position:sticky;top:0;z-index:20;background:#101116f5;backdrop-filter:blur(15px);border-bottom:1px solid #514024;padding:13px 4%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+cursor:not-allowed
 
-.logo{font-weight:900;letter-spacing:1px;color:var(--gold2);font-size:16px}
+}
 
-nav{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
+.secondary{
+
+background:#24262d;
+
+color:white;
+
+border:1px solid #444
+
+}
+
+header{
+
+position:sticky;
+
+top:0;
+
+z-index:20;
+
+background:#101116f5;
+
+backdrop-filter:blur(15px);
+
+border-bottom:1px solid #514024;
+
+padding:13px 4%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:12px;
+
+flex-wrap:wrap
+
+}
+
+.logo{
+
+font-weight:900;
+
+letter-spacing:1px;
+
+color:var(--gold2);
+
+font-size:16px
+
+}
+
+nav{
+
+display:flex;
+
+gap:5px;
+
+flex-wrap:wrap;
+
+justify-content:center
+
+}
 
 nav button{font-size:12px;padding:9px 12px}
 
-main{max-width:1150px;margin:30px auto;padding:15px;min-height:65vh}
+/* Mobile navigation */
+
+.menu-toggle{
+
+display:none;
+
+background:#24262d;
+
+color:var(--gold2);
+
+border:1px solid #514024;
+
+padding:10px 16px
+
+}
+
+main{
+
+max-width:1150px;
+
+margin:30px auto;
+
+padding:15px;
+
+min-height:65vh
+
+}
 
 .hidden{display:none!important}
 
-h1,h2,h3{line-height:1.35;margin-bottom:13px}
+h1,h2,h3{
+
+line-height:1.35;
+
+margin-bottom:13px
+
+}
 
 h1,h2{color:var(--gold2)}
 
 p{color:#c1c1c6;margin-bottom:13px}
 
-.hero{padding:55px 20px;text-align:center;border:1px solid #84662e;border-radius:23px;background:radial-gradient(ellipse at 50% 0%,#80601e,#382b18 40%,#17181d 80%)}
+.hero{
 
-.hero-banner{display:block;width:100%;max-width:1000px;height:auto;margin:0 auto 18px;border-radius:16px;border:1px solid #b48a37;box-shadow:0 10px 35px #0009}
+padding:55px 20px;
+
+text-align:center;
+
+border:1px solid #84662e;
+
+border-radius:23px;
+
+background:radial-gradient(ellipse at 50% 0%,#80601e,#382b18 40%,#17181d 80%)
+
+}
+
+.hero-banner{
+
+display:block;
+
+width:100%;
+
+max-width:1000px;
+
+height:auto;
+
+margin:0 auto 18px;
+
+border-radius:16px;
+
+border:1px solid #b48a37;
+
+box-shadow:0 10px 35px #0009
+
+}
 
 .banner-action{text-align:center;margin:0 auto 25px}
 
-.banner-action button{min-width:220px;padding:16px 28px;font-size:16px;letter-spacing:1px}
+.banner-action button{
 
-.hero-tag{display:inline-block;padding:7px 16px;border:1px solid #b48a37;border-radius:30px;color:var(--gold2);font-size:12px;letter-spacing:2px;margin-bottom:20px}
+min-width:220px;
 
-.hero h1{font-size:clamp(34px,6vw,55px);max-width:850px;margin:auto}
+padding:16px 28px;
+
+font-size:16px;
+
+letter-spacing:1px
+
+}
+
+.hero-tag{
+
+display:inline-block;
+
+padding:7px 16px;
+
+border:1px solid #b48a37;
+
+border-radius:30px;
+
+color:var(--gold2);
+
+font-size:12px;
+
+letter-spacing:2px;
+
+margin-bottom:20px
+
+}
+
+.hero h1{
+
+font-size:clamp(34px,6vw,55px);
+
+max-width:850px;
+
+margin:auto
+
+}
 
 .hero p{max-width:680px;margin:18px auto 25px}
 
-.hero-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
+.hero-buttons{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:8px
+
+}
 
 .hero-buttons button{min-width:150px}
 
@@ -100,11 +320,39 @@ p{color:#c1c1c6;margin-bottom:13px}
 
 .section-heading p{font-size:14px}
 
-.card{background:linear-gradient(145deg,#1c1e25,#121419);border:1px solid var(--border);border-radius:16px;padding:23px;margin:16px 0}
+.card{
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+background:linear-gradient(145deg,#1c1e25,#121419);
 
-.feature-icon{font-size:30px;color:var(--gold2);margin-bottom:10px}
+border:1px solid var(--border);
+
+border-radius:16px;
+
+padding:23px;
+
+margin:16px 0
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:16px
+
+}
+
+.feature-icon{
+
+font-size:30px;
+
+color:var(--gold2);
+
+margin-bottom:10px
+
+}
 
 .feature h3,.plan h3{color:var(--gold2)}
 
@@ -112,13 +360,57 @@ p{color:#c1c1c6;margin-bottom:13px}
 
 .plan:hover{border-color:#b48a37;transform:translateY(-3px)}
 
-.plan-label{display:inline-block;padding:5px 13px;background:#4b3a19;border-radius:20px;color:#ffe29a;font-size:11px;font-weight:bold}
+.plan-label{
 
-.price,.stat{font-size:32px;font-weight:900;color:var(--gold2);margin:15px 0}
+display:inline-block;
+
+padding:5px 13px;
+
+background:#4b3a19;
+
+border-radius:20px;
+
+color:#ffe29a;
+
+font-size:11px;
+
+font-weight:bold
+
+}
+
+.price,.stat{
+
+font-size:32px;
+
+font-weight:900;
+
+color:var(--gold2);
+
+margin:15px 0
+
+}
 
 .plan button{width:100%}
 
-input,textarea{width:100%;padding:14px;margin:7px 0 17px;background:#0c0d11;border:1px solid #44464e;border-radius:9px;color:white;outline:none}
+input,textarea{
+
+width:100%;
+
+padding:14px;
+
+margin:7px 0 17px;
+
+background:#0c0d11;
+
+border:1px solid #44464e;
+
+border-radius:9px;
+
+color:white;
+
+outline:none
+
+}
 
 textarea{min-height:130px;resize:vertical}
 
@@ -126,21 +418,81 @@ input:focus,textarea:focus{border-color:var(--gold)}
 
 label{font-size:13px;color:#ddd;font-weight:bold}
 
-.notice{padding:16px;background:#2b2516;border:1px solid #79602a;border-radius:10px;color:#f2d99c;margin:15px 0;font-size:13px}
+.notice{
 
-.step-number{font-size:30px;font-weight:900;color:var(--gold2)}
+padding:16px;
 
-.step{background:#17191f;border:1px solid #39352c;border-radius:14px;padding:22px}
+background:#2b2516;
+
+border:1px solid #79602a;
+
+border-radius:10px;
+
+color:#f2d99c;
+
+margin:15px 0;
+
+font-size:13px
+
+}
+
+.step-number{
+
+font-size:30px;
+
+font-weight:900;
+
+color:var(--gold2)
+
+}
+
+.step{
+
+background:#17191f;
+
+border:1px solid #39352c;
+
+border-radius:14px;
+
+padding:22px
+
+}
 
 .muted{color:#999;font-size:13px}
 
-#message{color:var(--gold2);overflow-wrap:anywhere;margin-top:12px}
+#message{
+
+color:var(--gold2);
+
+overflow-wrap:anywhere;
+
+margin-top:12px
+
+}
 
 .table-wrap{overflow-x:auto}
 
-table{width:100%;border-collapse:collapse;min-width:550px}
+table{
 
-th,td{text-align:left;padding:12px;border-bottom:1px solid #393939;font-size:13px}
+width:100%;
+
+border-collapse:collapse;
+
+min-width:550px
+
+}
+
+th,td{
+
+text-align:left;
+
+padding:12px;
+
+border-bottom:1px solid #393939;
+
+font-size:13px
+
+}
 
 th{color:var(--gold2)}
 
@@ -148,25 +500,95 @@ th{color:var(--gold2)}
 
 .faq-item h3{font-size:16px;color:var(--gold2)}
 
-.contact-email{color:var(--gold2);font-weight:bold;overflow-wrap:anywhere}
+.contact-email{
 
-footer{text-align:center;padding:40px 15px;color:#777;border-top:1px solid #292929;margin-top:50px;font-size:13px}
+color:var(--gold2);
 
-.footer-logo{font-size:18px;color:var(--gold2);font-weight:900;margin-bottom:10px}
+font-weight:bold;
 
-.footer-links{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin:15px}
+overflow-wrap:anywhere
+
+}
+
+footer{
+
+text-align:center;
+
+padding:40px 15px;
+
+color:#777;
+
+border-top:1px solid #292929;
+
+margin-top:50px;
+
+font-size:13px
+
+}
+
+.footer-logo{
+
+font-size:18px;
+
+color:var(--gold2);
+
+font-weight:900;
+
+margin-bottom:10px
+
+}
+
+.footer-links{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+margin:15px
+
+}
 
 .footer-links a{color:var(--gold2);text-decoration:none}
 
 @media(max-width:650px){
 
-header{justify-content:center;padding:12px 8px}
+header{
 
-.logo{text-align:center}
+justify-content:space-between;
 
-nav{width:100%}
+padding:12px 8px
 
-nav button{font-size:11px;padding:8px 10px}
+}
+
+.logo{text-align:center;font-size:14px}
+
+.menu-toggle{display:block}
+
+#mainNav{
+
+display:none;
+
+width:100%;
+
+flex-direction:column;
+
+gap:7px
+
+}
+
+#mainNav.open{display:flex}
+
+#mainNav button{
+
+width:100%;
+
+padding:12px
+
+}
 
 main{padding:10px;margin:15px auto}
 
@@ -188,17 +610,23 @@ main{padding:10px;margin:15px auto}
 
 <div class="logo">✦ TOUR GOLD INVESTMENT</div>
 
-<nav>
+<button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation menu">
 
-<button class="secondary" onclick="showSection('home')">Home</button>
+☰ MENU
 
-<button class="secondary" onclick="showSection('auth')">Account</button>
+</button>
 
-<button class="secondary" onclick="showSection('about')">About</button>
+<nav id="mainNav">
 
-<button class="secondary" onclick="showSection('contact')">Contact</button>
+<button class="secondary" onclick="navigate('home')">Home</button>
 
-<button id="adminNav" class="secondary hidden" onclick="showSection('admin')">Admin</button>
+<button class="secondary" onclick="navigate('auth')">Account</button>
+
+<button class="secondary" onclick="navigate('about')">About</button>
+
+<button class="secondary" onclick="navigate('contact')">Contact</button>
+
+<button id="adminNav" class="secondary hidden" onclick="navigate('admin')">Admin</button>
 
 </nav>
 
@@ -210,11 +638,17 @@ main{padding:10px;margin:15px auto}
 
 <div class="hero">
 
-<img class="hero-banner" src="B8A8A5E1-3E6A-43BD-A8A7-9328B1AE5548.png" alt="TOUR GOLD INVESTMENT promotional banner" loading="eager">
+<img class="hero-banner"
+
+src="B8A8A5E1-3E6A-43BD-A8A7-9328B1AE5548.png"
+
+alt="TOUR GOLD INVESTMENT promotional banner"
+
+loading="eager">
 
 <div class="banner-action">
 
-<button onclick="showSection('auth')">INVEST NOW →</button>
+<button onclick="navigate('auth')">INVEST NOW →</button>
 
 </div>
 
@@ -226,11 +660,11 @@ main{padding:10px;margin:15px auto}
 
 <div class="hero-buttons">
 
-<button onclick="showSection('auth')">GET STARTED →</button>
+<button onclick="navigate('auth')">GET STARTED →</button>
 
 <button class="secondary" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">EXPLORE OPTIONS</button>
 
-<button class="secondary" onclick="showSection('about')">LEARN MORE</button>
+<button class="secondary" onclick="navigate('about')">LEARN MORE</button>
 
 </div>
 
@@ -246,7 +680,13 @@ main{padding:10px;margin:15px auto}
 
 </div>
 
-<div id="plans" class="section-heading"><h2>Choose Your Deposit Amount</h2><p>Select your preferred option below.</p></div>
+<div id="plans" class="section-heading">
+
+<h2>Choose Your Deposit Amount</h2>
+
+<p>Select your preferred option below.</p>
+
+</div>
 
 <div class="grid">
 
@@ -294,7 +734,7 @@ main{padding:10px;margin:15px auto}
 
 <div class="card"><h2>Important Financial Information</h2><p>The existence of an account or deposit option does not itself establish that an investment product is licensed, profitable or guaranteed. Customers should independently review the business, its authorisations, the underlying investment activity and all applicable terms before transferring money.</p></div>
 
-<button onclick="showSection('home')">BACK TO HOME</button>
+<button onclick="navigate('home')">BACK TO HOME</button>
 
 </section>
 
@@ -310,7 +750,7 @@ main{padding:10px;margin:15px auto}
 
 <div class="notice">Do not treat a deposit as a confirmed investment until the transaction and the relevant investment agreement have been properly verified.</div>
 
-<button onclick="showSection('home')">BACK TO HOME</button>
+<button onclick="navigate('home')">BACK TO HOME</button>
 
 </section>
 
@@ -328,7 +768,7 @@ main{padding:10px;margin:15px auto}
 
 <div class="notice"><strong>Payment verification notice</strong><br>The current website redirects to a hosted Paystack payment page. The selected amount is not dynamically transmitted by this basic redirect, and automatic transaction verification is not yet connected. Do not assume that a payment has been recorded in your dashboard until secure verification is enabled.</div>
 
-<button onclick="showSection('home')">BACK TO HOME</button>
+<button onclick="navigate('home')">BACK TO HOME</button>
 
 </section>
 
@@ -360,7 +800,7 @@ main{padding:10px;margin:15px auto}
 
 </div>
 
-<button onclick="showSection('home')">BACK TO HOME</button>
+<button onclick="navigate('home')">BACK TO HOME</button>
 
 </section>
 
@@ -384,7 +824,7 @@ main{padding:10px;margin:15px auto}
 
 <div class="notice">These are general website terms, not a substitute for a complete legal agreement. Before accepting customer funds, publish legally reviewed terms covering the actual product, operator, regulatory status, custody of funds, fees, withdrawals, refunds and dispute procedures.</div>
 
-<button onclick="showSection('home')">BACK TO HOME</button>
+<button onclick="navigate('home')">BACK TO HOME</button>
 
 </section>
 
@@ -402,7 +842,9 @@ main{padding:10px;margin:15px auto}
 
 <div class="card">
 
-<h2>Send Us a Message</h2><p>Complete the fields below. Your email application will open with your message prepared.</p>
+<h2>Send Us a Message</h2>
+
+<p>Complete the fields below. Your email application will open with your message prepared.</p>
 
 <form id="contactForm">
 
@@ -502,7 +944,11 @@ main{padding:10px;margin:15px auto}
 
 <div id="selectedPlan" class="card hidden">
 
-<h2>Payment Details</h2><p id="planName"></p><div id="planAmount" class="price"></div>
+<h2>Payment Details</h2>
+
+<p id="planName"></p>
+
+<div id="planAmount" class="price"></div>
 
 <div class="notice">Check the amount displayed on the Paystack page before confirming payment.</div>
 
@@ -526,7 +972,7 @@ main{padding:10px;margin:15px auto}
 
 <button onclick="loadAdminData()">REFRESH DASHBOARD</button>
 
-<button class="secondary" onclick="showSection('dashboard')">CUSTOMER DASHBOARD</button>
+<button class="secondary" onclick="navigate('dashboard')">CUSTOMER DASHBOARD</button>
 
 <button class="secondary" onclick="logOut()">LOGOUT</button>
 
@@ -562,17 +1008,17 @@ main{padding:10px;margin:15px auto}
 
 <div class="footer-links">
 
-<a href="#" onclick="showSection('about');return false">About Us</a>
+<a href="#" onclick="navigate('about');return false">About Us</a>
 
-<a href="#" onclick="showSection('investmentInfo');return false">Investment Information</a>
+<a href="#" onclick="navigate('investmentInfo');return false">Investment Information</a>
 
-<a href="#" onclick="showSection('paymentInfo');return false">Payments</a>
+<a href="#" onclick="navigate('paymentInfo');return false">Payments</a>
 
-<a href="#" onclick="showSection('faq');return false">FAQs</a>
+<a href="#" onclick="navigate('faq');return false">FAQs</a>
 
-<a href="#" onclick="showSection('terms');return false">Terms</a>
+<a href="#" onclick="navigate('terms');return false">Terms</a>
 
-<a href="#" onclick="showSection('contact');return false">Contact</a>
+<a href="#" onclick="navigate('contact');return false">Contact</a>
 
 </div>
 
@@ -598,19 +1044,69 @@ let currentUser=null;
 
 let selectedPlan=null;
 
-function money(n){return "GH₵"+Number(n||0).toFixed(2)}
+/* Mobile menu */
+
+function toggleMenu(){
+
+document.getElementById("mainNav").classList.toggle("open");
+
+}
+
+function closeMenu(){
+
+document.getElementById("mainNav").classList.remove("open");
+
+}
+
+function navigate(id){
+
+closeMenu();
+
+showSection(id);
+
+}
+
+function money(n){
+
+return "GH₵"+Number(n||0).toFixed(2);
+
+}
 
 function esc(v){
 
-return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+return String(v??"").replace(/[&<>"']/g,c=>({
+
+"&":"&amp;",
+
+"<":"&lt;",
+
+">":"&gt;",
+
+'"':"&quot;",
+
+"'":"&#39;"
+
+}[c])));
 
 }
 
 function showSection(id){
 
-const sections=["home","auth","dashboard","admin","about","investmentInfo","paymentInfo","faq","terms","contact"];
+const sections=[
 
-sections.forEach(x=>document.getElementById(x).classList.add("hidden"));
+"home","auth","dashboard","admin",
+
+"about","investmentInfo","paymentInfo",
+
+"faq","terms","contact"
+
+];
+
+sections.forEach(x=>{
+
+document.getElementById(x).classList.add("hidden");
+
+});
 
 document.getElementById(id).classList.remove("hidden");
 
@@ -622,13 +1118,19 @@ function choosePlan(name,amount){
 
 amount=Number(amount);
 
-if(!Number.isFinite(amount)||amount<50){alert("Minimum amount is GH₵50.");return}
+if(!Number.isFinite(amount)||amount<50){
+
+alert("Minimum amount is GH₵50.");
+
+return;
+
+}
 
 selectedPlan={name,amount};
 
 if(!currentUser){
 
-showSection("auth");
+navigate("auth");
 
 message("Please log in or create an account to continue.");
 
@@ -658,7 +1160,13 @@ function customPlan(id){
 
 const amount=Number(document.getElementById(id).value);
 
-if(!Number.isFinite(amount)||amount<50){alert("Enter a valid amount of at least GH₵50.");return}
+if(!Number.isFinite(amount)||amount<50){
+
+alert("Enter a valid amount of at least GH₵50.");
+
+return;
+
+}
 
 choosePlan("Custom Plan",amount);
 
@@ -674,17 +1182,45 @@ document.getElementById("selectedPlan").classList.add("hidden");
 
 function payHere(){
 
-if(!currentUser){showSection("auth");message("Please log in first.");return}
+if(!currentUser){
 
-if(!selectedPlan){alert("Select an amount first.");return}
+navigate("auth");
 
-const confirmed=confirm("Selected amount: "+money(selectedPlan.amount)+". The hosted Paystack page may have a separately configured amount. Check it carefully before paying. Continue?");
+message("Please log in first.");
 
-if(confirmed)window.location.href=PAYSTACK_PAYMENT_URL;
+return;
 
 }
 
-function message(t){document.getElementById("message").textContent=t}
+if(!selectedPlan){
+
+alert("Select an amount first.");
+
+return;
+
+}
+
+const confirmed=confirm(
+
+"Selected amount: "+money(selectedPlan.amount)+
+
+". The hosted Paystack page may have a separately configured amount. Check it carefully before paying. Continue?"
+
+);
+
+if(confirmed){
+
+window.location.href=PAYSTACK_PAYMENT_URL;
+
+}
+
+}
+
+function message(t){
+
+document.getElementById("message").textContent=t;
+
+}
 
 document.getElementById("contactForm").addEventListener("submit",function(event){
 
@@ -698,11 +1234,21 @@ const subject=document.getElementById("contactSubject").value.trim();
 
 const body=document.getElementById("contactMessage").value.trim();
 
-if(!name||!email||!subject||!body){alert("Please complete all contact fields.");return}
+if(!name||!email||!subject||!body){
+
+alert("Please complete all contact fields.");
+
+return;
+
+}
 
 const mailBody="Name: "+name+"\nCustomer Email: "+email+"\n\nMessage:\n"+body;
 
-const mailto="mailto:ziddrisu341@gmail.com"+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(mailBody);
+const mailto="mailto:ziddrisu341@gmail.com"+
+
+"?subject="+encodeURIComponent(subject)+
+
+"&body="+encodeURIComponent(mailBody);
 
 window.location.href=mailto;
 
@@ -716,9 +1262,21 @@ const email=document.getElementById("signupEmail").value.trim();
 
 const password=document.getElementById("signupPassword").value;
 
-if(!name||!email||!password){message("Complete all fields.");return}
+if(!name||!email||!password){
 
-if(password.length<6){message("Password must contain at least 6 characters.");return}
+message("Complete all fields.");
+
+return;
+
+}
+
+if(password.length<6){
+
+message("Password must contain at least 6 characters.");
+
+return;
+
+}
 
 const btn=document.getElementById("signupBtn");
 
@@ -728,17 +1286,39 @@ message("Creating your account...");
 
 try{
 
-const {data,error}=await db.auth.signUp({email,password,options:{data:{full_name:name}}});
+const {data,error}=await db.auth.signUp({
+
+email,
+
+password,
+
+options:{data:{full_name:name}}
+
+});
 
 if(error)throw error;
 
-if(data.session){currentUser=data.user;await openDashboard()}
+if(data.session){
 
-else{message("Account created. Check your email if confirmation is required, then log in.")}
+currentUser=data.user;
 
-}catch(error){message(error.message)}
+await openDashboard();
 
-finally{btn.disabled=false}
+}else{
+
+message("Account created. Check your email if confirmation is required, then log in.");
+
+}
+
+}catch(error){
+
+message(error.message);
+
+}finally{
+
+btn.disabled=false;
+
+}
 
 }
 
@@ -748,7 +1328,13 @@ const email=document.getElementById("loginEmail").value.trim();
 
 const password=document.getElementById("loginPassword").value;
 
-if(!email||!password){message("Enter your email and password.");return}
+if(!email||!password){
+
+message("Enter your email and password.");
+
+return;
+
+}
 
 const btn=document.getElementById("loginBtn");
 
@@ -766,9 +1352,15 @@ currentUser=data.user;
 
 await openDashboard();
 
-}catch(error){message(error.message)}
+}catch(error){
 
-finally{btn.disabled=false}
+message(error.message);
+
+}finally{
+
+btn.disabled=false;
+
+}
 
 }
 
@@ -776,9 +1368,19 @@ async function resetPassword(){
 
 const email=document.getElementById("loginEmail").value.trim();
 
-if(!email){message("Enter your email first.");return}
+if(!email){
 
-const {error}=await db.auth.resetPasswordForEmail(email,{redirectTo:location.origin+location.pathname});
+message("Enter your email first.");
+
+return;
+
+}
+
+const {error}=await db.auth.resetPasswordForEmail(email,{
+
+redirectTo:location.origin+location.pathname
+
+});
 
 message(error?error.message:"If the account exists, reset instructions have been sent.");
 
@@ -794,33 +1396,53 @@ document.getElementById("adminNav").classList.add("hidden");
 
 clearPlan();
 
-showSection("home");
+navigate("home");
 
 }
 
 async function openDashboard(){
 
-showSection("dashboard");
+navigate("dashboard");
 
 document.getElementById("customerEmail").textContent=currentUser.email||"";
 
 document.getElementById("customerName").textContent=currentUser.user_metadata?.full_name||"Customer";
 
-const {data:profile,error}=await db.from("profiles").select("full_name,role").eq("id",currentUser.id).maybeSingle();
+const {data:profile,error}=await db
+
+.from("profiles")
+
+.select("full_name,role")
+
+.eq("id",currentUser.id)
+
+.maybeSingle();
 
 if(!error&&profile){
 
-document.getElementById("customerName").textContent=profile.full_name||currentUser.user_metadata?.full_name||"Customer";
+document.getElementById("customerName").textContent=
+
+profile.full_name||currentUser.user_metadata?.full_name||"Customer";
 
 if(profile.role==="admin"){
 
 document.getElementById("adminNav").classList.remove("hidden");
 
-document.getElementById("adminWelcome").textContent="Signed in as "+(profile.full_name||currentUser.email);
+document.getElementById("adminWelcome").textContent=
 
-}else{document.getElementById("adminNav").classList.add("hidden")}
+"Signed in as "+(profile.full_name||currentUser.email);
 
-}else{document.getElementById("adminNav").classList.add("hidden")}
+}else{
+
+document.getElementById("adminNav").classList.add("hidden");
+
+}
+
+}else{
+
+document.getElementById("adminNav").classList.add("hidden");
+
+}
 
 await loadInvestments();
 
@@ -836,13 +1458,47 @@ const box=document.getElementById("investmentList");
 
 box.textContent="Loading...";
 
-const {data,error}=await db.from("investment_records").select("id,plan_name,amount,status,created_at").eq("user_id",currentUser.id).order("created_at",{ascending:false});
+const {data,error}=await db
 
-if(error){box.textContent="Could not load records: "+error.message;return}
+.from("investment_records")
 
-if(!data?.length){box.textContent="No investment records found yet.";return}
+.select("id,plan_name,amount,status,created_at")
 
-box.innerHTML=data.map(x=>`<div class="card"><strong>${esc(x.plan_name)}</strong><p>${money(x.amount)}</p><p>Status: ${esc(x.status)}</p><p class="muted">${x.created_at?new Date(x.created_at).toLocaleString():""}</p></div>`).join("");
+.eq("user_id",currentUser.id)
+
+.order("created_at",{ascending:false});
+
+if(error){
+
+box.textContent="Could not load records: "+error.message;
+
+return;
+
+}
+
+if(!data?.length){
+
+box.textContent="No investment records found yet.";
+
+return;
+
+}
+
+box.innerHTML=data.map(x=>`
+
+<div class="card">
+
+<strong>${esc(x.plan_name)}</strong>
+
+<p>${money(x.amount)}</p>
+
+<p>Status: ${esc(x.status)}</p>
+
+<p class="muted">${x.created_at?new Date(x.created_at).toLocaleString():""}</p>
+
+</div>
+
+`).join("");
 
 }
 
@@ -850,9 +1506,21 @@ function renderTable(container,rows,columns,emptyText){
 
 const box=document.getElementById(container);
 
-if(!Array.isArray(rows)||!rows.length){box.textContent=emptyText;return}
+if(!Array.isArray(rows)||!rows.length){
 
-box.innerHTML='<div class="table-wrap"><table><thead><tr>'+columns.map(k=>"<th>"+esc(k.label)+"</th>").join("")+"</tr></thead><tbody>"+rows.map(row=>"<tr>"+columns.map(k=>{
+box.textContent=emptyText;
+
+return;
+
+}
+
+box.innerHTML='<div class="table-wrap"><table><thead><tr>'+
+
+columns.map(k=>"<th>"+esc(k.label)+"</th>").join("")+
+
+"</tr></thead><tbody>"+
+
+rows.map(row=>"<tr>"+columns.map(k=>{
 
 let val=row[k.key];
 
@@ -862,7 +1530,9 @@ if(k.key==="created_at"&&val)val=new Date(val).toLocaleString();
 
 return "<td>"+esc(val??"—")+"</td>";
 
-}).join("")+"</tr>").join("")+"</tbody></table></div>";
+}).join("")+"</tr>").join("")+
+
+"</tbody></table></div>";
 
 }
 
@@ -870,19 +1540,43 @@ async function loadAdminData(){
 
 if(!currentUser)return;
 
-const {data:profile,error}=await db.from("profiles").select("role").eq("id",currentUser.id).maybeSingle();
+const {data:profile,error}=await db
 
-if(error||profile?.role!=="admin"){alert("Admin access only.");showSection("dashboard");return}
+.from("profiles")
+
+.select("role")
+
+.eq("id",currentUser.id)
+
+.maybeSingle();
+
+if(error||profile?.role!=="admin"){
+
+alert("Admin access only.");
+
+navigate("dashboard");
+
+return;
+
+}
 
 document.getElementById("adminCustomers").textContent="Loading...";
 
 document.getElementById("adminInvestments").textContent="Loading...";
 
-const [customerResult,investmentResult]=await Promise.all([db.rpc("admin_list_customers"),db.rpc("admin_list_investments")]);
+const [customerResult,investmentResult]=await Promise.all([
+
+db.rpc("admin_list_customers"),
+
+db.rpc("admin_list_investments")
+
+]);
 
 if(customerResult.error){
 
-document.getElementById("adminCustomers").textContent="Customer loading error: "+customerResult.error.message;
+document.getElementById("adminCustomers").textContent=
+
+"Customer loading error: "+customerResult.error.message;
 
 }else{
 
@@ -890,13 +1584,25 @@ const customers=customerResult.data||[];
 
 document.getElementById("totalCustomers").textContent=customers.length;
 
-renderTable("adminCustomers",customers,[{key:"full_name",label:"Customer"},{key:"email",label:"Email"},{key:"role",label:"Role"},{key:"created_at",label:"Joined"}],"No customers found.");
+renderTable("adminCustomers",customers,[
+
+{key:"full_name",label:"Customer"},
+
+{key:"email",label:"Email"},
+
+{key:"role",label:"Role"},
+
+{key:"created_at",label:"Joined"}
+
+],"No customers found.");
 
 }
 
 if(investmentResult.error){
 
-document.getElementById("adminInvestments").textContent="Investment loading error: "+investmentResult.error.message;
+document.getElementById("adminInvestments").textContent=
+
+"Investment loading error: "+investmentResult.error.message;
 
 }else{
 
@@ -904,9 +1610,23 @@ const records=investmentResult.data||[];
 
 document.getElementById("totalInvestments").textContent=records.length;
 
-document.getElementById("pendingInvestments").textContent=records.filter(x=>String(x.status||"").toLowerCase()==="pending").length;
+document.getElementById("pendingInvestments").textContent=
 
-renderTable("adminInvestments",records,[{key:"plan_name",label:"Plan"},{key:"amount",label:"Amount"},{key:"status",label:"Status"},{key:"user_id",label:"Customer ID"},{key:"created_at",label:"Date"}],"No investment records found.");
+records.filter(x=>String(x.status||"").toLowerCase()==="pending").length;
+
+renderTable("adminInvestments",records,[
+
+{key:"plan_name",label:"Plan"},
+
+{key:"amount",label:"Amount"},
+
+{key:"status",label:"Status"},
+
+{key:"user_id",label:"Customer ID"},
+
+{key:"created_at",label:"Date"}
+
+],"No investment records found.");
 
 }
 
@@ -926,9 +1646,21 @@ db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 
 const {data,error}=await db.auth.getSession();
 
-if(error){console.error(error);return}
+if(error){
 
-if(data.session){currentUser=data.session.user;await openDashboard()}
+console.error(error);
+
+return;
+
+}
+
+if(data.session){
+
+currentUser=data.session.user;
+
+await openDashboard();
+
+}
 
 db.auth.onAuthStateChange((event,session)=>{
 
@@ -938,7 +1670,7 @@ currentUser=null;
 
 document.getElementById("adminNav").classList.add("hidden");
 
-showSection("home");
+navigate("home");
 
 }
 
