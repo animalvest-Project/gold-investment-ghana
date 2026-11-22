@@ -8,6 +8,8 @@
 
 
 
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -22,7 +24,7 @@
 
 <title>TOUR GOLD INVESTMENT</title>
 
-<meta name="description" content="TOUR GOLD INVESTMENT - Gold investment information, account access and customer support.">
+<meta name="description" content="TOUR GOLD INVESTMENT - Gold investment information, account access, payment information and customer support.">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -376,7 +378,7 @@ label{
 
 .pool-heading{
 
-  margin-top:45px;
+  margin-top:15px;
 
   margin-bottom:10px;
 
@@ -474,17 +476,21 @@ label{
 
 }
 
-.pool-row span{
-
-  color:#aaa;
-
-}
+.pool-row span{color:#aaa}
 
 .pool-row strong{
 
   color:#f5f5f5;
 
   text-align:right;
+
+}
+
+.pool-return{
+
+  color:#e9b63e !important;
+
+  font-size:19px;
 
 }
 
@@ -512,11 +518,7 @@ label{
 
 }
 
-.pool-button:hover{
-
-  filter:brightness(1.1);
-
-}
+.pool-button:hover{filter:brightness(1.1)}
 
 .pool-note{
 
@@ -586,7 +588,11 @@ hr{
 
   <div class="nav">
 
-    <a class="logo" href="#home">TOUR GOLD INVESTMENT</a>
+    <a class="logo" href="#home">
+
+      TOUR GOLD INVESTMENT
+
+    </a>
 
     <nav>
 
@@ -608,11 +614,17 @@ hr{
 
 <main>
 
+<!-- HOMEPAGE -->
+
 <section id="home">
 
   <div class="hero">
 
-    <div class="tag">GOLD • TRUST • TRANSPARENCY</div>
+    <div class="tag">
+
+      GOLD • TRUST • TRANSPARENCY
+
+    </div>
 
     <h1>
 
@@ -632,9 +644,17 @@ hr{
 
     <div class="actions">
 
-      <a class="btn" href="#pools">Explore Gold Pools</a>
+      <a class="btn" href="#pools">
 
-      <a class="btn secondary" href="#about">Learn More</a>
+        Explore Gold Pools
+
+      </a>
+
+      <a class="btn secondary" href="#about">
+
+        Learn More
+
+      </a>
 
     </div>
 
@@ -646,7 +666,11 @@ hr{
 
       <h3>Secure Account Access</h3>
 
-      <p>Create an account and access your account information.</p>
+      <p>
+
+        Create an account and access your account information.
+
+      </p>
 
     </div>
 
@@ -654,7 +678,11 @@ hr{
 
       <h3>Gold Pool Information</h3>
 
-      <p>Review available gold investment information and terms.</p>
+      <p>
+
+        Review available gold investment information and terms.
+
+      </p>
 
     </div>
 
@@ -662,7 +690,11 @@ hr{
 
       <h3>Customer Support</h3>
 
-      <p>Contact our support team if you need assistance.</p>
+      <p>
+
+        Contact our support team if you need assistance.
+
+      </p>
 
     </div>
 
@@ -692,67 +724,21 @@ hr{
 
   <p class="muted">
 
-    Explore the investment information below. Review the official
+    Explore our gold investment pools and review the terms
 
-    terms before making any payment.
+    before proceeding.
 
   </p>
 
   <div class="grid">
 
-    <div class="pool-card">
-
-      <div class="gold-icon">🪙</div>
-
-      <h3>Gold Starter Pool</h3>
-
-      <div class="pool-details">
-
-        <div class="pool-row">
-
-          <span>Minimum Deposit:</span>
-
-          <strong>GH₵50.00</strong>
-
-        </div>
-
-        <div class="pool-row">
-
-          <span>Duration:</span>
-
-          <strong>See Official Terms</strong>
-
-        </div>
-
-        <div class="pool-row">
-
-          <span>Expected Return:</span>
-
-          <strong>Not Guaranteed</strong>
-
-        </div>
-
-      </div>
-
-      <a class="pool-button" href="#payments">
-
-        View & Invest
-
-      </a>
-
-      <p class="pool-note">
-
-        Review verified investment terms before proceeding.
-
-      </p>
-
-    </div>
+    <!-- TAKWA MINES -->
 
     <div class="pool-card">
 
       <div class="gold-icon">🥇</div>
 
-      <h3>Gold Growth Pool</h3>
+      <h3>Takwa Mines</h3>
 
       <div class="pool-details">
 
@@ -768,7 +754,7 @@ hr{
 
           <span>Duration:</span>
 
-          <strong>See Official Terms</strong>
+          <strong>1</strong>
 
         </div>
 
@@ -776,7 +762,7 @@ hr{
 
           <span>Expected Return:</span>
 
-          <strong>Not Guaranteed</strong>
+          <strong class="pool-return">GH₵430.00</strong>
 
         </div>
 
@@ -790,17 +776,19 @@ hr{
 
       <p class="pool-note">
 
-        Review verified investment terms before proceeding.
+        Review the actual investment terms before proceeding.
 
       </p>
 
     </div>
 
+    <!-- TAKWA GOLD -->
+
     <div class="pool-card">
 
-      <div class="gold-icon">⛏️</div>
+      <div class="gold-icon">🪙</div>
 
-      <h3>Gold Mining Pool</h3>
+      <h3>Takwa Gold</h3>
 
       <div class="pool-details">
 
@@ -808,7 +796,7 @@ hr{
 
           <span>Minimum Deposit:</span>
 
-          <strong>To Be Confirmed</strong>
+          <strong>GH₵50.00</strong>
 
         </div>
 
@@ -816,7 +804,7 @@ hr{
 
           <span>Duration:</span>
 
-          <strong>See Official Terms</strong>
+          <strong>1</strong>
 
         </div>
 
@@ -824,7 +812,7 @@ hr{
 
           <span>Expected Return:</span>
 
-          <strong>Not Guaranteed</strong>
+          <strong class="pool-return">GH₵150.00</strong>
 
         </div>
 
@@ -838,7 +826,7 @@ hr{
 
       <p class="pool-note">
 
-        Review verified investment terms before proceeding.
+        Review the actual investment terms before proceeding.
 
       </p>
 
@@ -848,21 +836,27 @@ hr{
 
   <div class="notice">
 
-    Important: These cards are informational website displays.
+    Expected returns shown are not guaranteed. Confirm the actual
 
-    A payment does not automatically confirm an investment,
+    investment terms, duration, fees and risks before accepting
 
-    ownership, profit, or account balance.
+    customer deposits. A payment alone does not confirm an investment.
 
   </div>
 
 </section>
 
+<!-- ACCOUNT -->
+
 <section id="account">
 
   <h2>Your Account</h2>
 
-  <p class="muted">Sign up or log in to access your account.</p>
+  <p class="muted">
+
+    Sign up or log in to access your account.
+
+  </p>
 
   <div class="panel">
 
@@ -870,13 +864,17 @@ hr{
 
       <div class="actions">
 
-        <button class="btn" type="button" onclick="showForm('signup')">
+        <button class="btn" type="button"
+
+                onclick="showForm('signup')">
 
           Create Account
 
         </button>
 
-        <button class="btn secondary" type="button" onclick="showForm('login')">
+        <button class="btn secondary" type="button"
+
+                onclick="showForm('login')">
 
           Log In
 
@@ -884,43 +882,97 @@ hr{
 
       </div>
 
-      <form id="signupForm" onsubmit="signup(event)" style="margin-top:20px">
+      <!-- SIGNUP FORM -->
+
+      <form id="signupForm"
+
+            onsubmit="signup(event)"
+
+            style="margin-top:20px">
 
         <h3>Create Account</h3>
 
         <label>Full name</label>
 
-        <input id="signupName" type="text" placeholder="Your full name" required>
+        <input id="signupName"
+
+               type="text"
+
+               placeholder="Your full name"
+
+               required>
 
         <label>Email address</label>
 
-        <input id="signupEmail" type="email" placeholder="Your email" required>
+        <input id="signupEmail"
+
+               type="email"
+
+               placeholder="Your email"
+
+               required>
 
         <label>Password</label>
 
-        <input id="signupPassword" type="password" minlength="6"
+        <input id="signupPassword"
 
-               placeholder="At least 6 characters" required>
+               type="password"
 
-        <button class="btn" type="submit">Create Account</button>
+               minlength="6"
+
+               placeholder="At least 6 characters"
+
+               required>
+
+        <button class="btn" type="submit">
+
+          Create Account
+
+        </button>
 
       </form>
 
-      <form id="loginForm" onsubmit="login(event)" style="display:none;margin-top:20px">
+      <!-- LOGIN FORM -->
+
+      <form id="loginForm"
+
+            onsubmit="login(event)"
+
+            style="display:none;margin-top:20px">
 
         <h3>Log In</h3>
 
         <label>Email address</label>
 
-        <input id="loginEmail" type="email" placeholder="Your email" required>
+        <input id="loginEmail"
+
+               type="email"
+
+               placeholder="Your email"
+
+               required>
 
         <label>Password</label>
 
-        <input id="loginPassword" type="password" placeholder="Your password" required>
+        <input id="loginPassword"
 
-        <button class="btn" type="submit">Log In</button>
+               type="password"
 
-        <button class="btn secondary" type="button" onclick="resetPassword()">
+               placeholder="Your password"
+
+               required>
+
+        <button class="btn" type="submit">
+
+          Log In
+
+        </button>
+
+        <button class="btn secondary"
+
+                type="button"
+
+                onclick="resetPassword()">
 
           Forgot Password?
 
@@ -928,9 +980,15 @@ hr{
 
       </form>
 
-      <div id="authStatus" class="status" aria-live="polite"></div>
+      <div id="authStatus"
+
+           class="status"
+
+           aria-live="polite"></div>
 
     </div>
+
+    <!-- ACCOUNT DASHBOARD -->
 
     <div id="dashboard" style="display:none">
 
@@ -942,15 +1000,23 @@ hr{
 
       <div class="notice">
 
-        Your account login does not mean that a payment has been received
+        Your account login does not mean that a payment has
 
-        or that an investment has been made.
+        been received or that an investment has been made.
 
       </div>
 
-      <a class="btn" href="#payments">Payment Information</a>
+      <a class="btn" href="#payments">
 
-      <button class="btn secondary" type="button" onclick="logout()">
+        Payment Information
+
+      </a>
+
+      <button class="btn secondary"
+
+              type="button"
+
+              onclick="logout()">
 
         Log Out
 
@@ -964,6 +1030,8 @@ hr{
 
 </section>
 
+<!-- PAYMENTS -->
+
 <section id="payments">
 
   <h2>Payment Information</h2>
@@ -974,15 +1042,19 @@ hr{
 
     <p>
 
-      Review the payment details and applicable terms before continuing.
+      Review the payment details and applicable terms
+
+      before continuing.
 
     </p>
 
     <div class="notice">
 
-      The checkout page is hosted by Paystack. This website does not
+      The checkout page is hosted by Paystack. This website
 
-      automatically verify or credit payments. Keep your transaction receipt.
+      does not automatically verify or credit payments.
+
+      Keep your transaction receipt.
 
     </div>
 
@@ -994,21 +1066,23 @@ hr{
 
        rel="noopener noreferrer">
 
-       Continue to Paystack
+      Continue to Paystack
 
     </a>
 
     <p class="small">
 
-      The hosted checkout may not automatically use an amount selected
+      The hosted checkout may not automatically use an amount
 
-      on this website.
+      selected on this website.
 
     </p>
 
   </div>
 
 </section>
+
+<!-- ABOUT -->
 
 <section id="about">
 
@@ -1020,29 +1094,35 @@ hr{
 
     <p>
 
-      TOUR GOLD INVESTMENT provides an online point of access for account
+      TOUR GOLD INVESTMENT provides an online point of access
 
-      services, gold investment information, payment information
+      for account services, gold investment information,
 
-      and customer support.
+      payment information and customer support.
 
     </p>
 
     <p>
 
-      Before sending money, customers should independently verify the
+      Before sending money, customers should independently
 
-      company's legal identity, business registration, authorisations,
+      verify the company's legal identity, business registration,
 
-      investment terms, fees and risks.
+      authorisations, investment terms, fees and risks.
 
     </p>
 
-    <p>No investment return is guaranteed by this website.</p>
+    <p>
+
+      No investment return is guaranteed by this website.
+
+    </p>
 
   </div>
 
 </section>
+
+<!-- CONTACT -->
 
 <section id="contact">
 
@@ -1052,11 +1132,17 @@ hr{
 
     <h3>Customer Support</h3>
 
-    <p>For questions or assistance, contact us by email:</p>
+    <p>
+
+      For questions or assistance, contact us by email:
+
+    </p>
 
     <p>
 
-      <a class="gold" href="mailto:ziddrisu341@gmail.com">
+      <a class="gold"
+
+         href="mailto:ziddrisu341@gmail.com">
 
         ziddrisu341@gmail.com
 
@@ -1068,6 +1154,8 @@ hr{
 
 </section>
 
+<!-- TERMS -->
+
 <section id="terms">
 
   <h2>Terms and Conditions</h2>
@@ -1076,33 +1164,35 @@ hr{
 
     <p>
 
-      Users should read and understand all applicable terms before
+      Users should read and understand all applicable terms
 
-      making a payment or financial decision.
-
-    </p>
-
-    <p>
-
-      Investment activities involve risk. Returns are not guaranteed.
-
-      Users should verify all company details and applicable
-
-      authorisations independently.
+      before making a payment or financial decision.
 
     </p>
 
     <p>
 
-      Payments are subject to the payment provider's terms and
+      Investment activities involve risk. Returns are not
 
-      successful transaction confirmation.
+      guaranteed. Users should verify all company details
+
+      and applicable authorisations independently.
+
+    </p>
+
+    <p>
+
+      Payments are subject to the payment provider's terms
+
+      and successful transaction confirmation.
 
     </p>
 
   </div>
 
 </section>
+
+<!-- PRIVACY -->
 
 <section id="privacy">
 
@@ -1112,23 +1202,25 @@ hr{
 
     <p>
 
-      Account registration information is handled through the
+      Account registration information is handled through
 
-      configured authentication provider.
-
-    </p>
-
-    <p>
-
-      Do not share your password or sensitive financial information
-
-      with anyone.
+      the configured authentication provider.
 
     </p>
 
     <p>
 
-      For privacy questions, contact ziddrisu341@gmail.com.
+      Do not share your password or sensitive financial
+
+      information with anyone.
+
+    </p>
+
+    <p>
+
+      For privacy questions, contact
+
+      ziddrisu341@gmail.com.
 
     </p>
 
@@ -1138,11 +1230,15 @@ hr{
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
 
   <p>
 
-    © <span id="year"></span> TOUR GOLD INVESTMENT. All rights reserved.
+    © <span id="year"></span>
+
+    TOUR GOLD INVESTMENT. All rights reserved.
 
   </p>
 
@@ -1164,13 +1260,19 @@ hr{
 
 </footer>
 
+<!-- WEBSITE FUNCTIONALITY -->
+
 <script>
 
 "use strict";
 
-const SUPABASE_URL = "https://yvorlcgppaelcexwtiwf.supabase.co";
+const SUPABASE_URL =
 
-const SUPABASE_KEY = "sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v";
+  "https://yvorlcgppaelcexwtiwf.supabase.co";
+
+const SUPABASE_KEY =
+
+  "sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v";
 
 let supabaseClient = null;
 
@@ -1194,15 +1296,23 @@ function showForm(which) {
 
 function setStatus(message) {
 
-  document.getElementById("authStatus").textContent = message;
+  document.getElementById("authStatus").textContent =
+
+    message;
 
 }
 
 async function startApp() {
 
-  if (!window.supabase || !window.supabase.createClient) {
+  if (!window.supabase ||
 
-    setStatus("Account service is temporarily unavailable. Please refresh and try again.");
+      !window.supabase.createClient) {
+
+    setStatus(
+
+      "Account service is temporarily unavailable. Please refresh and try again."
+
+    );
 
     return;
 
@@ -1210,13 +1320,15 @@ async function startApp() {
 
   try {
 
-    supabaseClient = window.supabase.createClient(
+    supabaseClient =
 
-      SUPABASE_URL,
+      window.supabase.createClient(
 
-      SUPABASE_KEY
+        SUPABASE_URL,
 
-    );
+        SUPABASE_KEY
+
+      );
 
     const { data, error } =
 
@@ -1230,7 +1342,11 @@ async function startApp() {
 
     console.error("Account startup error:", error);
 
-    setStatus("Could not connect to the account service. Please try again.");
+    setStatus(
+
+      "Could not connect to the account service. Please try again."
+
+    );
 
   }
 
@@ -1264,7 +1380,11 @@ async function signup(event) {
 
   if (!supabaseClient) {
 
-    return setStatus("Account service is not ready. Refresh the page.");
+    return setStatus(
+
+      "Account service is not ready. Refresh the page."
+
+    );
 
   }
 
@@ -1294,7 +1414,11 @@ async function signup(event) {
 
         options: {
 
-          data: { full_name: name }
+          data: {
+
+            full_name: name
+
+          }
 
         }
 
@@ -1310,13 +1434,23 @@ async function signup(event) {
 
     } else {
 
-      setStatus("Registration received. Check your email for a confirmation link if email confirmation is enabled.");
+      setStatus(
+
+        "Registration received. Check your email for a confirmation link if email confirmation is enabled."
+
+      );
 
     }
 
   } catch (error) {
 
-    setStatus(error.message || "Registration failed. Please try again.");
+    setStatus(
+
+      error.message ||
+
+      "Registration failed. Please try again."
+
+    );
 
   }
 
@@ -1328,7 +1462,11 @@ async function login(event) {
 
   if (!supabaseClient) {
 
-    return setStatus("Account service is not ready. Refresh the page.");
+    return setStatus(
+
+      "Account service is not ready. Refresh the page."
+
+    );
 
   }
 
@@ -1362,7 +1500,13 @@ async function login(event) {
 
   } catch (error) {
 
-    setStatus(error.message || "Login failed. Check your details.");
+    setStatus(
+
+      error.message ||
+
+      "Login failed. Check your details."
+
+    );
 
   }
 
@@ -1372,7 +1516,11 @@ async function resetPassword() {
 
   if (!supabaseClient) {
 
-    return setStatus("Account service is not ready. Refresh the page.");
+    return setStatus(
+
+      "Account service is not ready. Refresh the page."
+
+    );
 
   }
 
@@ -1382,7 +1530,11 @@ async function resetPassword() {
 
   if (!email) {
 
-    return setStatus("Enter your email address first.");
+    return setStatus(
+
+      "Enter your email address first."
+
+    );
 
   }
 
@@ -1392,25 +1544,41 @@ async function resetPassword() {
 
     const { error } =
 
-      await supabaseClient.auth.resetPasswordForEmail(email, {
+      await supabaseClient.auth.resetPasswordForEmail(
 
-        redirectTo:
+        email,
 
-          window.location.origin +
+        {
 
-          window.location.pathname +
+          redirectTo:
 
-          "#account"
+            window.location.origin +
 
-      });
+            window.location.pathname +
+
+            "#account"
+
+        }
+
+      );
 
     if (error) throw error;
 
-    setStatus("If the email is registered, a password reset link will be sent.");
+    setStatus(
+
+      "If the email is registered, a password reset link will be sent."
+
+    );
 
   } catch (error) {
 
-    setStatus(error.message || "Could not send reset email.");
+    setStatus(
+
+      error.message ||
+
+      "Could not send reset email."
+
+    );
 
   }
 
@@ -1436,7 +1604,9 @@ async function logout() {
 
     showForm("login");
 
-    status.textContent = "You have logged out.";
+    status.textContent =
+
+      "You have logged out.";
 
     location.hash = "account";
 
@@ -1450,13 +1620,23 @@ async function logout() {
 
 }
 
-if (window.supabase && window.supabase.createClient) {
+if (window.supabase &&
+
+    window.supabase.createClient) {
 
   startApp();
 
 } else {
 
-  window.addEventListener("load", startApp, { once: true });
+  window.addEventListener(
+
+    "load",
+
+    startApp,
+
+    { once: true }
+
+  );
 
 }
 
