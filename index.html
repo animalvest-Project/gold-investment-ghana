@@ -6,6 +6,8 @@
 
 
 
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -20,7 +22,7 @@
 
 <title>TOUR GOLD INVESTMENT</title>
 
-<meta name="description" content="TOUR GOLD INVESTMENT - Account access, payment information and customer support.">
+<meta name="description" content="TOUR GOLD INVESTMENT - Gold investment information, account access and customer support.">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -66,7 +68,11 @@ a{color:inherit;text-decoration:none}
 
 header{
 
-  position:sticky;top:0;z-index:20;
+  position:sticky;
+
+  top:0;
+
+  z-index:20;
 
   background:rgba(9,10,13,.97);
 
@@ -76,75 +82,181 @@ header{
 
 .nav{
 
-  max-width:1150px;margin:auto;padding:15px 20px;
+  max-width:1150px;
 
-  display:flex;align-items:center;justify-content:space-between;
+  margin:auto;
 
-  gap:15px;flex-wrap:wrap;
+  padding:15px 20px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:15px;
+
+  flex-wrap:wrap;
 
 }
 
-.logo{font-weight:900;color:var(--gold);font-size:19px}
+.logo{
 
-nav{display:flex;gap:17px;flex-wrap:wrap}
+  font-weight:900;
 
-nav a{font-size:13px;color:#ddd}
+  color:var(--gold);
+
+  font-size:19px;
+
+}
+
+nav{
+
+  display:flex;
+
+  gap:17px;
+
+  flex-wrap:wrap;
+
+}
+
+nav a{
+
+  font-size:13px;
+
+  color:#ddd;
+
+}
 
 nav a:hover{color:var(--gold)}
 
-main{max-width:1150px;margin:auto;padding:25px 20px 60px}
+main{
 
-section{display:none;scroll-margin-top:100px}
+  max-width:1150px;
+
+  margin:auto;
+
+  padding:25px 20px 60px;
+
+}
+
+section{
+
+  display:none;
+
+  scroll-margin-top:100px;
+
+}
 
 section:target{display:block}
 
 #home{display:block}
 
-main:has(section:target) #home:not(:target){display:none}
+main:has(section:target) #home:not(:target){
+
+  display:none;
+
+}
 
 .hero{
 
-  min-height:480px;padding:65px 25px;
+  min-height:480px;
 
-  display:flex;flex-direction:column;justify-content:center;
+  padding:65px 25px;
 
-  border:1px solid #554421;border-radius:20px;
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  border:1px solid #554421;
+
+  border-radius:20px;
 
   background:
 
-  radial-gradient(circle at 85% 15%,rgba(214,173,85,.20),transparent 35%),
+    radial-gradient(circle at 85% 15%,rgba(214,173,85,.20),transparent 35%),
 
-  linear-gradient(135deg,#17130b,#101115 65%,#19150d);
+    linear-gradient(135deg,#17130b,#101115 65%,#19150d);
 
 }
 
 .tag{
 
-  color:var(--gold2);font-size:12px;font-weight:bold;
+  color:var(--gold2);
+
+  font-size:12px;
+
+  font-weight:bold;
 
   letter-spacing:3px;
 
 }
 
-h1{font-size:clamp(38px,7vw,68px);line-height:1.08;margin:15px 0}
+h1{
 
-h2{color:var(--gold2);font-size:29px}
+  font-size:clamp(38px,7vw,68px);
+
+  line-height:1.08;
+
+  margin:15px 0;
+
+}
+
+h2{
+
+  color:var(--gold2);
+
+  font-size:29px;
+
+}
 
 h3{color:var(--gold2)}
 
-.hero p{max-width:620px;color:#c5c5c5;font-size:17px}
+.hero p{
 
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  max-width:620px;
+
+  color:#c5c5c5;
+
+  font-size:17px;
+
+}
+
+.actions{
+
+  display:flex;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+
+  margin-top:20px;
+
+}
 
 .btn{
 
-  display:inline-block;border:0;border-radius:8px;
+  display:inline-block;
 
-  padding:13px 22px;background:var(--gold);
+  border:0;
 
-  color:#111;font-weight:bold;cursor:pointer;
+  border-radius:8px;
 
-  text-align:center;font-size:14px;
+  padding:13px 22px;
+
+  background:var(--gold);
+
+  color:#111;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  text-align:center;
+
+  font-size:14px;
 
 }
 
@@ -152,7 +264,9 @@ h3{color:var(--gold2)}
 
 .btn.secondary{
 
-  background:transparent;color:var(--gold);
+  background:transparent;
+
+  color:var(--gold);
 
   border:1px solid var(--gold);
 
@@ -160,17 +274,25 @@ h3{color:var(--gold2)}
 
 .grid{
 
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  display:grid;
 
-  gap:17px;margin-top:25px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+  gap:17px;
+
+  margin-top:25px;
 
 }
 
 .card,.panel{
 
-  background:var(--panel);border:1px solid var(--line);
+  background:var(--panel);
 
-  border-radius:13px;padding:22px;
+  border:1px solid var(--line);
+
+  border-radius:13px;
+
+  padding:22px;
 
 }
 
@@ -178,55 +300,279 @@ h3{color:var(--gold2)}
 
 .gold{color:var(--gold)}
 
-form{display:grid;gap:13px;max-width:480px}
+form{
+
+  display:grid;
+
+  gap:13px;
+
+  max-width:480px;
+
+}
 
 input,textarea,select{
 
-  width:100%;padding:14px;border-radius:8px;
+  width:100%;
 
-  border:1px solid #383a40;background:#0d0f13;
+  padding:14px;
 
-  color:white;font-size:15px;
+  border-radius:8px;
+
+  border:1px solid #383a40;
+
+  background:#0d0f13;
+
+  color:white;
+
+  font-size:15px;
 
 }
 
-textarea{min-height:110px;resize:vertical}
+textarea{
 
-label{font-size:13px;color:#ccc}
+  min-height:110px;
+
+  resize:vertical;
+
+}
+
+label{
+
+  font-size:13px;
+
+  color:#ccc;
+
+}
 
 .notice{
 
-  padding:13px;border-radius:8px;
+  padding:13px;
 
-  background:#201b10;border:1px solid #574522;
+  border-radius:8px;
 
-  color:#e6d3a5;font-size:13px;margin:15px 0;
+  background:#201b10;
+
+  border:1px solid #574522;
+
+  color:#e6d3a5;
+
+  font-size:13px;
+
+  margin:15px 0;
 
 }
 
-.status{margin-top:12px;color:var(--gold2);font-size:14px}
+.status{
+
+  margin-top:12px;
+
+  color:var(--gold2);
+
+  font-size:14px;
+
+}
+
+/* GOLD INVESTMENT POOLS */
+
+.pool-heading{
+
+  margin-top:45px;
+
+  margin-bottom:10px;
+
+  border-left:5px solid var(--gold);
+
+  padding-left:16px;
+
+}
+
+.pool-heading h2{
+
+  margin:0;
+
+  color:white;
+
+  font-size:27px;
+
+}
+
+.pool-card{
+
+  background:#151515;
+
+  border:1px solid #292929;
+
+  border-radius:22px;
+
+  padding:28px 22px;
+
+  text-align:center;
+
+  margin-top:22px;
+
+  box-shadow:0 8px 25px rgba(0,0,0,.18);
+
+}
+
+.gold-icon{
+
+  width:75px;
+
+  height:60px;
+
+  margin:5px auto 20px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:38px;
+
+  filter:drop-shadow(0 0 15px rgba(214,173,85,.25));
+
+}
+
+.pool-card h3{
+
+  font-size:27px;
+
+  color:#e9b63e;
+
+  margin:8px 0 20px;
+
+}
+
+.pool-details{
+
+  background:#0d0d0d;
+
+  border-radius:13px;
+
+  padding:18px;
+
+  text-align:left;
+
+  margin:20px 0;
+
+}
+
+.pool-row{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:12px;
+
+  padding:8px 0;
+
+  font-size:15px;
+
+}
+
+.pool-row span{
+
+  color:#aaa;
+
+}
+
+.pool-row strong{
+
+  color:#f5f5f5;
+
+  text-align:right;
+
+}
+
+.pool-button{
+
+  display:block;
+
+  width:100%;
+
+  padding:17px;
+
+  border-radius:12px;
+
+  background:linear-gradient(90deg,#f3b51b,#df790c);
+
+  color:#151515;
+
+  font-size:19px;
+
+  font-weight:900;
+
+  text-align:center;
+
+  margin-top:22px;
+
+}
+
+.pool-button:hover{
+
+  filter:brightness(1.1);
+
+}
+
+.pool-note{
+
+  font-size:12px;
+
+  color:#999;
+
+  text-align:center;
+
+  margin-top:12px;
+
+}
 
 footer{
 
-  border-top:1px solid var(--line);padding:25px 20px;
+  border-top:1px solid var(--line);
 
-  text-align:center;color:#888;font-size:13px;
+  padding:25px 20px;
+
+  text-align:center;
+
+  color:#888;
+
+  font-size:13px;
 
 }
 
-.small{font-size:12px;color:#999}
+.small{
 
-hr{border:0;border-top:1px solid var(--line);margin:25px 0}
+  font-size:12px;
+
+  color:#999;
+
+}
+
+hr{
+
+  border:0;
+
+  border-top:1px solid var(--line);
+
+  margin:25px 0;
+
+}
 
 @media(max-width:600px){
 
- .nav{justify-content:center}
+  .nav{justify-content:center}
 
- nav{justify-content:center;gap:12px}
+  nav{justify-content:center;gap:12px}
 
- .hero{padding:45px 20px;min-height:420px}
+  .hero{padding:45px 20px;min-height:420px}
 
- main{padding:18px 14px 45px}
+  main{padding:18px 14px 45px}
+
+  .pool-card{padding:25px 17px}
 
 }
 
@@ -245,6 +591,8 @@ hr{border:0;border-top:1px solid var(--line);margin:25px 0}
     <nav>
 
       <a href="#home">Home</a>
+
+      <a href="#pools">Gold Pools</a>
 
       <a href="#account">Account</a>
 
@@ -266,19 +614,25 @@ hr{border:0;border-top:1px solid var(--line);margin:25px 0}
 
     <div class="tag">GOLD • TRUST • TRANSPARENCY</div>
 
-    <h1>Invest Today.<br><span class="gold">Grow Tomorrow.</span></h1>
+    <h1>
+
+      Invest Today.<br>
+
+      <span class="gold">Grow Tomorrow.</span>
+
+    </h1>
 
     <p>
 
-      A platform designed to give you convenient access to account
+      Explore gold investment information, account services
 
-      services, payment information and investment information.
+      and payment information through TOUR GOLD INVESTMENT.
 
     </p>
 
     <div class="actions">
 
-      <a class="btn" href="#account">Get Started</a>
+      <a class="btn" href="#pools">Explore Gold Pools</a>
 
       <a class="btn secondary" href="#about">Learn More</a>
 
@@ -298,9 +652,9 @@ hr{border:0;border-top:1px solid var(--line);margin:25px 0}
 
     <div class="card">
 
-      <h3>Payment Information</h3>
+      <h3>Gold Pool Information</h3>
 
-      <p>View payment instructions before proceeding to checkout.</p>
+      <p>Review available gold investment information and terms.</p>
 
     </div>
 
@@ -316,11 +670,189 @@ hr{border:0;border-top:1px solid var(--line);margin:25px 0}
 
   <div class="notice">
 
-    Important: Review all investment terms, risks, fees and company
+    Investment involves risk. Review the company's legal identity,
 
-    information independently before making any financial decision.
+    authorisations, investment terms, fees and risks before making
 
-    No profit or return is guaranteed.
+    any financial decision. No profit or return is guaranteed.
+
+  </div>
+
+</section>
+
+<!-- GOLD INVESTMENT POOLS -->
+
+<section id="pools">
+
+  <div class="pool-heading">
+
+    <h2>⭐ Gold Investment Pools</h2>
+
+  </div>
+
+  <p class="muted">
+
+    Explore the investment information below. Review the official
+
+    terms before making any payment.
+
+  </p>
+
+  <div class="grid">
+
+    <div class="pool-card">
+
+      <div class="gold-icon">🪙</div>
+
+      <h3>Gold Starter Pool</h3>
+
+      <div class="pool-details">
+
+        <div class="pool-row">
+
+          <span>Minimum Deposit:</span>
+
+          <strong>GH₵50.00</strong>
+
+        </div>
+
+        <div class="pool-row">
+
+          <span>Duration:</span>
+
+          <strong>See Official Terms</strong>
+
+        </div>
+
+        <div class="pool-row">
+
+          <span>Expected Return:</span>
+
+          <strong>Not Guaranteed</strong>
+
+        </div>
+
+      </div>
+
+      <a class="pool-button" href="#payments">
+
+        View & Invest
+
+      </a>
+
+      <p class="pool-note">
+
+        Review verified investment terms before proceeding.
+
+      </p>
+
+    </div>
+
+    <div class="pool-card">
+
+      <div class="gold-icon">🥇</div>
+
+      <h3>Gold Growth Pool</h3>
+
+      <div class="pool-details">
+
+        <div class="pool-row">
+
+          <span>Minimum Deposit:</span>
+
+          <strong>GH₵100.00</strong>
+
+        </div>
+
+        <div class="pool-row">
+
+          <span>Duration:</span>
+
+          <strong>See Official Terms</strong>
+
+        </div>
+
+        <div class="pool-row">
+
+          <span>Expected Return:</span>
+
+          <strong>Not Guaranteed</strong>
+
+        </div>
+
+      </div>
+
+      <a class="pool-button" href="#payments">
+
+        View & Invest
+
+      </a>
+
+      <p class="pool-note">
+
+        Review verified investment terms before proceeding.
+
+      </p>
+
+    </div>
+
+    <div class="pool-card">
+
+      <div class="gold-icon">⛏️</div>
+
+      <h3>Gold Mining Pool</h3>
+
+      <div class="pool-details">
+
+        <div class="pool-row">
+
+          <span>Minimum Deposit:</span>
+
+          <strong>To Be Confirmed</strong>
+
+        </div>
+
+        <div class="pool-row">
+
+          <span>Duration:</span>
+
+          <strong>See Official Terms</strong>
+
+        </div>
+
+        <div class="pool-row">
+
+          <span>Expected Return:</span>
+
+          <strong>Not Guaranteed</strong>
+
+        </div>
+
+      </div>
+
+      <a class="pool-button" href="#payments">
+
+        View & Invest
+
+      </a>
+
+      <p class="pool-note">
+
+        Review verified investment terms before proceeding.
+
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="notice">
+
+    Important: These cards are informational website displays.
+
+    A payment does not automatically confirm an investment,
+
+    ownership, profit, or account balance.
 
   </div>
 
@@ -338,9 +870,17 @@ hr{border:0;border-top:1px solid var(--line);margin:25px 0}
 
       <div class="actions">
 
-        <button class="btn" type="button" onclick="showForm('signup')">Create Account</button>
+        <button class="btn" type="button" onclick="showForm('signup')">
 
-        <button class="btn secondary" type="button" onclick="showForm('login')">Log In</button>
+          Create Account
+
+        </button>
+
+        <button class="btn secondary" type="button" onclick="showForm('login')">
+
+          Log In
+
+        </button>
 
       </div>
 
@@ -358,7 +898,9 @@ hr{border:0;border-top:1px solid var(--line);margin:25px 0}
 
         <label>Password</label>
 
-        <input id="signupPassword" type="password" minlength="6" placeholder="At least 6 characters" required>
+        <input id="signupPassword" type="password" minlength="6"
+
+               placeholder="At least 6 characters" required>
 
         <button class="btn" type="submit">Create Account</button>
 
@@ -378,7 +920,11 @@ hr{border:0;border-top:1px solid var(--line);margin:25px 0}
 
         <button class="btn" type="submit">Log In</button>
 
-        <button class="btn secondary" type="button" onclick="resetPassword()">Forgot Password?</button>
+        <button class="btn secondary" type="button" onclick="resetPassword()">
+
+          Forgot Password?
+
+        </button>
 
       </form>
 
@@ -404,7 +950,11 @@ hr{border:0;border-top:1px solid var(--line);margin:25px 0}
 
       <a class="btn" href="#payments">Payment Information</a>
 
-      <button class="btn secondary" type="button" onclick="logout()">Log Out</button>
+      <button class="btn secondary" type="button" onclick="logout()">
+
+        Log Out
+
+      </button>
 
       <div id="dashboardStatus" class="status"></div>
 
@@ -422,7 +972,11 @@ hr{border:0;border-top:1px solid var(--line);margin:25px 0}
 
     <h3>Payment Checkout</h3>
 
-    <p>Review the payment details and applicable terms before continuing.</p>
+    <p>
+
+      Review the payment details and applicable terms before continuing.
+
+    </p>
 
     <div class="notice">
 
@@ -432,11 +986,25 @@ hr{border:0;border-top:1px solid var(--line);margin:25px 0}
 
     </div>
 
-    <a class="btn" href="https://paystack.shop/pay/-egr5cbd19"
+    <a class="btn"
 
-       target="_blank" rel="noopener noreferrer">Continue to Paystack</a>
+       href="https://paystack.shop/pay/-egr5cbd19"
 
-    <p class="small">The hosted checkout may not automatically use an amount selected on this website.</p>
+       target="_blank"
+
+       rel="noopener noreferrer">
+
+       Continue to Paystack
+
+    </a>
+
+    <p class="small">
+
+      The hosted checkout may not automatically use an amount selected
+
+      on this website.
+
+    </p>
 
   </div>
 
@@ -454,7 +1022,9 @@ hr{border:0;border-top:1px solid var(--line);margin:25px 0}
 
       TOUR GOLD INVESTMENT provides an online point of access for account
 
-      services, payment information and customer support.
+      services, gold investment information, payment information
+
+      and customer support.
 
     </p>
 
@@ -484,7 +1054,15 @@ hr{border:0;border-top:1px solid var(--line);margin:25px 0}
 
     <p>For questions or assistance, contact us by email:</p>
 
-    <p><a class="gold" href="mailto:ziddrisu341@gmail.com">ziddrisu341@gmail.com</a></p>
+    <p>
+
+      <a class="gold" href="mailto:ziddrisu341@gmail.com">
+
+        ziddrisu341@gmail.com
+
+      </a>
+
+    </p>
 
   </div>
 
@@ -496,11 +1074,31 @@ hr{border:0;border-top:1px solid var(--line);margin:25px 0}
 
   <div class="panel">
 
-    <p>Users should read and understand all applicable terms before making a payment or financial decision.</p>
+    <p>
 
-    <p>Investment activities involve risk. Returns are not guaranteed. Users should verify all company details and applicable authorisations independently.</p>
+      Users should read and understand all applicable terms before
 
-    <p>Payments are subject to the payment provider's terms and successful transaction confirmation.</p>
+      making a payment or financial decision.
+
+    </p>
+
+    <p>
+
+      Investment activities involve risk. Returns are not guaranteed.
+
+      Users should verify all company details and applicable
+
+      authorisations independently.
+
+    </p>
+
+    <p>
+
+      Payments are subject to the payment provider's terms and
+
+      successful transaction confirmation.
+
+    </p>
 
   </div>
 
@@ -512,11 +1110,27 @@ hr{border:0;border-top:1px solid var(--line);margin:25px 0}
 
   <div class="panel">
 
-    <p>Account registration information is handled through the configured authentication provider.</p>
+    <p>
 
-    <p>Do not share your password or sensitive financial information with anyone.</p>
+      Account registration information is handled through the
 
-    <p>For privacy questions, contact ziddrisu341@gmail.com.</p>
+      configured authentication provider.
+
+    </p>
+
+    <p>
+
+      Do not share your password or sensitive financial information
+
+      with anyone.
+
+    </p>
+
+    <p>
+
+      For privacy questions, contact ziddrisu341@gmail.com.
+
+    </p>
 
   </div>
 
@@ -526,11 +1140,27 @@ hr{border:0;border-top:1px solid var(--line);margin:25px 0}
 
 <footer>
 
-  <p>© <span id="year"></span> TOUR GOLD INVESTMENT. All rights reserved.</p>
+  <p>
 
-  <p><a href="#terms">Terms</a> · <a href="#privacy">Privacy</a> · <a href="#payments">Payments</a></p>
+    © <span id="year"></span> TOUR GOLD INVESTMENT. All rights reserved.
 
-  <p class="small">Investment involves risk. No profit is guaranteed.</p>
+  </p>
+
+  <p>
+
+    <a href="#terms">Terms</a> ·
+
+    <a href="#privacy">Privacy</a> ·
+
+    <a href="#payments">Payments</a>
+
+  </p>
+
+  <p class="small">
+
+    Investment involves risk. No profit is guaranteed.
+
+  </p>
 
 </footer>
 
@@ -544,7 +1174,9 @@ const SUPABASE_KEY = "sb_publishable_PjwHaI2t4qNl1PTrc69lcA_TqIXRZ5v";
 
 let supabaseClient = null;
 
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent =
+
+  new Date().getFullYear();
 
 function showForm(which) {
 
@@ -578,9 +1210,17 @@ async function startApp() {
 
   try {
 
-    supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    supabaseClient = window.supabase.createClient(
 
-    const { data, error } = await supabaseClient.auth.getSession();
+      SUPABASE_URL,
+
+      SUPABASE_KEY
+
+    );
+
+    const { data, error } =
+
+      await supabaseClient.auth.getSession();
 
     if (error) throw error;
 
@@ -600,9 +1240,13 @@ function updateAccount(session) {
 
   const signedIn = !!session;
 
-  document.getElementById("authArea").style.display = signedIn ? "none" : "block";
+  document.getElementById("authArea").style.display =
 
-  document.getElementById("dashboard").style.display = signedIn ? "block" : "none";
+    signedIn ? "none" : "block";
+
+  document.getElementById("dashboard").style.display =
+
+    signedIn ? "block" : "none";
 
   if (signedIn) {
 
@@ -618,27 +1262,43 @@ async function signup(event) {
 
   event.preventDefault();
 
-  if (!supabaseClient) return setStatus("Account service is not ready. Refresh the page.");
+  if (!supabaseClient) {
 
-  const name = document.getElementById("signupName").value.trim();
+    return setStatus("Account service is not ready. Refresh the page.");
 
-  const email = document.getElementById("signupEmail").value.trim();
+  }
 
-  const password = document.getElementById("signupPassword").value;
+  const name =
+
+    document.getElementById("signupName").value.trim();
+
+  const email =
+
+    document.getElementById("signupEmail").value.trim();
+
+  const password =
+
+    document.getElementById("signupPassword").value;
 
   setStatus("Creating your account...");
 
   try {
 
-    const { data, error } = await supabaseClient.auth.signUp({
+    const { data, error } =
 
-      email,
+      await supabaseClient.auth.signUp({
 
-      password,
+        email,
 
-      options: { data: { full_name: name } }
+        password,
 
-    });
+        options: {
+
+          data: { full_name: name }
+
+        }
+
+      });
 
     if (error) throw error;
 
@@ -666,23 +1326,33 @@ async function login(event) {
 
   event.preventDefault();
 
-  if (!supabaseClient) return setStatus("Account service is not ready. Refresh the page.");
+  if (!supabaseClient) {
 
-  const email = document.getElementById("loginEmail").value.trim();
+    return setStatus("Account service is not ready. Refresh the page.");
 
-  const password = document.getElementById("loginPassword").value;
+  }
+
+  const email =
+
+    document.getElementById("loginEmail").value.trim();
+
+  const password =
+
+    document.getElementById("loginPassword").value;
 
   setStatus("Logging in...");
 
   try {
 
-    const { data, error } = await supabaseClient.auth.signInWithPassword({
+    const { data, error } =
 
-      email,
+      await supabaseClient.auth.signInWithPassword({
 
-      password
+        email,
 
-    });
+        password
+
+      });
 
     if (error) throw error;
 
@@ -700,21 +1370,39 @@ async function login(event) {
 
 async function resetPassword() {
 
-  if (!supabaseClient) return setStatus("Account service is not ready. Refresh the page.");
+  if (!supabaseClient) {
 
-  const email = document.getElementById("loginEmail").value.trim();
+    return setStatus("Account service is not ready. Refresh the page.");
 
-  if (!email) return setStatus("Enter your email address first.");
+  }
+
+  const email =
+
+    document.getElementById("loginEmail").value.trim();
+
+  if (!email) {
+
+    return setStatus("Enter your email address first.");
+
+  }
 
   setStatus("Sending password reset email...");
 
   try {
 
-    const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+    const { error } =
 
-      redirectTo: window.location.origin + window.location.pathname + "#account"
+      await supabaseClient.auth.resetPasswordForEmail(email, {
 
-    });
+        redirectTo:
+
+          window.location.origin +
+
+          window.location.pathname +
+
+          "#account"
+
+      });
 
     if (error) throw error;
 
@@ -732,11 +1420,15 @@ async function logout() {
 
   if (!supabaseClient) return;
 
-  const status = document.getElementById("dashboardStatus");
+  const status =
+
+    document.getElementById("dashboardStatus");
 
   try {
 
-    const { error } = await supabaseClient.auth.signOut();
+    const { error } =
+
+      await supabaseClient.auth.signOut();
 
     if (error) throw error;
 
@@ -750,7 +1442,9 @@ async function logout() {
 
   } catch (error) {
 
-    status.textContent = error.message || "Logout failed.";
+    status.textContent =
+
+      error.message || "Logout failed.";
 
   }
 
