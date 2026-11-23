@@ -44,9 +44,15 @@ html{scroll-behavior:smooth}
 
 body{
 
-margin:0;background:var(--bg);color:var(--text);
+margin:0;
 
-font-family:Arial,Helvetica,sans-serif;line-height:1.6
+background:var(--bg);
+
+color:var(--text);
+
+font-family:Arial,Helvetica,sans-serif;
+
+line-height:1.6;
 
 }
 
@@ -54,27 +60,51 @@ a{color:inherit;text-decoration:none}
 
 header{
 
-position:sticky;top:0;z-index:100;
+position:sticky;
+
+top:0;
+
+z-index:100;
 
 background:rgba(8,9,11,.97);
 
 border-bottom:1px solid var(--line);
 
-backdrop-filter:blur(12px)
+backdrop-filter:blur(12px);
 
 }
 
 .nav{
 
-max-width:1200px;margin:auto;padding:16px 20px;
+max-width:1200px;
 
-display:flex;align-items:center;justify-content:space-between;
+margin:auto;
 
-gap:20px;flex-wrap:wrap
+padding:16px 20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:20px;
+
+flex-wrap:wrap;
 
 }
 
-.logo{font-weight:900;color:var(--gold);font-size:18px;letter-spacing:1px}
+.logo{
+
+font-weight:900;
+
+color:var(--gold);
+
+font-size:18px;
+
+letter-spacing:1px;
+
+}
 
 nav{display:flex;gap:18px;flex-wrap:wrap}
 
@@ -82,7 +112,15 @@ nav a{font-size:13px;color:#ddd}
 
 nav a:hover{color:var(--gold)}
 
-main{max-width:1200px;margin:auto;padding:25px 20px 60px}
+main{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:25px 20px 60px;
+
+}
 
 section{display:none;scroll-margin-top:100px}
 
@@ -94,29 +132,75 @@ main:has(section:target) #home:not(:target){display:none}
 
 .hero{
 
-position:relative;overflow:hidden;min-height:520px;padding:65px 35px;
+position:relative;
 
-display:flex;flex-direction:column;justify-content:center;
+overflow:hidden;
 
-border:1px solid #554421;border-radius:22px;
+min-height:520px;
 
-background:radial-gradient(circle at 80% 20%,rgba(214,173,85,.25),transparent 35%),linear-gradient(135deg,#17130b,#101115 60%,#19150d)
+padding:65px 35px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+border:1px solid #554421;
+
+border-radius:22px;
+
+background:
+
+radial-gradient(circle at 80% 20%,rgba(214,173,85,.25),transparent 35%),
+
+linear-gradient(135deg,#17130b,#101115 60%,#19150d);
 
 }
 
 .hero::after{
 
-content:"GOLD";position:absolute;right:-25px;bottom:-65px;
+content:"GOLD";
 
-font-size:clamp(100px,22vw,260px);font-weight:900;
+position:absolute;
 
-color:rgba(214,173,85,.045);pointer-events:none
+right:-25px;
+
+bottom:-65px;
+
+font-size:clamp(100px,22vw,260px);
+
+font-weight:900;
+
+color:rgba(214,173,85,.045);
+
+pointer-events:none;
 
 }
 
-.tag{color:var(--gold-light);font-size:12px;font-weight:bold;letter-spacing:3px}
+.tag{
 
-h1{font-size:clamp(38px,7vw,70px);line-height:1.08;margin:18px 0;max-width:850px}
+color:var(--gold-light);
+
+font-size:12px;
+
+font-weight:bold;
+
+letter-spacing:3px;
+
+}
+
+h1{
+
+font-size:clamp(38px,7vw,70px);
+
+line-height:1.08;
+
+margin:18px 0;
+
+max-width:850px;
+
+}
 
 h2{color:var(--gold-light);font-size:30px}
 
@@ -130,33 +214,77 @@ h3{color:var(--gold-light)}
 
 .btn{
 
-display:inline-block;border:0;border-radius:8px;padding:14px 23px;
+display:inline-block;
 
-background:var(--gold);color:#111;font-weight:bold;cursor:pointer;
+border:0;
 
-text-align:center;font-size:14px
+border-radius:8px;
+
+padding:14px 23px;
+
+background:var(--gold);
+
+color:#111;
+
+font-weight:bold;
+
+cursor:pointer;
+
+text-align:center;
+
+font-size:14px;
 
 }
 
 .btn:hover{background:var(--gold-light)}
 
-.btn.secondary{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.btn.secondary{
 
-.grid{
+background:transparent;
 
-display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+color:var(--gold);
 
-gap:18px;margin-top:25px
+border:1px solid var(--gold);
 
 }
 
-.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:24px}
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:18px;
+
+margin-top:25px;
+
+}
+
+.card,.panel{
+
+background:var(--panel);
+
+border:1px solid var(--line);
+
+border-radius:15px;
+
+padding:24px;
+
+}
 
 .card p,.muted{color:var(--muted)}
 
 .feature-icon{font-size:30px;margin-bottom:10px}
 
-.pool-heading{margin:20px 0 10px;border-left:5px solid var(--gold);padding-left:16px}
+.pool-heading{
+
+margin:20px 0 10px;
+
+border-left:5px solid var(--gold);
+
+padding-left:16px;
+
+}
 
 .pool-heading h2{margin:0;color:white;font-size:29px}
 
@@ -164,33 +292,87 @@ gap:18px;margin-top:25px
 
 background:linear-gradient(160deg,#191919,#101010);
 
-border:1px solid #3b3322;border-radius:20px;padding:27px 22px;
+border:1px solid #3b3322;
 
-text-align:center;box-shadow:0 8px 25px rgba(0,0,0,.25)
+border-radius:20px;
+
+padding:27px 22px;
+
+text-align:center;
+
+box-shadow:0 8px 25px rgba(0,0,0,.25);
 
 }
 
-.pool-card:hover{border-color:var(--gold);transform:translateY(-3px);transition:.25s}
+.pool-card:hover{
+
+border-color:var(--gold);
+
+transform:translateY(-3px);
+
+transition:.25s;
+
+}
 
 .gold-icon{
 
-width:75px;height:65px;margin:5px auto 18px;
+width:75px;
 
-display:flex;align-items:center;justify-content:center;font-size:42px;
+height:65px;
 
-filter:drop-shadow(0 0 15px rgba(214,173,85,.25))
+margin:5px auto 18px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:42px;
+
+filter:drop-shadow(0 0 15px rgba(214,173,85,.25));
 
 }
 
-.pool-card h3{font-size:24px;color:#e9b63e;margin:8px 0 18px}
+.pool-card h3{
 
-.pool-details{background:#0b0b0b;border-radius:13px;padding:17px;text-align:left;margin:20px 0}
+font-size:24px;
+
+color:#e9b63e;
+
+margin:8px 0 18px;
+
+}
+
+.pool-details{
+
+background:#0b0b0b;
+
+border-radius:13px;
+
+padding:17px;
+
+text-align:left;
+
+margin:20px 0;
+
+}
 
 .pool-row{
 
-display:flex;justify-content:space-between;align-items:center;
+display:flex;
 
-gap:12px;padding:9px 0;font-size:14px;border-bottom:1px solid #222
+justify-content:space-between;
+
+align-items:center;
+
+gap:12px;
+
+padding:9px 0;
+
+font-size:14px;
+
+border-bottom:1px solid #222;
 
 }
 
@@ -202,25 +384,59 @@ gap:12px;padding:9px 0;font-size:14px;border-bottom:1px solid #222
 
 .pool-button{
 
-display:block;width:100%;padding:16px;border-radius:11px;
+display:block;
+
+width:100%;
+
+padding:16px;
+
+border-radius:11px;
 
 background:linear-gradient(90deg,#f3b51b,#df790c);
 
-color:#151515;font-size:16px;font-weight:900;text-align:center;margin-top:20px
+color:#151515;
+
+font-size:16px;
+
+font-weight:900;
+
+text-align:center;
+
+margin-top:20px;
 
 }
 
 .pool-button:hover{filter:brightness(1.1)}
 
-.pool-note{font-size:12px;color:#999;text-align:center;margin-top:12px}
+.pool-note{
+
+font-size:12px;
+
+color:#999;
+
+text-align:center;
+
+margin-top:12px;
+
+}
 
 form{display:grid;gap:13px;max-width:480px}
 
 input,textarea,select{
 
-width:100%;padding:14px;border-radius:8px;border:1px solid #383a40;
+width:100%;
 
-background:#0d0f13;color:white;font-size:15px
+padding:14px;
+
+border-radius:8px;
+
+border:1px solid #383a40;
+
+background:#0d0f13;
+
+color:white;
+
+font-size:15px;
 
 }
 
@@ -230,9 +446,19 @@ label{font-size:13px;color:#ccc}
 
 .notice{
 
-padding:15px;border-radius:9px;background:#201b10;
+padding:15px;
 
-border:1px solid #574522;color:#e6d3a5;font-size:13px;margin:18px 0
+border-radius:9px;
+
+background:#201b10;
+
+border:1px solid #574522;
+
+color:#e6d3a5;
+
+font-size:13px;
+
+margin:18px 0;
 
 }
 
@@ -242,7 +468,19 @@ border:1px solid #574522;color:#e6d3a5;font-size:13px;margin:18px 0
 
 hr{border:0;border-top:1px solid var(--line);margin:25px 0}
 
-footer{border-top:1px solid var(--line);padding:30px 20px;text-align:center;color:#888;font-size:13px}
+footer{
+
+border-top:1px solid var(--line);
+
+padding:30px 20px;
+
+text-align:center;
+
+color:#888;
+
+font-size:13px;
+
+}
 
 @media(max-width:600px){
 
@@ -298,7 +536,7 @@ main{padding:18px 14px 45px}
 
 <h1>Secure Your Future With<br><span class="gold">Tangible Assets</span></h1>
 
-<p>Explore gold investment information, account services and premium investment pool details through TOUR GOLD INVESTMENT.</p>
+<p>Exclusive access to physical gold investment information and premium heritage tours. Explore tangible assets, account services and payment information through TOUR GOLD INVESTMENT.</p>
 
 <div class="actions">
 
@@ -318,7 +556,7 @@ main{padding:18px 14px 45px}
 
 <h3>Exclusive Tours</h3>
 
-<p>Explore heritage and educational tour information.</p>
+<p>Experience the source of your wealth firsthand through heritage and educational tour information.</p>
 
 </div>
 
@@ -328,7 +566,7 @@ main{padding:18px 14px 45px}
 
 <h3>Physical Gold</h3>
 
-<p>Learn about physical gold, ownership arrangements and investment information.</p>
+<p>Learn about physical gold, ownership arrangements and available investment information.</p>
 
 </div>
 
@@ -338,7 +576,7 @@ main{padding:18px 14px 45px}
 
 <h3>Secure Account</h3>
 
-<p>Access your account through our client portal.</p>
+<p>Access your account through our client portal and review your account information.</p>
 
 </div>
 
@@ -348,7 +586,7 @@ main{padding:18px 14px 45px}
 
 <h3>Premium Experience</h3>
 
-<p>A premium gold investment information experience designed around clarity and transparency.</p>
+<p>Explore a premium gold investment information experience designed around clarity and transparency.</p>
 
 </div>
 
@@ -356,7 +594,7 @@ main{padding:18px 14px 45px}
 
 <div class="notice">
 
-Investment involves risk. Verify the company's legal identity, authorisations, ownership arrangements, terms and risks before making any financial decision. No profit or return is guaranteed.
+Investment involves risk. Verify the company's legal identity, authorisations, ownership arrangements, investment terms, fees and risks before making any financial decision. No profit or return is guaranteed.
 
 </div>
 
@@ -364,9 +602,13 @@ Investment involves risk. Verify the company's legal identity, authorisations, o
 
 <section id="pools">
 
-<div class="pool-heading"><h2>Gold Investment Pools</h2></div>
+<div class="pool-heading">
 
-<p class="muted">Explore available gold pool information and review the terms before proceeding.</p>
+<h2>Gold Investment Pools</h2>
+
+</div>
+
+<p class="muted">Explore available gold pool information. Review and verify actual terms before proceeding.</p>
 
 <div class="grid">
 
@@ -380,15 +622,15 @@ Investment involves risk. Verify the company's legal identity, authorisations, o
 
 <div class="pool-row"><span>Minimum Deposit:</span><strong>GH₵100.00</strong></div>
 
-<div class="pool-row"><span>Duration:</span><strong>1 Month*</strong></div>
+<div class="pool-row"><span>Duration:</span><strong>1</strong></div>
 
-<div class="pool-row"><span>Illustrative Return:</span><strong>GH₵430.00</strong></div>
+<div class="pool-row"><span>Expected Return:</span><strong>GH₵430.00*</strong></div>
 
 </div>
 
 <a class="pool-button" href="#payments">View &amp; Invest</a>
 
-<p class="pool-note">*Subject to confirmation. Return is illustrative, not guaranteed.</p>
+<p class="pool-note">*Illustrative figure only; not guaranteed. Verify all terms.</p>
 
 </div>
 
@@ -402,15 +644,15 @@ Investment involves risk. Verify the company's legal identity, authorisations, o
 
 <div class="pool-row"><span>Minimum Deposit:</span><strong>GH₵50.00</strong></div>
 
-<div class="pool-row"><span>Duration:</span><strong>1 Month*</strong></div>
+<div class="pool-row"><span>Duration:</span><strong>1</strong></div>
 
-<div class="pool-row"><span>Illustrative Return:</span><strong>GH₵150.00</strong></div>
+<div class="pool-row"><span>Expected Return:</span><strong>GH₵150.00*</strong></div>
 
 </div>
 
 <a class="pool-button" href="#payments">View &amp; Invest</a>
 
-<p class="pool-note">*Subject to confirmation. Return is illustrative, not guaranteed.</p>
+<p class="pool-note">*Illustrative figure only; not guaranteed. Verify all terms.</p>
 
 </div>
 
@@ -424,15 +666,15 @@ Investment involves risk. Verify the company's legal identity, authorisations, o
 
 <div class="pool-row"><span>Minimum Deposit:</span><strong>GH₵500.00</strong></div>
 
-<div class="pool-row"><span>Duration:</span><strong>1 Month*</strong></div>
+<div class="pool-row"><span>Duration:</span><strong>1</strong></div>
 
-<div class="pool-row"><span>Illustrative Return:</span><strong>GH₵2,000.00</strong></div>
+<div class="pool-row"><span>Expected Return:</span><strong>GH₵2,000.00*</strong></div>
 
 </div>
 
 <a class="pool-button" href="#payments">View Pool Information</a>
 
-<p class="pool-note">*Subject to confirmed agreement. GH₵2,000 is not a guaranteed return.</p>
+<p class="pool-note">*Illustrative figure only; not guaranteed. Confirm the actual duration and full pool terms before accepting deposits.</p>
 
 </div>
 
@@ -446,15 +688,15 @@ Investment involves risk. Verify the company's legal identity, authorisations, o
 
 <div class="pool-row"><span>Minimum Deposit:</span><strong>GH₵1,000.00</strong></div>
 
-<div class="pool-row"><span>Duration:</span><strong>1 Month*</strong></div>
+<div class="pool-row"><span>Duration:</span><strong>1</strong></div>
 
-<div class="pool-row"><span>Illustrative Return:</span><strong>GH₵3,500.00</strong></div>
+<div class="pool-row"><span>Expected Return:</span><strong>GH₵3,500.00*</strong></div>
 
 </div>
 
 <a class="pool-button" href="#payments">View Pool Information</a>
 
-<p class="pool-note">*Subject to confirmed agreement. GH₵3,500 is not a guaranteed return.</p>
+<p class="pool-note">*Illustrative figure only; not guaranteed. Confirm the actual duration and full pool terms before accepting deposits.</p>
 
 </div>
 
@@ -462,7 +704,7 @@ Investment involves risk. Verify the company's legal identity, authorisations, o
 
 <div class="notice">
 
-All displayed returns are illustrative figures, not promises. The one-month duration and actual investment terms must be confirmed in a written agreement. Verify company registration, applicable regulatory authorisations, fees, risks and ownership arrangements before accepting or sending money. A payment does not automatically confirm an investment.
+Displayed expected-return amounts are not promises or guarantees. Confirm the actual investment terms, duration, fees, risks, authorisations and ownership arrangements before accepting customer deposits. A payment alone does not confirm an investment.
 
 </div>
 
@@ -558,11 +800,11 @@ All displayed returns are illustrative figures, not promises. The one-month dura
 
 <h3>Paystack Checkout</h3>
 
-<p>Review the pool information and applicable terms before continuing.</p>
+<p>Review the payment details and applicable terms before continuing.</p>
 
 <div class="notice">
 
-Checkout is hosted by Paystack. This website does not automatically verify or credit payments. Keep your transaction receipt. Confirm the correct pool, amount and written agreement before paying.
+Checkout is hosted by Paystack. This website does not automatically verify or credit payments. Keep your transaction receipt.
 
 </div>
 
@@ -584,7 +826,7 @@ Checkout is hosted by Paystack. This website does not automatically verify or cr
 
 <p>TOUR GOLD INVESTMENT provides an online point of access for account services, gold investment information, payment information and customer support.</p>
 
-<p>Customers should independently verify the company's legal identity, business registration, applicable regulatory authorisations, investment terms, fees and risks.</p>
+<p>Before sending money, customers should independently verify the company's legal identity, business registration, authorisations, investment terms, fees and risks.</p>
 
 <p>No investment return is guaranteed by this website.</p>
 
@@ -616,7 +858,7 @@ Checkout is hosted by Paystack. This website does not automatically verify or cr
 
 <p>Users should read and understand all applicable terms before making a payment or financial decision.</p>
 
-<p>Investment activities involve risk. Returns are not guaranteed. Verify company details and applicable authorisations independently.</p>
+<p>Investment activities involve risk. Returns are not guaranteed. Users should verify all company details and applicable authorisations independently.</p>
 
 <p>Payments are subject to the payment provider's terms and successful transaction confirmation.</p>
 
@@ -746,7 +988,11 @@ try{
 
 const {data,error}=await supabaseClient.auth.signUp({
 
-email,password,options:{data:{full_name:name}}
+email,
+
+password,
+
+options:{data:{full_name:name}}
 
 });
 
@@ -860,9 +1106,15 @@ status.textContent=error.message||"Logout failed.";
 
 }
 
-if(window.supabase&&window.supabase.createClient)startApp();
+if(window.supabase&&window.supabase.createClient){
 
-else window.addEventListener("load",startApp,{once:true});
+startApp();
+
+}else{
+
+window.addEventListener("load",startApp,{once:true});
+
+}
 
 </script>
 
