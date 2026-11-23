@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -12,25 +14,65 @@
 
 <title>TOUR GOLD INVESTMENT</title>
 
-<meta name="description" content="TOUR GOLD INVESTMENT - Gold investment information, account services, payment information and customer support.">
+<meta name="description" content="TOUR GOLD INVESTMENT - Gold investment information, account services and customer support.">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
 
-:root{--gold:#d6ad55;--gold-light:#f4d58a;--bg:#08090b;--panel:#141519;--text:#f5f5f5;--muted:#a6a6a6;--line:#292b30}
+:root{
+
+--gold:#d6ad55;
+
+--gold-light:#f4d58a;
+
+--bg:#08090b;
+
+--panel:#141519;
+
+--text:#f5f5f5;
+
+--muted:#a6a6a6;
+
+--line:#292b30;
+
+}
 
 *{box-sizing:border-box}
 
 html{scroll-behavior:smooth}
 
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+body{
+
+margin:0;background:var(--bg);color:var(--text);
+
+font-family:Arial,Helvetica,sans-serif;line-height:1.6
+
+}
 
 a{color:inherit;text-decoration:none}
 
-header{position:sticky;top:0;z-index:100;background:rgba(8,9,11,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+header{
 
-.nav{max-width:1200px;margin:auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+position:sticky;top:0;z-index:100;
+
+background:rgba(8,9,11,.97);
+
+border-bottom:1px solid var(--line);
+
+backdrop-filter:blur(12px)
+
+}
+
+.nav{
+
+max-width:1200px;margin:auto;padding:16px 20px;
+
+display:flex;align-items:center;justify-content:space-between;
+
+gap:20px;flex-wrap:wrap
+
+}
 
 .logo{font-weight:900;color:var(--gold);font-size:18px;letter-spacing:1px}
 
@@ -50,9 +92,27 @@ section:target{display:block}
 
 main:has(section:target) #home:not(:target){display:none}
 
-.hero{position:relative;overflow:hidden;min-height:520px;padding:65px 35px;display:flex;flex-direction:column;justify-content:center;border:1px solid #554421;border-radius:22px;background:radial-gradient(circle at 80% 20%,rgba(214,173,85,.25),transparent 35%),linear-gradient(135deg,#17130b,#101115 60%,#19150d)}
+.hero{
 
-.hero::after{content:"GOLD";position:absolute;right:-25px;bottom:-65px;font-size:clamp(100px,22vw,260px);font-weight:900;color:rgba(214,173,85,.045);pointer-events:none}
+position:relative;overflow:hidden;min-height:520px;padding:65px 35px;
+
+display:flex;flex-direction:column;justify-content:center;
+
+border:1px solid #554421;border-radius:22px;
+
+background:radial-gradient(circle at 80% 20%,rgba(214,173,85,.25),transparent 35%),linear-gradient(135deg,#17130b,#101115 60%,#19150d)
+
+}
+
+.hero::after{
+
+content:"GOLD";position:absolute;right:-25px;bottom:-65px;
+
+font-size:clamp(100px,22vw,260px);font-weight:900;
+
+color:rgba(214,173,85,.045);pointer-events:none
+
+}
 
 .tag{color:var(--gold-light);font-size:12px;font-weight:bold;letter-spacing:3px}
 
@@ -68,13 +128,27 @@ h3{color:var(--gold-light)}
 
 .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
 
-.btn{display:inline-block;border:0;border-radius:8px;padding:14px 23px;background:var(--gold);color:#111;font-weight:bold;cursor:pointer;text-align:center;font-size:14px}
+.btn{
+
+display:inline-block;border:0;border-radius:8px;padding:14px 23px;
+
+background:var(--gold);color:#111;font-weight:bold;cursor:pointer;
+
+text-align:center;font-size:14px
+
+}
 
 .btn:hover{background:var(--gold-light)}
 
 .btn.secondary{background:transparent;color:var(--gold);border:1px solid var(--gold)}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:25px}
+.grid{
+
+display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:18px;margin-top:25px
+
+}
 
 .card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:24px}
 
@@ -86,17 +160,39 @@ h3{color:var(--gold-light)}
 
 .pool-heading h2{margin:0;color:white;font-size:29px}
 
-.pool-card{background:linear-gradient(160deg,#191919,#101010);border:1px solid #3b3322;border-radius:20px;padding:27px 22px;text-align:center;box-shadow:0 8px 25px rgba(0,0,0,.25)}
+.pool-card{
+
+background:linear-gradient(160deg,#191919,#101010);
+
+border:1px solid #3b3322;border-radius:20px;padding:27px 22px;
+
+text-align:center;box-shadow:0 8px 25px rgba(0,0,0,.25)
+
+}
 
 .pool-card:hover{border-color:var(--gold);transform:translateY(-3px);transition:.25s}
 
-.gold-icon{width:75px;height:65px;margin:5px auto 18px;display:flex;align-items:center;justify-content:center;font-size:42px;filter:drop-shadow(0 0 15px rgba(214,173,85,.25))}
+.gold-icon{
+
+width:75px;height:65px;margin:5px auto 18px;
+
+display:flex;align-items:center;justify-content:center;font-size:42px;
+
+filter:drop-shadow(0 0 15px rgba(214,173,85,.25))
+
+}
 
 .pool-card h3{font-size:24px;color:#e9b63e;margin:8px 0 18px}
 
 .pool-details{background:#0b0b0b;border-radius:13px;padding:17px;text-align:left;margin:20px 0}
 
-.pool-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 0;font-size:14px;border-bottom:1px solid #222}
+.pool-row{
+
+display:flex;justify-content:space-between;align-items:center;
+
+gap:12px;padding:9px 0;font-size:14px;border-bottom:1px solid #222
+
+}
 
 .pool-row:last-child{border-bottom:0}
 
@@ -104,7 +200,15 @@ h3{color:var(--gold-light)}
 
 .pool-row strong{color:#f5f5f5;text-align:right}
 
-.pool-button{display:block;width:100%;padding:16px;border-radius:11px;background:linear-gradient(90deg,#f3b51b,#df790c);color:#151515;font-size:16px;font-weight:900;text-align:center;margin-top:20px}
+.pool-button{
+
+display:block;width:100%;padding:16px;border-radius:11px;
+
+background:linear-gradient(90deg,#f3b51b,#df790c);
+
+color:#151515;font-size:16px;font-weight:900;text-align:center;margin-top:20px
+
+}
 
 .pool-button:hover{filter:brightness(1.1)}
 
@@ -112,13 +216,25 @@ h3{color:var(--gold-light)}
 
 form{display:grid;gap:13px;max-width:480px}
 
-input,textarea,select{width:100%;padding:14px;border-radius:8px;border:1px solid #383a40;background:#0d0f13;color:white;font-size:15px}
+input,textarea,select{
+
+width:100%;padding:14px;border-radius:8px;border:1px solid #383a40;
+
+background:#0d0f13;color:white;font-size:15px
+
+}
 
 textarea{min-height:110px;resize:vertical}
 
 label{font-size:13px;color:#ccc}
 
-.notice{padding:15px;border-radius:9px;background:#201b10;border:1px solid #574522;color:#e6d3a5;font-size:13px;margin:18px 0}
+.notice{
+
+padding:15px;border-radius:9px;background:#201b10;
+
+border:1px solid #574522;color:#e6d3a5;font-size:13px;margin:18px 0
+
+}
 
 .status{margin-top:12px;color:var(--gold-light);font-size:14px}
 
@@ -182,7 +298,7 @@ main{padding:18px 14px 45px}
 
 <h1>Secure Your Future With<br><span class="gold">Tangible Assets</span></h1>
 
-<p>Exclusive access to physical gold investment information and premium heritage tours. Explore tangible assets, account services and payment information through TOUR GOLD INVESTMENT.</p>
+<p>Explore gold investment information, account services and premium investment pool details through TOUR GOLD INVESTMENT.</p>
 
 <div class="actions">
 
@@ -202,7 +318,7 @@ main{padding:18px 14px 45px}
 
 <h3>Exclusive Tours</h3>
 
-<p>Experience the source of your wealth firsthand through heritage and educational tour information.</p>
+<p>Explore heritage and educational tour information.</p>
 
 </div>
 
@@ -212,7 +328,7 @@ main{padding:18px 14px 45px}
 
 <h3>Physical Gold</h3>
 
-<p>Learn about physical gold, ownership arrangements and available investment information.</p>
+<p>Learn about physical gold, ownership arrangements and investment information.</p>
 
 </div>
 
@@ -222,7 +338,7 @@ main{padding:18px 14px 45px}
 
 <h3>Secure Account</h3>
 
-<p>Access your account through our client portal and review your account information.</p>
+<p>Access your account through our client portal.</p>
 
 </div>
 
@@ -232,7 +348,7 @@ main{padding:18px 14px 45px}
 
 <h3>Premium Experience</h3>
 
-<p>Explore a premium gold investment information experience designed around clarity and transparency.</p>
+<p>A premium gold investment information experience designed around clarity and transparency.</p>
 
 </div>
 
@@ -240,7 +356,7 @@ main{padding:18px 14px 45px}
 
 <div class="notice">
 
-Investment involves risk. Verify the company's legal identity, authorisations, ownership arrangements, investment terms, fees and risks before making any financial decision. No profit or return is guaranteed.
+Investment involves risk. Verify the company's legal identity, authorisations, ownership arrangements, terms and risks before making any financial decision. No profit or return is guaranteed.
 
 </div>
 
@@ -248,13 +364,9 @@ Investment involves risk. Verify the company's legal identity, authorisations, o
 
 <section id="pools">
 
-<div class="pool-heading">
+<div class="pool-heading"><h2>Gold Investment Pools</h2></div>
 
-<h2>Gold Investment Pools</h2>
-
-</div>
-
-<p class="muted">Explore available gold pool information. Review and verify actual terms before proceeding.</p>
+<p class="muted">Explore available gold pool information and review the terms before proceeding.</p>
 
 <div class="grid">
 
@@ -268,15 +380,15 @@ Investment involves risk. Verify the company's legal identity, authorisations, o
 
 <div class="pool-row"><span>Minimum Deposit:</span><strong>GH₵100.00</strong></div>
 
-<div class="pool-row"><span>Duration:</span><strong>Confirm Terms</strong></div>
+<div class="pool-row"><span>Duration:</span><strong>1 Month*</strong></div>
 
-<div class="pool-row"><span>Expected Return:</span><strong>GH₵430.00*</strong></div>
+<div class="pool-row"><span>Illustrative Return:</span><strong>GH₵430.00</strong></div>
 
 </div>
 
 <a class="pool-button" href="#payments">View &amp; Invest</a>
 
-<p class="pool-note">*Illustrative figure only; not guaranteed. Verify all terms.</p>
+<p class="pool-note">*Subject to confirmation. Return is illustrative, not guaranteed.</p>
 
 </div>
 
@@ -290,15 +402,15 @@ Investment involves risk. Verify the company's legal identity, authorisations, o
 
 <div class="pool-row"><span>Minimum Deposit:</span><strong>GH₵50.00</strong></div>
 
-<div class="pool-row"><span>Duration:</span><strong>Confirm Terms</strong></div>
+<div class="pool-row"><span>Duration:</span><strong>1 Month*</strong></div>
 
-<div class="pool-row"><span>Expected Return:</span><strong>GH₵150.00*</strong></div>
+<div class="pool-row"><span>Illustrative Return:</span><strong>GH₵150.00</strong></div>
 
 </div>
 
 <a class="pool-button" href="#payments">View &amp; Invest</a>
 
-<p class="pool-note">*Illustrative figure only; not guaranteed. Verify all terms.</p>
+<p class="pool-note">*Subject to confirmation. Return is illustrative, not guaranteed.</p>
 
 </div>
 
@@ -312,15 +424,15 @@ Investment involves risk. Verify the company's legal identity, authorisations, o
 
 <div class="pool-row"><span>Minimum Deposit:</span><strong>GH₵500.00</strong></div>
 
-<div class="pool-row"><span>Duration:</span><strong>Confirm Terms</strong></div>
+<div class="pool-row"><span>Duration:</span><strong>1 Month*</strong></div>
 
-<div class="pool-row"><span>Expected Return:</span><strong>GH₵2,000.00*</strong></div>
+<div class="pool-row"><span>Illustrative Return:</span><strong>GH₵2,000.00</strong></div>
 
 </div>
 
 <a class="pool-button" href="#payments">View Pool Information</a>
 
-<p class="pool-note">*Illustrative figure only; not guaranteed. Confirm the duration and full pool terms before accepting deposits.</p>
+<p class="pool-note">*Subject to confirmed agreement. GH₵2,000 is not a guaranteed return.</p>
 
 </div>
 
@@ -334,15 +446,15 @@ Investment involves risk. Verify the company's legal identity, authorisations, o
 
 <div class="pool-row"><span>Minimum Deposit:</span><strong>GH₵1,000.00</strong></div>
 
-<div class="pool-row"><span>Duration:</span><strong>Confirm Terms</strong></div>
+<div class="pool-row"><span>Duration:</span><strong>1 Month*</strong></div>
 
-<div class="pool-row"><span>Expected Return:</span><strong>GH₵3,500.00*</strong></div>
+<div class="pool-row"><span>Illustrative Return:</span><strong>GH₵3,500.00</strong></div>
 
 </div>
 
 <a class="pool-button" href="#payments">View Pool Information</a>
 
-<p class="pool-note">*Illustrative figure only; not guaranteed. Confirm the duration and full pool terms before accepting deposits.</p>
+<p class="pool-note">*Subject to confirmed agreement. GH₵3,500 is not a guaranteed return.</p>
 
 </div>
 
@@ -350,7 +462,7 @@ Investment involves risk. Verify the company's legal identity, authorisations, o
 
 <div class="notice">
 
-Displayed expected-return amounts are not promises or guarantees. Confirm the actual investment terms, duration, fees, risks, authorisations and ownership arrangements before accepting customer deposits. A payment alone does not confirm an investment.
+All displayed returns are illustrative figures, not promises. The one-month duration and actual investment terms must be confirmed in a written agreement. Verify company registration, applicable regulatory authorisations, fees, risks and ownership arrangements before accepting or sending money. A payment does not automatically confirm an investment.
 
 </div>
 
@@ -446,11 +558,11 @@ Displayed expected-return amounts are not promises or guarantees. Confirm the ac
 
 <h3>Paystack Checkout</h3>
 
-<p>Review the payment details and applicable terms before continuing.</p>
+<p>Review the pool information and applicable terms before continuing.</p>
 
 <div class="notice">
 
-Checkout is hosted by Paystack. This website does not automatically verify or credit payments. Keep your transaction receipt.
+Checkout is hosted by Paystack. This website does not automatically verify or credit payments. Keep your transaction receipt. Confirm the correct pool, amount and written agreement before paying.
 
 </div>
 
@@ -472,7 +584,7 @@ Checkout is hosted by Paystack. This website does not automatically verify or cr
 
 <p>TOUR GOLD INVESTMENT provides an online point of access for account services, gold investment information, payment information and customer support.</p>
 
-<p>Before sending money, customers should independently verify the company's legal identity, business registration, authorisations, investment terms, fees and risks.</p>
+<p>Customers should independently verify the company's legal identity, business registration, applicable regulatory authorisations, investment terms, fees and risks.</p>
 
 <p>No investment return is guaranteed by this website.</p>
 
@@ -504,7 +616,7 @@ Checkout is hosted by Paystack. This website does not automatically verify or cr
 
 <p>Users should read and understand all applicable terms before making a payment or financial decision.</p>
 
-<p>Investment activities involve risk. Returns are not guaranteed. Users should verify all company details and applicable authorisations independently.</p>
+<p>Investment activities involve risk. Returns are not guaranteed. Verify company details and applicable authorisations independently.</p>
 
 <p>Payments are subject to the payment provider's terms and successful transaction confirmation.</p>
 
@@ -554,197 +666,197 @@ document.getElementById("year").textContent=new Date().getFullYear();
 
 function showForm(which){
 
- document.getElementById("signupForm").style.display=which==="signup"?"grid":"none";
+document.getElementById("signupForm").style.display=which==="signup"?"grid":"none";
 
- document.getElementById("loginForm").style.display=which==="login"?"grid":"none";
+document.getElementById("loginForm").style.display=which==="login"?"grid":"none";
 
- document.getElementById("authStatus").textContent="";
+document.getElementById("authStatus").textContent="";
 
 }
 
 function setStatus(message){
 
- document.getElementById("authStatus").textContent=message;
+document.getElementById("authStatus").textContent=message;
 
 }
 
 async function startApp(){
 
- if(!window.supabase||!window.supabase.createClient){
+if(!window.supabase||!window.supabase.createClient){
 
-  setStatus("Account service is temporarily unavailable. Please refresh and try again.");
+setStatus("Account service is temporarily unavailable. Please refresh and try again.");
 
-  return;
+return;
 
- }
+}
 
- try{
+try{
 
-  supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 
-  const {data,error}=await supabaseClient.auth.getSession();
+const {data,error}=await supabaseClient.auth.getSession();
 
-  if(error)throw error;
+if(error)throw error;
 
-  updateAccount(data.session);
+updateAccount(data.session);
 
-  supabaseClient.auth.onAuthStateChange((_event,session)=>updateAccount(session));
+supabaseClient.auth.onAuthStateChange((_event,session)=>updateAccount(session));
 
- }catch(error){
+}catch(error){
 
-  console.error("Account startup error:",error);
+console.error("Account startup error:",error);
 
-  setStatus("Could not connect to the account service. Please try again.");
+setStatus("Could not connect to the account service. Please try again.");
 
- }
+}
 
 }
 
 function updateAccount(session){
 
- const signedIn=!!session;
+const signedIn=!!session;
 
- document.getElementById("authArea").style.display=signedIn?"none":"block";
+document.getElementById("authArea").style.display=signedIn?"none":"block";
 
- document.getElementById("dashboard").style.display=signedIn?"block":"none";
+document.getElementById("dashboard").style.display=signedIn?"block":"none";
 
- if(signedIn)document.getElementById("userEmail").textContent=session.user.email||"Signed in";
+if(signedIn){
+
+document.getElementById("userEmail").textContent=session.user.email||"Signed in";
+
+}
 
 }
 
 async function signup(event){
 
- event.preventDefault();
+event.preventDefault();
 
- if(!supabaseClient)return setStatus("Account service is not ready. Refresh the page.");
+if(!supabaseClient)return setStatus("Account service is not ready. Refresh the page.");
 
- const name=document.getElementById("signupName").value.trim();
+const name=document.getElementById("signupName").value.trim();
 
- const email=document.getElementById("signupEmail").value.trim();
+const email=document.getElementById("signupEmail").value.trim();
 
- const password=document.getElementById("signupPassword").value;
+const password=document.getElementById("signupPassword").value;
 
- setStatus("Creating your account...");
+setStatus("Creating your account...");
 
- try{
+try{
 
-  const {data,error}=await supabaseClient.auth.signUp({
+const {data,error}=await supabaseClient.auth.signUp({
 
-   email,
+email,password,options:{data:{full_name:name}}
 
-   password,
+});
 
-   options:{data:{full_name:name}}
+if(error)throw error;
 
-  });
+if(data.session){
 
-  if(error)throw error;
+updateAccount(data.session);
 
-  if(data.session){
+setStatus("Your account has been created.");
 
-   updateAccount(data.session);
+}else{
 
-   setStatus("Your account has been created.");
+setStatus("Registration received. Check your email for a confirmation link if email confirmation is enabled.");
 
-  }else{
+}
 
-   setStatus("Registration received. Check your email for a confirmation link if email confirmation is enabled.");
+}catch(error){
 
-  }
+setStatus(error.message||"Registration failed. Please try again.");
 
- }catch(error){
-
-  setStatus(error.message||"Registration failed. Please try again.");
-
- }
+}
 
 }
 
 async function login(event){
 
- event.preventDefault();
+event.preventDefault();
 
- if(!supabaseClient)return setStatus("Account service is not ready. Refresh the page.");
+if(!supabaseClient)return setStatus("Account service is not ready. Refresh the page.");
 
- const email=document.getElementById("loginEmail").value.trim();
+const email=document.getElementById("loginEmail").value.trim();
 
- const password=document.getElementById("loginPassword").value;
+const password=document.getElementById("loginPassword").value;
 
- setStatus("Logging in...");
+setStatus("Logging in...");
 
- try{
+try{
 
-  const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
+const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
 
-  if(error)throw error;
+if(error)throw error;
 
-  updateAccount(data.session);
+updateAccount(data.session);
 
-  setStatus("Login successful.");
+setStatus("Login successful.");
 
- }catch(error){
+}catch(error){
 
-  setStatus(error.message||"Login failed. Check your details.");
+setStatus(error.message||"Login failed. Check your details.");
 
- }
+}
 
 }
 
 async function resetPassword(){
 
- if(!supabaseClient)return setStatus("Account service is not ready. Refresh the page.");
+if(!supabaseClient)return setStatus("Account service is not ready. Refresh the page.");
 
- const email=document.getElementById("loginEmail").value.trim();
+const email=document.getElementById("loginEmail").value.trim();
 
- if(!email)return setStatus("Enter your email address first.");
+if(!email)return setStatus("Enter your email address first.");
 
- setStatus("Sending password reset email...");
+setStatus("Sending password reset email...");
 
- try{
+try{
 
-  const {error}=await supabaseClient.auth.resetPasswordForEmail(email,{
+const {error}=await supabaseClient.auth.resetPasswordForEmail(email,{
 
-   redirectTo:window.location.origin+window.location.pathname+"#account"
+redirectTo:window.location.origin+window.location.pathname+"#account"
 
-  });
+});
 
-  if(error)throw error;
+if(error)throw error;
 
-  setStatus("If the email is registered, a password reset link will be sent.");
+setStatus("If the email is registered, a password reset link will be sent.");
 
- }catch(error){
+}catch(error){
 
-  setStatus(error.message||"Could not send reset email.");
+setStatus(error.message||"Could not send reset email.");
 
- }
+}
 
 }
 
 async function logout(){
 
- if(!supabaseClient)return;
+if(!supabaseClient)return;
 
- const status=document.getElementById("dashboardStatus");
+const status=document.getElementById("dashboardStatus");
 
- try{
+try{
 
-  const {error}=await supabaseClient.auth.signOut();
+const {error}=await supabaseClient.auth.signOut();
 
-  if(error)throw error;
+if(error)throw error;
 
-  updateAccount(null);
+updateAccount(null);
 
-  showForm("login");
+showForm("login");
 
-  status.textContent="You have logged out.";
+status.textContent="You have logged out.";
 
-  location.hash="account";
+location.hash="account";
 
- }catch(error){
+}catch(error){
 
-  status.textContent=error.message||"Logout failed.";
+status.textContent=error.message||"Logout failed.";
 
- }
+}
 
 }
 
