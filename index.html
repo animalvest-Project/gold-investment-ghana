@@ -1,15 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -24,557 +14,689 @@
 
 <title>TOUR GOLD INVESTMENT</title>
 
-<meta name="description" content="TOUR GOLD INVESTMENT - Gold investment information, account access, payment information and customer support.">
+<meta name="description" content="TOUR GOLD INVESTMENT - Gold investment information, account services, payment information and customer support.">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
 
-:root{
+:root {
 
-  --gold:#d6ad55;
+  --gold: #d6ad55;
 
-  --gold2:#f4d58a;
+  --gold-light: #f4d58a;
 
-  --bg:#090a0d;
+  --bg: #08090b;
 
-  --panel:#14161b;
+  --panel: #141519;
 
-  --text:#f5f5f5;
+  --text: #f5f5f5;
 
-  --muted:#a6a6a6;
+  --muted: #a6a6a6;
 
-  --line:#292b30;
-
-}
-
-*{box-sizing:border-box}
-
-html{scroll-behavior:smooth}
-
-body{
-
-  margin:0;
-
-  background:var(--bg);
-
-  color:var(--text);
-
-  font-family:Arial,Helvetica,sans-serif;
-
-  line-height:1.6;
+  --line: #292b30;
 
 }
 
-a{color:inherit;text-decoration:none}
+* {
 
-header{
-
-  position:sticky;
-
-  top:0;
-
-  z-index:20;
-
-  background:rgba(9,10,13,.97);
-
-  border-bottom:1px solid var(--line);
+  box-sizing: border-box;
 
 }
 
-.nav{
+html {
 
-  max-width:1150px;
-
-  margin:auto;
-
-  padding:15px 20px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:15px;
-
-  flex-wrap:wrap;
+  scroll-behavior: smooth;
 
 }
 
-.logo{
+body {
 
-  font-weight:900;
+  margin: 0;
 
-  color:var(--gold);
+  background: var(--bg);
 
-  font-size:19px;
+  color: var(--text);
 
-}
+  font-family: Arial, Helvetica, sans-serif;
 
-nav{
-
-  display:flex;
-
-  gap:17px;
-
-  flex-wrap:wrap;
+  line-height: 1.6;
 
 }
 
-nav a{
+a {
 
-  font-size:13px;
+  color: inherit;
 
-  color:#ddd;
-
-}
-
-nav a:hover{color:var(--gold)}
-
-main{
-
-  max-width:1150px;
-
-  margin:auto;
-
-  padding:25px 20px 60px;
+  text-decoration: none;
 
 }
 
-section{
+header {
 
-  display:none;
+  position: sticky;
 
-  scroll-margin-top:100px;
+  top: 0;
 
-}
+  z-index: 100;
 
-section:target{display:block}
+  background: rgba(8,9,11,.97);
 
-#home{display:block}
+  border-bottom: 1px solid var(--line);
 
-main:has(section:target) #home:not(:target){
-
-  display:none;
+  backdrop-filter: blur(12px);
 
 }
 
-.hero{
+.nav {
 
-  min-height:480px;
+  max-width: 1200px;
 
-  padding:65px 25px;
+  margin: auto;
 
-  display:flex;
+  padding: 16px 20px;
 
-  flex-direction:column;
+  display: flex;
 
-  justify-content:center;
+  align-items: center;
 
-  border:1px solid #554421;
+  justify-content: space-between;
 
-  border-radius:20px;
+  gap: 20px;
+
+  flex-wrap: wrap;
+
+}
+
+.logo {
+
+  font-weight: 900;
+
+  color: var(--gold);
+
+  font-size: 18px;
+
+  letter-spacing: 1px;
+
+}
+
+nav {
+
+  display: flex;
+
+  gap: 18px;
+
+  flex-wrap: wrap;
+
+}
+
+nav a {
+
+  font-size: 13px;
+
+  color: #ddd;
+
+}
+
+nav a:hover {
+
+  color: var(--gold);
+
+}
+
+main {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 25px 20px 60px;
+
+}
+
+section {
+
+  display: none;
+
+  scroll-margin-top: 100px;
+
+}
+
+section:target {
+
+  display: block;
+
+}
+
+#home {
+
+  display: block;
+
+}
+
+main:has(section:target) #home:not(:target) {
+
+  display: none;
+
+}
+
+/* HERO */
+
+.hero {
+
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 520px;
+
+  padding: 65px 35px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  border: 1px solid #554421;
+
+  border-radius: 22px;
 
   background:
 
-    radial-gradient(circle at 85% 15%,rgba(214,173,85,.20),transparent 35%),
+    radial-gradient(circle at 80% 20%, rgba(214,173,85,.25), transparent 35%),
 
-    linear-gradient(135deg,#17130b,#101115 65%,#19150d);
-
-}
-
-.tag{
-
-  color:var(--gold2);
-
-  font-size:12px;
-
-  font-weight:bold;
-
-  letter-spacing:3px;
+    linear-gradient(135deg, #17130b, #101115 60%, #19150d);
 
 }
 
-h1{
+.hero::after {
 
-  font-size:clamp(38px,7vw,68px);
+  content: "GOLD";
 
-  line-height:1.08;
+  position: absolute;
 
-  margin:15px 0;
+  right: -25px;
 
-}
+  bottom: -65px;
 
-h2{
+  font-size: clamp(100px, 22vw, 260px);
 
-  color:var(--gold2);
+  font-weight: 900;
 
-  font-size:29px;
+  color: rgba(214,173,85,.045);
 
-}
-
-h3{color:var(--gold2)}
-
-.hero p{
-
-  max-width:620px;
-
-  color:#c5c5c5;
-
-  font-size:17px;
+  pointer-events: none;
 
 }
 
-.actions{
+.tag {
 
-  display:flex;
+  color: var(--gold-light);
 
-  gap:12px;
+  font-size: 12px;
 
-  flex-wrap:wrap;
+  font-weight: bold;
 
-  margin-top:20px;
-
-}
-
-.btn{
-
-  display:inline-block;
-
-  border:0;
-
-  border-radius:8px;
-
-  padding:13px 22px;
-
-  background:var(--gold);
-
-  color:#111;
-
-  font-weight:bold;
-
-  cursor:pointer;
-
-  text-align:center;
-
-  font-size:14px;
+  letter-spacing: 3px;
 
 }
 
-.btn:hover{background:var(--gold2)}
+h1 {
 
-.btn.secondary{
+  font-size: clamp(38px, 7vw, 70px);
 
-  background:transparent;
+  line-height: 1.08;
 
-  color:var(--gold);
+  margin: 18px 0;
 
-  border:1px solid var(--gold);
-
-}
-
-.grid{
-
-  display:grid;
-
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
-  gap:17px;
-
-  margin-top:25px;
+  max-width: 850px;
 
 }
 
-.card,.panel{
+h2 {
 
-  background:var(--panel);
+  color: var(--gold-light);
 
-  border:1px solid var(--line);
-
-  border-radius:13px;
-
-  padding:22px;
+  font-size: 30px;
 
 }
 
-.card p,.muted{color:var(--muted)}
+h3 {
 
-.gold{color:var(--gold)}
-
-form{
-
-  display:grid;
-
-  gap:13px;
-
-  max-width:480px;
+  color: var(--gold-light);
 
 }
 
-input,textarea,select{
+.gold {
 
-  width:100%;
-
-  padding:14px;
-
-  border-radius:8px;
-
-  border:1px solid #383a40;
-
-  background:#0d0f13;
-
-  color:white;
-
-  font-size:15px;
+  color: var(--gold);
 
 }
 
-textarea{
+.hero p {
 
-  min-height:110px;
+  max-width: 650px;
 
-  resize:vertical;
+  color: #c5c5c5;
 
-}
-
-label{
-
-  font-size:13px;
-
-  color:#ccc;
+  font-size: 17px;
 
 }
 
-.notice{
+.actions {
 
-  padding:13px;
+  display: flex;
 
-  border-radius:8px;
+  gap: 12px;
 
-  background:#201b10;
+  flex-wrap: wrap;
 
-  border:1px solid #574522;
-
-  color:#e6d3a5;
-
-  font-size:13px;
-
-  margin:15px 0;
+  margin-top: 22px;
 
 }
 
-.status{
+.btn {
 
-  margin-top:12px;
+  display: inline-block;
 
-  color:var(--gold2);
+  border: 0;
 
-  font-size:14px;
+  border-radius: 8px;
 
-}
+  padding: 14px 23px;
 
-/* GOLD INVESTMENT POOLS */
+  background: var(--gold);
 
-.pool-heading{
+  color: #111;
 
-  margin-top:15px;
+  font-weight: bold;
 
-  margin-bottom:10px;
+  cursor: pointer;
 
-  border-left:5px solid var(--gold);
+  text-align: center;
 
-  padding-left:16px;
-
-}
-
-.pool-heading h2{
-
-  margin:0;
-
-  color:white;
-
-  font-size:27px;
+  font-size: 14px;
 
 }
 
-.pool-card{
+.btn:hover {
 
-  background:#151515;
-
-  border:1px solid #292929;
-
-  border-radius:22px;
-
-  padding:28px 22px;
-
-  text-align:center;
-
-  margin-top:22px;
-
-  box-shadow:0 8px 25px rgba(0,0,0,.18);
+  background: var(--gold-light);
 
 }
 
-.gold-icon{
+.btn.secondary {
 
-  width:75px;
+  background: transparent;
 
-  height:60px;
+  color: var(--gold);
 
-  margin:5px auto 20px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  font-size:38px;
-
-  filter:drop-shadow(0 0 15px rgba(214,173,85,.25));
+  border: 1px solid var(--gold);
 
 }
 
-.pool-card h3{
+/* FEATURE CARDS */
 
-  font-size:27px;
+.grid {
 
-  color:#e9b63e;
+  display: grid;
 
-  margin:8px 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 
-}
+  gap: 18px;
 
-.pool-details{
-
-  background:#0d0d0d;
-
-  border-radius:13px;
-
-  padding:18px;
-
-  text-align:left;
-
-  margin:20px 0;
+  margin-top: 25px;
 
 }
 
-.pool-row{
+.card,
 
-  display:flex;
+.panel {
 
-  justify-content:space-between;
+  background: var(--panel);
 
-  align-items:center;
+  border: 1px solid var(--line);
 
-  gap:12px;
+  border-radius: 15px;
 
-  padding:8px 0;
-
-  font-size:15px;
+  padding: 24px;
 
 }
 
-.pool-row span{color:#aaa}
+.card p,
 
-.pool-row strong{
+.muted {
 
-  color:#f5f5f5;
-
-  text-align:right;
+  color: var(--muted);
 
 }
 
-.pool-return{
+.feature-icon {
 
-  color:#e9b63e !important;
+  font-size: 30px;
 
-  font-size:19px;
-
-}
-
-.pool-button{
-
-  display:block;
-
-  width:100%;
-
-  padding:17px;
-
-  border-radius:12px;
-
-  background:linear-gradient(90deg,#f3b51b,#df790c);
-
-  color:#151515;
-
-  font-size:19px;
-
-  font-weight:900;
-
-  text-align:center;
-
-  margin-top:22px;
+  margin-bottom: 10px;
 
 }
 
-.pool-button:hover{filter:brightness(1.1)}
+/* GOLD POOLS */
 
-.pool-note{
+.pool-heading {
 
-  font-size:12px;
+  margin: 20px 0 10px;
 
-  color:#999;
+  border-left: 5px solid var(--gold);
 
-  text-align:center;
-
-  margin-top:12px;
+  padding-left: 16px;
 
 }
 
-footer{
+.pool-heading h2 {
 
-  border-top:1px solid var(--line);
+  margin: 0;
 
-  padding:25px 20px;
+  color: white;
 
-  text-align:center;
-
-  color:#888;
-
-  font-size:13px;
+  font-size: 29px;
 
 }
 
-.small{
+.pool-card {
 
-  font-size:12px;
+  background: linear-gradient(160deg, #191919, #101010);
 
-  color:#999;
+  border: 1px solid #3b3322;
 
-}
+  border-radius: 20px;
 
-hr{
+  padding: 27px 22px;
 
-  border:0;
+  text-align: center;
 
-  border-top:1px solid var(--line);
-
-  margin:25px 0;
+  box-shadow: 0 8px 25px rgba(0,0,0,.25);
 
 }
 
-@media(max-width:600px){
+.pool-card:hover {
 
-  .nav{justify-content:center}
+  border-color: var(--gold);
 
-  nav{justify-content:center;gap:12px}
+  transform: translateY(-3px);
 
-  .hero{padding:45px 20px;min-height:420px}
+  transition: .25s;
 
-  main{padding:18px 14px 45px}
+}
 
-  .pool-card{padding:25px 17px}
+.gold-icon {
+
+  width: 75px;
+
+  height: 65px;
+
+  margin: 5px auto 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 42px;
+
+  filter: drop-shadow(0 0 15px rgba(214,173,85,.25));
+
+}
+
+.pool-card h3 {
+
+  font-size: 24px;
+
+  color: #e9b63e;
+
+  margin: 8px 0 18px;
+
+}
+
+.pool-details {
+
+  background: #0b0b0b;
+
+  border-radius: 13px;
+
+  padding: 17px;
+
+  text-align: left;
+
+  margin: 20px 0;
+
+}
+
+.pool-row {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 9px 0;
+
+  font-size: 14px;
+
+  border-bottom: 1px solid #222;
+
+}
+
+.pool-row:last-child {
+
+  border-bottom: 0;
+
+}
+
+.pool-row span {
+
+  color: #aaa;
+
+}
+
+.pool-row strong {
+
+  color: #f5f5f5;
+
+  text-align: right;
+
+}
+
+.pool-button {
+
+  display: block;
+
+  width: 100%;
+
+  padding: 16px;
+
+  border-radius: 11px;
+
+  background: linear-gradient(90deg, #f3b51b, #df790c);
+
+  color: #151515;
+
+  font-size: 16px;
+
+  font-weight: 900;
+
+  text-align: center;
+
+  margin-top: 20px;
+
+}
+
+.pool-button:hover {
+
+  filter: brightness(1.1);
+
+}
+
+.pool-note {
+
+  font-size: 12px;
+
+  color: #999;
+
+  text-align: center;
+
+  margin-top: 12px;
+
+}
+
+/* FORMS */
+
+form {
+
+  display: grid;
+
+  gap: 13px;
+
+  max-width: 480px;
+
+}
+
+input,
+
+textarea,
+
+select {
+
+  width: 100%;
+
+  padding: 14px;
+
+  border-radius: 8px;
+
+  border: 1px solid #383a40;
+
+  background: #0d0f13;
+
+  color: white;
+
+  font-size: 15px;
+
+}
+
+textarea {
+
+  min-height: 110px;
+
+  resize: vertical;
+
+}
+
+label {
+
+  font-size: 13px;
+
+  color: #ccc;
+
+}
+
+.notice {
+
+  padding: 15px;
+
+  border-radius: 9px;
+
+  background: #201b10;
+
+  border: 1px solid #574522;
+
+  color: #e6d3a5;
+
+  font-size: 13px;
+
+  margin: 18px 0;
+
+}
+
+.status {
+
+  margin-top: 12px;
+
+  color: var(--gold-light);
+
+  font-size: 14px;
+
+}
+
+.small {
+
+  font-size: 12px;
+
+  color: #999;
+
+}
+
+hr {
+
+  border: 0;
+
+  border-top: 1px solid var(--line);
+
+  margin: 25px 0;
+
+}
+
+footer {
+
+  border-top: 1px solid var(--line);
+
+  padding: 30px 20px;
+
+  text-align: center;
+
+  color: #888;
+
+  font-size: 13px;
+
+}
+
+@media(max-width:600px) {
+
+  .nav {
+
+    justify-content: center;
+
+  }
+
+  nav {
+
+    justify-content: center;
+
+    gap: 12px;
+
+  }
+
+  .hero {
+
+    padding: 45px 20px;
+
+    min-height: 430px;
+
+  }
+
+  main {
+
+    padding: 18px 14px 45px;
+
+  }
+
+  .pool-card {
+
+    padding: 25px 17px;
+
+  }
 
 }
 
@@ -628,17 +750,21 @@ hr{
 
     <h1>
 
-      Invest Today.<br>
+      Secure Your Future With<br>
 
-      <span class="gold">Grow Tomorrow.</span>
+      <span class="gold">Tangible Assets</span>
 
     </h1>
 
     <p>
 
-      Explore gold investment information, account services
+      Exclusive access to physical gold investment information
 
-      and payment information through TOUR GOLD INVESTMENT.
+      and premium heritage tours. Explore tangible assets,
+
+      account services and payment information through
+
+      TOUR GOLD INVESTMENT.
 
     </p>
 
@@ -646,13 +772,13 @@ hr{
 
       <a class="btn" href="#pools">
 
-        Explore Gold Pools
+        Start Investing
 
       </a>
 
-      <a class="btn secondary" href="#about">
+      <a class="btn secondary" href="#account">
 
-        Learn More
+        Client Portal
 
       </a>
 
@@ -660,15 +786,21 @@ hr{
 
   </div>
 
+  <!-- FOUR HOMEPAGE FEATURES -->
+
   <div class="grid">
 
     <div class="card">
 
-      <h3>Secure Account Access</h3>
+      <div class="feature-icon">✦</div>
+
+      <h3>Exclusive Tours</h3>
 
       <p>
 
-        Create an account and access your account information.
+        Experience the source of your wealth firsthand
+
+        through heritage and educational tour information.
 
       </p>
 
@@ -676,11 +808,15 @@ hr{
 
     <div class="card">
 
-      <h3>Gold Pool Information</h3>
+      <div class="feature-icon">🥇</div>
+
+      <h3>Physical Gold</h3>
 
       <p>
 
-        Review available gold investment information and terms.
+        Learn about physical gold, ownership arrangements
+
+        and available investment information.
 
       </p>
 
@@ -688,11 +824,31 @@ hr{
 
     <div class="card">
 
-      <h3>Customer Support</h3>
+      <div class="feature-icon">🔐</div>
+
+      <h3>Secure Vault</h3>
 
       <p>
 
-        Contact our support team if you need assistance.
+        Access your account through our client portal
+
+        and review your account information.
+
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <div class="feature-icon">◆</div>
+
+      <h3>Premium Experience</h3>
+
+      <p>
+
+        Explore a premium gold investment information
+
+        experience designed around clarity and transparency.
 
       </p>
 
@@ -702,37 +858,39 @@ hr{
 
   <div class="notice">
 
-    Investment involves risk. Review the company's legal identity,
+    Investment involves risk. Verify the company's legal identity,
 
-    authorisations, investment terms, fees and risks before making
+    authorisations, ownership arrangements, investment terms,
 
-    any financial decision. No profit or return is guaranteed.
+    fees and risks before making any financial decision.
+
+    No profit or return is guaranteed.
 
   </div>
 
 </section>
 
-<!-- GOLD INVESTMENT POOLS -->
+<!-- FOUR GOLD INVESTMENT POOLS -->
 
 <section id="pools">
 
   <div class="pool-heading">
 
-    <h2>⭐ Gold Investment Pools</h2>
+    <h2>Gold Investment Pools</h2>
 
   </div>
 
   <p class="muted">
 
-    Explore our gold investment pools and review the terms
+    Explore the available gold pool information.
 
-    before proceeding.
+    Review the actual terms before proceeding.
 
   </p>
 
   <div class="grid">
 
-    <!-- TAKWA MINES -->
+    <!-- POOL 1 -->
 
     <div class="pool-card">
 
@@ -754,15 +912,15 @@ hr{
 
           <span>Duration:</span>
 
-          <strong>1</strong>
+          <strong>Confirm Terms</strong>
 
         </div>
 
         <div class="pool-row">
 
-          <span>Expected Return:</span>
+          <span>Returns:</span>
 
-          <strong class="pool-return">GH₵430.00</strong>
+          <strong>Not Guaranteed</strong>
 
         </div>
 
@@ -776,13 +934,13 @@ hr{
 
       <p class="pool-note">
 
-        Review the actual investment terms before proceeding.
+        Confirm the actual investment terms before proceeding.
 
       </p>
 
     </div>
 
-    <!-- TAKWA GOLD -->
+    <!-- POOL 2 -->
 
     <div class="pool-card">
 
@@ -804,15 +962,15 @@ hr{
 
           <span>Duration:</span>
 
-          <strong>1</strong>
+          <strong>Confirm Terms</strong>
 
         </div>
 
         <div class="pool-row">
 
-          <span>Expected Return:</span>
+          <span>Returns:</span>
 
-          <strong class="pool-return">GH₵150.00</strong>
+          <strong>Not Guaranteed</strong>
 
         </div>
 
@@ -826,7 +984,107 @@ hr{
 
       <p class="pool-note">
 
-        Review the actual investment terms before proceeding.
+        Confirm the actual investment terms before proceeding.
+
+      </p>
+
+    </div>
+
+    <!-- POOL 3 -->
+
+    <div class="pool-card">
+
+      <div class="gold-icon">✨</div>
+
+      <h3>Premium Gold Pool</h3>
+
+      <div class="pool-details">
+
+        <div class="pool-row">
+
+          <span>Minimum Deposit:</span>
+
+          <strong>Terms Pending</strong>
+
+        </div>
+
+        <div class="pool-row">
+
+          <span>Duration:</span>
+
+          <strong>Confirm Terms</strong>
+
+        </div>
+
+        <div class="pool-row">
+
+          <span>Returns:</span>
+
+          <strong>Not Guaranteed</strong>
+
+        </div>
+
+      </div>
+
+      <a class="pool-button" href="#payments">
+
+        View & Invest
+
+      </a>
+
+      <p class="pool-note">
+
+        Pool terms must be confirmed before accepting deposits.
+
+      </p>
+
+    </div>
+
+    <!-- POOL 4 -->
+
+    <div class="pool-card">
+
+      <div class="gold-icon">🏆</div>
+
+      <h3>Heritage Gold Pool</h3>
+
+      <div class="pool-details">
+
+        <div class="pool-row">
+
+          <span>Minimum Deposit:</span>
+
+          <strong>Terms Pending</strong>
+
+        </div>
+
+        <div class="pool-row">
+
+          <span>Duration:</span>
+
+          <strong>Confirm Terms</strong>
+
+        </div>
+
+        <div class="pool-row">
+
+          <span>Returns:</span>
+
+          <strong>Not Guaranteed</strong>
+
+        </div>
+
+      </div>
+
+      <a class="pool-button" href="#payments">
+
+        View & Invest
+
+      </a>
+
+      <p class="pool-note">
+
+        Pool terms must be confirmed before accepting deposits.
 
       </p>
 
@@ -836,11 +1094,13 @@ hr{
 
   <div class="notice">
 
-    Expected returns shown are not guaranteed. Confirm the actual
+    Investment returns are not guaranteed. Confirm the actual
 
-    investment terms, duration, fees and risks before accepting
+    investment terms, duration, fees, risks and ownership
 
-    customer deposits. A payment alone does not confirm an investment.
+    arrangements before accepting customer deposits.
+
+    A payment alone does not confirm an investment.
 
   </div>
 
@@ -850,11 +1110,11 @@ hr{
 
 <section id="account">
 
-  <h2>Your Account</h2>
+  <h2>Client Portal</h2>
 
   <p class="muted">
 
-    Sign up or log in to access your account.
+    Create an account or log in to access your account.
 
   </p>
 
@@ -882,7 +1142,7 @@ hr{
 
       </div>
 
-      <!-- SIGNUP FORM -->
+      <!-- SIGNUP -->
 
       <form id="signupForm"
 
@@ -932,7 +1192,7 @@ hr{
 
       </form>
 
-      <!-- LOGIN FORM -->
+      <!-- LOGIN -->
 
       <form id="loginForm"
 
@@ -1000,9 +1260,9 @@ hr{
 
       <div class="notice">
 
-        Your account login does not mean that a payment has
+        Your account login does not mean that a payment
 
-        been received or that an investment has been made.
+        has been received or that an investment has been made.
 
       </div>
 
@@ -1038,7 +1298,7 @@ hr{
 
   <div class="panel">
 
-    <h3>Payment Checkout</h3>
+    <h3>Paystack Checkout</h3>
 
     <p>
 
@@ -1050,11 +1310,11 @@ hr{
 
     <div class="notice">
 
-      The checkout page is hosted by Paystack. This website
+      Checkout is hosted by Paystack. This website does not
 
-      does not automatically verify or credit payments.
+      automatically verify or credit payments. Keep your
 
-      Keep your transaction receipt.
+      transaction receipt.
 
     </div>
 
@@ -1337,6 +1597,16 @@ async function startApp() {
     if (error) throw error;
 
     updateAccount(data.session);
+
+    supabaseClient.auth.onAuthStateChange(
+
+      (_event, session) => {
+
+        updateAccount(session);
+
+      }
+
+    );
 
   } catch (error) {
 
